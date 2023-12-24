@@ -184,4 +184,9 @@ h3 {
     .footer {
         text-align: center;
     }
+
+}
+
+.vertical-space {
+    margin-bottom: 200px;
 }
