@@ -424,7 +424,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -452,9 +452,9 @@
        y="80.925598"
        rx="0.82586712"
        ry="0.82586712"
-       inkscape:export-filename="D:\Desarrollo\CAAT\elgato\_diseno\icon512.png"
-       inkscape:export-xdpi="304.69016"
-       inkscape:export-ydpi="304.69016" />
+       inkscape:export-filename="D:\xampp\htdocs\proyectos\darellanodev.github.io\img\icons\artwork.png"
+       inkscape:export-xdpi="292.84152"
+       inkscape:export-ydpi="292.84152" />
     <rect
        inkscape:export-ydpi="28.564703"
        inkscape:export-xdpi="28.564703"
