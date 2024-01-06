@@ -2,6 +2,19 @@ h2 {
     color:rgb(112, 64, 64);
 }
 
+.container {
+    padding: 20px 40px 40px;
+    max-width: 600px;
+}
+
+.containerleftimg {
+    width: 50px;
+    margin: 30px 30px 30px 0;
+    float: left;
+}
+.containertext {
+    display: inline;
+}
 
 .profile {
     padding: 20px 40px 40px;
