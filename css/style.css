@@ -3,25 +3,19 @@ h2 {
 }
 
 
-.container {
+.profile {
     padding: 20px 40px 40px;
     max-width: 600px;
 }
-.container__roundedrightimage {
+.profileimg {
     width: 200px;
-    margin: 30px 30px 30px 0;
-    float: right;
 }
-.container__leftimage {
+.profiletext {
     width: 50px;
-    margin: 30px 30px 30px 0;
-    float: left;
-}
-.container__text {
     display: inline;
 }
 
-.circular--square { 
+.roundedimg { 
     border-radius: 50%; 
 }
 
@@ -46,5 +40,12 @@ h2 {
 @media (min-width: 500px) {
     .gallerycontainer {
         flex-direction: row;
+    }
+}
+
+@media (min-width: 460px) {
+    .profileimg {
+        width: 200px;
+        float: right;
     }
 }
