@@ -5,7 +5,7 @@
 ## Next Tasks
 
 - [ ] Put links to videos on youtube.
-- [ ] Put a demo for the playable web version of jetpack game.
+- [x] Put a demo for the playable web version of jetpack game.
 - [x] Add old cavedrop game
 - [x] Insert screenshots for gif tower defense and jetpack game.
 - [x] Crop the space lab game screenshots.
