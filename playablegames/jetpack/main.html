@@ -10,6 +10,10 @@
 
 <body class="wasmcontent">
 
+    <div id="spinner" class="spinner">
+        <p>Loading, please wait...</p>
+    </div>
+
     <script src="wasm_exec.js"></script>
     <script>
         // Polyfill
@@ -21,9 +25,20 @@
         }
 
         const go = new Go();
+        const spinner = document.getElementById('spinner');
+
         WebAssembly.instantiateStreaming(fetch("jetpackgame.wasm"), go.importObject).then(result => {
+
             go.run(result.instance);
+            spinner.style.display = 'none';
+
+        }).catch(error => {
+
+            console.error('Error loading wasm:', error);
+            spinner.style.display = 'none';
+
         });
+
     </script>
 
 </body>
