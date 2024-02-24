@@ -6,12 +6,19 @@
     <title>darellanodev - developer and graphic designer</title>
     <meta content="width=device-width, initial-scale=1" name="viewport">
     <link href='css/normalize.css' rel='stylesheet' type='text/css'>
-    <link href='css/sakura.css' id="sakura-css" rel='stylesheet' type='text/css'>
+    <link href='css/sakura-vader.css' id="sakura-css" rel='stylesheet' type='text/css'>
     <link href="css/style.css" rel="stylesheet">
 
 </head>
 
 <body>
+
+
+    <div id="toggle">
+        <span id="switch">
+            <button id="switchThemeButton" onclick="switchSakuraTheme();">Light Mode</button>
+        </span>
+    </div>
 
     <div id="top">
         <h1>darellanodev</h1>
@@ -276,6 +283,29 @@
             <p><a href="#top">[Top]</a></p>
         </div>
     </div>
+
+    <script>
+        const themes = [
+            {
+                name: "Dark Mode",
+                href: "css/sakura-vader.css",
+            },
+            {
+                name: "Light Mode",
+                href: "css/sakura.css",
+            },
+
+        ];
+        let current = 0;
+        const sakura = document.getElementById("sakura-css");
+        const switchTag = document.getElementById("switch");
+        const switchThemeButton = document.getElementById("switchThemeButton");
+        function switchSakuraTheme() {
+            sakura.href = themes[(current + 1) % themes.length].href;
+            switchThemeButton.textContent = themes[(current) % themes.length].name;
+            current += 1
+        }
+    </script>
 
 </body>
 
