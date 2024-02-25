@@ -57,3 +57,14 @@ h2 {
         max-width: 600px;
     }
 }
+
+#myCanvas {
+    width: 30px;
+    height: 30px;
+    margin-left: 190px;
+}
+
+#containerTitle {
+    display: flex;
+    align-items: center;
+}
