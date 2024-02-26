@@ -21,8 +21,8 @@ function animate() {
         c.elapsedTime += 1 / 60
 
         if (c.elapsedTime >= c.colorChangeInterval) {
-            changeCubeColor(c);
-            c.elapsedTime = 0;
+            changeCubeColor(c)
+            c.elapsedTime = 0
         }
 
     })
@@ -34,9 +34,9 @@ document.getElementById('myCanvas').appendChild(renderer.domElement)
 
 
 cubes.push(
-    new createCube(-300, 1, 1),
-    new createCube(0, -60, 150),
-    new createCube(0, -180, -500),
+    new createCube(-60, 30, 21),
+    new createCube(0, -1, 50),
+    new createCube(20, -30, -90),
     )
 
 cubes.forEach(c => { scene.add(c) })

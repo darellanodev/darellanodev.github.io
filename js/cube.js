@@ -5,7 +5,7 @@ function createCube(x, y, z) {
     const material = new THREE.MeshBasicMaterial({ color: 0xcccccc, wireframe: true })
     const cube = new THREE.Mesh(geometry, material)
     cube.position.set(x, y, z)
-    cube.scale.set(200, 200, 200)
+    cube.scale.set(35, 35, 35)
     cube.elapsedTime = 0
     cube.colorChangeInterval = 5
 
