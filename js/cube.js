@@ -6,8 +6,15 @@ function createCube(x, y, z) {
     const cube = new THREE.Mesh(geometry, material)
     cube.position.set(x, y, z)
     cube.scale.set(200, 200, 200)
+    cube.elapsedTime = 0
+    cube.colorChangeInterval = 5
 
     return cube
 }
 
-export {cubes, createCube}
+function changeCubeColor(cube) {
+    const randomColor = Math.random() * 0xffffff;
+    cube.material.color.set(randomColor);
+}
+
+export {cubes, createCube, changeCubeColor}
