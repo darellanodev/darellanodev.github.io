@@ -1,13 +1,12 @@
 import camera from "./camera.js"
-import {createCube, cubes, changeCubeColor} from "./cube.js"
+import { changeCubeColor } from "./color.js"
+import { createCube, cubes } from "./cube.js"
 import renderer from "./renderer.js"
 import scene from "./scene.js"
 
 
 function animate() {
     requestAnimationFrame(animate)
-
-    
 
     cubes.forEach((c, index) => {
         
@@ -25,8 +24,6 @@ function animate() {
             changeCubeColor(c);
             c.elapsedTime = 0;
         }
-
-        
 
     })
     renderer.render(scene, camera)

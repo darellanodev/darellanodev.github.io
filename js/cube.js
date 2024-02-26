@@ -12,9 +12,4 @@ function createCube(x, y, z) {
     return cube
 }
 
-function changeCubeColor(cube) {
-    const randomColor = Math.random() * 0xffffff;
-    cube.material.color.set(randomColor);
-}
-
-export {cubes, createCube, changeCubeColor}
+export {cubes, createCube}
