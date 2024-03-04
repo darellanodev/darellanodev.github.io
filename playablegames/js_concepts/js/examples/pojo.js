@@ -2,7 +2,7 @@
 
 const levelOne = {
     id: 1,
-    rowMapTiles: ['000001','111111','100000','100000','111111','000001'],
+    rowMapTiles: ['000001','111111','100000','100000','111111'],
     name: 'serpent',
     favorite: true,
 }
