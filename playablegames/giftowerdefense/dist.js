@@ -1,69 +1,22 @@
 var Const = (function () {
     function Const() {
     }
-    Const.HUD_NORMAL = 0;
-    Const.HUD_UPGRADING = 1;
-    Const.HUD_UPGRADING_MAX = 2;
-    Const.HUD_ICON_GREEN_TOWER_ON = 0;
-    Const.HUD_ICON_GREEN_TOWER_OFF = 1;
-    Const.HUD_ICON_RED_TOWER_ON = 2;
-    Const.HUD_ICON_RED_TOWER_OFF = 3;
-    Const.HUD_ICON_YELLOW_TOWER_ON = 4;
-    Const.HUD_ICON_YELLOW_TOWER_OFF = 5;
-    Const.GREEN_TOWER = 1;
-    Const.RED_TOWER = 2;
-    Const.YELLOW_TOWER = 3;
-    Const.GREEN_COLOR = [75, 185, 35];
-    Const.RED_COLOR = [185, 35, 35];
-    Const.YELLOW_COLOR = [202, 191, 24];
     Const.GRAY_COLOR = [50, 50, 50];
-    Const.DAMAGE_UPGRADE_GREEN_TOWER = [1, 2, 4, 6, 12, 24];
-    Const.PROFIT_SELL_UPGRADE_GREEN_TOWER = [30, 35, 65, 220, 900, 1880];
-    Const.PROFIT_SELL_UPGRADE_RED_TOWER = [80, 110, 190, 420, 1200, 2880];
-    Const.PROFIT_SELL_UPGRADE_YELLOW_TOWER = [
-        680, 2460, 7440, 21920, 66900, 199880,
-    ];
-    Const.COST_UPGRADE_GREEN_TOWER = [50, 75, 125, 300, 1000, 2000];
-    Const.COST_UPGRADE_RED_TOWER = [100, 150, 250, 500, 1300, 3000];
-    Const.COST_UPGRADE_YELLOW_TOWER = [700, 2500, 7500, 22000, 67000, 200000];
-    Const.GREEN_TOWER_UPGRADE_INFLUENCE_AREA = [150, 180, 220, 300, 400, 550];
-    Const.RED_TOWER_UPGRADE_INFLUENCE_AREA = [150, 180, 220, 300, 400, 550];
-    Const.YELLOW_TOWER_UPGRADE_INFLUENCE_AREA = [150, 180, 220, 300, 400, 550];
     Const.LEFT_DIRECTION = 1;
     Const.RIGHT_DIRECTION = 2;
     Const.UP_DIRECTION = 3;
     Const.DOWN_DIRECTION = 4;
     Const.TILE_SIZE = 50;
     Const.UPGRADE_MAX_LEVEL = 5;
-    Const.TOTAL_ENEMIES = 5;
     Const.CANVAS_WIDTH = 800;
     Const.CANVAS_HEIGHT = 580;
     Const.HUD_HEIGHT = 84;
     Const.KEY_1 = 49;
     Const.KEY_2 = 50;
     Const.KEY_3 = 51;
-    Const.CREATE_ENEMY_MAX_TIME = 200;
     Const.TOWER_OFFSET = 5;
-    Const.GREEN_TOWER_INFLUENCE_AREA = 150;
-    Const.RED_TOWER_INFLUENCE_AREA = 240;
-    Const.YELLOW_TOWER_INFLUENCE_AREA = 290;
     Const.ALPHA_INFLUENCE_AREA_FILL = 50;
     Const.ALPHA_INFLUENCE_AREA_STROKE = 120;
-    Const.ENEMY_VELOCITY = 1;
-    Const.BOSS_VELOCITY = 0.5;
-    Const.ENEMY_CHANGE_EYES_MAX_TIME = 50;
-    Const.ENEMY_EXTEND_CLOSED_EYES_MAX_TIME = 20;
-    Const.ENEMY_MIN_TIME_TO_CLOSE = 50;
-    Const.ENEMY_MAX_TIME_TO_CLOSE = 200;
-    Const.ENEMY_EYES_CENTER = 0;
-    Const.ENEMY_EYES_LEFT = 1;
-    Const.ENEMY_EYES_RIGHT = 2;
-    Const.ENEMY_EYES_CLOSED = 3;
-    Const.ENEMY_STATUS_ALIVE = 0;
-    Const.ENEMY_STATUS_DEAD = 1;
-    Const.PROGRESSBAR_WIDTH = 27;
-    Const.PROGRESSBAR_HEIGHT = 7;
-    Const.ENEMY_EXPLOSION_MAX_EMIT_TIME = 5;
     Const.EXPLOSION_OFFSET = 25;
     Const.GAME_STATUS_PLAYING = 0;
     Const.GAME_STATUS_GAME_OVER = 1;
@@ -74,31 +27,9 @@ var Const = (function () {
     Const.ID_LEVEL_INVALID_FOR_UNIT_TESTING = 6666;
     Const.ID_LEVEL_INVALID_WITHOUT_ROWSMAP_FOR_UNIT_TESTING = 6667;
     Const.DELAY_UPGRADE_MULTIPLIER = 5;
-    Const.MAGIC_FIREBALL_SPEED = 10;
-    Const.MAGIC_FIREBALLS = 3;
-    Const.MAGIC_FIREBALL_DAMAGE = 500;
-    Const.MAGIC_ICEBALL_SPEED = 10;
-    Const.MAGIC_ICEBALLS = 3;
-    Const.MAGIC_ICEBALL_FREEZE_ENEMY_MAX_TIME = 500;
-    Const.MAGIC_UFO_SPEED = 10;
-    Const.MAGIC_UFOS = 3;
     Const.MAGIC_STATUS_ALIVE = 0;
     Const.MAGIC_STATUS_DEAD = 1;
-    Const.PARTICLE_EXPLOSION_ENEMY_SIZE = 12;
-    Const.PARTICLE_EXPLOSION_FIREBALL_SIZE = 6;
-    Const.PARTICLE_EXPLOSION_ICEBALL_SIZE = 6;
-    Const.PARTICLE_EXPLOSION_ENEMY_COLOR = [255, 165, 0];
-    Const.PARTICLE_EXPLOSION_MAGIC_FIREBALL_COLOR = [202, 191, 24];
-    Const.PARTICLE_EXPLOSION_MAGIC_ICEBALL_COLOR = [0, 65, 255];
     return Const;
-}());
-var CustomRange = (function () {
-    function CustomRange() {
-    }
-    CustomRange.make = function (start, stop) {
-        return new Array(stop - start + 1).fill(0).map(function (v, i) { return start + i; });
-    };
-    return CustomRange;
 }());
 var Debug = (function () {
     function Debug() {
@@ -108,15 +39,6 @@ var Debug = (function () {
         text("".concat(position.x, " - ").concat(position.y), 260, 18);
     };
     return Debug;
-}());
-var Distance = (function () {
-    function Distance() {
-    }
-    Distance.twoPoints = function (posA, posB) {
-        return Math.sqrt((posA.x - posB.x) * (posA.x - posB.x) +
-            (posA.y - posB.y) * (posA.y - posB.y));
-    };
-    return Distance;
 }());
 var __assign = (this && this.__assign) || function () {
     __assign = Object.assign || function(t) {
@@ -153,16 +75,16 @@ var Enemy = (function () {
         this.Const = Const;
         this.RandomClass = RandomClass;
         this.ProgressBarClass = ProgressBarClass;
-        this.imgIndex = this.Const.ENEMY_EYES_CENTER;
-        this.imgIndexBeforeEyesClosed = this.Const.ENEMY_EYES_CENTER;
+        this.imgIndex = Enemy.EYES_CENTER;
+        this.imgIndexBeforeEyesClosed = Enemy.EYES_CENTER;
         this.eyesSequence = [
-            this.Const.ENEMY_EYES_LEFT,
-            this.Const.ENEMY_EYES_CENTER,
-            this.Const.ENEMY_EYES_RIGHT,
-            this.Const.ENEMY_EYES_CENTER,
+            Enemy.EYES_LEFT,
+            Enemy.EYES_CENTER,
+            Enemy.EYES_RIGHT,
+            Enemy.EYES_CENTER,
         ];
-        this.healthBar = new this.ProgressBarClass({ x: 200, y: 200 }, this.Const.PROGRESSBAR_WIDTH, this.Const.PROGRESSBAR_HEIGHT);
-        this.status = this.Const.ENEMY_STATUS_ALIVE;
+        this.healthBar = new this.ProgressBarClass({ x: 200, y: 200 }, ProgressBar.WIDTH, ProgressBar.HEIGHT);
+        this.status = Enemy.STATUS_ALIVE;
         this.damage = 0;
         this.position = __assign({}, this.startPosition);
         this.moveCount = 0;
@@ -184,17 +106,17 @@ var Enemy = (function () {
         this.damage += shotDamage / this.endurance;
         this.healthBar.setProgress(this.damage);
         if (this.healthBar.isFullOfProgress()) {
-            this.status = this.Const.ENEMY_STATUS_DEAD;
+            this.status = Enemy.STATUS_DEAD;
         }
     };
     Enemy.prototype.freeze = function () {
         this.freezed = true;
     };
     Enemy.prototype.isDead = function () {
-        return this.status == this.Const.ENEMY_STATUS_DEAD;
+        return this.status == Enemy.STATUS_DEAD;
     };
     Enemy.prototype.isAlive = function () {
-        return this.status == this.Const.ENEMY_STATUS_ALIVE;
+        return this.status == Enemy.STATUS_ALIVE;
     };
     Enemy.prototype.isWinner = function () {
         return this.winned;
@@ -219,7 +141,7 @@ var Enemy = (function () {
     };
     Enemy.prototype.update = function () {
         if (this.freezed) {
-            if (this.freezedTime < this.Const.MAGIC_ICEBALL_FREEZE_ENEMY_MAX_TIME) {
+            if (this.freezedTime < MagicIceball.FREEZE_ENEMY_MAX_TIME) {
                 this.freezedTime++;
             }
             else {
@@ -228,9 +150,7 @@ var Enemy = (function () {
             }
             return;
         }
-        var velocity = this.isBoss
-            ? this.Const.BOSS_VELOCITY
-            : this.Const.ENEMY_VELOCITY;
+        var velocity = this.isBoss ? Enemy.BOSS_VELOCITY : Enemy.VELOCITY;
         switch (this.currentDirection) {
             case this.Const.LEFT_DIRECTION:
                 this.position.x = this.position.x - velocity;
@@ -258,11 +178,11 @@ var Enemy = (function () {
         }
     };
     Enemy.prototype._hasOpenEyes = function () {
-        return this.imgIndex != this.Const.ENEMY_EYES_CLOSED;
+        return this.imgIndex != Enemy.EYES_CLOSED;
     };
     Enemy.prototype._moveEyesInSequence = function () {
         this.changeEyesTime++;
-        if (this.changeEyesTime > this.Const.ENEMY_CHANGE_EYES_MAX_TIME) {
+        if (this.changeEyesTime > Enemy.CHANGE_EYES_MAX_TIME) {
             this.changeEyesTime = 0;
             this.indexEyesSecuence++;
             if (this.indexEyesSecuence == this.eyesSequence.length) {
@@ -272,7 +192,7 @@ var Enemy = (function () {
         }
     };
     Enemy.prototype._setRandomTimeMaxForClosingEyes = function () {
-        this.randomCloseEyes = this.RandomClass.integerBetween(this.Const.ENEMY_MIN_TIME_TO_CLOSE, this.Const.ENEMY_MAX_TIME_TO_CLOSE);
+        this.randomCloseEyes = this.RandomClass.integerBetween(Enemy.MIN_TIME_TO_CLOSE, Enemy.MAX_TIME_TO_CLOSE);
     };
     Enemy.prototype._changeEyes = function () {
         if (this._hasOpenEyes()) {
@@ -281,13 +201,13 @@ var Enemy = (function () {
                 this.closeEyesTime = 0;
                 this._setRandomTimeMaxForClosingEyes();
                 this.imgIndexBeforeEyesClosed = this.imgIndex;
-                this.imgIndex = this.Const.ENEMY_EYES_CLOSED;
+                this.imgIndex = Enemy.EYES_CLOSED;
             }
             this._moveEyesInSequence();
         }
         else {
             this.extendClosedEyesTime++;
-            if (this.extendClosedEyesTime > this.Const.ENEMY_EXTEND_CLOSED_EYES_MAX_TIME) {
+            if (this.extendClosedEyesTime > Enemy.EXTEND_CLOSED_EYES_MAX_TIME) {
                 this.extendClosedEyesTime = 0;
                 this.imgIndex = this.imgIndexBeforeEyesClosed;
             }
@@ -302,6 +222,20 @@ var Enemy = (function () {
         this.healthBar.setPosition({ x: this.position.x, y: this.position.y - 20 });
         this.healthBar.draw();
     };
+    Enemy.VELOCITY = 1;
+    Enemy.BOSS_VELOCITY = 0.5;
+    Enemy.CHANGE_EYES_MAX_TIME = 50;
+    Enemy.EXTEND_CLOSED_EYES_MAX_TIME = 20;
+    Enemy.MIN_TIME_TO_CLOSE = 50;
+    Enemy.MAX_TIME_TO_CLOSE = 200;
+    Enemy.EYES_CENTER = 0;
+    Enemy.EYES_LEFT = 1;
+    Enemy.EYES_RIGHT = 2;
+    Enemy.EYES_CLOSED = 3;
+    Enemy.STATUS_ALIVE = 0;
+    Enemy.STATUS_DEAD = 1;
+    Enemy.TOTAL_ENEMIES = 5;
+    Enemy.CREATION_MAX_TIME = 200;
     return Enemy;
 }());
 var EnemyExplosion = (function () {
@@ -309,7 +243,7 @@ var EnemyExplosion = (function () {
         this.x = x;
         this.y = y;
         this.Const = Const;
-        this.particleSystem = new ParticleSystemClass(createVector(this.x + this.Const.EXPLOSION_OFFSET, this.y + this.Const.EXPLOSION_OFFSET), this.Const.PARTICLE_EXPLOSION_ENEMY_SIZE, this.Const.PARTICLE_EXPLOSION_ENEMY_COLOR);
+        this.particleSystem = new ParticleSystemClass(createVector(this.x + this.Const.EXPLOSION_OFFSET, this.y + this.Const.EXPLOSION_OFFSET), EnemyExplosion.SIZE, EnemyExplosion.COLOR);
         this.emisionTime = 0;
         this.finished = false;
     }
@@ -317,20 +251,23 @@ var EnemyExplosion = (function () {
         return !this.finished;
     };
     EnemyExplosion.prototype.update = function () {
-        if (this.emisionTime < this.Const.ENEMY_EXPLOSION_MAX_EMIT_TIME) {
+        if (this.emisionTime < EnemyExplosion.MAX_EMIT_TIME) {
             this.emisionTime++;
             this.particleSystem.addParticle();
         }
         this.particleSystem.run();
     };
+    EnemyExplosion.MAX_EMIT_TIME = 5;
+    EnemyExplosion.SIZE = 12;
+    EnemyExplosion.COLOR = [255, 165, 0];
     return EnemyExplosion;
 }());
 var GreenTower = (function () {
-    function GreenTower(images, position, Const, DistanceClass, ProgressBarClass) {
+    function GreenTower(images, position, Const, MathUtilsClass, ProgressBarClass) {
         this.images = images;
         this.position = __assign({}, position);
         this.Const = Const;
-        this.DistanceClass = DistanceClass;
+        this.MathUtilsClass = MathUtilsClass;
         this.ProgressBarClass = ProgressBarClass;
         this.upgradeLevel = 0;
         this.enemyTarget = null;
@@ -339,7 +276,7 @@ var GreenTower = (function () {
         this.progressBar = new this.ProgressBarClass({
             x: this.position.x + this.Const.TOWER_OFFSET,
             y: this.position.y + this.Const.TOWER_OFFSET,
-        }, this.Const.PROGRESSBAR_WIDTH, this.Const.PROGRESSBAR_HEIGHT);
+        }, ProgressBar.WIDTH, ProgressBar.HEIGHT);
         this.upgradeProgress = 0;
     }
     GreenTower.prototype.upgrade = function () {
@@ -364,13 +301,13 @@ var GreenTower = (function () {
     };
     GreenTower.prototype._drawShotToEnemy = function () {
         strokeWeight(3);
-        stroke(this.Const.RED_COLOR);
+        stroke(RedTower.COLOR);
         line(-1, -18, 7 - this.distanceToEnemyTarget / 7, -this.distanceToEnemyTarget);
     };
     GreenTower.prototype._drawUpgradeBackground = function () {
         strokeWeight(1);
         stroke('black');
-        fill(this.Const.GREEN_COLOR);
+        fill(GreenTower.COLOR);
         rect(this.position.x + 4, this.position.y + 4, this.Const.TILE_SIZE, this.Const.TILE_SIZE);
     };
     GreenTower.prototype.draw = function () {
@@ -404,7 +341,7 @@ var GreenTower = (function () {
                 imageMode(CENTER);
                 applyMatrix(cos_a, sin_a, -sin_a, cos_a, this.position.x + 30, this.position.y + 30);
                 this._drawShotToEnemy();
-                this.enemyTarget.addDamage(this.Const.DAMAGE_UPGRADE_GREEN_TOWER[this.upgradeLevel]);
+                this.enemyTarget.addDamage(GreenTower.DAMAGE_UPGRADE[this.upgradeLevel]);
                 image(this.images[this.upgradeLevel], 0, 0);
                 resetMatrix();
                 imageMode(CORNER);
@@ -415,13 +352,13 @@ var GreenTower = (function () {
         }
     };
     GreenTower.prototype.getInfluenceArea = function () {
-        return this.Const.GREEN_TOWER_UPGRADE_INFLUENCE_AREA[this.upgradeLevel];
+        return GreenTower.UPGRADE_INFLUENCE_AREA[this.upgradeLevel];
     };
     GreenTower.prototype.getCostWhenUpgradeLevelIs = function (selectedUpgradeLevel) {
         if (selectedUpgradeLevel > this.Const.UPGRADE_MAX_LEVEL) {
-            return this.Const.COST_UPGRADE_GREEN_TOWER[this.Const.UPGRADE_MAX_LEVEL];
+            return GreenTower.COST_UPGRADE[this.Const.UPGRADE_MAX_LEVEL];
         }
-        return this.Const.COST_UPGRADE_GREEN_TOWER[selectedUpgradeLevel];
+        return GreenTower.COST_UPGRADE[selectedUpgradeLevel];
     };
     GreenTower.prototype.getCost = function () {
         return this.getCostWhenUpgradeLevelIs(this.getUpgradeLevel());
@@ -435,24 +372,23 @@ var GreenTower = (function () {
         }
     };
     GreenTower.prototype.getSellProfit = function () {
-        return this.Const.PROFIT_SELL_UPGRADE_GREEN_TOWER[this.getUpgradeLevel()];
+        return GreenTower.PROFIT_SELL_UPGRADE[this.getUpgradeLevel()];
     };
     GreenTower.prototype.getType = function () {
-        return this.Const.GREEN_TOWER;
+        return GreenTower.ID;
     };
     GreenTower.prototype.getColor = function () {
-        return this.Const.GREEN_COLOR;
+        return GreenTower.COLOR;
     };
     GreenTower.prototype._isDistanceIntoInfluenceArea = function (distance) {
-        return (distance <=
-            this.Const.GREEN_TOWER_UPGRADE_INFLUENCE_AREA[this.upgradeLevel] / 1.65);
+        return (distance <= GreenTower.UPGRADE_INFLUENCE_AREA[this.upgradeLevel] / 1.65);
     };
     GreenTower.prototype.selectTarget = function (enemies) {
         var _this = this;
         var minDistance = 99999;
         var enemyTarget = null;
         enemies.forEach(function (enemy) {
-            var distance = _this.DistanceClass.twoPoints({ x: _this.position.x, y: _this.position.y }, {
+            var distance = _this.MathUtilsClass.distance({ x: _this.position.x, y: _this.position.y }, {
                 x: enemy.getPosition().x,
                 y: enemy.getPosition().y,
             });
@@ -470,6 +406,13 @@ var GreenTower = (function () {
             this.distanceToEnemyTarget = 0;
         }
     };
+    GreenTower.ID = 1;
+    GreenTower.COLOR = [75, 185, 35];
+    GreenTower.PROFIT_SELL_UPGRADE = [30, 35, 65, 220, 900, 1880];
+    GreenTower.DAMAGE_UPGRADE = [1, 2, 4, 6, 12, 24];
+    GreenTower.COST_UPGRADE = [50, 75, 125, 300, 1000, 2000];
+    GreenTower.UPGRADE_INFLUENCE_AREA = [150, 180, 220, 300, 400, 550];
+    GreenTower.INFLUENCE_AREA = 150;
     return GreenTower;
 }());
 var Hud = (function () {
@@ -484,18 +427,18 @@ var Hud = (function () {
         this.waveProgressBar = waveProgressBar;
         this.bossProgressBar = bossProgressBar;
         this.wave = wave;
-        this.waveProgressBar = new ProgressBar(335, -19, 150, 16);
-        this.bossProgressBar = new ProgressBar(335, -2, 150, 10);
-        this.hudType = this.Const.HUD_NORMAL;
-        this.selectedItem = this.Const.GREEN_TOWER;
+        this.waveProgressBar = new ProgressBar({ x: 335, y: -19 }, 150, 16);
+        this.bossProgressBar = new ProgressBar({ x: 335, y: -2 }, 150, 10);
+        this.hudType = Hud.NORMAL;
+        this.selectedItem = GreenTower.ID;
         this.upgradeCost = null;
         this.sellProfit = null;
         this.canBuyGreenTower = false;
         this.canBuyRedTower = false;
         this.canBuyYellowTower = false;
-        this.magicfireballs = this.Const.MAGIC_FIREBALLS;
-        this.magiciceballs = this.Const.MAGIC_ICEBALLS;
-        this.magicUFOs = this.Const.MAGIC_UFOS;
+        this.magicfireballs = MagicFireball.FIREBALLS;
+        this.magiciceballs = MagicIceball.ICEBALLS;
+        this.magicUFOs = MagicUFO.UFOS;
     }
     Hud.prototype.isInsideButtonsBar = function (px, py) {
         if (px > 0 && px < 800 && py > 28 && py < 78) {
@@ -570,16 +513,16 @@ var Hud = (function () {
     };
     Hud.prototype.draw = function () {
         switch (this.hudType) {
-            case this.Const.HUD_NORMAL:
-                image(this.hudImages[this.Const.HUD_NORMAL], 0, 0);
+            case Hud.NORMAL:
+                image(this.hudImages[Hud.NORMAL], 0, 0);
                 this._drawTowerIcons();
                 this._drawSelectedItem();
                 break;
-            case this.Const.HUD_UPGRADING:
-                image(this.hudImages[this.Const.HUD_UPGRADING], 0, 0);
+            case Hud.UPGRADING:
+                image(this.hudImages[Hud.UPGRADING], 0, 0);
                 break;
-            case this.Const.HUD_UPGRADING_MAX:
-                image(this.hudImages[this.Const.HUD_UPGRADING_MAX], 0, 0);
+            case Hud.UPGRADING_MAX:
+                image(this.hudImages[Hud.UPGRADING_MAX], 0, 0);
                 break;
         }
         this.waveProgressBar.draw();
@@ -595,7 +538,7 @@ var Hud = (function () {
         this._drawMagicUFO();
         this._drawMagicFireball();
         this._drawMagicIceball();
-        if (this.hudType === this.Const.HUD_NORMAL) {
+        if (this.hudType === Hud.NORMAL) {
             this._drawNewTowerPrices();
         }
     };
@@ -606,17 +549,17 @@ var Hud = (function () {
         this.lives = lives;
     };
     Hud.prototype._drawTowerIcons = function () {
-        var greenIconImgPos = this.Const.HUD_ICON_GREEN_TOWER_OFF;
-        var redIconImgPos = this.Const.HUD_ICON_RED_TOWER_OFF;
-        var yellowIconImgPos = this.Const.HUD_ICON_YELLOW_TOWER_OFF;
+        var greenIconImgPos = Hud.ICON_GREEN_TOWER_OFF;
+        var redIconImgPos = Hud.ICON_RED_TOWER_OFF;
+        var yellowIconImgPos = Hud.ICON_YELLOW_TOWER_OFF;
         if (this.canBuyGreenTower) {
-            greenIconImgPos = this.Const.HUD_ICON_GREEN_TOWER_ON;
+            greenIconImgPos = Hud.ICON_GREEN_TOWER_ON;
         }
         if (this.canBuyRedTower) {
-            redIconImgPos = this.Const.HUD_ICON_RED_TOWER_ON;
+            redIconImgPos = Hud.ICON_RED_TOWER_ON;
         }
         if (this.canBuyYellowTower) {
-            yellowIconImgPos = this.Const.HUD_ICON_YELLOW_TOWER_ON;
+            yellowIconImgPos = Hud.ICON_YELLOW_TOWER_ON;
         }
         image(this.hudIconImages[greenIconImgPos], 60, 38);
         image(this.hudIconImages[redIconImgPos], 142, 38);
@@ -664,21 +607,21 @@ var Hud = (function () {
         if (!this.canBuyGreenTower) {
             fill('gray');
         }
-        text(this.Const.COST_UPGRADE_GREEN_TOWER[0], 40, 72);
+        text(GreenTower.COST_UPGRADE[0], 40, 72);
         fill('white');
     };
     Hud.prototype._drawRedTowerPrice = function () {
         if (!this.canBuyRedTower) {
             fill('gray');
         }
-        text(this.Const.COST_UPGRADE_RED_TOWER[0], 118, 72);
+        text(RedTower.COST_UPGRADE[0], 118, 72);
         fill('white');
     };
     Hud.prototype._drawYellowTowerPrice = function () {
         if (!this.canBuyYellowTower) {
             fill('gray');
         }
-        text(this.Const.COST_UPGRADE_YELLOW_TOWER[0], 202, 72);
+        text(YellowTower.COST_UPGRADE[0], 202, 72);
         fill('white');
     };
     Hud.prototype._drawNewTowerPrices = function () {
@@ -691,35 +634,35 @@ var Hud = (function () {
         stroke(255, 204, 0);
         noFill();
         switch (this.selectedItem) {
-            case this.Const.GREEN_TOWER:
+            case GreenTower.ID:
                 square(57, 36, 37);
                 break;
-            case this.Const.RED_TOWER:
+            case RedTower.ID:
                 square(140, 36, 37);
                 break;
-            case this.Const.YELLOW_TOWER:
+            case YellowTower.ID:
                 square(225, 36, 37);
                 break;
         }
     };
     Hud.prototype.selectTowerHudType = function (tower) {
         if (tower.getUpgradeLevel() < this.Const.UPGRADE_MAX_LEVEL) {
-            this.setType(this.Const.HUD_UPGRADING);
+            this.setType(Hud.UPGRADING);
         }
         else {
-            this.setType(this.Const.HUD_UPGRADING_MAX);
+            this.setType(Hud.UPGRADING_MAX);
         }
     };
     Hud.prototype.viewUpgradeCost = function (tower, canUpgrade) {
         this.upgradeCost = null;
-        if (this.hudType === this.Const.HUD_UPGRADING) {
+        if (this.hudType === Hud.UPGRADING) {
             this.upgradeCost = tower.getNextLevelUpgradeCost();
         }
         this.canUpgrade = canUpgrade;
     };
     Hud.prototype.viewSellProfit = function (tower) {
         this.sellProfit = null;
-        if (this.hudType === this.Const.HUD_UPGRADING) {
+        if (this.hudType === Hud.UPGRADING) {
             this.sellProfit = tower.getSellProfit();
         }
     };
@@ -729,15 +672,16 @@ var Hud = (function () {
     Hud.prototype.hideSellProfit = function () {
         this.sellProfit = null;
     };
+    Hud.NORMAL = 0;
+    Hud.UPGRADING = 1;
+    Hud.UPGRADING_MAX = 2;
+    Hud.ICON_GREEN_TOWER_ON = 0;
+    Hud.ICON_GREEN_TOWER_OFF = 1;
+    Hud.ICON_RED_TOWER_ON = 2;
+    Hud.ICON_RED_TOWER_OFF = 3;
+    Hud.ICON_YELLOW_TOWER_ON = 4;
+    Hud.ICON_YELLOW_TOWER_OFF = 5;
     return Hud;
-}());
-var ImageUtils = (function () {
-    function ImageUtils() {
-    }
-    ImageUtils.getRangeImagesOfEnemy = function (number) {
-        return [number * 4, (number + 1) * 4];
-    };
-    return ImageUtils;
 }());
 var __spreadArray = (this && this.__spreadArray) || function (to, from, pack) {
     if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar; i < l; i++) {
@@ -758,31 +702,31 @@ var InfluenceArea = (function () {
     };
     InfluenceArea.prototype._setInfluenceAreaColor = function (towerId) {
         switch (towerId) {
-            case this.Const.GREEN_TOWER:
-                stroke.apply(void 0, __spreadArray(__spreadArray([], this.Const.GREEN_COLOR, false), [this.Const.ALPHA_INFLUENCE_AREA_STROKE], false));
-                fill.apply(void 0, __spreadArray(__spreadArray([], this.Const.GREEN_COLOR, false), [this.Const.ALPHA_INFLUENCE_AREA_FILL], false));
+            case GreenTower.ID:
+                stroke.apply(void 0, __spreadArray(__spreadArray([], GreenTower.COLOR, false), [this.Const.ALPHA_INFLUENCE_AREA_STROKE], false));
+                fill.apply(void 0, __spreadArray(__spreadArray([], GreenTower.COLOR, false), [this.Const.ALPHA_INFLUENCE_AREA_FILL], false));
                 break;
-            case this.Const.RED_TOWER:
-                stroke.apply(void 0, __spreadArray(__spreadArray([], this.Const.RED_COLOR, false), [this.Const.ALPHA_INFLUENCE_AREA_STROKE], false));
-                fill.apply(void 0, __spreadArray(__spreadArray([], this.Const.RED_COLOR, false), [this.Const.ALPHA_INFLUENCE_AREA_FILL], false));
+            case RedTower.ID:
+                stroke.apply(void 0, __spreadArray(__spreadArray([], RedTower.COLOR, false), [this.Const.ALPHA_INFLUENCE_AREA_STROKE], false));
+                fill.apply(void 0, __spreadArray(__spreadArray([], RedTower.COLOR, false), [this.Const.ALPHA_INFLUENCE_AREA_FILL], false));
                 break;
-            case this.Const.YELLOW_TOWER:
-                stroke.apply(void 0, __spreadArray(__spreadArray([], this.Const.YELLOW_COLOR, false), [this.Const.ALPHA_INFLUENCE_AREA_STROKE], false));
-                fill.apply(void 0, __spreadArray(__spreadArray([], this.Const.YELLOW_COLOR, false), [this.Const.ALPHA_INFLUENCE_AREA_FILL], false));
+            case YellowTower.ID:
+                stroke.apply(void 0, __spreadArray(__spreadArray([], YellowTower.COLOR, false), [this.Const.ALPHA_INFLUENCE_AREA_STROKE], false));
+                fill.apply(void 0, __spreadArray(__spreadArray([], YellowTower.COLOR, false), [this.Const.ALPHA_INFLUENCE_AREA_FILL], false));
                 break;
         }
     };
     InfluenceArea.prototype._getInfluenceAreaFor = function (towerSelected) {
-        var influenceArea = this.Const.GREEN_TOWER_INFLUENCE_AREA;
+        var influenceArea = GreenTower.INFLUENCE_AREA;
         switch (towerSelected) {
-            case this.Const.GREEN_TOWER:
-                influenceArea = this.Const.GREEN_TOWER_INFLUENCE_AREA;
+            case GreenTower.ID:
+                influenceArea = GreenTower.INFLUENCE_AREA;
                 break;
-            case this.Const.RED_TOWER:
-                influenceArea = this.Const.RED_TOWER_INFLUENCE_AREA;
+            case RedTower.ID:
+                influenceArea = RedTower.INFLUENCE_AREA;
                 break;
-            case this.Const.YELLOW_TOWER:
-                influenceArea = this.Const.YELLOW_TOWER_INFLUENCE_AREA;
+            case YellowTower.ID:
+                influenceArea = YellowTower.INFLUENCE_AREA;
                 break;
         }
         return influenceArea;
@@ -802,8 +746,7 @@ var InfluenceArea = (function () {
         var towerPosition = tower.getPosition();
         var x = towerPosition.x;
         var y = towerPosition.y;
-        if (tower.getType() === this.Const.GREEN_TOWER ||
-            tower.getType() === this.Const.RED_TOWER) {
+        if (tower.getType() === GreenTower.ID || tower.getType() === RedTower.ID) {
             x += this.Const.TOWER_OFFSET;
             y += this.Const.TOWER_OFFSET;
         }
@@ -903,19 +846,19 @@ var MagicFireball = (function () {
     MagicFireball.prototype.update = function () {
         switch (this.currentDirection) {
             case this.Const.LEFT_DIRECTION:
-                this.x = this.x - this.Const.MAGIC_FIREBALL_SPEED;
+                this.x = this.x - MagicFireball.SPEED;
                 break;
             case this.Const.RIGHT_DIRECTION:
-                this.x = this.x + this.Const.MAGIC_FIREBALL_SPEED;
+                this.x = this.x + MagicFireball.SPEED;
                 break;
             case this.Const.UP_DIRECTION:
-                this.y = this.y - this.Const.MAGIC_FIREBALL_SPEED;
+                this.y = this.y - MagicFireball.SPEED;
                 break;
             case this.Const.DOWN_DIRECTION:
-                this.y = this.y + this.Const.MAGIC_FIREBALL_SPEED;
+                this.y = this.y + MagicFireball.SPEED;
                 break;
         }
-        this.moveCount = this.moveCount + this.Const.MAGIC_FIREBALL_SPEED;
+        this.moveCount = this.moveCount + MagicFireball.SPEED;
         if (this.moveCount === this.Const.TILE_SIZE) {
             this.moveCount = 0;
             this.indexOrder++;
@@ -947,7 +890,7 @@ var MagicFireball = (function () {
         this.touchedEnemiesIds.push(enemy.id);
     };
     MagicFireball.prototype.addDamage = function (enemy) {
-        enemy.addDamage(this.Const.MAGIC_FIREBALL_DAMAGE);
+        enemy.addDamage(MagicFireball.DAMAGE);
     };
     MagicFireball.prototype.isAlive = function () {
         return this.status == this.Const.MAGIC_STATUS_ALIVE;
@@ -961,6 +904,9 @@ var MagicFireball = (function () {
     MagicFireball.prototype.draw = function () {
         image(this.img, this.x, this.y);
     };
+    MagicFireball.SPEED = 10;
+    MagicFireball.FIREBALLS = 3;
+    MagicFireball.DAMAGE = 500;
     return MagicFireball;
 }());
 var MagicFireballExplosion = (function () {
@@ -968,7 +914,7 @@ var MagicFireballExplosion = (function () {
         this.x = x;
         this.y = y;
         this.Const = Const;
-        this.particleSystem = new ParticleSystemClass(createVector(this.x + this.Const.EXPLOSION_OFFSET, this.y + this.Const.EXPLOSION_OFFSET), this.Const.PARTICLE_EXPLOSION_FIREBALL_SIZE, this.Const.PARTICLE_EXPLOSION_MAGIC_FIREBALL_COLOR);
+        this.particleSystem = new ParticleSystemClass(createVector(this.x + this.Const.EXPLOSION_OFFSET, this.y + this.Const.EXPLOSION_OFFSET), MagicFireballExplosion.SIZE, MagicFireballExplosion.COLOR);
         this.emisionTime = 0;
         this.finished = false;
     }
@@ -976,12 +922,15 @@ var MagicFireballExplosion = (function () {
         return !this.finished;
     };
     MagicFireballExplosion.prototype.update = function () {
-        if (this.emisionTime < this.Const.ENEMY_EXPLOSION_MAX_EMIT_TIME) {
+        if (this.emisionTime < MagicFireballExplosion.MAX_EMIT_TIME) {
             this.emisionTime++;
             this.particleSystem.addParticle();
         }
         this.particleSystem.run();
     };
+    MagicFireballExplosion.MAX_EMIT_TIME = 5;
+    MagicFireballExplosion.SIZE = 6;
+    MagicFireballExplosion.COLOR = [202, 191, 24];
     return MagicFireballExplosion;
 }());
 var MagicIceball = (function () {
@@ -1002,19 +951,19 @@ var MagicIceball = (function () {
     MagicIceball.prototype.update = function () {
         switch (this.currentDirection) {
             case this.Const.LEFT_DIRECTION:
-                this.x = this.x - this.Const.MAGIC_FIREBALL_SPEED;
+                this.x = this.x - MagicFireball.SPEED;
                 break;
             case this.Const.RIGHT_DIRECTION:
-                this.x = this.x + this.Const.MAGIC_FIREBALL_SPEED;
+                this.x = this.x + MagicFireball.SPEED;
                 break;
             case this.Const.UP_DIRECTION:
-                this.y = this.y - this.Const.MAGIC_FIREBALL_SPEED;
+                this.y = this.y - MagicFireball.SPEED;
                 break;
             case this.Const.DOWN_DIRECTION:
-                this.y = this.y + this.Const.MAGIC_FIREBALL_SPEED;
+                this.y = this.y + MagicFireball.SPEED;
                 break;
         }
-        this.moveCount = this.moveCount + this.Const.MAGIC_FIREBALL_SPEED;
+        this.moveCount = this.moveCount + MagicFireball.SPEED;
         if (this.moveCount === this.Const.TILE_SIZE) {
             this.moveCount = 0;
             this.indexOrder++;
@@ -1059,6 +1008,9 @@ var MagicIceball = (function () {
     MagicIceball.prototype.draw = function () {
         image(this.img, this.x, this.y);
     };
+    MagicIceball.SPEED = 10;
+    MagicIceball.ICEBALLS = 3;
+    MagicIceball.FREEZE_ENEMY_MAX_TIME = 500;
     return MagicIceball;
 }());
 var MagicIceballExplosion = (function () {
@@ -1066,7 +1018,7 @@ var MagicIceballExplosion = (function () {
         this.x = x;
         this.y = y;
         this.Const = Const;
-        this.particleSystem = new ParticleSystemClass(createVector(this.x + this.Const.EXPLOSION_OFFSET, this.y + this.Const.EXPLOSION_OFFSET), this.Const.PARTICLE_EXPLOSION_ICEBALL_SIZE, this.Const.PARTICLE_EXPLOSION_MAGIC_ICEBALL_COLOR);
+        this.particleSystem = new ParticleSystemClass(createVector(this.x + this.Const.EXPLOSION_OFFSET, this.y + this.Const.EXPLOSION_OFFSET), MagicIceballExplosion.SIZE, MagicIceballExplosion.COLOR);
         this.emisionTime = 0;
         this.finished = false;
     }
@@ -1074,12 +1026,15 @@ var MagicIceballExplosion = (function () {
         return !this.finished;
     };
     MagicIceballExplosion.prototype.update = function () {
-        if (this.emisionTime < this.Const.ENEMY_EXPLOSION_MAX_EMIT_TIME) {
+        if (this.emisionTime < MagicIceballExplosion.MAX_EMIT_TIME) {
             this.emisionTime++;
             this.particleSystem.addParticle();
         }
         this.particleSystem.run();
     };
+    MagicIceballExplosion.MAX_EMIT_TIME = 5;
+    MagicIceballExplosion.SIZE = 6;
+    MagicIceballExplosion.COLOR = [0, 65, 255];
     return MagicIceballExplosion;
 }());
 var MagicUFO = (function () {
@@ -1098,19 +1053,19 @@ var MagicUFO = (function () {
     MagicUFO.prototype.update = function () {
         switch (this.currentDirection) {
             case this.Const.LEFT_DIRECTION:
-                this.x = this.x - this.Const.MAGIC_FIREBALL_SPEED;
+                this.x = this.x - MagicUFO.SPEED;
                 break;
             case this.Const.RIGHT_DIRECTION:
-                this.x = this.x + this.Const.MAGIC_FIREBALL_SPEED;
+                this.x = this.x + MagicUFO.SPEED;
                 break;
             case this.Const.UP_DIRECTION:
-                this.y = this.y - this.Const.MAGIC_FIREBALL_SPEED;
+                this.y = this.y - MagicUFO.SPEED;
                 break;
             case this.Const.DOWN_DIRECTION:
-                this.y = this.y + this.Const.MAGIC_FIREBALL_SPEED;
+                this.y = this.y + MagicUFO.SPEED;
                 break;
         }
-        this.moveCount = this.moveCount + this.Const.MAGIC_FIREBALL_SPEED;
+        this.moveCount = this.moveCount + MagicUFO.SPEED;
         if (this.moveCount === this.Const.TILE_SIZE) {
             this.moveCount = 0;
             this.indexOrder++;
@@ -1130,7 +1085,24 @@ var MagicUFO = (function () {
     MagicUFO.prototype.draw = function () {
         image(this.img, this.x, this.y);
     };
+    MagicUFO.SPEED = 10;
+    MagicUFO.UFOS = 3;
     return MagicUFO;
+}());
+var MathUtils = (function () {
+    function MathUtils() {
+    }
+    MathUtils.distance = function (posA, posB) {
+        return Math.sqrt((posA.x - posB.x) * (posA.x - posB.x) +
+            (posA.y - posB.y) * (posA.y - posB.y));
+    };
+    MathUtils.range = function (start, stop) {
+        return new Array(stop - start + 1).fill(0).map(function (v, i) { return start + i; });
+    };
+    MathUtils.getTwoNumbersFourTimes = function (number) {
+        return [number * 4, (number + 1) * 4];
+    };
+    return MathUtils;
 }());
 var OrangeTile = (function () {
     function OrangeTile(img, position, Const, towerGenerator) {
@@ -1452,6 +1424,8 @@ var ProgressBar = (function () {
             this._drawProgressBar();
         }
     };
+    ProgressBar.WIDTH = 27;
+    ProgressBar.HEIGHT = 7;
     return ProgressBar;
 }());
 var Random = (function () {
@@ -1463,15 +1437,15 @@ var Random = (function () {
     return Random;
 }());
 var RedTower = (function () {
-    function RedTower(images, position, Const, DistanceClass, ProgressBarClass) {
+    function RedTower(images, position, Const, MathUtilsClass, ProgressBarClass) {
         this.images = images;
         this.position = __assign({}, position);
         this.Const = Const;
-        this.DistanceClass = DistanceClass;
+        this.MathUtilsClass = MathUtilsClass;
         this.ProgressBarClass = ProgressBarClass;
         this.upgradeLevel = 0;
         this.upgrading = false;
-        this.progressBar = new this.ProgressBarClass(this.position, this.Const.PROGRESSBAR_WIDTH, this.Const.PROGRESSBAR_HEIGHT);
+        this.progressBar = new this.ProgressBarClass(this.position, ProgressBar.WIDTH, ProgressBar.HEIGHT);
         this.upgradeProgress = 0;
     }
     RedTower.prototype.upgrade = function () {
@@ -1495,7 +1469,7 @@ var RedTower = (function () {
     RedTower.prototype._drawUpgradeBackground = function () {
         strokeWeight(1);
         stroke('black');
-        fill(this.Const.RED_COLOR);
+        fill(RedTower.COLOR);
         rect(this.position.x + 4, this.position.y + 4, this.Const.TILE_SIZE, this.Const.TILE_SIZE);
     };
     RedTower.prototype.draw = function () {
@@ -1517,13 +1491,13 @@ var RedTower = (function () {
         }
     };
     RedTower.prototype.getInfluenceArea = function () {
-        return this.Const.RED_TOWER_UPGRADE_INFLUENCE_AREA[this.upgradeLevel];
+        return RedTower.UPGRADE_INFLUENCE_AREA[this.upgradeLevel];
     };
     RedTower.prototype.getCostWhenUpgradeLevelIs = function (selectedUpgradeLevel) {
         if (selectedUpgradeLevel > this.Const.UPGRADE_MAX_LEVEL) {
-            return this.Const.COST_UPGRADE_RED_TOWER[this.Const.UPGRADE_MAX_LEVEL];
+            return RedTower.COST_UPGRADE[this.Const.UPGRADE_MAX_LEVEL];
         }
-        return this.Const.COST_UPGRADE_RED_TOWER[selectedUpgradeLevel];
+        return RedTower.COST_UPGRADE[selectedUpgradeLevel];
     };
     RedTower.prototype.getCost = function () {
         return this.getCostWhenUpgradeLevelIs(this.getUpgradeLevel());
@@ -1537,16 +1511,22 @@ var RedTower = (function () {
         }
     };
     RedTower.prototype.getSellProfit = function () {
-        return this.Const.PROFIT_SELL_UPGRADE_RED_TOWER[this.getUpgradeLevel()];
+        return RedTower.PROFIT_SELL_UPGRADE[this.getUpgradeLevel()];
     };
     RedTower.prototype.getType = function () {
-        return this.Const.RED_TOWER;
+        return RedTower.ID;
     };
     RedTower.prototype.getColor = function () {
-        return this.Const.RED_COLOR;
+        return RedTower.COLOR;
     };
     RedTower.prototype.selectTarget = function (enemies) {
     };
+    RedTower.ID = 2;
+    RedTower.COLOR = [185, 35, 35];
+    RedTower.PROFIT_SELL_UPGRADE = [80, 110, 190, 420, 1200, 2880];
+    RedTower.COST_UPGRADE = [100, 150, 250, 500, 1300, 3000];
+    RedTower.UPGRADE_INFLUENCE_AREA = [150, 180, 220, 300, 400, 550];
+    RedTower.INFLUENCE_AREA = 240;
     return RedTower;
 }());
 var Resources = (function () {
@@ -1554,8 +1534,8 @@ var Resources = (function () {
     }
     Resources.enemies = function () {
         var enemiesImages = [];
-        var countEnemiesAndBoss = Const.TOTAL_ENEMIES + 1;
-        CustomRange.make(1, countEnemiesAndBoss).forEach(function (v) {
+        var countEnemiesAndBoss = Enemy.TOTAL_ENEMIES + 1;
+        MathUtils.range(1, countEnemiesAndBoss).forEach(function (v) {
             enemiesImages.push(loadImage('img/enemies/' + v + '_center.png'));
             enemiesImages.push(loadImage('img/enemies/' + v + '_left.png'));
             enemiesImages.push(loadImage('img/enemies/' + v + '_right.png'));
@@ -1565,21 +1545,21 @@ var Resources = (function () {
     };
     Resources.greenTower = function () {
         var greenTowerImages = [];
-        CustomRange.make(0, Const.UPGRADE_MAX_LEVEL).forEach(function (v) {
+        MathUtils.range(0, Const.UPGRADE_MAX_LEVEL).forEach(function (v) {
             greenTowerImages.push(loadImage('img/towers/green_tower_upgrade_' + v + '.png'));
         });
         return greenTowerImages;
     };
     Resources.redTower = function () {
         var redTowerImages = [];
-        CustomRange.make(0, Const.UPGRADE_MAX_LEVEL).forEach(function (v) {
+        MathUtils.range(0, Const.UPGRADE_MAX_LEVEL).forEach(function (v) {
             redTowerImages.push(loadImage('img/towers/red_tower_upgrade_' + v + '.png'));
         });
         return redTowerImages;
     };
     Resources.yellowTower = function () {
         var yellowTowerImages = [];
-        CustomRange.make(0, Const.UPGRADE_MAX_LEVEL).forEach(function (v) {
+        MathUtils.range(0, Const.UPGRADE_MAX_LEVEL).forEach(function (v) {
             yellowTowerImages.push(loadImage('img/towers/yellow_tower_upgrade_' + v + '.png'));
         });
         return yellowTowerImages;
@@ -1784,7 +1764,7 @@ var TileGenerator = (function () {
     return TileGenerator;
 }());
 var TowerGenerator = (function () {
-    function TowerGenerator(greenTowerImages, redTowerImages, yellowTowerImages, Const, GreenTowerClass, RedTowerClass, YellowTowerClass, DistanceClass, ProgressBarClass) {
+    function TowerGenerator(greenTowerImages, redTowerImages, yellowTowerImages, Const, GreenTowerClass, RedTowerClass, YellowTowerClass, MathUtilsClass, ProgressBarClass) {
         this.greenTowerImages = greenTowerImages;
         this.redTowerImages = redTowerImages;
         this.yellowTowerImages = yellowTowerImages;
@@ -1792,26 +1772,26 @@ var TowerGenerator = (function () {
         this.GreenTowerClass = GreenTowerClass;
         this.RedTowerClass = RedTowerClass;
         this.YellowTowerClass = YellowTowerClass;
-        this.DistanceClass = DistanceClass;
+        this.MathUtilsClass = MathUtilsClass;
         this.ProgressBarClass = ProgressBarClass;
     }
     TowerGenerator.prototype.newTower = function (towerId, position) {
         var tower = null;
         switch (towerId) {
-            case this.Const.GREEN_TOWER:
+            case GreenTower.ID:
                 tower = new this.GreenTowerClass(this.greenTowerImages, {
                     x: position.x - this.Const.TOWER_OFFSET,
                     y: position.y - this.Const.TOWER_OFFSET,
-                }, this.Const, this.DistanceClass, this.ProgressBarClass);
+                }, this.Const, this.MathUtilsClass, this.ProgressBarClass);
                 break;
-            case this.Const.RED_TOWER:
+            case RedTower.ID:
                 tower = new this.RedTowerClass(this.redTowerImages, {
                     x: position.x - this.Const.TOWER_OFFSET,
                     y: position.y - this.Const.TOWER_OFFSET,
-                }, this.Const, this.DistanceClass, this.ProgressBarClass);
+                }, this.Const, this.MathUtilsClass, this.ProgressBarClass);
                 break;
-            case this.Const.YELLOW_TOWER:
-                tower = new this.YellowTowerClass(this.yellowTowerImages, { x: position.x, y: position.y }, this.Const, this.DistanceClass, this.ProgressBarClass);
+            case YellowTower.ID:
+                tower = new this.YellowTowerClass(this.yellowTowerImages, { x: position.x, y: position.y }, this.Const, this.MathUtilsClass, this.ProgressBarClass);
                 break;
             default:
                 break;
@@ -1837,15 +1817,14 @@ var Wallet = (function () {
     Wallet.prototype.haveMoneyToBuy = function (towerId, upgradeLevel) {
         var canBuy = false;
         switch (towerId) {
-            case this.Const.GREEN_TOWER:
-                canBuy = this.Const.COST_UPGRADE_GREEN_TOWER[upgradeLevel] <= this.money;
+            case GreenTower.ID:
+                canBuy = GreenTower.COST_UPGRADE[upgradeLevel] <= this.money;
                 break;
-            case this.Const.RED_TOWER:
-                canBuy = this.Const.COST_UPGRADE_RED_TOWER[upgradeLevel] <= this.money;
+            case RedTower.ID:
+                canBuy = RedTower.COST_UPGRADE[upgradeLevel] <= this.money;
                 break;
-            case this.Const.YELLOW_TOWER:
-                canBuy =
-                    this.Const.COST_UPGRADE_YELLOW_TOWER[upgradeLevel] <= this.money;
+            case YellowTower.ID:
+                canBuy = YellowTower.COST_UPGRADE[upgradeLevel] <= this.money;
                 break;
             default:
                 break;
@@ -1855,11 +1834,11 @@ var Wallet = (function () {
     return Wallet;
 }());
 var YellowTower = (function () {
-    function YellowTower(images, position, Const, DistanceClass, ProgressBarClass) {
+    function YellowTower(images, position, Const, MathUtilsClass, ProgressBarClass) {
         this.images = images;
         this.position = __assign({}, position);
         this.Const = Const;
-        this.DistanceClass = DistanceClass;
+        this.MathUtilsClass = MathUtilsClass;
         this.ProgressBarClass = ProgressBarClass;
         this.upgradeLevel = 0;
         this.upgrading = false;
@@ -1887,7 +1866,7 @@ var YellowTower = (function () {
     YellowTower.prototype._drawUpgradeBackground = function () {
         strokeWeight(1);
         stroke('black');
-        fill(this.Const.YELLOW_COLOR);
+        fill(YellowTower.COLOR);
         rect(this.position.x, this.position.y, this.Const.TILE_SIZE, this.Const.TILE_SIZE);
     };
     YellowTower.prototype.draw = function () {
@@ -1909,13 +1888,13 @@ var YellowTower = (function () {
         }
     };
     YellowTower.prototype.getInfluenceArea = function () {
-        return this.Const.YELLOW_TOWER_UPGRADE_INFLUENCE_AREA[this.upgradeLevel];
+        return YellowTower.UPGRADE_INFLUENCE_AREA[this.upgradeLevel];
     };
     YellowTower.prototype.getCostWhenUpgradeLevelIs = function (selectedUpgradeLevel) {
         if (selectedUpgradeLevel > this.Const.UPGRADE_MAX_LEVEL) {
-            return this.Const.COST_UPGRADE_YELLOW_TOWER[this.Const.UPGRADE_MAX_LEVEL];
+            return YellowTower.COST_UPGRADE[this.Const.UPGRADE_MAX_LEVEL];
         }
-        return this.Const.COST_UPGRADE_YELLOW_TOWER[selectedUpgradeLevel];
+        return YellowTower.COST_UPGRADE[selectedUpgradeLevel];
     };
     YellowTower.prototype.getCost = function () {
         return this.getCostWhenUpgradeLevelIs(this.getUpgradeLevel());
@@ -1929,16 +1908,22 @@ var YellowTower = (function () {
         }
     };
     YellowTower.prototype.getSellProfit = function () {
-        return this.Const.PROFIT_SELL_UPGRADE_YELLOW_TOWER[this.getUpgradeLevel()];
+        return YellowTower.PROFIT_SELL_UPGRADE[this.getUpgradeLevel()];
     };
     YellowTower.prototype.getType = function () {
-        return this.Const.YELLOW_TOWER;
+        return YellowTower.ID;
     };
     YellowTower.prototype.getColor = function () {
-        return this.Const.YELLOW_COLOR;
+        return YellowTower.COLOR;
     };
     YellowTower.prototype.selectTarget = function (enemies) {
     };
+    YellowTower.ID = 3;
+    YellowTower.COLOR = [202, 191, 24];
+    YellowTower.PROFIT_SELL_UPGRADE = [680, 2460, 7440, 21920, 66900, 199880];
+    YellowTower.COST_UPGRADE = [700, 2500, 7500, 22000, 67000, 200000];
+    YellowTower.UPGRADE_INFLUENCE_AREA = [150, 180, 220, 300, 400, 550];
+    YellowTower.INFLUENCE_AREA = 290;
     return YellowTower;
 }());
 var orders;
@@ -2013,7 +1998,7 @@ function setup() {
     levelDataProvider = new LevelsDataProvider(LevelsData.data);
     var levelMap = levelDataProvider.getLevel(1);
     createEnemyTime = 0;
-    towerGenerator = new TowerGenerator(greenTowerImages, redTowerImages, yellowTowerImages, Const, GreenTower, RedTower, YellowTower, Distance, ProgressBar);
+    towerGenerator = new TowerGenerator(greenTowerImages, redTowerImages, yellowTowerImages, Const, GreenTower, RedTower, YellowTower, MathUtils, ProgressBar);
     var tileGenerator = new TileGenerator(levelMap, tileImages, Const, OrangeTile, PathTile, StartTile, EndTile, towerGenerator);
     orangeTiles = tileGenerator.orangeTiles();
     startTile = tileGenerator.startTile();
@@ -2039,24 +2024,24 @@ function setup() {
     magicFireballExplosions = [];
     magicIceballExplosions = [];
     magicFireballs = [];
-    magicFireballsCount = Const.MAGIC_FIREBALLS;
+    magicFireballsCount = MagicFireball.FIREBALLS;
     magicIceballs = [];
-    magicIceballsCount = Const.MAGIC_ICEBALLS;
+    magicIceballsCount = MagicIceball.ICEBALLS;
     magicUFOs = [];
-    magicUFOsCount = Const.MAGIC_UFOS;
+    magicUFOsCount = MagicUFO.UFOS;
     influenceArea = new InfluenceArea(Const);
     gameStatus = Const.GAME_STATUS_PLAYING;
 }
 function keyPressed() {
     switch (keyCode) {
         case Const.KEY_1:
-            hud.selectTower(Const.GREEN_TOWER);
+            hud.selectTower(GreenTower.ID);
             break;
         case Const.KEY_2:
-            hud.selectTower(Const.RED_TOWER);
+            hud.selectTower(RedTower.ID);
             break;
         case Const.KEY_3:
-            hud.selectTower(Const.YELLOW_TOWER);
+            hud.selectTower(YellowTower.ID);
             break;
     }
 }
@@ -2089,13 +2074,13 @@ function canBuyTower(tower) {
 }
 function handleHudButtons() {
     if (hud.isInsideGreenTowerButton(mouseX, mouseY)) {
-        hud.selectTower(Const.GREEN_TOWER);
+        hud.selectTower(GreenTower.ID);
     }
     if (hud.isInsideRedTowerButton(mouseX, mouseY)) {
-        hud.selectTower(Const.RED_TOWER);
+        hud.selectTower(RedTower.ID);
     }
     if (hud.isInsideYellowTowerButton(mouseX, mouseY)) {
-        hud.selectTower(Const.YELLOW_TOWER);
+        hud.selectTower(YellowTower.ID);
     }
     if (hud.isInsideMagicFireball(mouseX, mouseY)) {
         createNewMagicFireball();
@@ -2136,7 +2121,7 @@ function mouseClicked() {
 function createNewEnemy(waveEnemy, wave) {
     var endurance = wave * 3 + waveEnemy * 2;
     var isBoss = false;
-    enemies.push(new Enemy(currentEnemyId, enemiesImages.slice.apply(enemiesImages, ImageUtils.getRangeImagesOfEnemy(waveEnemy)), initialEnemiesPosition, orders, endurance, isBoss, Const, Random, ProgressBar));
+    enemies.push(new Enemy(currentEnemyId, enemiesImages.slice.apply(enemiesImages, MathUtils.getTwoNumbersFourTimes(waveEnemy)), initialEnemiesPosition, orders, endurance, isBoss, Const, Random, ProgressBar));
     currentEnemyId++;
 }
 function createNewMagicFireball() {
@@ -2164,7 +2149,7 @@ function createNewBoss(wave) {
     var endurance = wave * 25;
     var indexBossInEnemiesImages = 5;
     var isBoss = true;
-    enemies.push(new Enemy(currentEnemyId, enemiesImages.slice.apply(enemiesImages, ImageUtils.getRangeImagesOfEnemy(indexBossInEnemiesImages)), initialEnemiesPosition, orders, endurance, isBoss, Const, Random, ProgressBar));
+    enemies.push(new Enemy(currentEnemyId, enemiesImages.slice.apply(enemiesImages, MathUtils.getTwoNumbersFourTimes(indexBossInEnemiesImages)), initialEnemiesPosition, orders, endurance, isBoss, Const, Random, ProgressBar));
 }
 function handleEnemyExplosions() {
     var deadEnemies = enemies.filter(function (enemy) { return enemy.isDead(); });
@@ -2177,9 +2162,9 @@ function handleEnemyExplosions() {
 }
 function handleNewEnemyCreation() {
     if (allowCreateEnemies) {
-        if (waveEnemies < Const.TOTAL_ENEMIES) {
+        if (waveEnemies < Enemy.TOTAL_ENEMIES) {
             createEnemyTime++;
-            if (createEnemyTime === Const.CREATE_ENEMY_MAX_TIME) {
+            if (createEnemyTime === Enemy.CREATION_MAX_TIME) {
                 createEnemyTime = 0;
                 createNewEnemy(waveEnemies, wave);
                 waveEnemies++;
@@ -2365,9 +2350,9 @@ function draw() {
     });
     hud.draw();
     var canBuySelectedTower = canBuyNewTower(hud.getSelectedTower());
-    var canBuyGreenTower = canBuyNewTower(Const.GREEN_TOWER);
-    var canBuyRedTower = canBuyNewTower(Const.RED_TOWER);
-    var canBuyYellowTower = canBuyNewTower(Const.YELLOW_TOWER);
+    var canBuyGreenTower = canBuyNewTower(GreenTower.ID);
+    var canBuyRedTower = canBuyNewTower(RedTower.ID);
+    var canBuyYellowTower = canBuyNewTower(YellowTower.ID);
     if (mouseOrangeTileOver !== null) {
         if (mouseOrangeTileOver.hasTower()) {
             var tileTower = mouseOrangeTileOver.getTower();
@@ -2381,14 +2366,14 @@ function draw() {
         }
         else {
             influenceArea.drawHudTowerInfluenceArea(hud.getSelectedTower(), mouseOrangeTileOver.getPosition(), canBuySelectedTower);
-            hud.setType(Const.HUD_NORMAL);
+            hud.setType(Hud.NORMAL);
             hud.setCanBuy(canBuyGreenTower, canBuyRedTower, canBuyYellowTower);
             hud.hideUpgradeCost();
             hud.hideSellProfit();
         }
     }
     else {
-        hud.setType(Const.HUD_NORMAL);
+        hud.setType(Hud.NORMAL);
         hud.setCanBuy(canBuyGreenTower, canBuyRedTower, canBuyYellowTower);
         hud.hideUpgradeCost();
         hud.hideSellProfit();
