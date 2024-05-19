@@ -1,8 +1,9 @@
-# Personal portfolio darellanodev
+# Darellanodev made with zola and tabi
+
+This is my personal porfolio made with zola and tabi.
 
 <https://darellanodev.github.io/>
 
-## Next Tasks
+## Sources
 
-- [ ] Reduce the size of the 3d cubes when viewing on mobile
-- [ ] Put links to videos on youtube.
+The sources of this build version are in: <https://github.com/darellanodev/portfolio-zola>
