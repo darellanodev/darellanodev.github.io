@@ -5,10 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>wasm</title>
-    <link rel="stylesheet" href="../common/style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 
-<body class="container">
+<body class="wasmcontent">
 
     <div id="spinner" class="spinner">
         <p>Loading, please wait...</p>
@@ -16,6 +16,7 @@
 
     <script src="wasm_exec.js"></script>
     <script>
+
         // Polyfill
         if (!WebAssembly.instantiateStreaming) {
             WebAssembly.instantiateStreaming = async (resp, importObject) => {
