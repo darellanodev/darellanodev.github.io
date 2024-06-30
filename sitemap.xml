@@ -18,11 +18,15 @@
         <loc>https://darellanodev.github.io/blog/</loc>
     </url>
     <url>
-        <loc>https://darellanodev.github.io/blog/markdown/</loc>
-        <lastmod>2024-05-19</lastmod>
+        <loc>https://darellanodev.github.io/blog/newwebsite/</loc>
+        <lastmod>2024-06-30</lastmod>
     </url>
     <url>
         <loc>https://darellanodev.github.io/blog/page/1/</loc>
+    </url>
+    <url>
+        <loc>https://darellanodev.github.io/blog/vimvscode/</loc>
+        <lastmod>2024-06-30</lastmod>
     </url>
     <url>
         <loc>https://darellanodev.github.io/privacy/</loc>
@@ -32,25 +36,25 @@
         <loc>https://darellanodev.github.io/projects/</loc>
     </url>
     <url>
+        <loc>https://darellanodev.github.io/projects/cavedrop/</loc>
+    </url>
+    <url>
         <loc>https://darellanodev.github.io/projects/giftowerdefense/</loc>
     </url>
     <url>
         <loc>https://darellanodev.github.io/projects/jsconcepts/</loc>
     </url>
     <url>
+        <loc>https://darellanodev.github.io/projects/memoryfarm/</loc>
+    </url>
+    <url>
         <loc>https://darellanodev.github.io/projects/minijetpack/</loc>
     </url>
     <url>
-        <loc>https://darellanodev.github.io/projects_old/</loc>
+        <loc>https://darellanodev.github.io/projects/spacelab/</loc>
     </url>
     <url>
-        <loc>https://darellanodev.github.io/projects_old/cavedrop/</loc>
-    </url>
-    <url>
-        <loc>https://darellanodev.github.io/projects_old/memoryfarm/</loc>
-    </url>
-    <url>
-        <loc>https://darellanodev.github.io/projects_old/spacelab/</loc>
+        <loc>https://darellanodev.github.io/projects/taskeatermanager/</loc>
     </url>
     <url>
         <loc>https://darellanodev.github.io/tags/</loc>
@@ -60,5 +64,11 @@
     </url>
     <url>
         <loc>https://darellanodev.github.io/tags/showcase/</loc>
+    </url>
+    <url>
+        <loc>https://darellanodev.github.io/tags/vim/</loc>
+    </url>
+    <url>
+        <loc>https://darellanodev.github.io/tags/vscode/</loc>
     </url>
 </urlset>
