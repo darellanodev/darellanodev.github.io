@@ -18,6 +18,10 @@
         <loc>https://darellanodev.github.io/blog/</loc>
     </url>
     <url>
+        <loc>https://darellanodev.github.io/blog/devquotes/</loc>
+        <lastmod>2024-07-14</lastmod>
+    </url>
+    <url>
         <loc>https://darellanodev.github.io/blog/newwebsite/</loc>
         <lastmod>2024-06-30</lastmod>
     </url>
@@ -26,7 +30,7 @@
     </url>
     <url>
         <loc>https://darellanodev.github.io/blog/vimvscode/</loc>
-        <lastmod>2024-06-30</lastmod>
+        <lastmod>2024-07-14</lastmod>
     </url>
     <url>
         <loc>https://darellanodev.github.io/privacy/</loc>
@@ -61,6 +65,9 @@
     </url>
     <url>
         <loc>https://darellanodev.github.io/tags/news/</loc>
+    </url>
+    <url>
+        <loc>https://darellanodev.github.io/tags/quotes/</loc>
     </url>
     <url>
         <loc>https://darellanodev.github.io/tags/showcase/</loc>
