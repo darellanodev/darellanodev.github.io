@@ -1,0 +1,436 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="base" content="https://darellanodev.github.io/">
+
+    
+    <title>Darellanodev • JavaScript Observer Pattern</title>
+
+    
+    
+        <link rel="icon" type="image/png" href="https://darellanodev.github.io/img/seedling.png"/>
+    
+    
+        <link rel=icon href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 105 55"><text y=".7em" font-size="82">🌱</text></svg>'>
+    
+
+    
+    <link rel="alternate" type="application/atom+xml" title="Darellanodev" href="https://darellanodev.github.io/atom.xml">
+
+    
+    
+    
+        <link rel="stylesheet" href="https://darellanodev.github.io/custom_subset.css?h=6de30382822eb2c02ee0">
+    
+
+    
+        <link rel="stylesheet" href="https://darellanodev.github.io/main.css?h=8832a91d58a28d321cfa" />
+
+    <meta name="color-scheme" content="light dark" />
+        <meta name="theme-color" content="#087e96" />
+        <meta name="description" content="An example of the Observer Pattern in JavaScript." />
+        <meta property="og:description" content="An example of the Observer Pattern in JavaScript." />
+
+    
+        <meta name="robots" content="index, nofollow" />
+    
+
+    <meta property="og:title" content="JavaScript Observer Pattern" />
+    <meta property="og:type" content="article" />
+
+    
+        
+        
+        
+
+        
+        
+            
+            
+            
+                
+            
+        
+
+        
+        <meta property="og:image" content="https://darellanodev.github.io/social_cards/index.jpg?h=d8be352f1d2fb154df81" />
+        <meta property="og:image:width" content="1400" />
+        <meta property="og:image:height" content="800" />
+        <meta name="twitter:image" content="https://darellanodev.github.io/social_cards/index.jpg?h=d8be352f1d2fb154df81" />
+        <meta name="twitter:card" content="summary_large_image" />
+    
+
+    <meta property="og:locale" content="en_GB" />
+
+    <meta property="og:url" content="https:&#x2F;&#x2F;darellanodev.github.io&#x2F;blog&#x2F;js-observer-pattern&#x2F;" /><meta property="og:site_name" content="Darellanodev"><meta http-equiv="Content-Security-Policy"
+content="default-src 'self';font-src &#x27;self&#x27; data:;img-src &#x27;self&#x27; https:&#x2F;&#x2F;* data:;media-src &#x27;self&#x27; https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;;style-src &#x27;self&#x27;;frame-src player.vimeo.com https:&#x2F;&#x2F;www.youtube-nocookie.com;connect-src 'self' https://tabi-stats.osc.garden;script-src 'self' https://tabi-stats.osc.garden 'self'">
+
+        <noscript><link rel="stylesheet" href="https://darellanodev.github.io/no_js.css"/></noscript>
+        <script type="text/javascript" src="https://darellanodev.github.io/js/initializeTheme.min.js"></script>
+        <script defer src="https://darellanodev.github.io/js/themeSwitcher.min.js"></script>
+
+
+
+
+    
+    
+
+
+
+        <script defer src="https://darellanodev.github.io/js/searchElasticlunr.min.js?h=2950d57f80c9fa78f37e"></script>
+
+        </head>
+
+
+<body>
+    <header>
+    <nav class="navbar">
+        <div class="nav-title">
+            <a class="home-title" href=https://darellanodev.github.io>Darellanodev</a>
+        </div>
+            <div class="nav-navs">
+                <ul>
+                        
+                            <li>
+                                
+                                <a class="nav-links no-hover-padding" href="https://darellanodev.github.io/projects/">
+                                projects
+                                </a>
+                            </li>
+                        
+                            <li>
+                                
+                                <a class="nav-links no-hover-padding" href="https://darellanodev.github.io/artwork/">
+                                artwork
+                                </a>
+                            </li>
+                        
+                            <li>
+                                
+                                <a class="nav-links no-hover-padding" href="https://darellanodev.github.io/blog/">
+                                blog
+                                </a>
+                            </li>
+                        <li class="js">
+                        <div role="button" tabindex="0" id="search-button" class="search-icon interactive-icon" title="Click or press $SHORTCUT to open search" aria-label="Click or press $SHORTCUT to open search">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                                <path d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"/>
+                            </svg>
+                        </div>
+                    </li>
+
+                    
+                    
+
+                    <li class="theme-switcher-wrapper js"><div
+        title="Toggle dark&#x2F;light mode"
+        class="theme-switcher"
+        tabindex="0"
+        role="button"
+        aria-label="Toggle dark mode"
+        aria-pressed="false">
+    </div><div
+        title="Reset mode to default"
+        class="theme-resetter"
+        tabindex="0"
+        role="button"
+        aria-hidden="true"
+        aria-label="Reset mode to default">
+    </div>
+
+</li>
+</ul>
+            </div>
+        
+    </nav>
+</header>
+
+    <div class="content">
+
+        
+        
+
+
+
+
+<main>
+    <article>
+        <h1 class="article-title">
+            JavaScript Observer Pattern
+        </h1>
+
+        <ul class="meta">
+            
+
+            
+                <li>
+
+
+
+
+
+    
+
+    
+        
+        
+            
+        
+    
+
+    
+    14th
+    
+        Jul 2024
+    
+
+
+</li>
+            
+
+            
+            
+                • <li title="230 words">2 min read</li>
+            •&nbsp;<li>Tags:&nbsp;</li><li><a href=https://darellanodev.github.io/tags/jspatterns/>JSPatterns</a></li>
+                </ul><ul class="meta last-updated"><li>Last updated on 
+
+
+
+
+
+    
+
+    
+        
+        
+            
+        
+    
+
+    
+    14th
+    
+        Jul 2024
+    
+
+
+</li>
+                
+                
+            
+        </ul>
+
+        
+
+        
+        
+
+        <section class="body">
+            
+            
+            <h2 id="javascript-observer-pattern"><a class="header-anchor no-hover-padding" href="#javascript-observer-pattern" aria-label="Anchor link for: javascript-observer-pattern"><span class="link-icon" aria-hidden="true"></span></a>
+JavaScript Observer Pattern</h2>
+<p>This is an example on how to apply the observer pattern to a to-do list app.</p>
+<h3 id="main-components"><a class="header-anchor no-hover-padding" href="#main-components" aria-label="Anchor link for: main-components"><span class="link-icon" aria-hidden="true"></span></a>
+Main components</h3>
+<ul>
+<li>
+<p><strong>The subject</strong>: It would represent the list of the tasks. When a task is added, modified or deleted it will notify to the observers suscribed to it.</p>
+</li>
+<li>
+<p><strong>The observers</strong>: They are components of the user interface that can be suscribed to the subject (the to-do list) and then they will receibe a notification from the to-do list (the subject), and then for example they can update them.</p>
+</li>
+</ul>
+<h3 id="implementation"><a class="header-anchor no-hover-padding" href="#implementation" aria-label="Anchor link for: implementation"><span class="link-icon" aria-hidden="true"></span></a>
+Implementation</h3>
+<h4 id="the-subject-the-to-do-list"><a class="header-anchor no-hover-padding" href="#the-subject-the-to-do-list" aria-label="Anchor link for: the-subject-the-to-do-list"><span class="link-icon" aria-hidden="true"></span></a>
+The subject (the to-do list)</h4>
+<pre data-lang="javascript" class="language-javascript z-code"><code class="language-javascript" data-lang="javascript"><span class="z-source z-ts"><span class="z-meta z-class z-ts"><span class="z-storage z-type z-class z-ts">class</span> <span class="z-entity z-name z-type z-class z-ts">TodoList</span> <span class="z-punctuation z-definition z-block z-ts">{</span>
+</span></span><span class="z-source z-ts"><span class="z-meta z-class z-ts"><span class="z-meta z-method z-declaration z-ts">  <span class="z-storage z-type z-ts">constructor</span><span class="z-meta z-parameters z-ts"><span class="z-punctuation z-definition z-parameters z-begin z-ts">(</span><span class="z-punctuation z-definition z-parameters z-end z-ts">)</span></span> <span class="z-meta z-block z-ts"><span class="z-punctuation z-definition z-block z-ts">{</span>
+</span></span></span></span><span class="z-source z-ts"><span class="z-meta z-class z-ts"><span class="z-meta z-method z-declaration z-ts"><span class="z-meta z-block z-ts">    <span class="z-variable z-language z-this z-ts">this</span><span class="z-punctuation z-accessor z-ts">.</span><span class="z-variable z-other z-property z-ts">todos</span> <span class="z-keyword z-operator z-assignment z-ts">=</span><span class="z-meta z-array z-literal z-ts"> <span class="z-meta z-brace z-square z-ts">[</span><span class="z-meta z-brace z-square z-ts">]</span></span>
+</span></span></span></span><span class="z-source z-ts"><span class="z-meta z-class z-ts"><span class="z-meta z-method z-declaration z-ts"><span class="z-meta z-block z-ts">    <span class="z-variable z-language z-this z-ts">this</span><span class="z-punctuation z-accessor z-ts">.</span><span class="z-variable z-other z-property z-ts">observers</span> <span class="z-keyword z-operator z-assignment z-ts">=</span><span class="z-meta z-array z-literal z-ts"> <span class="z-meta z-brace z-square z-ts">[</span><span class="z-meta z-brace z-square z-ts">]</span></span>
+</span></span></span></span><span class="z-source z-ts"><span class="z-meta z-class z-ts"><span class="z-meta z-method z-declaration z-ts"><span class="z-meta z-block z-ts">  <span class="z-punctuation z-definition z-block z-ts">}</span></span></span>
+</span></span><span class="z-source z-ts"><span class="z-meta z-class z-ts">
+</span></span><span class="z-source z-ts"><span class="z-meta z-class z-ts"><span class="z-meta z-method z-declaration z-ts">  <span class="z-meta z-definition z-method z-ts"><span class="z-entity z-name z-function z-ts">attach</span></span><span class="z-meta z-parameters z-ts"><span class="z-punctuation z-definition z-parameters z-begin z-ts">(</span><span class="z-variable z-parameter z-ts">observer</span><span class="z-punctuation z-definition z-parameters z-end z-ts">)</span></span> <span class="z-meta z-block z-ts"><span class="z-punctuation z-definition z-block z-ts">{</span>
+</span></span></span></span><span class="z-source z-ts"><span class="z-meta z-class z-ts"><span class="z-meta z-method z-declaration z-ts"><span class="z-meta z-block z-ts">    <span class="z-meta z-function-call z-ts"><span class="z-variable z-language z-this z-ts">this</span><span class="z-punctuation z-accessor z-ts">.</span><span class="z-variable z-other z-object z-property z-ts">observers</span><span class="z-punctuation z-accessor z-ts">.</span><span class="z-support z-function z-ts">push</span></span><span class="z-meta z-brace z-round z-ts">(</span><span class="z-variable z-other z-readwrite z-ts">observer</span><span class="z-meta z-brace z-round z-ts">)</span>
+</span></span></span></span><span class="z-source z-ts"><span class="z-meta z-class z-ts"><span class="z-meta z-method z-declaration z-ts"><span class="z-meta z-block z-ts">  <span class="z-punctuation z-definition z-block z-ts">}</span></span></span>
+</span></span><span class="z-source z-ts"><span class="z-meta z-class z-ts">
+</span></span><span class="z-source z-ts"><span class="z-meta z-class z-ts"><span class="z-meta z-method z-declaration z-ts">  <span class="z-meta z-definition z-method z-ts"><span class="z-entity z-name z-function z-ts">detach</span></span><span class="z-meta z-parameters z-ts"><span class="z-punctuation z-definition z-parameters z-begin z-ts">(</span><span class="z-variable z-parameter z-ts">observer</span><span class="z-punctuation z-definition z-parameters z-end z-ts">)</span></span> <span class="z-meta z-block z-ts"><span class="z-punctuation z-definition z-block z-ts">{</span>
+</span></span></span></span><span class="z-source z-ts"><span class="z-meta z-class z-ts"><span class="z-meta z-method z-declaration z-ts"><span class="z-meta z-block z-ts">    <span class="z-meta z-var z-expr z-ts"><span class="z-storage z-type z-ts">const</span> <span class="z-meta z-var-single-variable z-expr z-ts"><span class="z-meta z-definition z-variable z-ts"><span class="z-variable z-other z-constant z-ts">index</span></span> </span><span class="z-keyword z-operator z-assignment z-ts">=</span> <span class="z-meta z-function-call z-ts"><span class="z-variable z-language z-this z-ts">this</span><span class="z-punctuation z-accessor z-ts">.</span><span class="z-variable z-other z-object z-property z-ts">observers</span><span class="z-punctuation z-accessor z-ts">.</span><span class="z-support z-function z-ts">indexOf</span></span><span class="z-meta z-brace z-round z-ts">(</span><span class="z-variable z-other z-readwrite z-ts">observer</span><span class="z-meta z-brace z-round z-ts">)</span></span>
+</span></span></span></span><span class="z-source z-ts"><span class="z-meta z-class z-ts"><span class="z-meta z-method z-declaration z-ts"><span class="z-meta z-block z-ts">    <span class="z-keyword z-control z-conditional z-ts">if</span> <span class="z-meta z-brace z-round z-ts">(</span><span class="z-variable z-other z-readwrite z-ts">index</span> <span class="z-keyword z-operator z-comparison z-ts">!==</span> <span class="z-keyword z-operator z-arithmetic z-ts">-</span><span class="z-constant z-numeric z-decimal z-ts">1</span><span class="z-meta z-brace z-round z-ts">)</span> <span class="z-meta z-block z-ts"><span class="z-punctuation z-definition z-block z-ts">{</span>
+</span></span></span></span></span><span class="z-source z-ts"><span class="z-meta z-class z-ts"><span class="z-meta z-method z-declaration z-ts"><span class="z-meta z-block z-ts"><span class="z-meta z-block z-ts">      <span class="z-meta z-function-call z-ts"><span class="z-variable z-language z-this z-ts">this</span><span class="z-punctuation z-accessor z-ts">.</span><span class="z-variable z-other z-object z-property z-ts">observers</span><span class="z-punctuation z-accessor z-ts">.</span><span class="z-support z-function z-ts">splice</span></span><span class="z-meta z-brace z-round z-ts">(</span><span class="z-variable z-other z-readwrite z-ts">index</span><span class="z-punctuation z-separator z-comma z-ts">,</span> <span class="z-constant z-numeric z-decimal z-ts">1</span><span class="z-meta z-brace z-round z-ts">)</span>
+</span></span></span></span></span><span class="z-source z-ts"><span class="z-meta z-class z-ts"><span class="z-meta z-method z-declaration z-ts"><span class="z-meta z-block z-ts"><span class="z-meta z-block z-ts">    <span class="z-punctuation z-definition z-block z-ts">}</span></span>
+</span></span></span></span><span class="z-source z-ts"><span class="z-meta z-class z-ts"><span class="z-meta z-method z-declaration z-ts"><span class="z-meta z-block z-ts">  <span class="z-punctuation z-definition z-block z-ts">}</span></span></span>
+</span></span><span class="z-source z-ts"><span class="z-meta z-class z-ts">
+</span></span><span class="z-source z-ts"><span class="z-meta z-class z-ts"><span class="z-meta z-method z-declaration z-ts">  <span class="z-meta z-definition z-method z-ts"><span class="z-entity z-name z-function z-ts">notify</span></span><span class="z-meta z-parameters z-ts"><span class="z-punctuation z-definition z-parameters z-begin z-ts">(</span><span class="z-punctuation z-definition z-parameters z-end z-ts">)</span></span> <span class="z-meta z-block z-ts"><span class="z-punctuation z-definition z-block z-ts">{</span>
+</span></span></span></span><span class="z-source z-ts"><span class="z-meta z-class z-ts"><span class="z-meta z-method z-declaration z-ts"><span class="z-meta z-block z-ts">    <span class="z-meta z-function-call z-ts"><span class="z-variable z-language z-this z-ts">this</span><span class="z-punctuation z-accessor z-ts">.</span><span class="z-variable z-other z-object z-property z-ts">observers</span><span class="z-punctuation z-accessor z-ts">.</span><span class="z-support z-function z-dom z-ts">forEach</span></span><span class="z-meta z-brace z-round z-ts">(</span><span class="z-meta z-arrow z-ts"><span class="z-meta z-parameters z-ts"><span class="z-punctuation z-definition z-parameters z-begin z-ts">(</span><span class="z-variable z-parameter z-ts">observer</span><span class="z-punctuation z-definition z-parameters z-end z-ts">)</span></span> </span><span class="z-meta z-arrow z-ts"><span class="z-storage z-type z-function z-arrow z-ts">=&gt;</span> </span><span class="z-meta z-function-call z-ts"><span class="z-variable z-other z-object z-ts">observer</span><span class="z-punctuation z-accessor z-ts">.</span><span class="z-entity z-name z-function z-ts">update</span></span><span class="z-meta z-brace z-round z-ts">(</span><span class="z-variable z-language z-this z-ts">this</span><span class="z-punctuation z-accessor z-ts">.</span><span class="z-variable z-other z-property z-ts">todos</span><span class="z-meta z-brace z-round z-ts">)</span><span class="z-meta z-brace z-round z-ts">)</span>
+</span></span></span></span><span class="z-source z-ts"><span class="z-meta z-class z-ts"><span class="z-meta z-method z-declaration z-ts"><span class="z-meta z-block z-ts">  <span class="z-punctuation z-definition z-block z-ts">}</span></span></span>
+</span></span><span class="z-source z-ts"><span class="z-meta z-class z-ts">
+</span></span><span class="z-source z-ts"><span class="z-meta z-class z-ts"><span class="z-meta z-method z-declaration z-ts">  <span class="z-meta z-definition z-method z-ts"><span class="z-entity z-name z-function z-ts">addTodo</span></span><span class="z-meta z-parameters z-ts"><span class="z-punctuation z-definition z-parameters z-begin z-ts">(</span><span class="z-variable z-parameter z-ts">todo</span><span class="z-punctuation z-definition z-parameters z-end z-ts">)</span></span> <span class="z-meta z-block z-ts"><span class="z-punctuation z-definition z-block z-ts">{</span>
+</span></span></span></span><span class="z-source z-ts"><span class="z-meta z-class z-ts"><span class="z-meta z-method z-declaration z-ts"><span class="z-meta z-block z-ts">    <span class="z-meta z-function-call z-ts"><span class="z-variable z-language z-this z-ts">this</span><span class="z-punctuation z-accessor z-ts">.</span><span class="z-variable z-other z-object z-property z-ts">todos</span><span class="z-punctuation z-accessor z-ts">.</span><span class="z-support z-function z-ts">push</span></span><span class="z-meta z-brace z-round z-ts">(</span><span class="z-variable z-other z-readwrite z-ts">todo</span><span class="z-meta z-brace z-round z-ts">)</span>
+</span></span></span></span><span class="z-source z-ts"><span class="z-meta z-class z-ts"><span class="z-meta z-method z-declaration z-ts"><span class="z-meta z-block z-ts">    <span class="z-meta z-function-call z-ts"><span class="z-variable z-language z-this z-ts">this</span><span class="z-punctuation z-accessor z-ts">.</span><span class="z-entity z-name z-function z-ts">notify</span></span><span class="z-meta z-brace z-round z-ts">(</span><span class="z-meta z-brace z-round z-ts">)</span>
+</span></span></span></span><span class="z-source z-ts"><span class="z-meta z-class z-ts"><span class="z-meta z-method z-declaration z-ts"><span class="z-meta z-block z-ts">  <span class="z-punctuation z-definition z-block z-ts">}</span></span></span>
+</span></span><span class="z-source z-ts"><span class="z-meta z-class z-ts">
+</span></span><span class="z-source z-ts"><span class="z-meta z-class z-ts"><span class="z-meta z-method z-declaration z-ts">  <span class="z-meta z-definition z-method z-ts"><span class="z-entity z-name z-function z-ts">removeTodo</span></span><span class="z-meta z-parameters z-ts"><span class="z-punctuation z-definition z-parameters z-begin z-ts">(</span><span class="z-variable z-parameter z-ts">index</span><span class="z-punctuation z-definition z-parameters z-end z-ts">)</span></span> <span class="z-meta z-block z-ts"><span class="z-punctuation z-definition z-block z-ts">{</span>
+</span></span></span></span><span class="z-source z-ts"><span class="z-meta z-class z-ts"><span class="z-meta z-method z-declaration z-ts"><span class="z-meta z-block z-ts">    <span class="z-meta z-function-call z-ts"><span class="z-variable z-language z-this z-ts">this</span><span class="z-punctuation z-accessor z-ts">.</span><span class="z-variable z-other z-object z-property z-ts">todos</span><span class="z-punctuation z-accessor z-ts">.</span><span class="z-support z-function z-ts">splice</span></span><span class="z-meta z-brace z-round z-ts">(</span><span class="z-variable z-other z-readwrite z-ts">index</span><span class="z-punctuation z-separator z-comma z-ts">,</span> <span class="z-constant z-numeric z-decimal z-ts">1</span><span class="z-meta z-brace z-round z-ts">)</span>
+</span></span></span></span><span class="z-source z-ts"><span class="z-meta z-class z-ts"><span class="z-meta z-method z-declaration z-ts"><span class="z-meta z-block z-ts">    <span class="z-meta z-function-call z-ts"><span class="z-variable z-language z-this z-ts">this</span><span class="z-punctuation z-accessor z-ts">.</span><span class="z-entity z-name z-function z-ts">notify</span></span><span class="z-meta z-brace z-round z-ts">(</span><span class="z-meta z-brace z-round z-ts">)</span>
+</span></span></span></span><span class="z-source z-ts"><span class="z-meta z-class z-ts"><span class="z-meta z-method z-declaration z-ts"><span class="z-meta z-block z-ts">  <span class="z-punctuation z-definition z-block z-ts">}</span></span></span>
+</span></span><span class="z-source z-ts"><span class="z-meta z-class z-ts">
+</span></span><span class="z-source z-ts"><span class="z-meta z-class z-ts"><span class="z-meta z-method z-declaration z-ts">  <span class="z-meta z-definition z-method z-ts"><span class="z-entity z-name z-function z-ts">updateTodo</span></span><span class="z-meta z-parameters z-ts"><span class="z-punctuation z-definition z-parameters z-begin z-ts">(</span><span class="z-variable z-parameter z-ts">index</span><span class="z-punctuation z-separator z-parameter z-ts">,</span> <span class="z-variable z-parameter z-ts">todo</span><span class="z-punctuation z-definition z-parameters z-end z-ts">)</span></span> <span class="z-meta z-block z-ts"><span class="z-punctuation z-definition z-block z-ts">{</span>
+</span></span></span></span><span class="z-source z-ts"><span class="z-meta z-class z-ts"><span class="z-meta z-method z-declaration z-ts"><span class="z-meta z-block z-ts">    <span class="z-variable z-language z-this z-ts">this</span><span class="z-punctuation z-accessor z-ts">.</span><span class="z-variable z-other z-property z-ts">todos</span><span class="z-meta z-array z-literal z-ts"><span class="z-meta z-brace z-square z-ts">[</span><span class="z-variable z-other z-readwrite z-ts">index</span><span class="z-meta z-brace z-square z-ts">]</span></span> <span class="z-keyword z-operator z-assignment z-ts">=</span> <span class="z-variable z-other z-readwrite z-ts">todo</span>
+</span></span></span></span><span class="z-source z-ts"><span class="z-meta z-class z-ts"><span class="z-meta z-method z-declaration z-ts"><span class="z-meta z-block z-ts">    <span class="z-meta z-function-call z-ts"><span class="z-variable z-language z-this z-ts">this</span><span class="z-punctuation z-accessor z-ts">.</span><span class="z-entity z-name z-function z-ts">notify</span></span><span class="z-meta z-brace z-round z-ts">(</span><span class="z-meta z-brace z-round z-ts">)</span>
+</span></span></span></span><span class="z-source z-ts"><span class="z-meta z-class z-ts"><span class="z-meta z-method z-declaration z-ts"><span class="z-meta z-block z-ts">  <span class="z-punctuation z-definition z-block z-ts">}</span></span></span>
+</span></span><span class="z-source z-ts"><span class="z-meta z-class z-ts"><span class="z-punctuation z-definition z-block z-ts">}</span></span>
+</span></code></pre>
+<h4 id="an-observer"><a class="header-anchor no-hover-padding" href="#an-observer" aria-label="Anchor link for: an-observer"><span class="link-icon" aria-hidden="true"></span></a>
+An observer</h4>
+<pre data-lang="javascript" class="language-javascript z-code"><code class="language-javascript" data-lang="javascript"><span class="z-source z-ts"><span class="z-meta z-class z-ts"><span class="z-storage z-type z-class z-ts">class</span> <span class="z-entity z-name z-type z-class z-ts">TodoDisplay</span> <span class="z-punctuation z-definition z-block z-ts">{</span>
+</span></span><span class="z-source z-ts"><span class="z-meta z-class z-ts"><span class="z-meta z-method z-declaration z-ts">  <span class="z-meta z-definition z-method z-ts"><span class="z-entity z-name z-function z-ts">update</span></span><span class="z-meta z-parameters z-ts"><span class="z-punctuation z-definition z-parameters z-begin z-ts">(</span><span class="z-variable z-parameter z-ts">todos</span><span class="z-punctuation z-definition z-parameters z-end z-ts">)</span></span> <span class="z-meta z-block z-ts"><span class="z-punctuation z-definition z-block z-ts">{</span>
+</span></span></span></span><span class="z-source z-ts"><span class="z-meta z-class z-ts"><span class="z-meta z-method z-declaration z-ts"><span class="z-meta z-block z-ts">    <span class="z-meta z-function-call z-ts"><span class="z-support z-class z-console z-ts">console</span><span class="z-punctuation z-accessor z-ts">.</span><span class="z-support z-function z-console z-ts">log</span></span><span class="z-meta z-brace z-round z-ts">(</span><span class="z-string z-quoted z-single z-ts"><span class="z-punctuation z-definition z-string z-begin z-ts">&#39;</span>Total tasks:<span class="z-punctuation z-definition z-string z-end z-ts">&#39;</span></span><span class="z-punctuation z-separator z-comma z-ts">,</span> <span class="z-variable z-other z-object z-ts">todos</span><span class="z-punctuation z-accessor z-ts">.</span><span class="z-support z-variable z-property z-ts">length</span><span class="z-punctuation z-separator z-comma z-ts">,</span> <span class="z-string z-quoted z-single z-ts"><span class="z-punctuation z-definition z-string z-begin z-ts">&#39;</span>tasks<span class="z-punctuation z-definition z-string z-end z-ts">&#39;</span></span><span class="z-meta z-brace z-round z-ts">)</span>
+</span></span></span></span><span class="z-source z-ts"><span class="z-meta z-class z-ts"><span class="z-meta z-method z-declaration z-ts"><span class="z-meta z-block z-ts">  <span class="z-punctuation z-definition z-block z-ts">}</span></span></span>
+</span></span><span class="z-source z-ts"><span class="z-meta z-class z-ts"><span class="z-punctuation z-definition z-block z-ts">}</span></span>
+</span></code></pre>
+<h4 id="main-program"><a class="header-anchor no-hover-padding" href="#main-program" aria-label="Anchor link for: main-program"><span class="link-icon" aria-hidden="true"></span></a>
+Main program</h4>
+<pre data-lang="javascript" class="language-javascript z-code"><code class="language-javascript" data-lang="javascript"><span class="z-source z-ts"><span class="z-meta z-var z-expr z-ts"><span class="z-storage z-type z-ts">const</span> <span class="z-meta z-var-single-variable z-expr z-ts"><span class="z-meta z-definition z-variable z-ts"><span class="z-variable z-other z-constant z-ts">todoList</span></span> </span><span class="z-keyword z-operator z-assignment z-ts">=</span> <span class="z-new z-expr z-ts"><span class="z-keyword z-operator z-new z-ts">new</span> <span class="z-entity z-name z-type z-ts">TodoList</span><span class="z-meta z-brace z-round z-ts">(</span><span class="z-meta z-brace z-round z-ts">)</span></span></span>
+</span><span class="z-source z-ts"><span class="z-meta z-var z-expr z-ts"><span class="z-storage z-type z-ts">const</span> <span class="z-meta z-var-single-variable z-expr z-ts"><span class="z-meta z-definition z-variable z-ts"><span class="z-variable z-other z-constant z-ts">display</span></span> </span><span class="z-keyword z-operator z-assignment z-ts">=</span> <span class="z-new z-expr z-ts"><span class="z-keyword z-operator z-new z-ts">new</span> <span class="z-entity z-name z-type z-ts">TodoDisplay</span><span class="z-meta z-brace z-round z-ts">(</span><span class="z-meta z-brace z-round z-ts">)</span></span></span>
+</span><span class="z-source z-ts">
+</span><span class="z-source z-ts"><span class="z-meta z-function-call z-ts"><span class="z-variable z-other z-object z-ts">todoList</span><span class="z-punctuation z-accessor z-ts">.</span><span class="z-entity z-name z-function z-ts">attach</span></span><span class="z-meta z-brace z-round z-ts">(</span><span class="z-variable z-other z-readwrite z-ts">display</span><span class="z-meta z-brace z-round z-ts">)</span>
+</span><span class="z-source z-ts">
+</span><span class="z-source z-ts"><span class="z-meta z-function-call z-ts"><span class="z-variable z-other z-object z-ts">todoList</span><span class="z-punctuation z-accessor z-ts">.</span><span class="z-entity z-name z-function z-ts">addTodo</span></span><span class="z-meta z-brace z-round z-ts">(</span><span class="z-meta z-objectliteral z-ts"><span class="z-punctuation z-definition z-block z-ts">{</span> <span class="z-meta z-object z-member z-ts"><span class="z-meta z-object-literal z-key z-ts">title</span></span><span class="z-meta z-object z-member z-ts"><span class="z-meta z-object-literal z-key z-ts"><span class="z-punctuation z-separator z-key-value z-ts">:</span></span> <span class="z-string z-quoted z-single z-ts"><span class="z-punctuation z-definition z-string z-begin z-ts">&#39;</span>buy a bottle of milk<span class="z-punctuation z-definition z-string z-end z-ts">&#39;</span></span> </span><span class="z-punctuation z-definition z-block z-ts">}</span></span><span class="z-meta z-brace z-round z-ts">)</span>
+</span><span class="z-source z-ts"><span class="z-meta z-function-call z-ts"><span class="z-variable z-other z-object z-ts">todoList</span><span class="z-punctuation z-accessor z-ts">.</span><span class="z-entity z-name z-function z-ts">removeTodo</span></span><span class="z-meta z-brace z-round z-ts">(</span><span class="z-constant z-numeric z-decimal z-ts">0</span><span class="z-meta z-brace z-round z-ts">)</span> <span class="z-comment z-line z-double-slash z-ts"><span class="z-punctuation z-definition z-comment z-ts">//</span></span><span class="z-comment z-line z-double-slash z-ts"> remove the task</span>
+</span></code></pre>
+<p>In this example when adding a new task to the to-do list, the to-do list will notify to their observers. In this example there is one observer but we can add more observers. The display observer will update when it receives the notification from the to-do list.</p>
+
+        </section>
+
+        
+        
+        
+        
+
+        
+            
+            
+            
+
+            
+        
+            
+            
+            
+
+            
+        
+            
+            
+            
+
+            
+        
+            
+            
+            
+
+            
+        
+
+        
+        
+
+        
+        
+
+    </article>
+</main>
+
+
+<span id="copy-success" class="hidden">
+        Copied!
+    </span>
+    <span id="copy-init" class="hidden">
+        Copy code to clipboard
+    </span>
+    <script defer src="https://darellanodev.github.io/js/copyCodeToClipboard.min.js"></script><script defer src="https://darellanodev.github.io/js/footnoteBacklinks.min.js"></script>
+    </div>
+    <footer>
+    <section>
+        <nav class="socials nav-navs">
+            <ul>
+                <li>
+                    <a class="nav-links no-hover-padding social" rel=" me" 
+                        href=https://github.com/darellanodev>
+                        <img alt=github title=github
+                            src="https://darellanodev.github.io/social_icons/github.svg">
+                    </a>
+                </li>
+                
+            </ul>
+            
+        </nav>
+
+        
+        <nav class="nav-navs">
+            <small>
+                <ul>
+                    
+                    <li><a class="nav-links no-hover-padding" href="https:&#x2F;&#x2F;darellanodev.github.io&#x2F;privacy&#x2F;">
+                            privacy policy
+                        </a>
+                    </li>
+                    
+                </ul>
+            </small>
+            
+        </nav>
+
+        <div class="credits">
+            <small>
+                
+
+                
+                Powered by
+                <a rel=""  href="https://www.getzola.org">Zola</a>
+                &amp;
+                <a rel=""  href="https://github.com/welpo/tabi">tabi</a>
+
+
+            </small>
+        </div>
+    </section>
+
+    <div id="searchModal" class="search-modal js" role="dialog" aria-labelledby="modalTitle">
+    <h1 id="modalTitle" class="visually-hidden">Search</h1>
+    <div id="modal-content">
+        <div id="searchBar">
+            <div class="search-icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                    <path d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"/>
+                </svg>
+            </div>
+            <input id="searchInput" role="combobox" autocomplete="off" spellcheck="false" aria-expanded="false" aria-controls="results-container" placeholder="Search…"/>
+            <div id="clear-search" class="close-icon interactive-icon" tabindex="0" role="button" title="Clear search">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/>
+                </svg>
+            </div>
+        </div>
+        <div id="results-container">
+            <div id="results-info"><span id="zero_results"> No results</span>
+                <span id="one_results"> $NUMBER result</span>
+                <span id="many_results"> $NUMBER results</span><span id="two_results"> $NUMBER results</span>
+                <span id="few_results"> $NUMBER results</span>
+            </div>
+        <div id="results" role="listbox"></div>
+    </div>
+</div>
+</footer>
+</body>
+
+</html>

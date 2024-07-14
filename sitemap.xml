@@ -22,6 +22,10 @@
         <lastmod>2024-07-14</lastmod>
     </url>
     <url>
+        <loc>https://darellanodev.github.io/blog/js-observer-pattern/</loc>
+        <lastmod>2024-07-14</lastmod>
+    </url>
+    <url>
         <loc>https://darellanodev.github.io/blog/newwebsite/</loc>
         <lastmod>2024-06-30</lastmod>
     </url>
@@ -62,6 +66,9 @@
     </url>
     <url>
         <loc>https://darellanodev.github.io/tags/</loc>
+    </url>
+    <url>
+        <loc>https://darellanodev.github.io/tags/jspatterns/</loc>
     </url>
     <url>
         <loc>https://darellanodev.github.io/tags/news/</loc>
