@@ -10,6 +10,6 @@ function initializeVivus() {
   new Vivus('logo-animation', {
     duration: 800,
     start: 'autostart',
-    file: 'img/darellanodev_logo.svg',
+    file: logo_animation_path,
   })
 }
