@@ -44,8 +44,12 @@
         <loc>https://darellanodev.github.io/blog/page/2/</loc>
     </url>
     <url>
+        <loc>https://darellanodev.github.io/blog/svgutilities/</loc>
+        <lastmod>2024-07-22</lastmod>
+    </url>
+    <url>
         <loc>https://darellanodev.github.io/blog/vimvscode/</loc>
-        <lastmod>2024-07-14</lastmod>
+        <lastmod>2024-07-22</lastmod>
     </url>
     <url>
         <loc>https://darellanodev.github.io/privacy/</loc>
@@ -92,6 +96,9 @@
     </url>
     <url>
         <loc>https://darellanodev.github.io/tags/showcase/</loc>
+    </url>
+    <url>
+        <loc>https://darellanodev.github.io/tags/svg/</loc>
     </url>
     <url>
         <loc>https://darellanodev.github.io/tags/vim/</loc>
