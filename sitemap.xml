@@ -23,7 +23,11 @@
     </url>
     <url>
         <loc>https://darellanodev.github.io/blog/devquotes/</loc>
-        <lastmod>2024-07-14</lastmod>
+        <lastmod>2024-07-25</lastmod>
+    </url>
+    <url>
+        <loc>https://darellanodev.github.io/blog/gitreview/</loc>
+        <lastmod>2024-07-26</lastmod>
     </url>
     <url>
         <loc>https://darellanodev.github.io/blog/js-factory-pattern/</loc>
@@ -84,6 +88,9 @@
     </url>
     <url>
         <loc>https://darellanodev.github.io/tags/bookmarks/</loc>
+    </url>
+    <url>
+        <loc>https://darellanodev.github.io/tags/git/</loc>
     </url>
     <url>
         <loc>https://darellanodev.github.io/tags/jspatterns/</loc>
