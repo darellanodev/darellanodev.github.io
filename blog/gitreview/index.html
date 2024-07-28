@@ -218,7 +218,7 @@
 
             
             
-                • <li title="114 words">1 min read</li>
+                • <li title="305 words">2 min read</li>
             •&nbsp;<li>Tags:&nbsp;</li><li><a href=https://darellanodev.github.io/tags/git/>Git</a></li>
                 </ul><ul class="meta last-updated"><li>Last updated on 
 
@@ -236,7 +236,7 @@
     
 
     
-    26th
+    28th
     
         Jul 2024
     
@@ -262,27 +262,105 @@ Git commands review</h2>
 <h3 id="basics"><a class="header-anchor no-hover-padding" href="#basics" aria-label="Anchor link for: basics"><span class="link-icon" aria-hidden="true"></span></a>
 Basics</h3>
 <ul>
+<li>
+<p>Configuration:</p>
+<ul>
 <li>View user name / email: <code>git config user.name</code> / <code>git config user.email</code></li>
 <li>Set globally user / email: <code>git config --global user.name &quot;My name&quot;</code> / <code>git config --global user.email &quot;myemail@providermail.com&quot;</code></li>
-<li>View the current status: <code>git status</code></li>
-<li>Initialize repository: <code>git init</code></li>
-<li>Add files to the staged area / Add all: <code>git add file1.txt file2.txt</code> / <code>git add .</code></li>
-<li>Commit with a message: <code>git commit -m &quot;start creating two sample files&quot;</code></li>
-<li>Display a list of the commits: <code>git log</code>
+</ul>
+</li>
+<li>
+<p>View the current status: <code>git status</code></p>
+</li>
+<li>
+<p>Initialize repository: <code>git init</code></p>
+</li>
+<li>
+<p>Add files to the staged area / Add all: <code>git add file1.txt file2.txt</code> / <code>git add .</code></p>
+</li>
+<li>
+<p>Commit:</p>
 <ul>
+<li>Commit with a message: <code>git commit -m &quot;start creating two sample files&quot;</code></li>
+<li>Add everything and commit with message <code>git commit -am &quot;first commit&quot;</code></li>
+</ul>
+</li>
+<li>
+<p>View log:</p>
+<ul>
+<li>Display a list of the commits: <code>git log</code></li>
 <li>In one line <code>git log --oneline</code></li>
 </ul>
 </li>
-<li>Amend:
+<li>
+<p>Amend:</p>
 <ul>
 <li>Amend without editing the message <code>git commit --amend --no-edit</code></li>
 <li>Amend the message <code>git commit --amend -m &quot;my new message&quot;</code></li>
+</ul>
+</li>
+<li>
+<p>Branches:</p>
+<ul>
+<li>
+<p>View all branches: <code>git branch</code></p>
+</li>
+<li>
+<p>Create / Switch:</p>
+<ul>
+<li>Create a branch: <code>git branch bugfix</code></li>
+<li>Switch to a branch: <code>git switch bugfix</code></li>
+<li>Create and switch to a branch: <code>git switch -c bugfix</code></li>
+<li>Old command: <code>git checkout -b bugfix</code></li>
+</ul>
+</li>
+<li>
+<p>Delete a branch:</p>
+<ul>
+<li>1: move to other branch: <code>git switch main</code></li>
+<li>2: delete the branch: <code>git branch -d bugfix</code></li>
+</ul>
+</li>
+<li>
+<p>Rename a branch:</p>
+<ul>
+<li>1: Switch to the branch: <code>git switch bugfix</code></li>
+<li>2: Rename it: <code>git branch -m errorfix</code></li>
+</ul>
+</li>
+<li>
+<p>Merge a branch:</p>
+<ul>
+<li>1: go to the receiving branch: <code>git switch main</code></li>
+<li>2: merge the desired branch into the actual branch: <code>git merge bugfix</code></li>
+</ul>
+</li>
+<li>
+<p>See changes:</p>
+<ul>
+<li>in the working directory that are not staged: <code>git diff</code></li>
+<li>since the last commit (no matters if staged or not): <code>git diff HEAD</code></li>
+<li>for the staged: <code>git diff --staged</code></li>
+<li>we can add a filename to the previous commands to limit to a specific file:
+<ul>
+<li><code>git diff HEAD colors.txt</code></li>
+</ul>
+</li>
+<li>list the changes between the tip of branch1 and branch2: <code>git diff branch1 branch2</code></li>
+<li>list the changes between two commits: <code>git diff 45bdd51 f3eaa49</code></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
 <h2 id="guis"><a class="header-anchor no-hover-padding" href="#guis" aria-label="Anchor link for: guis"><span class="link-icon" aria-hidden="true"></span></a>
 GUIs</h2>
 <ul>
+<li>VSCode:
+<ul>
+<li>Git Graph extension</li>
+</ul>
+</li>
 <li><a href="https://www.gitkraken.com/">GitKraken</a></li>
 </ul>
 
