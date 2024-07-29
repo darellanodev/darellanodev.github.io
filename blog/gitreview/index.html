@@ -218,7 +218,7 @@
 
             
             
-                • <li title="305 words">2 min read</li>
+                • <li title="382 words">2 min read</li>
             •&nbsp;<li>Tags:&nbsp;</li><li><a href=https://darellanodev.github.io/tags/git/>Git</a></li>
                 </ul><ul class="meta last-updated"><li>Last updated on 
 
@@ -317,8 +317,8 @@ Basics</h3>
 <li>
 <p>Delete a branch:</p>
 <ul>
-<li>1: move to other branch: <code>git switch main</code></li>
-<li>2: delete the branch: <code>git branch -d bugfix</code></li>
+<li>1: Move to other branch: <code>git switch main</code></li>
+<li>2: Delete the branch: <code>git branch -d bugfix</code></li>
 </ul>
 </li>
 <li>
@@ -331,23 +331,39 @@ Basics</h3>
 <li>
 <p>Merge a branch:</p>
 <ul>
-<li>1: go to the receiving branch: <code>git switch main</code></li>
-<li>2: merge the desired branch into the actual branch: <code>git merge bugfix</code></li>
+<li>1: Go to the receiving branch: <code>git switch main</code></li>
+<li>2: Merge the desired branch into the actual branch: <code>git merge bugfix</code></li>
 </ul>
 </li>
 <li>
 <p>See changes:</p>
 <ul>
-<li>in the working directory that are not staged: <code>git diff</code></li>
-<li>since the last commit (no matters if staged or not): <code>git diff HEAD</code></li>
-<li>for the staged: <code>git diff --staged</code></li>
-<li>we can add a filename to the previous commands to limit to a specific file:
+<li>In the working directory that are not staged: <code>git diff</code></li>
+<li>Since the last commit (no matters if staged or not): <code>git diff HEAD</code></li>
+<li>For the staged: <code>git diff --staged</code></li>
+<li>We can add a filename to the previous commands to limit to a specific file:
 <ul>
 <li><code>git diff HEAD colors.txt</code></li>
 </ul>
 </li>
-<li>list the changes between the tip of branch1 and branch2: <code>git diff branch1 branch2</code></li>
-<li>list the changes between two commits: <code>git diff 45bdd51 f3eaa49</code></li>
+<li>List the changes between the tip of branch1 and branch2: <code>git diff branch1 branch2</code></li>
+<li>List the changes between two commits: <code>git diff 45bdd51 f3eaa49</code></li>
+</ul>
+</li>
+<li>
+<p>Stash:</p>
+<ul>
+<li>For save: <code>git stash</code></li>
+<li>Restore and remove from the stash: <code>git stash pop</code></li>
+<li>Other stash commands that are less used:
+<ul>
+<li>Restore but keep a copy in the stash (for example to apply the stash to multiples branches) <code>git stash apply</code></li>
+<li>If we keep more than one stashed thing: <code>git stash list</code></li>
+<li>Apply a specific stash: <code>git stash apply stash@{1}</code></li>
+<li>Delete a specific stash: <code>git stash drop stash@{1}</code></li>
+<li>Delete all the stash: <code>git stash clear</code></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
