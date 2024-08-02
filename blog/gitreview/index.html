@@ -218,7 +218,7 @@
 
             
             
-                • <li title="382 words">2 min read</li>
+                • <li title="877 words">5 min read</li>
             •&nbsp;<li>Tags:&nbsp;</li><li><a href=https://darellanodev.github.io/tags/git/>Git</a></li>
                 </ul><ul class="meta last-updated"><li>Last updated on 
 
@@ -276,13 +276,20 @@ Basics</h3>
 <p>Initialize repository: <code>git init</code></p>
 </li>
 <li>
-<p>Add files to the staged area / Add all: <code>git add file1.txt file2.txt</code> / <code>git add .</code></p>
+<p>Basic workflow</p>
+<ul>
+<li>1: add
+<ul>
+<li>Add specific files to the staged area: <code>git add file1.txt file2.txt</code></li>
+<li>Or add all: <code>git add .</code></li>
+</ul>
 </li>
-<li>
-<p>Commit:</p>
+<li>2: Commit:
 <ul>
 <li>Commit with a message: <code>git commit -m &quot;start creating two sample files&quot;</code></li>
-<li>Add everything and commit with message <code>git commit -am &quot;first commit&quot;</code></li>
+</ul>
+</li>
+<li>Also we can add everything and commit with message in one command: <code>git commit -am &quot;first commit&quot;</code></li>
 </ul>
 </li>
 <li>
@@ -335,6 +342,8 @@ Basics</h3>
 <li>2: Merge the desired branch into the actual branch: <code>git merge bugfix</code></li>
 </ul>
 </li>
+</ul>
+</li>
 <li>
 <p>See changes:</p>
 <ul>
@@ -364,6 +373,108 @@ Basics</h3>
 <li>Delete all the stash: <code>git stash clear</code></li>
 </ul>
 </li>
+</ul>
+</li>
+<li>
+<p>Travel to make changes:</p>
+<ul>
+<li>
+<p>1: move HEAD to a specific commit <code>git checkout &lt;commit-hash&gt;</code></p>
+</li>
+<li>
+<p>2: then make a branch that starts for this commit, and we can make changes in a new branch</p>
+</li>
+<li>
+<p>Other method to move the head:</p>
+<ul>
+<li>to move one time back the HEAD to the previous commit <code>git checkout HEAD~1</code></li>
+<li>… two times back <code>git checkout HEAD~2</code></li>
+<li>… three times back<code>git checkout HEAD~3</code></li>
+<li>…</li>
+</ul>
+</li>
+<li>
+<p>After move HEAD to a specific commit we can return to the last commit of the branch using: <code>git switch -</code></p>
+</li>
+<li>
+<p>Discarding modified changes:</p>
+<ul>
+<li><code>git checkout HEAD file1.txt</code></li>
+<li>other method: <code>git checkout -- file1.txt</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Restoring things:</p>
+<ul>
+<li>Git restore (same to the previous git commands)
+<ul>
+<li><code>git restore file1.txt</code></li>
+</ul>
+</li>
+<li>To restore a file to what it was in a specific commit:
+<ul>
+<li>1: we can do (we can put the commit hash instead of HEAD~1): <code>git restore --source HEAD~1 file1.txt</code></li>
+<li>2: then we can also go back to the last commit of the file<code>git restore file1.txt</code></li>
+</ul>
+</li>
+<li>Unstaging files
+<ul>
+<li><code>git restore --staged file1.txt</code></li>
+</ul>
+</li>
+<li>Git reset
+<ul>
+<li>remove the commits but not the changes: <code>git reset &lt;commit-hash&gt;</code>
+<ul>
+<li>this is useful when we had made changes in the incorrect branch. First we delete the commits without loosing the changes and then we create a new branch.</li>
+</ul>
+</li>
+<li>remove the commits and the changes: <code>git reset --hard &lt;commit-hash&gt;</code></li>
+</ul>
+</li>
+<li>Git revert
+<ul>
+<li>Is similar to reset but it creates a new commit without removing any previous commits.</li>
+<li>It’s good because it does not alter the git history specially when we are collaborating with other persons.</li>
+<li>It can produce conflicts and then you have to resolve to make the new commit</li>
+<li><code>git revert &lt;bad-commit-hash-that-we-want-to-revert&gt;</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Working with the remote</p>
+<ul>
+<li>Git remote:
+<ul>
+<li>View the actual remotes: <code>git remote -v</code></li>
+<li>Add a remote with the name origin: <code>git remote add origin &lt;repo-url&gt;</code></li>
+<li>Rename the branch where we are to: <code>git branch -M main</code></li>
+<li>Push a branch: <code>git push origin main</code></li>
+<li>Set the upstream:
+<ul>
+<li>1: remember that the main branch of my local repo is connected with the main branch of the origin: <code>git push -u origin main</code></li>
+<li>2: then we can do <code>git push</code></li>
+</ul>
+</li>
+<li>View remote branches: <code>git branch -r</code></li>
+<li>To get locally a branch that is in remote but not in local (if the branch name exists in remote it will get the branch): <code>git switch branchname</code></li>
+</ul>
+</li>
+<li>Fetch:
+<ul>
+<li>Download the last changes of a branch without messing up the working directory: <code>git fetch</code> or <code>git fetch origin</code></li>
+<li>You can indicate a specific branch: <code>git fetch origin/responsivegui</code></li>
+<li>Then we can travel to it: <code>git checkout origin/responsivegui</code></li>
+</ul>
+</li>
+<li>Pull (is like a fetch and then a merge):
+<ul>
+<li><code>git pull origin responsivegui</code></li>
+<li>A tipically workflow when doing a pull cause conflicts is: resolve conflicts, and then push the fixed conflicts</li>
+<li>Short syntax: <code>git pull</code> (by default is origin, and the current branch)</li>
 </ul>
 </li>
 </ul>
