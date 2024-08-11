@@ -218,7 +218,7 @@
 
             
             
-                • <li title="877 words">5 min read</li>
+                • <li title="1005 words">6 min read</li>
             •&nbsp;<li>Tags:&nbsp;</li><li><a href=https://darellanodev.github.io/tags/git/>Git</a></li>
                 </ul><ul class="meta last-updated"><li>Last updated on 
 
@@ -490,6 +490,28 @@ GUIs</h2>
 </li>
 <li><a href="https://www.gitkraken.com/">GitKraken</a></li>
 </ul>
+<h2 id="other-interesting-links"><a class="header-anchor no-hover-padding" href="#other-interesting-links" aria-label="Anchor link for: other-interesting-links"><span class="link-icon" aria-hidden="true"></span></a>
+Other interesting links</h2>
+<ul>
+<li><a href="https://about.gitlab.com/blog/2018/08/08/git-happens/">https://about.gitlab.com/blog/2018/08/08/git-happens/</a></li>
+</ul>
+<h2 id="other-common-scenarios"><a class="header-anchor no-hover-padding" href="#other-common-scenarios" aria-label="Anchor link for: other-common-scenarios"><span class="link-icon" aria-hidden="true"></span></a>
+Other common scenarios</h2>
+<h3 id="when-you-put-something-to-ignore-but-it-is-commited-previously-and-now-i-want-to-ignore-it"><a class="header-anchor no-hover-padding" href="#when-you-put-something-to-ignore-but-it-is-commited-previously-and-now-i-want-to-ignore-it" aria-label="Anchor link for: when-you-put-something-to-ignore-but-it-is-commited-previously-and-now-i-want-to-ignore-it"><span class="link-icon" aria-hidden="true"></span></a>
+When you put something to ignore but it is commited previously and now I want to ignore it</h3>
+<pre class="z-code"><code><span class="z-text z-plain">Source: &lt;https://stackoverflow.com/questions/7527982/applying-gitignore-to-committed-files&gt;
+</span><span class="z-text z-plain">
+</span><span class="z-text z-plain">After editing .gitignore to match the ignored files, you can do git ls-files -ci --exclude-standard to see the files that are included in the exclude lists; you can then do
+</span><span class="z-text z-plain">
+</span><span class="z-text z-plain">    Linux/MacOS:
+</span><span class="z-text z-plain">        git ls-files -ci --exclude-standard -z | xargs -0 git rm --cached
+</span><span class="z-text z-plain">    Windows (PowerShell):
+</span><span class="z-text z-plain">        git ls-files -ci --exclude-standard | % { git rm --cached &quot;$_&quot; }
+</span><span class="z-text z-plain">    Windows (cmd.exe):
+</span><span class="z-text z-plain">        for /F &quot;tokens=*&quot; %a in (&#39;git ls-files -ci --exclude-standard&#39;) do @git rm --cached &quot;%a&quot;
+</span><span class="z-text z-plain">
+</span><span class="z-text z-plain">to remove them from the repository (without deleting them from disk).
+</span></code></pre>
 
         </section>
 
