@@ -1,6 +1,6 @@
-# Darellanodev made with zola and tabi
+# My personal web portfolio made with Zola and Tabi
 
-This is my personal porfolio made with zola and tabi.
+This is my personal portfolio made with [Zola](https://github.com/getzola/zola) and [Tabi](https://github.com/welpo/tabi).
 
 <https://darellanodev.github.io/>
 
