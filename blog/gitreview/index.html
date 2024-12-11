@@ -218,7 +218,7 @@
 
             
             
-                • <li title="1005 words">6 min read</li>
+                • <li title="1122 words">6 min read</li>
             •&nbsp;<li>Tags:&nbsp;</li><li><a href=https://darellanodev.github.io/tags/git/>Git</a></li>
                 </ul><ul class="meta last-updated"><li>Last updated on 
 
@@ -512,6 +512,16 @@ When you put something to ignore but it is commited previously and now I want to
 </span><span class="z-text z-plain">
 </span><span class="z-text z-plain">to remove them from the repository (without deleting them from disk).
 </span></code></pre>
+<h3 id="workflow-with-github-issues"><a class="header-anchor no-hover-padding" href="#workflow-with-github-issues" aria-label="Anchor link for: workflow-with-github-issues"><span class="link-icon" aria-hidden="true"></span></a>
+Workflow with GitHub Issues</h3>
+<p>Example Workflow:</p>
+<ol>
+<li>Create an issue: You open a new issue titled “Add form validation” and assign it the number #10.</li>
+<li>Work on the task: You create a new branch in your local repository to work on the task: git checkout -b add-form-validation.</li>
+<li>Make commits: As you progress, you make commits with messages referencing the issue: git commit -m “Add basic form validation #10”.</li>
+<li>Complete the task: Once the task is finished, you make a final commit that closes the issue: git commit -m “Complete form validation, closes #10”.</li>
+<li>Merge changes: You merge the branch into the main branch, and issue #10 is automatically closed on GitHub.</li>
+</ol>
 
         </section>
 
