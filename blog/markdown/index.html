@@ -1,373 +1,388 @@
-
-
-
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="base" content="https://darellanodev.github.io/">
 
-    
+
     <title>Darellanodev • New website</title>
 
-    
-    
-        <link rel="icon" type="image/png" href="https://darellanodev.github.io/img/seedling.png"/>
-    
-    
-        <link rel=icon href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 105 55"><text y=".7em" font-size="82">🌱</text></svg>'>
-    
 
-    
-    <link rel="alternate" type="application/atom+xml" title="Darellanodev" href="https://darellanodev.github.io/atom.xml">
 
-    
-    
-    
-        <link rel="stylesheet" href="https://darellanodev.github.io/custom_subset.css?h=6de30382822eb2c02ee0">
-    
+    <link rel="icon" type="image/png" href="https://darellanodev.github.io/img/seedling.png" />
 
-    
-        <link rel="stylesheet" href="https://darellanodev.github.io/main.css?h=8832a91d58a28d321cfa" />
+
+    <link rel=icon
+        href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 105 55"><text y=".7em" font-size="82">🌱</text></svg>'>
+
+
+
+    <link rel="alternate" type="application/atom+xml" title="Darellanodev"
+        href="https://darellanodev.github.io/atom.xml">
+
+
+
+
+    <link rel="stylesheet" href="https://darellanodev.github.io/custom_subset.css?h=6de30382822eb2c02ee0">
+
+
+
+    <link rel="stylesheet" href="https://darellanodev.github.io/main.css?h=8832a91d58a28d321cfa" />
 
     <meta name="color-scheme" content="light dark" />
-        <meta name="theme-color" content="#087e96" />
-        <meta name="description" content="This post is an announcement to show the new Darellanodev website using Zola and Tabi theme." />
-        <meta property="og:description" content="This post is an announcement to show the new Darellanodev website using Zola and Tabi theme." />
+    <meta name="theme-color" content="#087e96" />
+    <meta name="description"
+        content="This post is an announcement to show the new Darellanodev website using Zola and Tabi theme." />
+    <meta property="og:description"
+        content="This post is an announcement to show the new Darellanodev website using Zola and Tabi theme." />
 
-    
-        <meta name="robots" content="index, nofollow" />
-    
+
+    <meta name="robots" content="index, nofollow" />
+
 
     <meta property="og:title" content="New website" />
     <meta property="og:type" content="article" />
 
-    
-        
-        
-        
 
-        
-        
-            
-        
 
-        
-        <meta property="og:image" content="https://darellanodev.github.io/blog/markdown/social_cards/blog_markdown.jpg?h=83df382f9831b7b91c41" />
-        <meta property="og:image:width" content="1400" />
-        <meta property="og:image:height" content="800" />
-        <meta name="twitter:image" content="https://darellanodev.github.io/blog/markdown/social_cards/blog_markdown.jpg?h=83df382f9831b7b91c41" />
-        <meta name="twitter:card" content="summary_large_image" />
-    
+
+
+
+
+
+
+
+
+
+    <meta property="og:image"
+        content="https://darellanodev.github.io/blog/markdown/social_cards/blog_markdown.jpg?h=83df382f9831b7b91c41" />
+    <meta property="og:image:width" content="1400" />
+    <meta property="og:image:height" content="800" />
+    <meta name="twitter:image"
+        content="https://darellanodev.github.io/blog/markdown/social_cards/blog_markdown.jpg?h=83df382f9831b7b91c41" />
+    <meta name="twitter:card" content="summary_large_image" />
+
 
     <meta property="og:locale" content="en_GB" />
 
-    <meta property="og:url" content="https:&#x2F;&#x2F;darellanodev.github.io&#x2F;blog&#x2F;markdown&#x2F;" /><meta property="og:site_name" content="Darellanodev"><meta http-equiv="Content-Security-Policy"
-content="default-src 'self';font-src &#x27;self&#x27; data:;img-src &#x27;self&#x27; https:&#x2F;&#x2F;* data:;media-src &#x27;self&#x27; https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;;style-src &#x27;self&#x27;;frame-src player.vimeo.com https:&#x2F;&#x2F;www.youtube-nocookie.com;connect-src 'self' https://tabi-stats.osc.garden;script-src 'self' https://tabi-stats.osc.garden 'self'">
+    <meta property="og:url" content="https:&#x2F;&#x2F;darellanodev.github.io&#x2F;blog&#x2F;markdown&#x2F;" />
+    <meta property="og:site_name" content="Darellanodev">
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self';font-src &#x27;self&#x27; data:;img-src &#x27;self&#x27; https:&#x2F;&#x2F;* data:;media-src &#x27;self&#x27; https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;;style-src &#x27;self&#x27;;frame-src player.vimeo.com https:&#x2F;&#x2F;www.youtube-nocookie.com;connect-src 'self' https://tabi-stats.osc.garden;script-src 'self' https://tabi-stats.osc.garden 'self'">
 
-        <noscript><link rel="stylesheet" href="https://darellanodev.github.io/no_js.css"/></noscript>
-        <script type="text/javascript" src="https://darellanodev.github.io/js/initializeTheme.min.js"></script>
-        <script defer src="https://darellanodev.github.io/js/themeSwitcher.min.js"></script>
-
-
-
-
-    
-    
+    <noscript>
+        <link rel="stylesheet" href="https://darellanodev.github.io/no_js.css" />
+    </noscript>
+    <script type="text/javascript" src="https://darellanodev.github.io/js/initializeTheme.min.js"></script>
+    <script defer src="https://darellanodev.github.io/js/themeSwitcher.min.js"></script>
 
 
 
-        <script defer src="https://darellanodev.github.io/js/searchElasticlunr.min.js?h=2950d57f80c9fa78f37e"></script>
 
-        </head>
+
+
+
+
+
+    <script defer src="https://darellanodev.github.io/js/searchElasticlunr.min.js?h=2950d57f80c9fa78f37e"></script>
+
+</head>
 
 
 <body>
     <header>
-    <nav class="navbar">
-        <div class="nav-title">
-            <a class="home-title" href=https://darellanodev.github.io>Darellanodev</a>
-        </div>
+        <nav class="navbar">
+            <div class="nav-title">
+                <a class="home-title" href=https://darellanodev.github.io>Darellanodev</a>
+            </div>
             <div class="nav-navs">
                 <ul>
-                        
-                            <li>
-                                
-                                <a class="nav-links no-hover-padding" href="https://darellanodev.github.io/projects/">
-                                last projects
-                                </a>
-                            </li>
-                        
-                            <li>
-                                
-                                <a class="nav-links no-hover-padding" href="https://darellanodev.github.io/projects_old/">
-                                old projects
-                                </a>
-                            </li>
-                        
-                            <li>
-                                
-                                <a class="nav-links no-hover-padding" href="https://darellanodev.github.io/artwork/">
-                                artwork
-                                </a>
-                            </li>
-                        
-                            <li>
-                                
-                                <a class="nav-links no-hover-padding" href="https://darellanodev.github.io/blog/">
-                                blog
-                                </a>
-                            </li>
-                        <li class="js">
-                        <div role="button" tabindex="0" id="search-button" class="search-icon interactive-icon" title="Click or press $SHORTCUT to open search" aria-label="Click or press $SHORTCUT to open search">
+
+                    <li>
+
+                        <a class="nav-links no-hover-padding" href="https://darellanodev.github.io/projects/">
+                            latest projects
+                        </a>
+                    </li>
+
+                    <li>
+
+                        <a class="nav-links no-hover-padding" href="https://darellanodev.github.io/projects_old/">
+                            old projects
+                        </a>
+                    </li>
+
+                    <li>
+
+                        <a class="nav-links no-hover-padding" href="https://darellanodev.github.io/artwork/">
+                            artwork
+                        </a>
+                    </li>
+
+                    <li>
+
+                        <a class="nav-links no-hover-padding" href="https://darellanodev.github.io/blog/">
+                            blog
+                        </a>
+                    </li>
+                    <li class="js">
+                        <div role="button" tabindex="0" id="search-button" class="search-icon interactive-icon"
+                            title="Click or press $SHORTCUT to open search"
+                            aria-label="Click or press $SHORTCUT to open search">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
-                                <path d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"/>
+                                <path
+                                    d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z" />
                             </svg>
                         </div>
                     </li>
 
-                    
-                    
 
-                    <li class="theme-switcher-wrapper js"><div
-        title="Toggle dark&#x2F;light mode"
-        class="theme-switcher"
-        tabindex="0"
-        role="button"
-        aria-label="Toggle dark mode"
-        aria-pressed="false">
-    </div><div
-        title="Reset mode to default"
-        class="theme-resetter"
-        tabindex="0"
-        role="button"
-        aria-hidden="true"
-        aria-label="Reset mode to default">
-    </div>
 
-</li>
-</ul>
+
+                    <li class="theme-switcher-wrapper js">
+                        <div title="Toggle dark&#x2F;light mode" class="theme-switcher" tabindex="0" role="button"
+                            aria-label="Toggle dark mode" aria-pressed="false">
+                        </div>
+                        <div title="Reset mode to default" class="theme-resetter" tabindex="0" role="button"
+                            aria-hidden="true" aria-label="Reset mode to default">
+                        </div>
+
+                    </li>
+                </ul>
             </div>
-        
-    </nav>
-</header>
+
+        </nav>
+    </header>
 
     <div class="content">
 
-        
-        
-
-
-
-
-<main>
-    <article>
-        <h1 class="article-title">
-            New website
-        </h1>
-
-        <ul class="meta">
-            
-
-            
-                <li>
 
 
 
 
 
-    
 
-    
-        
-        
-            
-        
-    
+        <main>
+            <article>
+                <h1 class="article-title">
+                    New website
+                </h1>
 
-    
-    19th
-    
-        May 2024
-    
+                <ul class="meta">
 
 
-</li>
-            
 
-            
-            
-                • <li title="38 words">1 min read</li>
-            •&nbsp;<li>Tags:&nbsp;</li><li><a href=https://darellanodev.github.io/tags/news/>news</a>,&nbsp;</li><li><a href=https://darellanodev.github.io/tags/showcase/>showcase</a></li>
-                </ul><ul class="meta last-updated"><li>Last updated on 
+                    <li>
 
 
 
 
 
-    
-
-    
-        
-        
-            
-        
-    
-
-    
-    19th
-    
-        May 2024
-    
 
 
-</li>
-                
-                
-            
-        </ul>
-
-        
-
-        
-        
-
-        <section class="body">
-            
-            
-            <h2 id="welcome-to-the-new-version-of-the-darellanodev-website"><a class="header-anchor no-hover-padding" href="#welcome-to-the-new-version-of-the-darellanodev-website" aria-label="Anchor link for: welcome-to-the-new-version-of-the-darellanodev-website"><span class="link-icon" aria-hidden="true"></span></a>
-Welcome to the new version of the Darellanodev website</h2>
-<p>Today I publish my new portfolio to show some of my personal projects.</p>
-<h2 id="zola"><a class="header-anchor no-hover-padding" href="#zola" aria-label="Anchor link for: zola"><span class="link-icon" aria-hidden="true"></span></a>
-Zola</h2>
-<p>Also this website helps me to learn the Zola static web generator.</p>
-<p>More comming soon.</p>
-
-        </section>
-
-        
-        
-        
-        
-
-        
-            
-            
-            
-
-            
-        
-            
-            
-            
-
-            
-        
-            
-            
-            
-
-            
-        
-            
-            
-            
-
-            
-        
-
-        
-        
-
-        
-        
-
-    </article>
-</main>
 
 
-<span id="copy-success" class="hidden">
-        Copied!
-    </span>
-    <span id="copy-init" class="hidden">
-        Copy code to clipboard
-    </span>
-    <script defer src="https://darellanodev.github.io/js/copyCodeToClipboard.min.js"></script><script defer src="https://darellanodev.github.io/js/footnoteBacklinks.min.js"></script>
+
+
+
+
+
+
+                        19th
+
+                        May 2024
+
+
+
+                    </li>
+
+
+
+
+                    • <li title="38 words">1 min read</li>
+                    •&nbsp;<li>Tags:&nbsp;</li>
+                    <li><a href=https://darellanodev.github.io/tags/news />news</a>,&nbsp;</li>
+                    <li><a href=https://darellanodev.github.io/tags/showcase />showcase</a></li>
+                </ul>
+                <ul class="meta last-updated">
+                    <li>Last updated on
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        19th
+
+                        May 2024
+
+
+
+                    </li>
+
+
+
+                </ul>
+
+
+
+
+
+
+                <section class="body">
+
+
+                    <h2 id="welcome-to-the-new-version-of-the-darellanodev-website"><a
+                            class="header-anchor no-hover-padding"
+                            href="#welcome-to-the-new-version-of-the-darellanodev-website"
+                            aria-label="Anchor link for: welcome-to-the-new-version-of-the-darellanodev-website"><span
+                                class="link-icon" aria-hidden="true"></span></a>
+                        Welcome to the new version of the Darellanodev website</h2>
+                    <p>Today I publish my new portfolio to show some of my personal projects.</p>
+                    <h2 id="zola"><a class="header-anchor no-hover-padding" href="#zola"
+                            aria-label="Anchor link for: zola"><span class="link-icon" aria-hidden="true"></span></a>
+                        Zola</h2>
+                    <p>Also this website helps me to learn the Zola static web generator.</p>
+                    <p>More comming soon.</p>
+
+                </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            </article>
+        </main>
+
+
+        <span id="copy-success" class="hidden">
+            Copied!
+        </span>
+        <span id="copy-init" class="hidden">
+            Copy code to clipboard
+        </span>
+        <script defer src="https://darellanodev.github.io/js/copyCodeToClipboard.min.js"></script>
+        <script defer src="https://darellanodev.github.io/js/footnoteBacklinks.min.js"></script>
     </div>
     <footer>
-    <section>
-        <nav class="socials nav-navs">
-            <ul>
-                <li>
-                    <a class="nav-links no-hover-padding social" rel=" me" 
-                        href=https://github.com/darellanodev>
-                        <img alt=github title=github
-                            src="https://darellanodev.github.io/social_icons/github.svg">
-                    </a>
-                </li>
-                
-            </ul>
-            
-        </nav>
-
-        
-        <nav class="nav-navs">
-            <small>
+        <section>
+            <nav class="socials nav-navs">
                 <ul>
-                    
-                    <li><a class="nav-links no-hover-padding" href="https:&#x2F;&#x2F;darellanodev.github.io&#x2F;privacy&#x2F;">
-                            privacy policy
+                    <li>
+                        <a class="nav-links no-hover-padding social" rel=" me" href=https://github.com/darellanodev>
+                            <img alt=github title=github src="https://darellanodev.github.io/social_icons/github.svg">
                         </a>
                     </li>
-                    
+
                 </ul>
-            </small>
-            
-        </nav>
 
-        <div class="credits">
-            <small>
-                
-
-                
-                Powered by
-                <a rel=""  href="https://www.getzola.org">Zola</a>
-                &amp;
-                <a rel=""  href="https://github.com/welpo/tabi">tabi</a>
+            </nav>
 
 
-            </small>
-        </div>
-    </section>
+            <nav class="nav-navs">
+                <small>
+                    <ul>
 
-    <div id="searchModal" class="search-modal js" role="dialog" aria-labelledby="modalTitle">
-    <h1 id="modalTitle" class="visually-hidden">Search</h1>
-    <div id="modal-content">
-        <div id="searchBar">
-            <div class="search-icon" aria-hidden="true">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
-                    <path d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"/>
-                </svg>
+                        <li><a class="nav-links no-hover-padding"
+                                href="https:&#x2F;&#x2F;darellanodev.github.io&#x2F;privacy&#x2F;">
+                                privacy policy
+                            </a>
+                        </li>
+
+                    </ul>
+                </small>
+
+            </nav>
+
+            <div class="credits">
+                <small>
+
+
+
+                    Powered by
+                    <a rel="" href="https://www.getzola.org">Zola</a>
+                    &amp;
+                    <a rel="" href="https://github.com/welpo/tabi">tabi</a>
+
+
+                </small>
             </div>
-            <input id="searchInput" role="combobox" autocomplete="off" spellcheck="false" aria-expanded="false" aria-controls="results-container" placeholder="Search…"/>
-            <div id="clear-search" class="close-icon interactive-icon" tabindex="0" role="button" title="Clear search">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
-                <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/>
-                </svg>
+        </section>
+
+        <div id="searchModal" class="search-modal js" role="dialog" aria-labelledby="modalTitle">
+            <h1 id="modalTitle" class="visually-hidden">Search</h1>
+            <div id="modal-content">
+                <div id="searchBar">
+                    <div class="search-icon" aria-hidden="true">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                            <path
+                                d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z" />
+                        </svg>
+                    </div>
+                    <input id="searchInput" role="combobox" autocomplete="off" spellcheck="false" aria-expanded="false"
+                        aria-controls="results-container" placeholder="Search…" />
+                    <div id="clear-search" class="close-icon interactive-icon" tabindex="0" role="button"
+                        title="Clear search">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                            <path
+                                d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
+                        </svg>
+                    </div>
+                </div>
+                <div id="results-container">
+                    <div id="results-info"><span id="zero_results"> No results</span>
+                        <span id="one_results"> $NUMBER result</span>
+                        <span id="many_results"> $NUMBER results</span><span id="two_results"> $NUMBER results</span>
+                        <span id="few_results"> $NUMBER results</span>
+                    </div>
+                    <div id="results" role="listbox"></div>
+                </div>
             </div>
-        </div>
-        <div id="results-container">
-            <div id="results-info"><span id="zero_results"> No results</span>
-                <span id="one_results"> $NUMBER result</span>
-                <span id="many_results"> $NUMBER results</span><span id="two_results"> $NUMBER results</span>
-                <span id="few_results"> $NUMBER results</span>
-            </div>
-        <div id="results" role="listbox"></div>
-    </div>
-</div>
-</footer>
+    </footer>
 </body>
 
 </html>
