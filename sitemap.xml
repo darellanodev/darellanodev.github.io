@@ -18,6 +18,10 @@
         <loc>https://darellanodev.github.io/blog/</loc>
     </url>
     <url>
+        <loc>https://darellanodev.github.io/blog/20250215-github-collaborate/</loc>
+        <lastmod>2025-02-15</lastmod>
+    </url>
+    <url>
         <loc>https://darellanodev.github.io/blog/bookmarks/</loc>
         <lastmod>2024-07-20</lastmod>
     </url>
@@ -107,6 +111,9 @@
     </url>
     <url>
         <loc>https://darellanodev.github.io/tags/git/</loc>
+    </url>
+    <url>
+        <loc>https://darellanodev.github.io/tags/github/</loc>
     </url>
     <url>
         <loc>https://darellanodev.github.io/tags/gym/</loc>
