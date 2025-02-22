@@ -9,8 +9,18 @@
     <link href="https://darellanodev.github.io/tags/github/atom.xml" rel="self" type="application/atom+xml"/>
     <link href="https://darellanodev.github.io"/>
     <generator uri="https://www.getzola.org/">Zola</generator>
-    <updated>2025-02-15T00:00:00+00:00</updated>
+    <updated>2025-02-22T00:00:00+00:00</updated>
     <id>https://darellanodev.github.io/tags/github/atom.xml</id><entry xml:lang="en">
+        <title>Accessing and reviewing a friend&#x27;s branch.</title>
+        <published>2025-02-22T00:00:00+00:00</published>
+        <updated>2025-02-22T00:00:00+00:00</updated>
+        <author>
+            <name>Unknown</name>
+        </author>
+        <link rel="alternate" href="https://darellanodev.github.io/blog/20250222-reviewing-branch/" type="text/html"/>
+        <id>https://darellanodev.github.io/blog/20250222-reviewing-branch/</id>
+        <summary type="html">I&#x27;m collaborating with a friend on his GitHub repository and he asked me to review his work in progress on his branch.</summary>
+        </entry><entry xml:lang="en">
         <title>Collaborate on a friend&#x27;s repo in GitHub.</title>
         <published>2025-02-15T00:00:00+00:00</published>
         <updated>2025-02-15T00:00:00+00:00</updated>
