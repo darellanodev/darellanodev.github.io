@@ -9,8 +9,18 @@
     <link href="https://darellanodev.github.io/tags/github/atom.xml" rel="self" type="application/atom+xml"/>
     <link href="https://darellanodev.github.io"/>
     <generator uri="https://www.getzola.org/">Zola</generator>
-    <updated>2025-02-22T00:00:00+00:00</updated>
+    <updated>2025-03-02T00:00:00+00:00</updated>
     <id>https://darellanodev.github.io/tags/github/atom.xml</id><entry xml:lang="en">
+        <title>How to delete a branch locally and remotely after it has been merged into main</title>
+        <published>2025-03-02T00:00:00+00:00</published>
+        <updated>2025-03-02T00:00:00+00:00</updated>
+        <author>
+            <name>Unknown</name>
+        </author>
+        <link rel="alternate" href="https://darellanodev.github.io/blog/20250302-delete-branches/" type="text/html"/>
+        <id>https://darellanodev.github.io/blog/20250302-delete-branches/</id>
+        <summary type="html">I submitted a pull request to my friend&#x27;s GitHub repository, which they have now merged. As the branch is no longer needed, I would like to delete it.</summary>
+        </entry><entry xml:lang="en">
         <title>Accessing and reviewing a friend&#x27;s branch.</title>
         <published>2025-02-22T00:00:00+00:00</published>
         <updated>2025-02-22T00:00:00+00:00</updated>
