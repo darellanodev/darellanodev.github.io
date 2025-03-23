@@ -9,8 +9,18 @@
     <link href="https://darellanodev.github.io/tags/git/atom.xml" rel="self" type="application/atom+xml"/>
     <link href="https://darellanodev.github.io"/>
     <generator uri="https://www.getzola.org/">Zola</generator>
-    <updated>2025-03-16T00:00:00+00:00</updated>
+    <updated>2025-03-23T00:00:00+00:00</updated>
     <id>https://darellanodev.github.io/tags/git/atom.xml</id><entry xml:lang="en">
+        <title>Prefixing Git commits</title>
+        <published>2025-03-23T00:00:00+00:00</published>
+        <updated>2025-03-23T00:00:00+00:00</updated>
+        <author>
+            <name>Unknown</name>
+        </author>
+        <link rel="alternate" href="https://darellanodev.github.io/blog/20250323-git-prefixes/" type="text/html"/>
+        <id>https://darellanodev.github.io/blog/20250323-git-prefixes/</id>
+        <summary type="html">Last week, I started adding prefixes to my Git commits to provide more context.</summary>
+        </entry><entry xml:lang="en">
         <title>How to obtain the YOLO achievement on GitHub</title>
         <published>2025-03-16T00:00:00+00:00</published>
         <updated>2025-03-16T00:00:00+00:00</updated>
