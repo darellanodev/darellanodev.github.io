@@ -42,6 +42,10 @@
         <lastmod>2025-03-23</lastmod>
     </url>
     <url>
+        <loc>https://darellanodev.github.io/blog/20250331-refactor-switch/</loc>
+        <lastmod>2025-03-31</lastmod>
+    </url>
+    <url>
         <loc>https://darellanodev.github.io/blog/bookmarks/</loc>
         <lastmod>2024-07-20</lastmod>
     </url>
@@ -77,6 +81,9 @@
     </url>
     <url>
         <loc>https://darellanodev.github.io/blog/page/3/</loc>
+    </url>
+    <url>
+        <loc>https://darellanodev.github.io/blog/page/4/</loc>
     </url>
     <url>
         <loc>https://darellanodev.github.io/blog/svgutilities/</loc>
@@ -154,10 +161,16 @@
         <loc>https://darellanodev.github.io/tags/quotes/</loc>
     </url>
     <url>
+        <loc>https://darellanodev.github.io/tags/refactor/</loc>
+    </url>
+    <url>
         <loc>https://darellanodev.github.io/tags/showcase/</loc>
     </url>
     <url>
         <loc>https://darellanodev.github.io/tags/svg/</loc>
+    </url>
+    <url>
+        <loc>https://darellanodev.github.io/tags/typescript/</loc>
     </url>
     <url>
         <loc>https://darellanodev.github.io/tags/vim/</loc>

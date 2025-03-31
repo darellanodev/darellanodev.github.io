@@ -1,0 +1,455 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="base" content="https://darellanodev.github.io/">
+
+    
+    <title>Darellanodev • Changing a switch statement to an object-like structure</title>
+
+    
+    
+        <link rel="icon" type="image/png" href="https://darellanodev.github.io/img/seedling.png"/>
+    
+    
+        <link rel=icon href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 105 55"><text y=".7em" font-size="82">🌱</text></svg>'>
+    
+
+    
+    <link rel="alternate" type="application/atom+xml" title="Darellanodev" href="https://darellanodev.github.io/atom.xml">
+
+    
+    
+    
+        <link rel="stylesheet" href="https://darellanodev.github.io/custom_subset.css?h=6de30382822eb2c02ee0">
+    
+
+    
+        <link rel="stylesheet" href="https://darellanodev.github.io/main.css?h=7271fc37941b56d02285" />
+
+    <meta name="color-scheme" content="light dark" />
+        <meta name="theme-color" content="#087e96" />
+        <meta name="description" content="A few days ago, I saw a post on LinkedIn about a cool JavaScript refactor, and I wondered if I could apply it to one of my TypeScript projects." />
+        <meta property="og:description" content="A few days ago, I saw a post on LinkedIn about a cool JavaScript refactor, and I wondered if I could apply it to one of my TypeScript projects." />
+
+    
+        <meta name="robots" content="index, nofollow" />
+    
+
+    <meta property="og:title" content="Changing a switch statement to an object-like structure" />
+    <meta property="og:type" content="article" />
+
+    
+        
+        
+        
+
+        
+        
+            
+            
+            
+                
+            
+        
+
+        
+        <meta property="og:image" content="https://darellanodev.github.io/social_cards/index.jpg?h=d8be352f1d2fb154df81" />
+        <meta property="og:image:width" content="1400" />
+        <meta property="og:image:height" content="800" />
+        <meta name="twitter:image" content="https://darellanodev.github.io/social_cards/index.jpg?h=d8be352f1d2fb154df81" />
+        <meta name="twitter:card" content="summary_large_image" />
+    
+
+    <meta property="og:locale" content="en_GB" />
+
+    <meta property="og:url" content="https:&#x2F;&#x2F;darellanodev.github.io&#x2F;blog&#x2F;20250331-refactor-switch&#x2F;" /><meta property="og:site_name" content="Darellanodev">
+        <noscript><link rel="stylesheet" href="https://darellanodev.github.io/no_js.css"/></noscript>
+        <script type="text/javascript" src="https://darellanodev.github.io/js/initializeTheme.min.js"></script>
+        <script defer src="https://darellanodev.github.io/js/themeSwitcher.min.js"></script>
+
+
+
+
+    
+    
+
+
+
+        <script defer src="https://darellanodev.github.io/js/searchElasticlunr.min.js?h=2950d57f80c9fa78f37e"></script>
+
+        </head>
+
+
+<body>
+    <header>
+    <nav class="navbar">
+        <div class="nav-title">
+            <a href=https://darellanodev.github.io class="withoutbg">
+                <img src="https://darellanodev.github.io/img/darellanodev_logo.svg" alt="darellanodev logo">
+            </a>
+        </div>
+        <div class="nav-navs">
+            <ul>
+                
+                <li>
+                    
+                    
+
+                    <a class="nav-links no-hover-padding" href="https:&#x2F;&#x2F;github.com&#x2F;darellanodev">
+                        github
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    
+                    
+
+                    <a class="nav-links no-hover-padding"
+                        href="https://darellanodev.github.io/projects/">
+                        projects
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    
+                    
+
+                    <a class="nav-links no-hover-padding"
+                        href="https://darellanodev.github.io/artwork/">
+                        artwork
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    
+                    
+
+                    <a class="nav-links no-hover-padding"
+                        href="https://darellanodev.github.io/blog/">
+                        blog
+                    </a>
+                    
+                </li>
+                <li class="js">
+                    <div role="button" tabindex="0" id="search-button" class="search-icon interactive-icon"
+                        title="Click or press $SHORTCUT to open search" aria-label="Click or press $SHORTCUT to open search">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                            <path
+                                d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z" />
+                        </svg>
+                    </div>
+                </li>
+                
+                
+
+                <li class="theme-switcher-wrapper js"><div
+        title="Toggle dark&#x2F;light mode"
+        class="theme-switcher"
+        tabindex="0"
+        role="button"
+        aria-label="Toggle dark mode"
+        aria-pressed="false">
+    </div><div
+        title="Reset mode to default"
+        class="theme-resetter"
+        tabindex="0"
+        role="button"
+        aria-hidden="true"
+        aria-label="Reset mode to default">
+    </div>
+
+</li>
+</ul>
+        </div>
+        
+    </nav>
+</header>
+    <div class="content">
+
+        
+        
+
+
+
+
+<main>
+    <article>
+        <h1 class="article-title">
+            Changing a switch statement to an object-like structure
+        </h1>
+
+        <ul class="meta">
+            
+
+            
+                <li>
+
+
+
+
+
+    
+
+    
+        
+        
+            
+        
+    
+
+    
+    31st
+    
+        Mar 2025
+    
+
+
+</li>
+            
+
+            
+            
+                • <li title="285 words">2 min read</li>
+            •&nbsp;<li>Tags:&nbsp;</li><li><a href=https://darellanodev.github.io/tags/typescript/>TypeScript</a>,&nbsp;</li><li><a href=https://darellanodev.github.io/tags/refactor/>Refactor</a></li>
+                </ul><ul class="meta last-updated"><li>Last updated on 
+
+
+
+
+
+    
+
+    
+        
+        
+            
+        
+    
+
+    
+    31st
+    
+        Mar 2025
+    
+
+
+</li>
+                
+                
+            
+        </ul>
+
+        
+
+        
+        
+
+        <section class="body">
+            
+            
+            <p>A few days ago, I saw a post on LinkedIn showcasing a cool JavaScript refactor to convert a switch statement into an object-like structure. This approach reduces the number of lines of code and makes it more readable. I decided to apply it to my GitHub project, <a href="https://github.com/darellanodev/gif-tower-defense">Gif Tower Defense</a>, and refactored some of its switch statements.</p>
+<p><img src="https://darellanodev.github.io/blog/20250331-refactor-switch/./refactor_switch.png" alt="refactor_switch" /></p>
+<p>Before performing a refactor, I like to have a set of tests covering the code to ensure that I don’t break anything after the changes.</p>
+<p>Here’s an example of the code before the refactor:</p>
+<pre data-lang="TypeScript" class="language-TypeScript z-code"><code class="language-TypeScript" data-lang="TypeScript"><span class="z-source z-ts">    <span class="z-switch-statement z-expr z-ts"><span class="z-switch-expression z-expr z-ts"><span class="z-keyword z-control z-switch z-ts">switch</span> <span class="z-meta z-brace z-round z-ts">(</span><span class="z-variable z-other z-readwrite z-ts">direction</span><span class="z-meta z-brace z-round z-ts">)</span></span> <span class="z-switch-block z-expr z-ts"><span class="z-punctuation z-definition z-block z-ts">{</span>
+</span></span></span><span class="z-source z-ts"><span class="z-switch-statement z-expr z-ts"><span class="z-switch-block z-expr z-ts">       <span class="z-case-clause z-expr z-ts"><span class="z-keyword z-control z-switch z-ts">case</span> <span class="z-constant z-numeric z-decimal z-ts">1</span></span><span class="z-case-clause z-expr z-ts"><span class="z-punctuation z-definition z-section z-case-statement z-ts">:</span></span>
+</span></span></span><span class="z-source z-ts"><span class="z-switch-statement z-expr z-ts"><span class="z-switch-block z-expr z-ts">         <span class="z-keyword z-control z-flow z-ts">return</span> <span class="z-string z-quoted z-single z-ts"><span class="z-punctuation z-definition z-string z-begin z-ts">&#39;</span>ConstDirection.RIGHT<span class="z-punctuation z-definition z-string z-end z-ts">&#39;</span></span>
+</span></span></span><span class="z-source z-ts"><span class="z-switch-statement z-expr z-ts"><span class="z-switch-block z-expr z-ts">         <span class="z-keyword z-control z-loop z-ts">break</span>
+</span></span></span><span class="z-source z-ts"><span class="z-switch-statement z-expr z-ts"><span class="z-switch-block z-expr z-ts">       <span class="z-case-clause z-expr z-ts"><span class="z-keyword z-control z-switch z-ts">case</span> <span class="z-constant z-numeric z-decimal z-ts">2</span></span><span class="z-case-clause z-expr z-ts"><span class="z-punctuation z-definition z-section z-case-statement z-ts">:</span></span>
+</span></span></span><span class="z-source z-ts"><span class="z-switch-statement z-expr z-ts"><span class="z-switch-block z-expr z-ts">         <span class="z-keyword z-control z-flow z-ts">return</span> <span class="z-string z-quoted z-single z-ts"><span class="z-punctuation z-definition z-string z-begin z-ts">&#39;</span>ConstDirection.LEFT<span class="z-punctuation z-definition z-string z-end z-ts">&#39;</span></span>
+</span></span></span><span class="z-source z-ts"><span class="z-switch-statement z-expr z-ts"><span class="z-switch-block z-expr z-ts">         <span class="z-keyword z-control z-loop z-ts">break</span>
+</span></span></span><span class="z-source z-ts"><span class="z-switch-statement z-expr z-ts"><span class="z-switch-block z-expr z-ts">       <span class="z-case-clause z-expr z-ts"><span class="z-keyword z-control z-switch z-ts">case</span> <span class="z-constant z-numeric z-decimal z-ts">3</span></span><span class="z-case-clause z-expr z-ts"><span class="z-punctuation z-definition z-section z-case-statement z-ts">:</span></span>
+</span></span></span><span class="z-source z-ts"><span class="z-switch-statement z-expr z-ts"><span class="z-switch-block z-expr z-ts">         <span class="z-keyword z-control z-flow z-ts">return</span> <span class="z-string z-quoted z-single z-ts"><span class="z-punctuation z-definition z-string z-begin z-ts">&#39;</span>ConstDirection.DOWN<span class="z-punctuation z-definition z-string z-end z-ts">&#39;</span></span>
+</span></span></span><span class="z-source z-ts"><span class="z-switch-statement z-expr z-ts"><span class="z-switch-block z-expr z-ts">         <span class="z-keyword z-control z-loop z-ts">break</span>
+</span></span></span><span class="z-source z-ts"><span class="z-switch-statement z-expr z-ts"><span class="z-switch-block z-expr z-ts">       <span class="z-case-clause z-expr z-ts"><span class="z-keyword z-control z-switch z-ts">case</span> <span class="z-constant z-numeric z-decimal z-ts">4</span></span><span class="z-case-clause z-expr z-ts"><span class="z-punctuation z-definition z-section z-case-statement z-ts">:</span></span>
+</span></span></span><span class="z-source z-ts"><span class="z-switch-statement z-expr z-ts"><span class="z-switch-block z-expr z-ts">         <span class="z-keyword z-control z-flow z-ts">return</span> <span class="z-string z-quoted z-single z-ts"><span class="z-punctuation z-definition z-string z-begin z-ts">&#39;</span>ConstDirection.UP<span class="z-punctuation z-definition z-string z-end z-ts">&#39;</span></span>
+</span></span></span><span class="z-source z-ts"><span class="z-switch-statement z-expr z-ts"><span class="z-switch-block z-expr z-ts">         <span class="z-keyword z-control z-loop z-ts">break</span>
+</span></span></span><span class="z-source z-ts"><span class="z-switch-statement z-expr z-ts"><span class="z-switch-block z-expr z-ts">       <span class="z-case-clause z-expr z-ts"><span class="z-keyword z-control z-switch z-ts">default</span></span><span class="z-case-clause z-expr z-ts"><span class="z-punctuation z-definition z-section z-case-statement z-ts">:</span></span>
+</span></span></span><span class="z-source z-ts"><span class="z-switch-statement z-expr z-ts"><span class="z-switch-block z-expr z-ts">         <span class="z-keyword z-control z-flow z-ts">return</span> <span class="z-string z-quoted z-single z-ts"><span class="z-punctuation z-definition z-string z-begin z-ts">&#39;</span>ConstDirection.LEFT<span class="z-punctuation z-definition z-string z-end z-ts">&#39;</span></span>
+</span></span></span><span class="z-source z-ts"><span class="z-switch-statement z-expr z-ts"><span class="z-switch-block z-expr z-ts">         <span class="z-keyword z-control z-loop z-ts">break</span>
+</span></span></span><span class="z-source z-ts"><span class="z-switch-statement z-expr z-ts"><span class="z-switch-block z-expr z-ts">     </span><span class="z-punctuation z-definition z-block z-ts">}</span></span>
+</span></code></pre>
+<p>And this is the code after the refactor:</p>
+<pre data-lang="TypeScript" class="language-TypeScript z-code"><code class="language-TypeScript" data-lang="TypeScript"><span class="z-source z-ts">    <span class="z-meta z-var z-expr z-ts"><span class="z-storage z-type z-ts">const</span> <span class="z-meta z-var-single-variable z-expr z-ts"><span class="z-meta z-definition z-variable z-ts"><span class="z-variable z-other z-constant z-ts">directionMap</span></span> </span><span class="z-keyword z-operator z-assignment z-ts">=</span> <span class="z-meta z-objectliteral z-ts"><span class="z-punctuation z-definition z-block z-ts">{</span>
+</span></span></span><span class="z-source z-ts"><span class="z-meta z-var z-expr z-ts"><span class="z-meta z-objectliteral z-ts">       <span class="z-meta z-object z-member z-ts"><span class="z-meta z-object-literal z-key z-ts"><span class="z-constant z-numeric z-decimal z-ts">1</span></span></span><span class="z-meta z-object z-member z-ts"><span class="z-meta z-object-literal z-key z-ts"><span class="z-punctuation z-separator z-key-value z-ts">:</span></span> <span class="z-string z-quoted z-single z-ts"><span class="z-punctuation z-definition z-string z-begin z-ts">&#39;</span>ConstDirection.RIGHT<span class="z-punctuation z-definition z-string z-end z-ts">&#39;</span></span></span><span class="z-punctuation z-separator z-comma z-ts">,</span>
+</span></span></span><span class="z-source z-ts"><span class="z-meta z-var z-expr z-ts"><span class="z-meta z-objectliteral z-ts">       <span class="z-meta z-object z-member z-ts"><span class="z-meta z-object-literal z-key z-ts"><span class="z-constant z-numeric z-decimal z-ts">2</span></span></span><span class="z-meta z-object z-member z-ts"><span class="z-meta z-object-literal z-key z-ts"><span class="z-punctuation z-separator z-key-value z-ts">:</span></span> <span class="z-string z-quoted z-single z-ts"><span class="z-punctuation z-definition z-string z-begin z-ts">&#39;</span>ConstDirection.LEFT<span class="z-punctuation z-definition z-string z-end z-ts">&#39;</span></span></span><span class="z-punctuation z-separator z-comma z-ts">,</span>
+</span></span></span><span class="z-source z-ts"><span class="z-meta z-var z-expr z-ts"><span class="z-meta z-objectliteral z-ts">       <span class="z-meta z-object z-member z-ts"><span class="z-meta z-object-literal z-key z-ts"><span class="z-constant z-numeric z-decimal z-ts">3</span></span></span><span class="z-meta z-object z-member z-ts"><span class="z-meta z-object-literal z-key z-ts"><span class="z-punctuation z-separator z-key-value z-ts">:</span></span> <span class="z-string z-quoted z-single z-ts"><span class="z-punctuation z-definition z-string z-begin z-ts">&#39;</span>ConstDirection.DOWN<span class="z-punctuation z-definition z-string z-end z-ts">&#39;</span></span></span><span class="z-punctuation z-separator z-comma z-ts">,</span>
+</span></span></span><span class="z-source z-ts"><span class="z-meta z-var z-expr z-ts"><span class="z-meta z-objectliteral z-ts">       <span class="z-meta z-object z-member z-ts"><span class="z-meta z-object-literal z-key z-ts"><span class="z-constant z-numeric z-decimal z-ts">4</span></span></span><span class="z-meta z-object z-member z-ts"><span class="z-meta z-object-literal z-key z-ts"><span class="z-punctuation z-separator z-key-value z-ts">:</span></span> <span class="z-string z-quoted z-single z-ts"><span class="z-punctuation z-definition z-string z-begin z-ts">&#39;</span>ConstDirection.UP<span class="z-punctuation z-definition z-string z-end z-ts">&#39;</span></span></span><span class="z-punctuation z-separator z-comma z-ts">,</span>
+</span></span></span><span class="z-source z-ts"><span class="z-meta z-var z-expr z-ts"><span class="z-meta z-objectliteral z-ts">     <span class="z-punctuation z-definition z-block z-ts">}</span></span></span>
+</span><span class="z-source z-ts">     <span class="z-keyword z-control z-flow z-ts">return</span> <span class="z-meta z-brace z-round z-ts">(</span>
+</span><span class="z-source z-ts">       <span class="z-meta z-brace z-round z-ts">(</span><span class="z-variable z-other z-readwrite z-ts">directionMap</span> <span class="z-keyword z-control z-as z-ts">as</span> <span class="z-entity z-name z-type z-ts">Record</span><span class="z-meta z-type z-parameters z-ts"><span class="z-punctuation z-definition z-typeparameters z-begin z-ts">&lt;</span></span><span class="z-meta z-type z-parameters z-ts"><span class="z-support z-type z-primitive z-ts">number</span><span class="z-punctuation z-separator z-comma z-ts">,</span> <span class="z-support z-type z-primitive z-ts">string</span></span><span class="z-meta z-type z-parameters z-ts"><span class="z-punctuation z-definition z-typeparameters z-end z-ts">&gt;</span></span><span class="z-meta z-brace z-round z-ts">)</span><span class="z-meta z-array z-literal z-ts"><span class="z-meta z-brace z-square z-ts">[</span><span class="z-variable z-other z-readwrite z-ts">direction</span><span class="z-meta z-brace z-square z-ts">]</span></span> <span class="z-keyword z-operator z-logical z-ts">||</span>
+</span><span class="z-source z-ts">       <span class="z-string z-quoted z-single z-ts"><span class="z-punctuation z-definition z-string z-begin z-ts">&#39;</span>ConstDirection.LEFT<span class="z-punctuation z-definition z-string z-end z-ts">&#39;</span></span>
+</span><span class="z-source z-ts">     <span class="z-meta z-brace z-round z-ts">)</span>
+</span></code></pre>
+<p>I also learned that you can use brackets in object keys to create expressions that evaluate to the returned values. For example:</p>
+<p>Here’s the code before refactoring:</p>
+<pre data-lang="TypeScript" class="language-TypeScript z-code"><code class="language-TypeScript" data-lang="TypeScript"><span class="z-source z-ts">    <span class="z-meta z-var z-expr z-ts"><span class="z-storage z-type z-ts">let</span> <span class="z-meta z-var-single-variable z-expr z-ts"><span class="z-meta z-definition z-variable z-ts"><span class="z-variable z-other z-readwrite z-ts">canBuy</span></span> </span><span class="z-keyword z-operator z-assignment z-ts">=</span> <span class="z-constant z-language z-boolean z-false z-ts">false</span></span>
+</span><span class="z-source z-ts">
+</span><span class="z-source z-ts">     <span class="z-switch-statement z-expr z-ts"><span class="z-switch-expression z-expr z-ts"><span class="z-keyword z-control z-switch z-ts">switch</span> <span class="z-meta z-brace z-round z-ts">(</span><span class="z-variable z-other z-readwrite z-ts">towerId</span><span class="z-meta z-brace z-round z-ts">)</span></span> <span class="z-switch-block z-expr z-ts"><span class="z-punctuation z-definition z-block z-ts">{</span>
+</span></span></span><span class="z-source z-ts"><span class="z-switch-statement z-expr z-ts"><span class="z-switch-block z-expr z-ts">       <span class="z-case-clause z-expr z-ts"><span class="z-keyword z-control z-switch z-ts">case</span> <span class="z-variable z-other z-object z-ts">TowerGreen</span><span class="z-punctuation z-accessor z-ts">.</span><span class="z-variable z-other z-constant z-property z-ts">ID</span></span><span class="z-case-clause z-expr z-ts"><span class="z-punctuation z-definition z-section z-case-statement z-ts">:</span></span>
+</span></span></span><span class="z-source z-ts"><span class="z-switch-statement z-expr z-ts"><span class="z-switch-block z-expr z-ts">         <span class="z-variable z-other z-readwrite z-ts">canBuy</span> <span class="z-keyword z-operator z-assignment z-ts">=</span> <span class="z-variable z-language z-this z-ts">this</span><span class="z-punctuation z-accessor z-ts">.</span><span class="z-variable z-other z-property z-ts">money</span> <span class="z-keyword z-operator z-relational z-ts">&gt;=</span> <span class="z-variable z-other z-object z-ts">TowerGreen</span><span class="z-punctuation z-accessor z-ts">.</span><span class="z-variable z-other z-constant z-property z-ts">COST_UPGRADE</span><span class="z-meta z-array z-literal z-ts"><span class="z-meta z-brace z-square z-ts">[</span><span class="z-variable z-other z-readwrite z-ts">upgradeLevel</span><span class="z-meta z-brace z-square z-ts">]</span></span>
+</span></span></span><span class="z-source z-ts"><span class="z-switch-statement z-expr z-ts"><span class="z-switch-block z-expr z-ts">         <span class="z-keyword z-control z-loop z-ts">break</span>
+</span></span></span><span class="z-source z-ts"><span class="z-switch-statement z-expr z-ts"><span class="z-switch-block z-expr z-ts">       <span class="z-case-clause z-expr z-ts"><span class="z-keyword z-control z-switch z-ts">case</span> <span class="z-variable z-other z-object z-ts">TowerRed</span><span class="z-punctuation z-accessor z-ts">.</span><span class="z-variable z-other z-constant z-property z-ts">ID</span></span><span class="z-case-clause z-expr z-ts"><span class="z-punctuation z-definition z-section z-case-statement z-ts">:</span></span>
+</span></span></span><span class="z-source z-ts"><span class="z-switch-statement z-expr z-ts"><span class="z-switch-block z-expr z-ts">         <span class="z-variable z-other z-readwrite z-ts">canBuy</span> <span class="z-keyword z-operator z-assignment z-ts">=</span> <span class="z-variable z-language z-this z-ts">this</span><span class="z-punctuation z-accessor z-ts">.</span><span class="z-variable z-other z-property z-ts">money</span> <span class="z-keyword z-operator z-relational z-ts">&gt;=</span> <span class="z-variable z-other z-object z-ts">TowerRed</span><span class="z-punctuation z-accessor z-ts">.</span><span class="z-variable z-other z-constant z-property z-ts">COST_UPGRADE</span><span class="z-meta z-array z-literal z-ts"><span class="z-meta z-brace z-square z-ts">[</span><span class="z-variable z-other z-readwrite z-ts">upgradeLevel</span><span class="z-meta z-brace z-square z-ts">]</span></span>
+</span></span></span><span class="z-source z-ts"><span class="z-switch-statement z-expr z-ts"><span class="z-switch-block z-expr z-ts">         <span class="z-keyword z-control z-loop z-ts">break</span>
+</span></span></span><span class="z-source z-ts"><span class="z-switch-statement z-expr z-ts"><span class="z-switch-block z-expr z-ts">       <span class="z-case-clause z-expr z-ts"><span class="z-keyword z-control z-switch z-ts">case</span> <span class="z-variable z-other z-object z-ts">TowerYellow</span><span class="z-punctuation z-accessor z-ts">.</span><span class="z-variable z-other z-constant z-property z-ts">ID</span></span><span class="z-case-clause z-expr z-ts"><span class="z-punctuation z-definition z-section z-case-statement z-ts">:</span></span>
+</span></span></span><span class="z-source z-ts"><span class="z-switch-statement z-expr z-ts"><span class="z-switch-block z-expr z-ts">         <span class="z-variable z-other z-readwrite z-ts">canBuy</span> <span class="z-keyword z-operator z-assignment z-ts">=</span> <span class="z-variable z-language z-this z-ts">this</span><span class="z-punctuation z-accessor z-ts">.</span><span class="z-variable z-other z-property z-ts">money</span> <span class="z-keyword z-operator z-relational z-ts">&gt;=</span> <span class="z-variable z-other z-object z-ts">TowerYellow</span><span class="z-punctuation z-accessor z-ts">.</span><span class="z-variable z-other z-constant z-property z-ts">COST_UPGRADE</span><span class="z-meta z-array z-literal z-ts"><span class="z-meta z-brace z-square z-ts">[</span><span class="z-variable z-other z-readwrite z-ts">upgradeLevel</span><span class="z-meta z-brace z-square z-ts">]</span></span>
+</span></span></span><span class="z-source z-ts"><span class="z-switch-statement z-expr z-ts"><span class="z-switch-block z-expr z-ts">         <span class="z-keyword z-control z-loop z-ts">break</span>
+</span></span></span><span class="z-source z-ts"><span class="z-switch-statement z-expr z-ts"><span class="z-switch-block z-expr z-ts">
+</span></span></span><span class="z-source z-ts"><span class="z-switch-statement z-expr z-ts"><span class="z-switch-block z-expr z-ts">       <span class="z-case-clause z-expr z-ts"><span class="z-keyword z-control z-switch z-ts">default</span></span><span class="z-case-clause z-expr z-ts"><span class="z-punctuation z-definition z-section z-case-statement z-ts">:</span></span>
+</span></span></span><span class="z-source z-ts"><span class="z-switch-statement z-expr z-ts"><span class="z-switch-block z-expr z-ts">         <span class="z-keyword z-control z-loop z-ts">break</span>
+</span></span></span><span class="z-source z-ts"><span class="z-switch-statement z-expr z-ts"><span class="z-switch-block z-expr z-ts">     </span><span class="z-punctuation z-definition z-block z-ts">}</span></span>
+</span><span class="z-source z-ts">
+</span><span class="z-source z-ts">     <span class="z-keyword z-control z-flow z-ts">return</span> <span class="z-variable z-other z-readwrite z-ts">canBuy</span>
+</span></code></pre>
+<p>And here’s the equivalent code after the refactor (here you can view the brackets in object keys):</p>
+<pre data-lang="TypeScript" class="language-TypeScript z-code"><code class="language-TypeScript" data-lang="TypeScript"><span class="z-source z-ts">    <span class="z-meta z-var z-expr z-ts"><span class="z-storage z-type z-ts">const</span> <span class="z-meta z-var-single-variable z-expr z-ts"><span class="z-meta z-definition z-variable z-ts"><span class="z-variable z-other z-constant z-ts">towerCosts</span></span> </span><span class="z-keyword z-operator z-assignment z-ts">=</span> <span class="z-meta z-objectliteral z-ts"><span class="z-punctuation z-definition z-block z-ts">{</span>
+</span></span></span><span class="z-source z-ts"><span class="z-meta z-var z-expr z-ts"><span class="z-meta z-objectliteral z-ts">       <span class="z-meta z-object z-member z-ts"><span class="z-meta z-object-literal z-key z-ts"><span class="z-meta z-array z-literal z-ts"><span class="z-meta z-brace z-square z-ts">[</span><span class="z-variable z-other z-object z-ts">TowerGreen</span><span class="z-punctuation z-accessor z-ts">.</span><span class="z-variable z-other z-constant z-property z-ts">ID</span><span class="z-meta z-brace z-square z-ts">]</span></span></span></span><span class="z-meta z-object z-member z-ts"><span class="z-meta z-object-literal z-key z-ts"><span class="z-punctuation z-separator z-key-value z-ts">:</span></span> <span class="z-variable z-other z-object z-ts">TowerGreen</span><span class="z-punctuation z-accessor z-ts">.</span><span class="z-variable z-other z-constant z-property z-ts">COST_UPGRADE</span></span><span class="z-punctuation z-separator z-comma z-ts">,</span>
+</span></span></span><span class="z-source z-ts"><span class="z-meta z-var z-expr z-ts"><span class="z-meta z-objectliteral z-ts">       <span class="z-meta z-object z-member z-ts"><span class="z-meta z-object-literal z-key z-ts"><span class="z-meta z-array z-literal z-ts"><span class="z-meta z-brace z-square z-ts">[</span><span class="z-variable z-other z-object z-ts">TowerRed</span><span class="z-punctuation z-accessor z-ts">.</span><span class="z-variable z-other z-constant z-property z-ts">ID</span><span class="z-meta z-brace z-square z-ts">]</span></span></span></span><span class="z-meta z-object z-member z-ts"><span class="z-meta z-object-literal z-key z-ts"><span class="z-punctuation z-separator z-key-value z-ts">:</span></span> <span class="z-variable z-other z-object z-ts">TowerRed</span><span class="z-punctuation z-accessor z-ts">.</span><span class="z-variable z-other z-constant z-property z-ts">COST_UPGRADE</span></span><span class="z-punctuation z-separator z-comma z-ts">,</span>
+</span></span></span><span class="z-source z-ts"><span class="z-meta z-var z-expr z-ts"><span class="z-meta z-objectliteral z-ts">       <span class="z-meta z-object z-member z-ts"><span class="z-meta z-object-literal z-key z-ts"><span class="z-meta z-array z-literal z-ts"><span class="z-meta z-brace z-square z-ts">[</span><span class="z-variable z-other z-object z-ts">TowerYellow</span><span class="z-punctuation z-accessor z-ts">.</span><span class="z-variable z-other z-constant z-property z-ts">ID</span><span class="z-meta z-brace z-square z-ts">]</span></span></span></span><span class="z-meta z-object z-member z-ts"><span class="z-meta z-object-literal z-key z-ts"><span class="z-punctuation z-separator z-key-value z-ts">:</span></span> <span class="z-variable z-other z-object z-ts">TowerYellow</span><span class="z-punctuation z-accessor z-ts">.</span><span class="z-variable z-other z-constant z-property z-ts">COST_UPGRADE</span></span><span class="z-punctuation z-separator z-comma z-ts">,</span>
+</span></span></span><span class="z-source z-ts"><span class="z-meta z-var z-expr z-ts"><span class="z-meta z-objectliteral z-ts">     <span class="z-punctuation z-definition z-block z-ts">}</span></span></span>
+</span><span class="z-source z-ts">    <span class="z-meta z-var z-expr z-ts"><span class="z-storage z-type z-ts">const</span> <span class="z-meta z-var-single-variable z-expr z-ts"><span class="z-meta z-definition z-variable z-ts"><span class="z-variable z-other z-constant z-ts">cost</span></span> </span><span class="z-keyword z-operator z-assignment z-ts">=</span> <span class="z-variable z-other z-readwrite z-ts">towerCosts</span><span class="z-meta z-array z-literal z-ts"><span class="z-meta z-brace z-square z-ts">[</span><span class="z-variable z-other z-readwrite z-ts">towerId</span><span class="z-meta z-brace z-square z-ts">]</span></span><span class="z-punctuation z-accessor z-optional z-ts">?.</span><span class="z-meta z-array z-literal z-ts"><span class="z-meta z-brace z-square z-ts">[</span><span class="z-variable z-other z-readwrite z-ts">upgradeLevel</span><span class="z-meta z-brace z-square z-ts">]</span></span></span>
+</span><span class="z-source z-ts">
+</span><span class="z-source z-ts">     <span class="z-keyword z-control z-conditional z-ts">if</span> <span class="z-meta z-brace z-round z-ts">(</span><span class="z-variable z-other z-readwrite z-ts">cost</span> <span class="z-keyword z-operator z-comparison z-ts">===</span> <span class="z-constant z-language z-undefined z-ts">undefined</span><span class="z-meta z-brace z-round z-ts">)</span> <span class="z-meta z-block z-ts"><span class="z-punctuation z-definition z-block z-ts">{</span>
+</span></span><span class="z-source z-ts"><span class="z-meta z-block z-ts">       <span class="z-keyword z-control z-trycatch z-ts">throw</span> <span class="z-new z-expr z-ts"><span class="z-keyword z-operator z-new z-ts">new</span> <span class="z-entity z-name z-type z-ts">Error</span><span class="z-meta z-brace z-round z-ts">(</span><span class="z-string z-template z-ts"><span class="z-punctuation z-definition z-string z-template z-begin z-ts">`</span>Unknown tower id: <span class="z-meta z-template z-expression z-ts"><span class="z-punctuation z-definition z-template-expression z-begin z-ts">${</span></span><span class="z-meta z-template z-expression z-ts"><span class="z-meta z-embedded z-line z-ts"><span class="z-variable z-other z-readwrite z-ts">towerId</span></span><span class="z-punctuation z-definition z-template-expression z-end z-ts">}</span></span><span class="z-punctuation z-definition z-string z-template z-end z-ts">`</span></span><span class="z-meta z-brace z-round z-ts">)</span></span>
+</span></span><span class="z-source z-ts"><span class="z-meta z-block z-ts">     <span class="z-punctuation z-definition z-block z-ts">}</span></span>
+</span><span class="z-source z-ts">
+</span><span class="z-source z-ts">     <span class="z-keyword z-control z-flow z-ts">return</span> <span class="z-variable z-language z-this z-ts">this</span><span class="z-punctuation z-accessor z-ts">.</span><span class="z-variable z-other z-property z-ts">money</span> <span class="z-keyword z-operator z-relational z-ts">&gt;=</span> <span class="z-variable z-other z-readwrite z-ts">cost</span>
+</span></code></pre>
+<p>In <a href="https://github.com/darellanodev/gif-tower-defense/commit/3dc02a78b23d201ff4441e6237ba0d14d965e218">this commit</a>, you can see other changes I made related to this refactor, including the examples mentioned in this post.</p>
+
+        </section>
+
+        
+        
+        
+        
+
+        
+            
+            
+            
+
+            
+        
+            
+            
+            
+
+            
+        
+            
+            
+            
+
+            
+        
+            
+            
+            
+
+            
+        
+
+        
+        
+
+        
+        
+
+    </article>
+</main>
+
+
+<span id="copy-success" class="hidden">
+        Copied!
+    </span>
+    <span id="copy-init" class="hidden">
+        Copy code to clipboard
+    </span>
+    <script defer src="https://darellanodev.github.io/js/copyCodeToClipboard.min.js"></script><script defer src="https://darellanodev.github.io/js/footnoteBacklinks.min.js"></script>
+    </div>
+    <footer>
+    <section>
+        <nav class="socials nav-navs">
+            <ul>
+                <li>
+                    <a class="nav-links no-hover-padding social" rel=" me" 
+                        href=https://github.com/darellanodev>
+                        <img alt=github title=github
+                            src="https://darellanodev.github.io/social_icons/github.svg">
+                    </a>
+                </li>
+                
+            </ul>
+            
+        </nav>
+
+        
+        <nav class="nav-navs">
+            <small>
+                <ul>
+                    
+                    <li><a class="nav-links no-hover-padding" href="https:&#x2F;&#x2F;darellanodev.github.io&#x2F;privacy&#x2F;">
+                            privacy policy
+                        </a>
+                    </li>
+                    
+                </ul>
+            </small>
+            
+        </nav>
+
+        <div class="credits">
+            <small>
+                
+
+                
+                Powered by
+                <a rel=""  href="https://www.getzola.org">Zola</a>
+                &amp;
+                <a rel=""  href="https://github.com/welpo/tabi">tabi</a>
+
+
+            </small>
+        </div>
+    </section>
+
+    <div id="searchModal" class="search-modal js" role="dialog" aria-labelledby="modalTitle">
+    <h1 id="modalTitle" class="visually-hidden">Search</h1>
+    <div id="modal-content">
+        <div id="searchBar">
+            <div class="search-icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                    <path d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"/>
+                </svg>
+            </div>
+            <input id="searchInput" role="combobox" autocomplete="off" spellcheck="false" aria-expanded="false" aria-controls="results-container" placeholder="Search…"/>
+            <div id="clear-search" class="close-icon interactive-icon" tabindex="0" role="button" title="Clear search">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/>
+                </svg>
+            </div>
+        </div>
+        <div id="results-container">
+            <div id="results-info"><span id="zero_results"> No results</span>
+                <span id="one_results"> $NUMBER result</span>
+                <span id="many_results"> $NUMBER results</span><span id="two_results"> $NUMBER results</span>
+                <span id="few_results"> $NUMBER results</span>
+            </div>
+        <div id="results" role="listbox"></div>
+    </div>
+</div>
+</footer>
+</body>
+
+</html>
