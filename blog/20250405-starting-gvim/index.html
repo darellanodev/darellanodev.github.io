@@ -1,0 +1,420 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="base" content="https://darellanodev.github.io/">
+
+    
+    <title>Darellanodev • Installing and starting to use Vim with gVim in Windows</title>
+
+    
+    
+        <link rel="icon" type="image/png" href="https://darellanodev.github.io/img/seedling.png"/>
+    
+    
+        <link rel=icon href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 105 55"><text y=".7em" font-size="82">🌱</text></svg>'>
+    
+
+    
+    <link rel="alternate" type="application/atom+xml" title="Darellanodev" href="https://darellanodev.github.io/atom.xml">
+
+    
+    
+    
+        <link rel="stylesheet" href="https://darellanodev.github.io/custom_subset.css?h=6de30382822eb2c02ee0">
+    
+
+    
+        <link rel="stylesheet" href="https://darellanodev.github.io/main.css?h=7271fc37941b56d02285" />
+
+    <meta name="color-scheme" content="light dark" />
+        <meta name="theme-color" content="#087e96" />
+        <meta name="description" content="Last year, I started using the Vim extension for VSCode to speed up my coding workflow. Now, in parallel, I want to try gVim on Windows to practice Vim more effectively." />
+        <meta property="og:description" content="Last year, I started using the Vim extension for VSCode to speed up my coding workflow. Now, in parallel, I want to try gVim on Windows to practice Vim more effectively." />
+
+    
+        <meta name="robots" content="index, nofollow" />
+    
+
+    <meta property="og:title" content="Installing and starting to use Vim with gVim in Windows" />
+    <meta property="og:type" content="article" />
+
+    
+        
+        
+        
+
+        
+        
+            
+            
+            
+                
+            
+        
+
+        
+        <meta property="og:image" content="https://darellanodev.github.io/social_cards/index.jpg?h=d8be352f1d2fb154df81" />
+        <meta property="og:image:width" content="1400" />
+        <meta property="og:image:height" content="800" />
+        <meta name="twitter:image" content="https://darellanodev.github.io/social_cards/index.jpg?h=d8be352f1d2fb154df81" />
+        <meta name="twitter:card" content="summary_large_image" />
+    
+
+    <meta property="og:locale" content="en_GB" />
+
+    <meta property="og:url" content="https:&#x2F;&#x2F;darellanodev.github.io&#x2F;blog&#x2F;20250405-starting-gvim&#x2F;" /><meta property="og:site_name" content="Darellanodev">
+        <noscript><link rel="stylesheet" href="https://darellanodev.github.io/no_js.css"/></noscript>
+        <script type="text/javascript" src="https://darellanodev.github.io/js/initializeTheme.min.js"></script>
+        <script defer src="https://darellanodev.github.io/js/themeSwitcher.min.js"></script>
+
+
+
+
+    
+    
+
+
+
+        <script defer src="https://darellanodev.github.io/js/searchElasticlunr.min.js?h=2950d57f80c9fa78f37e"></script>
+
+        </head>
+
+
+<body>
+    <header>
+    <nav class="navbar">
+        <div class="nav-title">
+            <a href=https://darellanodev.github.io class="withoutbg">
+                <img src="https://darellanodev.github.io/img/darellanodev_logo.svg" alt="darellanodev logo">
+            </a>
+        </div>
+        <div class="nav-navs">
+            <ul>
+                
+                <li>
+                    
+                    
+
+                    <a class="nav-links no-hover-padding" href="https:&#x2F;&#x2F;github.com&#x2F;darellanodev">
+                        github
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    
+                    
+
+                    <a class="nav-links no-hover-padding"
+                        href="https://darellanodev.github.io/projects/">
+                        projects
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    
+                    
+
+                    <a class="nav-links no-hover-padding"
+                        href="https://darellanodev.github.io/artwork/">
+                        artwork
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    
+                    
+
+                    <a class="nav-links no-hover-padding"
+                        href="https://darellanodev.github.io/blog/">
+                        blog
+                    </a>
+                    
+                </li>
+                <li class="js">
+                    <div role="button" tabindex="0" id="search-button" class="search-icon interactive-icon"
+                        title="Click or press $SHORTCUT to open search" aria-label="Click or press $SHORTCUT to open search">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                            <path
+                                d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z" />
+                        </svg>
+                    </div>
+                </li>
+                
+                
+
+                <li class="theme-switcher-wrapper js"><div
+        title="Toggle dark&#x2F;light mode"
+        class="theme-switcher"
+        tabindex="0"
+        role="button"
+        aria-label="Toggle dark mode"
+        aria-pressed="false">
+    </div><div
+        title="Reset mode to default"
+        class="theme-resetter"
+        tabindex="0"
+        role="button"
+        aria-hidden="true"
+        aria-label="Reset mode to default">
+    </div>
+
+</li>
+</ul>
+        </div>
+        
+    </nav>
+</header>
+    <div class="content">
+
+        
+        
+
+
+
+
+<main>
+    <article>
+        <h1 class="article-title">
+            Installing and starting to use Vim with gVim in Windows
+        </h1>
+
+        <ul class="meta">
+            
+
+            
+                <li>
+
+
+
+
+
+    
+
+    
+        
+        
+            
+        
+    
+
+    
+    5th
+    
+        Apr 2025
+    
+
+
+</li>
+            
+
+            
+            
+                • <li title="300 words">2 min read</li>
+            •&nbsp;<li>Tags:&nbsp;</li><li><a href=https://darellanodev.github.io/tags/vim/>Vim</a>,&nbsp;</li><li><a href=https://darellanodev.github.io/tags/gvim/>gVim</a></li>
+                </ul><ul class="meta last-updated"><li>Last updated on 
+
+
+
+
+
+    
+
+    
+        
+        
+            
+        
+    
+
+    
+    5th
+    
+        Apr 2025
+    
+
+
+</li>
+                
+                
+            
+        </ul>
+
+        
+
+        
+        
+
+        <section class="body">
+            
+            
+            <p>I’ve been using the Vim extension for VSCode for the past year and now I want to deepen my knowledge and practice more with Vim by using the gVim application on my Windows system.</p>
+<p><img src="https://darellanodev.github.io/blog/20250405-starting-gvim/./starting_gvim.png" alt="starting_gvim" /></p>
+<p>First I downloaded and installed gVim from the <a href="https://www.vim.org">official Vim website</a>.</p>
+<p>To enable opening gVim from the terminal (Git Bash), I added its path ’C:\Program Files\Vim\vim91' to the Windows system Path. So then I can open a gitbash terminal in a folder and open the folder with gVim:</p>
+<pre data-lang="bash" class="language-bash z-code"><code class="language-bash" data-lang="bash"><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-variable z-function z-shell">gvim</span></span><span class="z-meta z-function-call z-arguments z-shell"> .</span>
+</span></code></pre>
+<p>Next I wanted to increase the font size and change the color scheme. To do this, I cloned the <a href="https://github.com/dracula/vim.git">dracula vim</a> repository into ‘C:\Users\MyUser\vimfiles\pack\themes\start’. (The ‘pack’ directory didn’t exist prior to cloning the repository, so I created this directory and its subdirectories before cloning.)</p>
+<pre data-lang="bash" class="language-bash z-code"><code class="language-bash" data-lang="bash"><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-variable z-function z-shell">mkdir</span></span><span class="z-meta z-function-call z-arguments z-shell"> pack</span>
+</span><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-support z-function z-cd z-shell">cd</span></span><span class="z-meta z-function-call z-arguments z-shell"> pack</span>
+</span><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-variable z-function z-shell">mkdir</span></span><span class="z-meta z-function-call z-arguments z-shell"> themes</span>
+</span><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-support z-function z-cd z-shell">cd</span></span><span class="z-meta z-function-call z-arguments z-shell"> themes</span>
+</span><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-variable z-function z-shell">mkdir</span></span><span class="z-meta z-function-call z-arguments z-shell"> start</span>
+</span><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-support z-function z-cd z-shell">cd</span></span><span class="z-meta z-function-call z-arguments z-shell"> start</span>
+</span><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-variable z-function z-shell">git</span></span><span class="z-meta z-function-call z-arguments z-shell"> clone https://github.com/dracula/vim.git dracula</span>
+</span></code></pre>
+<p>Then, I created a _vimrc file in the C:\Users\MyUser\ folder with the following configuration:</p>
+<pre data-lang="vim" class="language-vim z-code"><code class="language-vim" data-lang="vim"><span class="z-source z-viml"><span class="z-support z-function z-viml">set</span> nocompatible
+</span><span class="z-source z-viml">syntax enable
+</span><span class="z-source z-viml"><span class="z-support z-function z-viml">set</span> termguicolors
+</span><span class="z-source z-viml"><span class="z-support z-function z-viml">set</span> guifont=Consola<span class="z-variable z-other z-viml">s:h14</span>
+</span><span class="z-source z-viml"><span class="z-support z-function z-viml">colorscheme</span> <span class="z-support z-function z-viml">dracula</span>
+</span></code></pre>
+<p>Additionally, I configured netrw (the native file explorer in gVim) to display as a vertical tree with 30% width. Using the leader key (default: ) combined with ‘e’, I can toggle the tree view.</p>
+<pre data-lang="vim" class="language-vim z-code"><code class="language-vim" data-lang="vim"><span class="z-source z-viml"><span class="z-support z-function z-viml">let</span> <span class="z-variable z-other z-viml">g:netrw_browse_split</span>=<span class="z-string z-quoted z-double z-viml">&quot;v&quot;</span>
+</span><span class="z-source z-viml"><span class="z-support z-function z-viml">let</span> <span class="z-variable z-other z-viml">g:netrw_altv</span>=<span class="z-constant z-numeric z-integer">1</span>
+</span><span class="z-source z-viml"><span class="z-support z-function z-viml">let</span> <span class="z-variable z-other z-viml">g:netrw_winsize</span>=<span class="z-constant z-numeric z-integer">30</span>
+</span><span class="z-source z-viml"><span class="z-support z-function z-viml">let</span> <span class="z-variable z-other z-viml">g:netrw_liststyle</span>=<span class="z-constant z-numeric z-integer">3</span>
+</span><span class="z-source z-viml"><span class="z-support z-function z-viml">nnoremap</span> <span class="z-support z-type z-viml">&lt;Leader&gt;</span>e :Lexplore<span class="z-support z-type z-viml">&lt;CR&gt;</span>
+</span></code></pre>
+<p>Finally, I mapped keys for sharing the Windows clipboard. This allows me to use Ctrl+C to copy selected text from gVim to the Windows clipboard and Ctrl+V to paste text from the clipboard into gVim:</p>
+<pre data-lang="vim" class="language-vim z-code"><code class="language-vim" data-lang="vim"><span class="z-source z-viml"><span class="z-support z-function z-viml">nnoremap</span> <span class="z-support z-type z-viml">&lt;Leader&gt;</span>e :Lexplore<span class="z-support z-type z-viml">&lt;CR&gt;</span>
+</span><span class="z-source z-viml"><span class="z-support z-function z-viml">vnoremap</span> <span class="z-support z-type z-viml">&lt;C-c&gt;</span> <span class="z-comment z-line z-quotes z-viml"><span class="z-punctuation z-definition z-comment z-vim">&quot;</span>+y
+</span></span><span class="z-source z-viml"><span class="z-support z-function z-viml">nnoremap</span> <span class="z-support z-type z-viml">&lt;C-v&gt;</span> <span class="z-comment z-line z-quotes z-viml"><span class="z-punctuation z-definition z-comment z-vim">&quot;</span>+p
+</span></span><span class="z-source z-viml"><span class="z-support z-function z-viml">inoremap</span> <span class="z-support z-type z-viml">&lt;C-v&gt;</span> <span class="z-support z-type z-viml">&lt;Esc&gt;</span><span class="z-comment z-line z-quotes z-viml"><span class="z-punctuation z-definition z-comment z-vim">&quot;</span>+pa
+</span></span></code></pre>
+
+        </section>
+
+        
+        
+        
+        
+
+        
+            
+            
+            
+
+            
+        
+            
+            
+            
+
+            
+        
+            
+            
+            
+
+            
+        
+            
+            
+            
+
+            
+        
+
+        
+        
+
+        
+        
+
+    </article>
+</main>
+
+
+<span id="copy-success" class="hidden">
+        Copied!
+    </span>
+    <span id="copy-init" class="hidden">
+        Copy code to clipboard
+    </span>
+    <script defer src="https://darellanodev.github.io/js/copyCodeToClipboard.min.js"></script><script defer src="https://darellanodev.github.io/js/footnoteBacklinks.min.js"></script>
+    </div>
+    <footer>
+    <section>
+        <nav class="socials nav-navs">
+            <ul>
+                <li>
+                    <a class="nav-links no-hover-padding social" rel=" me" 
+                        href=https://github.com/darellanodev>
+                        <img alt=github title=github
+                            src="https://darellanodev.github.io/social_icons/github.svg">
+                    </a>
+                </li>
+                
+            </ul>
+            
+        </nav>
+
+        
+        <nav class="nav-navs">
+            <small>
+                <ul>
+                    
+                    <li><a class="nav-links no-hover-padding" href="https:&#x2F;&#x2F;darellanodev.github.io&#x2F;privacy&#x2F;">
+                            privacy policy
+                        </a>
+                    </li>
+                    
+                </ul>
+            </small>
+            
+        </nav>
+
+        <div class="credits">
+            <small>
+                
+
+                
+                Powered by
+                <a rel=""  href="https://www.getzola.org">Zola</a>
+                &amp;
+                <a rel=""  href="https://github.com/welpo/tabi">tabi</a>
+
+
+            </small>
+        </div>
+    </section>
+
+    <div id="searchModal" class="search-modal js" role="dialog" aria-labelledby="modalTitle">
+    <h1 id="modalTitle" class="visually-hidden">Search</h1>
+    <div id="modal-content">
+        <div id="searchBar">
+            <div class="search-icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                    <path d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"/>
+                </svg>
+            </div>
+            <input id="searchInput" role="combobox" autocomplete="off" spellcheck="false" aria-expanded="false" aria-controls="results-container" placeholder="Search…"/>
+            <div id="clear-search" class="close-icon interactive-icon" tabindex="0" role="button" title="Clear search">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/>
+                </svg>
+            </div>
+        </div>
+        <div id="results-container">
+            <div id="results-info"><span id="zero_results"> No results</span>
+                <span id="one_results"> $NUMBER result</span>
+                <span id="many_results"> $NUMBER results</span><span id="two_results"> $NUMBER results</span>
+                <span id="few_results"> $NUMBER results</span>
+            </div>
+        <div id="results" role="listbox"></div>
+    </div>
+</div>
+</footer>
+</body>
+
+</html>

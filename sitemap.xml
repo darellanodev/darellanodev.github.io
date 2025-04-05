@@ -46,6 +46,10 @@
         <lastmod>2025-03-31</lastmod>
     </url>
     <url>
+        <loc>https://darellanodev.github.io/blog/20250405-starting-gvim/</loc>
+        <lastmod>2025-04-05</lastmod>
+    </url>
+    <url>
         <loc>https://darellanodev.github.io/blog/bookmarks/</loc>
         <lastmod>2024-07-20</lastmod>
     </url>
@@ -144,6 +148,9 @@
     </url>
     <url>
         <loc>https://darellanodev.github.io/tags/github/</loc>
+    </url>
+    <url>
+        <loc>https://darellanodev.github.io/tags/gvim/</loc>
     </url>
     <url>
         <loc>https://darellanodev.github.io/tags/gym/</loc>
