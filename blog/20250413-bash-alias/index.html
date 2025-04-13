@@ -1,0 +1,399 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="base" content="https://darellanodev.github.io/">
+
+    
+    <title>Darellanodev • Creating aliases to execute Git commands more effectively.</title>
+
+    
+    
+        <link rel="icon" type="image/png" href="https://darellanodev.github.io/img/seedling.png"/>
+    
+    
+        <link rel=icon href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 105 55"><text y=".7em" font-size="82">🌱</text></svg>'>
+    
+
+    
+    <link rel="alternate" type="application/atom+xml" title="Darellanodev" href="https://darellanodev.github.io/atom.xml">
+
+    
+    
+    
+        <link rel="stylesheet" href="https://darellanodev.github.io/custom_subset.css?h=6de30382822eb2c02ee0">
+    
+
+    
+        <link rel="stylesheet" href="https://darellanodev.github.io/main.css?h=7271fc37941b56d02285" />
+
+    <meta name="color-scheme" content="light dark" />
+        <meta name="theme-color" content="#087e96" />
+        <meta name="description" content="Last weekend, I reviewed with a friend how we could create aliases on our Windows machines to improve our daily workflow and be more efficient." />
+        <meta property="og:description" content="Last weekend, I reviewed with a friend how we could create aliases on our Windows machines to improve our daily workflow and be more efficient." />
+
+    
+        <meta name="robots" content="index, nofollow" />
+    
+
+    <meta property="og:title" content="Creating aliases to execute Git commands more effectively." />
+    <meta property="og:type" content="article" />
+
+    
+        
+        
+        
+
+        
+        
+            
+            
+            
+                
+            
+        
+
+        
+        <meta property="og:image" content="https://darellanodev.github.io/social_cards/index.jpg?h=d8be352f1d2fb154df81" />
+        <meta property="og:image:width" content="1400" />
+        <meta property="og:image:height" content="800" />
+        <meta name="twitter:image" content="https://darellanodev.github.io/social_cards/index.jpg?h=d8be352f1d2fb154df81" />
+        <meta name="twitter:card" content="summary_large_image" />
+    
+
+    <meta property="og:locale" content="en_GB" />
+
+    <meta property="og:url" content="https:&#x2F;&#x2F;darellanodev.github.io&#x2F;blog&#x2F;20250413-bash-alias&#x2F;" /><meta property="og:site_name" content="Darellanodev">
+        <noscript><link rel="stylesheet" href="https://darellanodev.github.io/no_js.css"/></noscript>
+        <script type="text/javascript" src="https://darellanodev.github.io/js/initializeTheme.min.js"></script>
+        <script defer src="https://darellanodev.github.io/js/themeSwitcher.min.js"></script>
+
+
+
+
+    
+    
+
+
+
+        <script defer src="https://darellanodev.github.io/js/searchElasticlunr.min.js?h=2950d57f80c9fa78f37e"></script>
+
+        </head>
+
+
+<body>
+    <header>
+    <nav class="navbar">
+        <div class="nav-title">
+            <a href=https://darellanodev.github.io class="withoutbg">
+                <img src="https://darellanodev.github.io/img/darellanodev_logo.svg" alt="darellanodev logo">
+            </a>
+        </div>
+        <div class="nav-navs">
+            <ul>
+                
+                <li>
+                    
+                    
+
+                    <a class="nav-links no-hover-padding" href="https:&#x2F;&#x2F;github.com&#x2F;darellanodev">
+                        github
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    
+                    
+
+                    <a class="nav-links no-hover-padding"
+                        href="https://darellanodev.github.io/projects/">
+                        projects
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    
+                    
+
+                    <a class="nav-links no-hover-padding"
+                        href="https://darellanodev.github.io/artwork/">
+                        artwork
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    
+                    
+
+                    <a class="nav-links no-hover-padding"
+                        href="https://darellanodev.github.io/blog/">
+                        blog
+                    </a>
+                    
+                </li>
+                <li class="js">
+                    <div role="button" tabindex="0" id="search-button" class="search-icon interactive-icon"
+                        title="Click or press $SHORTCUT to open search" aria-label="Click or press $SHORTCUT to open search">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                            <path
+                                d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z" />
+                        </svg>
+                    </div>
+                </li>
+                
+                
+
+                <li class="theme-switcher-wrapper js"><div
+        title="Toggle dark&#x2F;light mode"
+        class="theme-switcher"
+        tabindex="0"
+        role="button"
+        aria-label="Toggle dark mode"
+        aria-pressed="false">
+    </div><div
+        title="Reset mode to default"
+        class="theme-resetter"
+        tabindex="0"
+        role="button"
+        aria-hidden="true"
+        aria-label="Reset mode to default">
+    </div>
+
+</li>
+</ul>
+        </div>
+        
+    </nav>
+</header>
+    <div class="content">
+
+        
+        
+
+
+
+
+<main>
+    <article>
+        <h1 class="article-title">
+            Creating aliases to execute Git commands more effectively.
+        </h1>
+
+        <ul class="meta">
+            
+
+            
+                <li>
+
+
+
+
+
+    
+
+    
+        
+    
+
+    
+    13th
+    
+        Apr 2025
+    
+
+
+</li>
+            
+
+            
+            
+                • <li title="221 words">2 min read</li>
+            •&nbsp;<li>Tags:&nbsp;</li><li><a href=https://darellanodev.github.io/tags/gitbash/>gitbash</a>,&nbsp;</li><li><a href=https://darellanodev.github.io/tags/bash/>bash</a>,&nbsp;</li><li><a href=https://darellanodev.github.io/tags/bashrc/>bashrc</a></li>
+                </ul><ul class="meta last-updated"><li>Last updated on 
+
+
+
+
+
+    
+
+    
+        
+    
+
+    
+    13th
+    
+        Apr 2025
+    
+
+
+</li>
+                
+                
+            
+        </ul>
+
+        
+
+        
+        
+
+        <section class="body">
+            
+            
+            <p>Last week, I discussed with a friend how we can use the Git Bash console to create simple aliases that make executing Git commands more convenient and efficient. I use Visual Studio Code on my Windows machine, and the default terminal in it is Git Bash.</p>
+<p>To start, I opened my user directory by pressing <code>Win+R</code> and typing <code>%USERPROFILE%</code>.</p>
+<p>Next, I created a <code>.bashrc</code> file and added the following lines:</p>
+<pre data-lang="bash" class="language-bash z-code"><code class="language-bash" data-lang="bash"><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-support z-function z-alias z-shell">alias</span> <span class="z-entity z-name z-function z-alias z-shell">gs</span><span class="z-keyword z-operator z-assignment z-shell">=</span><span class="z-string z-unquoted z-shell"><span class="z-string z-quoted z-single z-shell"><span class="z-punctuation z-definition z-string z-begin z-shell">&#39;</span>git status<span class="z-punctuation z-definition z-string z-end z-shell">&#39;</span></span></span></span>
+</span><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-support z-function z-alias z-shell">alias</span> <span class="z-entity z-name z-function z-alias z-shell">gaa</span><span class="z-keyword z-operator z-assignment z-shell">=</span><span class="z-string z-unquoted z-shell"><span class="z-string z-quoted z-single z-shell"><span class="z-punctuation z-definition z-string z-begin z-shell">&#39;</span>git add --all<span class="z-punctuation z-definition z-string z-end z-shell">&#39;</span></span></span></span>
+</span><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-support z-function z-alias z-shell">alias</span> <span class="z-entity z-name z-function z-alias z-shell">gcm</span><span class="z-keyword z-operator z-assignment z-shell">=</span><span class="z-string z-unquoted z-shell"><span class="z-string z-quoted z-single z-shell"><span class="z-punctuation z-definition z-string z-begin z-shell">&#39;</span>git commit -m<span class="z-punctuation z-definition z-string z-end z-shell">&#39;</span></span></span></span>
+</span><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-support z-function z-alias z-shell">alias</span> <span class="z-entity z-name z-function z-alias z-shell">gpl</span><span class="z-keyword z-operator z-assignment z-shell">=</span><span class="z-string z-unquoted z-shell"><span class="z-string z-quoted z-single z-shell"><span class="z-punctuation z-definition z-string z-begin z-shell">&#39;</span>git pull<span class="z-punctuation z-definition z-string z-end z-shell">&#39;</span></span></span></span>
+</span><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-support z-function z-alias z-shell">alias</span> <span class="z-entity z-name z-function z-alias z-shell">gps</span><span class="z-keyword z-operator z-assignment z-shell">=</span><span class="z-string z-unquoted z-shell"><span class="z-string z-quoted z-single z-shell"><span class="z-punctuation z-definition z-string z-begin z-shell">&#39;</span>git push<span class="z-punctuation z-definition z-string z-end z-shell">&#39;</span></span></span></span>
+</span><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-support z-function z-alias z-shell">alias</span> <span class="z-entity z-name z-function z-alias z-shell">amend</span><span class="z-keyword z-operator z-assignment z-shell">=</span><span class="z-string z-unquoted z-shell"><span class="z-string z-quoted z-single z-shell"><span class="z-punctuation z-definition z-string z-begin z-shell">&#39;</span>git commit --amend --no-edit<span class="z-punctuation z-definition z-string z-end z-shell">&#39;</span></span></span></span>
+</span><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-support z-function z-alias z-shell">alias</span> <span class="z-entity z-name z-function z-alias z-shell">amendm</span><span class="z-keyword z-operator z-assignment z-shell">=</span><span class="z-string z-unquoted z-shell"><span class="z-string z-quoted z-single z-shell"><span class="z-punctuation z-definition z-string z-begin z-shell">&#39;</span>git commit --amend -m<span class="z-punctuation z-definition z-string z-end z-shell">&#39;</span></span></span></span>
+</span><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-support z-function z-alias z-shell">alias</span> <span class="z-entity z-name z-function z-alias z-shell">gcb</span><span class="z-keyword z-operator z-assignment z-shell">=</span><span class="z-string z-unquoted z-shell"><span class="z-string z-quoted z-single z-shell"><span class="z-punctuation z-definition z-string z-begin z-shell">&#39;</span>git checkout -b<span class="z-punctuation z-definition z-string z-end z-shell">&#39;</span></span></span></span>
+</span><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-support z-function z-alias z-shell">alias</span> <span class="z-entity z-name z-function z-alias z-shell">gco</span><span class="z-keyword z-operator z-assignment z-shell">=</span><span class="z-string z-unquoted z-shell"><span class="z-string z-quoted z-single z-shell"><span class="z-punctuation z-definition z-string z-begin z-shell">&#39;</span>git checkout main<span class="z-punctuation z-definition z-string z-end z-shell">&#39;</span></span></span></span>
+</span><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-support z-function z-alias z-shell">alias</span> <span class="z-entity z-name z-function z-alias z-shell">gm</span><span class="z-keyword z-operator z-assignment z-shell">=</span><span class="z-string z-unquoted z-shell"><span class="z-string z-quoted z-single z-shell"><span class="z-punctuation z-definition z-string z-begin z-shell">&#39;</span>git merge<span class="z-punctuation z-definition z-string z-end z-shell">&#39;</span></span></span></span>
+</span><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-support z-function z-alias z-shell">alias</span> <span class="z-entity z-name z-function z-alias z-shell">gb</span><span class="z-keyword z-operator z-assignment z-shell">=</span><span class="z-string z-unquoted z-shell"><span class="z-string z-quoted z-single z-shell"><span class="z-punctuation z-definition z-string z-begin z-shell">&#39;</span>git branch<span class="z-punctuation z-definition z-string z-end z-shell">&#39;</span></span></span></span>
+</span><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-support z-function z-alias z-shell">alias</span> <span class="z-entity z-name z-function z-alias z-shell">gbd</span><span class="z-keyword z-operator z-assignment z-shell">=</span><span class="z-string z-unquoted z-shell"><span class="z-string z-quoted z-single z-shell"><span class="z-punctuation z-definition z-string z-begin z-shell">&#39;</span>git branch -d<span class="z-punctuation z-definition z-string z-end z-shell">&#39;</span></span></span></span>
+</span><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-support z-function z-alias z-shell">alias</span> <span class="z-entity z-name z-function z-alias z-shell">gsc</span><span class="z-keyword z-operator z-assignment z-shell">=</span><span class="z-string z-unquoted z-shell"><span class="z-string z-quoted z-single z-shell"><span class="z-punctuation z-definition z-string z-begin z-shell">&#39;</span>git switch -c<span class="z-punctuation z-definition z-string z-end z-shell">&#39;</span></span></span></span>
+</span><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-support z-function z-alias z-shell">alias</span> <span class="z-entity z-name z-function z-alias z-shell">gsm</span><span class="z-keyword z-operator z-assignment z-shell">=</span><span class="z-string z-unquoted z-shell"><span class="z-string z-quoted z-single z-shell"><span class="z-punctuation z-definition z-string z-begin z-shell">&#39;</span>git switch main<span class="z-punctuation z-definition z-string z-end z-shell">&#39;</span></span></span></span>
+</span></code></pre>
+<p>After saving the file, I closed the Git Bash terminal in VSCode and reopened it. Now, when I run the <code>alias</code> command, I can see all the aliases listed. If I ever forget an alias, I can simply execute <code>alias</code> to view them.</p>
+<p>Finally, I can now execute an alias command like <code>gaa</code> in Git Bash, which results in running the command I wrote in my .bashrc file, <code>git add --all</code>, making it easy to stage all changes across the repository.</p>
+
+        </section>
+
+        
+        
+        
+        
+
+        
+            
+            
+            
+
+            
+        
+            
+            
+            
+
+            
+        
+            
+            
+            
+
+            
+        
+            
+            
+            
+
+            
+        
+
+        
+        
+
+        
+        
+
+    </article>
+</main>
+
+
+<span id="copy-success" class="hidden">
+        Copied!
+    </span>
+    <span id="copy-init" class="hidden">
+        Copy code to clipboard
+    </span>
+    <script defer src="https://darellanodev.github.io/js/copyCodeToClipboard.min.js"></script><script defer src="https://darellanodev.github.io/js/footnoteBacklinks.min.js"></script>
+    </div>
+    <footer>
+    <section>
+        <nav class="socials nav-navs">
+            <ul>
+                <li>
+                    <a class="nav-links no-hover-padding social" rel=" me" 
+                        href=https://github.com/darellanodev>
+                        <img alt=github title=github
+                            src="https://darellanodev.github.io/social_icons/github.svg">
+                    </a>
+                </li>
+                
+            </ul>
+            
+        </nav>
+
+        
+        <nav class="nav-navs">
+            <small>
+                <ul>
+                    
+                    <li><a class="nav-links no-hover-padding" href="https:&#x2F;&#x2F;darellanodev.github.io&#x2F;privacy&#x2F;">
+                            privacy policy
+                        </a>
+                    </li>
+                    
+                </ul>
+            </small>
+            
+        </nav>
+
+        <div class="credits">
+            <small>
+                
+
+                
+                Powered by
+                <a rel=""  href="https://www.getzola.org">Zola</a>
+                &amp;
+                <a rel=""  href="https://github.com/welpo/tabi">tabi</a>
+
+
+            </small>
+        </div>
+    </section>
+
+    <div id="searchModal" class="search-modal js" role="dialog" aria-labelledby="modalTitle">
+    <h1 id="modalTitle" class="visually-hidden">Search</h1>
+    <div id="modal-content">
+        <div id="searchBar">
+            <div class="search-icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                    <path d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"/>
+                </svg>
+            </div>
+            <input id="searchInput" role="combobox" autocomplete="off" spellcheck="false" aria-expanded="false" aria-controls="results-container" placeholder="Search…"/>
+            <div id="clear-search" class="close-icon interactive-icon" tabindex="0" role="button" title="Clear search">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/>
+                </svg>
+            </div>
+        </div>
+        <div id="results-container">
+            <div id="results-info"><span id="zero_results"> No results</span>
+                <span id="one_results"> $NUMBER result</span>
+                <span id="many_results"> $NUMBER results</span><span id="two_results"> $NUMBER results</span>
+                <span id="few_results"> $NUMBER results</span>
+            </div>
+        <div id="results" role="listbox"></div>
+    </div>
+</div>
+</footer>
+</body>
+
+</html>
