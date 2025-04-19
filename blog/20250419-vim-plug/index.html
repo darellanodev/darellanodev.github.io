@@ -1,0 +1,465 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="base" content="https://darellanodev.github.io/">
+
+    
+    <title>Darellanodev • Installing the vim-plug in gVim</title>
+
+    
+    
+        <link rel="icon" type="image/png" href="https://darellanodev.github.io/img/seedling.png"/>
+    
+    
+        <link rel=icon href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 105 55"><text y=".7em" font-size="82">🌱</text></svg>'>
+    
+
+    
+    <link rel="alternate" type="application/atom+xml" title="Darellanodev" href="https://darellanodev.github.io/atom.xml">
+
+    
+    
+    
+        <link rel="stylesheet" href="https://darellanodev.github.io/custom_subset.css?h=6de30382822eb2c02ee0">
+    
+
+    
+        <link rel="stylesheet" href="https://darellanodev.github.io/main.css?h=7271fc37941b56d02285" />
+
+    <meta name="color-scheme" content="light dark" />
+        <meta name="theme-color" content="#087e96" />
+        <meta name="description" content="Two days ago, I continued learning about gVim by practicing the installation of the vim-plug plugin." />
+        <meta property="og:description" content="Two days ago, I continued learning about gVim by practicing the installation of the vim-plug plugin." />
+
+    
+        <meta name="robots" content="index, nofollow" />
+    
+
+    <meta property="og:title" content="Installing the vim-plug in gVim" />
+    <meta property="og:type" content="article" />
+
+    
+        
+        
+        
+
+        
+        
+            
+            
+            
+                
+            
+        
+
+        
+        <meta property="og:image" content="https://darellanodev.github.io/social_cards/index.jpg?h=d8be352f1d2fb154df81" />
+        <meta property="og:image:width" content="1400" />
+        <meta property="og:image:height" content="800" />
+        <meta name="twitter:image" content="https://darellanodev.github.io/social_cards/index.jpg?h=d8be352f1d2fb154df81" />
+        <meta name="twitter:card" content="summary_large_image" />
+    
+
+    <meta property="og:locale" content="en_GB" />
+
+    <meta property="og:url" content="https:&#x2F;&#x2F;darellanodev.github.io&#x2F;blog&#x2F;20250419-vim-plug&#x2F;" /><meta property="og:site_name" content="Darellanodev">
+        <noscript><link rel="stylesheet" href="https://darellanodev.github.io/no_js.css"/></noscript>
+        <script type="text/javascript" src="https://darellanodev.github.io/js/initializeTheme.min.js"></script>
+        <script defer src="https://darellanodev.github.io/js/themeSwitcher.min.js"></script>
+
+
+
+
+    
+    
+
+
+
+        <script defer src="https://darellanodev.github.io/js/searchElasticlunr.min.js?h=2950d57f80c9fa78f37e"></script>
+
+        </head>
+
+
+<body>
+    <header>
+    <nav class="navbar">
+        <div class="nav-title">
+            <a href=https://darellanodev.github.io class="withoutbg">
+                <img src="https://darellanodev.github.io/img/darellanodev_logo.svg" alt="darellanodev logo">
+            </a>
+        </div>
+        <div class="nav-navs">
+            <ul>
+                
+                <li>
+                    
+                    
+
+                    <a class="nav-links no-hover-padding" href="https:&#x2F;&#x2F;github.com&#x2F;darellanodev">
+                        github
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    
+                    
+
+                    <a class="nav-links no-hover-padding"
+                        href="https://darellanodev.github.io/projects/">
+                        projects
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    
+                    
+
+                    <a class="nav-links no-hover-padding"
+                        href="https://darellanodev.github.io/artwork/">
+                        artwork
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    
+                    
+
+                    <a class="nav-links no-hover-padding"
+                        href="https://darellanodev.github.io/blog/">
+                        blog
+                    </a>
+                    
+                </li>
+                <li class="js">
+                    <div role="button" tabindex="0" id="search-button" class="search-icon interactive-icon"
+                        title="Click or press $SHORTCUT to open search" aria-label="Click or press $SHORTCUT to open search">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                            <path
+                                d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z" />
+                        </svg>
+                    </div>
+                </li>
+                
+                
+
+                <li class="theme-switcher-wrapper js"><div
+        title="Toggle dark&#x2F;light mode"
+        class="theme-switcher"
+        tabindex="0"
+        role="button"
+        aria-label="Toggle dark mode"
+        aria-pressed="false">
+    </div><div
+        title="Reset mode to default"
+        class="theme-resetter"
+        tabindex="0"
+        role="button"
+        aria-hidden="true"
+        aria-label="Reset mode to default">
+    </div>
+
+</li>
+</ul>
+        </div>
+        
+    </nav>
+</header>
+    <div class="content">
+
+        
+        
+
+
+
+
+<main>
+    <article>
+        <h1 class="article-title">
+            Installing the vim-plug in gVim
+        </h1>
+
+        <ul class="meta">
+            
+
+            
+                <li>
+
+
+
+
+
+    
+
+    
+        
+        
+            
+        
+    
+
+    
+    19th
+    
+        Apr 2025
+    
+
+
+</li>
+            
+
+            
+            
+                • <li title="423 words">3 min read</li>
+            •&nbsp;<li>Tags:&nbsp;</li><li><a href=https://darellanodev.github.io/tags/gvim/>gVim</a>,&nbsp;</li><li><a href=https://darellanodev.github.io/tags/plugins/>plugins</a></li>
+                </ul><ul class="meta last-updated"><li>Last updated on 
+
+
+
+
+
+    
+
+    
+        
+        
+            
+        
+    
+
+    
+    19th
+    
+        Apr 2025
+    
+
+
+</li>
+                
+                
+            
+        </ul>
+
+        
+
+        
+        
+
+        <section class="body">
+            
+            
+            <p>This week, I wanted to continue learning about gVim by practicing in one of my GitHub projects. First I wondered if there was an easy way to manage my gVim plugins instead of installing them manually. I found a plugin called vim-plug and I read the installation instructions in the official vim-plug GitHub repository for my Windows 10 machine.</p>
+<p><img src="https://darellanodev.github.io/blog/20250419-vim-plug/./vim_plug.png" alt="vim_plug" /></p>
+<p>First, I deleted the folders of the plugins I had previously downloaded manually, to avoid conflicts when using vim-plug.</p>
+<p>Then, I followed the instructions using the PowerShell command shown in the documentation on the vim-plug GitHub repository.</p>
+<p>I opened gVim and executed the command <code>:e $MYVIMRC</code>, then added the following lines at the top of the file before the existing <code>set nocompatible</code> line.</p>
+<p>I should mention that I needed to use the line <code>set shell=cmd.exe</code> because the vim-plug for windows had problems with other shells, so I added this line to prevent the errors shown by vim-plug.</p>
+<pre data-lang="bash" class="language-bash z-code"><code class="language-bash" data-lang="bash"><span class="z-source z-shell z-bash">
+</span><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-support z-function z-set z-shell">set</span></span><span class="z-meta z-function-call z-arguments z-shell"> nocompatible <span class="z-comment z-line z-number-sign z-shell"><span class="z-punctuation z-definition z-comment z-begin z-shell">#</span></span><span class="z-comment z-line z-number-sign z-shell"> this line was already there. It’s the first line on my _vimrc file</span><span class="z-comment z-line z-number-sign z-shell">
+</span></span></span><span class="z-source z-shell z-bash">
+</span><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-support z-function z-set z-shell">set</span></span><span class="z-meta z-function-call z-arguments z-shell"> shell=cmd.exe </span>
+</span><span class="z-source z-shell z-bash">
+</span><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-variable z-function z-shell">call</span></span><span class="z-meta z-function-call z-arguments z-shell"> plug#begin(<span class="z-string z-quoted z-single z-shell"><span class="z-punctuation z-definition z-string z-begin z-shell">&#39;</span>~/vimfiles/plugged<span class="z-punctuation z-definition z-string z-end z-shell">&#39;</span></span></span><span class="z-meta z-function-call z-shell"></span>)
+</span><span class="z-source z-shell z-bash">
+</span><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-variable z-function z-shell">Plug</span></span><span class="z-meta z-function-call z-arguments z-shell"> <span class="z-string z-quoted z-single z-shell"><span class="z-punctuation z-definition z-string z-begin z-shell">&#39;</span>tpope/vim-fugitive<span class="z-punctuation z-definition z-string z-end z-shell">&#39;</span></span></span>
+</span><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-variable z-function z-shell">Plug</span></span><span class="z-meta z-function-call z-arguments z-shell"> <span class="z-string z-quoted z-single z-shell"><span class="z-punctuation z-definition z-string z-begin z-shell">&#39;</span>ctrlpvim/ctrlp.vim<span class="z-punctuation z-definition z-string z-end z-shell">&#39;</span></span></span>
+</span><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-variable z-function z-shell">Plug</span></span><span class="z-meta z-function-call z-arguments z-shell"> <span class="z-string z-quoted z-single z-shell"><span class="z-punctuation z-definition z-string z-begin z-shell">&#39;</span>dracula/vim<span class="z-punctuation z-definition z-string z-end z-shell">&#39;</span></span>, <span class="z-meta z-group z-expansion z-brace z-shell"><span class="z-punctuation z-section z-expansion z-brace z-begin z-shell">{</span> <span class="z-string z-quoted z-single z-shell"><span class="z-punctuation z-definition z-string z-begin z-shell">&#39;</span>as<span class="z-punctuation z-definition z-string z-end z-shell">&#39;</span></span>: <span class="z-string z-quoted z-single z-shell"><span class="z-punctuation z-definition z-string z-begin z-shell">&#39;</span>dracula<span class="z-punctuation z-definition z-string z-end z-shell">&#39;</span></span> <span class="z-punctuation z-section z-expansion z-brace z-end z-shell">}</span></span></span>
+</span><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-variable z-function z-shell">Plug</span></span><span class="z-meta z-function-call z-arguments z-shell"> <span class="z-string z-quoted z-single z-shell"><span class="z-punctuation z-definition z-string z-begin z-shell">&#39;</span>szw/vim-maximizer<span class="z-punctuation z-definition z-string z-end z-shell">&#39;</span></span></span>
+</span><span class="z-source z-shell z-bash">
+</span><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-variable z-function z-shell">call</span></span><span class="z-meta z-function-call z-arguments z-shell"> plug#end(</span><span class="z-meta z-function-call z-shell"></span>)
+</span></code></pre>
+<p>As you can see, I installed four plugins:
+dracula: for the color scheme
+vim-fugitive: for managing Git inside gVim
+ctrlp: for simulating the vscode ctrl+p
+vim-maximizer: to temporarily maximize a window while working with multiple windows, and then restore it.</p>
+<p>I will talk about these plugins in future posts.</p>
+<p>Currently, my complete <code>_vimrc</code> file look like this (I’m using gVim 9.1.821 on my Windows 10 machine):</p>
+<pre data-lang="bash" class="language-bash z-code"><code class="language-bash" data-lang="bash"><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-support z-function z-set z-shell">set</span></span><span class="z-meta z-function-call z-arguments z-shell"> nocompatible</span>
+</span><span class="z-source z-shell z-bash">
+</span><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-variable z-function z-shell"><span class="z-string z-quoted z-double z-shell"><span class="z-punctuation z-definition z-string z-begin z-shell">&quot;</span> Needed for vim-plug to manage Windows paths
+</span></span></span></span><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-variable z-function z-shell"><span class="z-string z-quoted z-double z-shell">set shell=cmd.exe 
+</span></span></span></span><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-variable z-function z-shell"><span class="z-string z-quoted z-double z-shell">
+</span></span></span></span><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-variable z-function z-shell"><span class="z-string z-quoted z-double z-shell">call plug#begin(&#39;~/vimfiles/plugged&#39;)
+</span></span></span></span><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-variable z-function z-shell"><span class="z-string z-quoted z-double z-shell">
+</span></span></span></span><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-variable z-function z-shell"><span class="z-string z-quoted z-double z-shell">Plug &#39;tpope/vim-fugitive&#39;
+</span></span></span></span><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-variable z-function z-shell"><span class="z-string z-quoted z-double z-shell">Plug &#39;ctrlpvim/ctrlp.vim&#39;
+</span></span></span></span><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-variable z-function z-shell"><span class="z-string z-quoted z-double z-shell">Plug &#39;dracula/vim&#39;, { &#39;as&#39;: &#39;dracula&#39; }
+</span></span></span></span><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-variable z-function z-shell"><span class="z-string z-quoted z-double z-shell">Plug &#39;szw/vim-maximizer&#39;
+</span></span></span></span><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-variable z-function z-shell"><span class="z-string z-quoted z-double z-shell">
+</span></span></span></span><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-variable z-function z-shell"><span class="z-string z-quoted z-double z-shell">call plug#end()
+</span></span></span></span><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-variable z-function z-shell"><span class="z-string z-quoted z-double z-shell">
+</span></span></span></span><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-variable z-function z-shell"><span class="z-string z-quoted z-double z-shell">syntax enable
+</span></span></span></span><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-variable z-function z-shell"><span class="z-string z-quoted z-double z-shell">set termguicolors
+</span></span></span></span><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-variable z-function z-shell"><span class="z-string z-quoted z-double z-shell">set guifont=Consolas:h14
+</span></span></span></span><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-variable z-function z-shell"><span class="z-string z-quoted z-double z-shell">colorscheme dracula
+</span></span></span></span><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-variable z-function z-shell"><span class="z-string z-quoted z-double z-shell">set relativenumber
+</span></span></span></span><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-variable z-function z-shell"><span class="z-string z-quoted z-double z-shell">
+</span></span></span></span><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-variable z-function z-shell"><span class="z-string z-quoted z-double z-shell">let mapleader = <span class="z-punctuation z-definition z-string z-end z-shell">&quot;</span></span><span class="z-constant z-character z-escape z-shell">\\</span><span class="z-string z-quoted z-double z-shell"><span class="z-punctuation z-definition z-string z-begin z-shell">&quot;</span>
+</span></span></span></span><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-variable z-function z-shell"><span class="z-string z-quoted z-double z-shell">
+</span></span></span></span><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-variable z-function z-shell"><span class="z-string z-quoted z-double z-shell">let g:netrw_browse_split=<span class="z-punctuation z-definition z-string z-end z-shell">&quot;</span></span>v<span class="z-string z-quoted z-double z-shell"><span class="z-punctuation z-definition z-string z-begin z-shell">&quot;</span>
+</span></span></span></span><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-variable z-function z-shell"><span class="z-string z-quoted z-double z-shell">let g:netrw_altv=1
+</span></span></span></span><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-variable z-function z-shell"><span class="z-string z-quoted z-double z-shell">let g:netrw_winsize=30
+</span></span></span></span><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-variable z-function z-shell"><span class="z-string z-quoted z-double z-shell">let g:netrw_liststyle=3
+</span></span></span></span><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-variable z-function z-shell"><span class="z-string z-quoted z-double z-shell">
+</span></span></span></span><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-variable z-function z-shell"><span class="z-string z-quoted z-double z-shell">nnoremap &lt;Leader&gt;e :Lexplore&lt;CR&gt;
+</span></span></span></span><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-variable z-function z-shell"><span class="z-string z-quoted z-double z-shell">nnoremap &lt;Leader&gt;e :Lexplore&lt;CR&gt;
+</span></span></span></span><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-variable z-function z-shell"><span class="z-string z-quoted z-double z-shell">vnoremap &lt;C-c&gt; <span class="z-punctuation z-definition z-string z-end z-shell">&quot;</span></span>+y</span></span>
+</span><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-variable z-function z-shell">nnoremap</span></span><span class="z-meta z-function-call z-arguments z-shell"> <span class="z-keyword z-operator z-assignment z-redirection z-shell">&lt;</span>C-v<span class="z-keyword z-operator z-assignment z-redirection z-shell">&gt;</span> <span class="z-string z-quoted z-double z-shell"><span class="z-punctuation z-definition z-string z-begin z-shell">&quot;</span>+p
+</span></span></span><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-arguments z-shell"><span class="z-string z-quoted z-double z-shell">inoremap &lt;C-v&gt; &lt;Esc&gt;<span class="z-punctuation z-definition z-string z-end z-shell">&quot;</span></span>+pa</span>
+</span><span class="z-source z-shell z-bash">
+</span><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-variable z-function z-shell">filetype</span></span><span class="z-meta z-function-call z-arguments z-shell"> plugin indent on</span>
+</span><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-support z-function z-set z-shell">set</span></span><span class="z-meta z-function-call z-arguments z-shell"> autoindent</span>
+</span><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-support z-function z-set z-shell">set</span></span><span class="z-meta z-function-call z-arguments z-shell"> expandtab</span>
+</span><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-support z-function z-set z-shell">set</span></span><span class="z-meta z-function-call z-arguments z-shell"> tabstop=4</span>
+</span><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-support z-function z-set z-shell">set</span></span><span class="z-meta z-function-call z-arguments z-shell"> backspace=2</span>
+</span><span class="z-source z-shell z-bash">
+</span><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-variable z-function z-shell">language</span></span><span class="z-meta z-function-call z-arguments z-shell"> messages en_US.UTF-8</span>
+</span><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-support z-function z-set z-shell">set</span></span><span class="z-meta z-function-call z-arguments z-shell"> langmenu=en_US.UTF-8</span>
+</span><span class="z-source z-shell z-bash">
+</span><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-support z-function z-set z-shell">set</span></span><span class="z-meta z-function-call z-arguments z-shell"> noswapfile</span>
+</span><span class="z-source z-shell z-bash">
+</span><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-variable z-function z-shell"><span class="z-string z-quoted z-double z-shell"><span class="z-punctuation z-definition z-string z-begin z-shell">&quot;</span> Configuration for fugitive
+</span></span></span></span><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-variable z-function z-shell"><span class="z-string z-quoted z-double z-shell">set statusline=%f\ %h%w%m%r\ %{FugitiveStatusline()}\ %=%(%y\ %{&amp;fileencoding?&amp;fileencoding:&amp;encoding}\ %l/%L:%c\ %)
+</span></span></span></span><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-variable z-function z-shell"><span class="z-string z-quoted z-double z-shell">set laststatus=2
+</span></span></span></span><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-variable z-function z-shell"><span class="z-string z-quoted z-double z-shell">
+</span></span></span></span><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-variable z-function z-shell"><span class="z-string z-quoted z-double z-shell"><span class="z-punctuation z-definition z-string z-end z-shell">&quot;</span></span></span></span><span class="z-meta z-function-call z-arguments z-shell"> Other shortcuts for fugitive</span>
+</span><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-variable z-function z-shell">nnoremap</span></span><span class="z-meta z-function-call z-arguments z-shell"> <span class="z-keyword z-operator z-assignment z-redirection z-shell">&lt;</span>Leader<span class="z-keyword z-operator z-assignment z-redirection z-shell">&gt;</span>gs :Git<span class="z-keyword z-operator z-assignment z-redirection z-shell">&lt;</span>CR<span class="z-keyword z-operator z-assignment z-redirection z-shell">&gt;</span>
+</span></span><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-variable z-function z-shell">nnoremap</span></span><span class="z-meta z-function-call z-arguments z-shell"> <span class="z-keyword z-operator z-assignment z-redirection z-shell">&lt;</span>Leader<span class="z-keyword z-operator z-assignment z-redirection z-shell">&gt;</span>gc :Git commit<span class="z-keyword z-operator z-assignment z-redirection z-shell">&lt;</span>CR<span class="z-keyword z-operator z-assignment z-redirection z-shell">&gt;</span>
+</span></span><span class="z-source z-shell z-bash">
+</span></code></pre>
+
+        </section>
+
+        
+        
+        
+        
+
+        
+            
+            
+            
+
+            
+        
+            
+            
+            
+
+            
+        
+            
+            
+            
+
+            
+        
+            
+            
+            
+
+            
+        
+
+        
+        
+
+        
+        
+
+    </article>
+</main>
+
+
+<span id="copy-success" class="hidden">
+        Copied!
+    </span>
+    <span id="copy-init" class="hidden">
+        Copy code to clipboard
+    </span>
+    <script defer src="https://darellanodev.github.io/js/copyCodeToClipboard.min.js"></script><script defer src="https://darellanodev.github.io/js/footnoteBacklinks.min.js"></script>
+    </div>
+    <footer>
+    <section>
+        <nav class="socials nav-navs">
+            <ul>
+                <li>
+                    <a class="nav-links no-hover-padding social" rel=" me" 
+                        href=https://github.com/darellanodev>
+                        <img alt=github title=github
+                            src="https://darellanodev.github.io/social_icons/github.svg">
+                    </a>
+                </li>
+                
+            </ul>
+            
+        </nav>
+
+        
+        <nav class="nav-navs">
+            <small>
+                <ul>
+                    
+                    <li><a class="nav-links no-hover-padding" href="https:&#x2F;&#x2F;darellanodev.github.io&#x2F;privacy&#x2F;">
+                            privacy policy
+                        </a>
+                    </li>
+                    
+                </ul>
+            </small>
+            
+        </nav>
+
+        <div class="credits">
+            <small>
+                
+
+                
+                Powered by
+                <a rel=""  href="https://www.getzola.org">Zola</a>
+                &amp;
+                <a rel=""  href="https://github.com/welpo/tabi">tabi</a>
+
+
+            </small>
+        </div>
+    </section>
+
+    <div id="searchModal" class="search-modal js" role="dialog" aria-labelledby="modalTitle">
+    <h1 id="modalTitle" class="visually-hidden">Search</h1>
+    <div id="modal-content">
+        <div id="searchBar">
+            <div class="search-icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                    <path d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"/>
+                </svg>
+            </div>
+            <input id="searchInput" role="combobox" autocomplete="off" spellcheck="false" aria-expanded="false" aria-controls="results-container" placeholder="Search…"/>
+            <div id="clear-search" class="close-icon interactive-icon" tabindex="0" role="button" title="Clear search">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/>
+                </svg>
+            </div>
+        </div>
+        <div id="results-container">
+            <div id="results-info"><span id="zero_results"> No results</span>
+                <span id="one_results"> $NUMBER result</span>
+                <span id="many_results"> $NUMBER results</span><span id="two_results"> $NUMBER results</span>
+                <span id="few_results"> $NUMBER results</span>
+            </div>
+        <div id="results" role="listbox"></div>
+    </div>
+</div>
+</footer>
+</body>
+
+</html>

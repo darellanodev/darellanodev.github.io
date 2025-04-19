@@ -54,6 +54,10 @@
         <lastmod>2025-04-13</lastmod>
     </url>
     <url>
+        <loc>https://darellanodev.github.io/blog/20250419-vim-plug/</loc>
+        <lastmod>2025-04-19</lastmod>
+    </url>
+    <url>
         <loc>https://darellanodev.github.io/blog/bookmarks/</loc>
         <lastmod>2024-07-20</lastmod>
     </url>
@@ -176,6 +180,9 @@
     </url>
     <url>
         <loc>https://darellanodev.github.io/tags/news/</loc>
+    </url>
+    <url>
+        <loc>https://darellanodev.github.io/tags/plugins/</loc>
     </url>
     <url>
         <loc>https://darellanodev.github.io/tags/quotes/</loc>
