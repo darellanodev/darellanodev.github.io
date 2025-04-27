@@ -58,6 +58,10 @@
         <lastmod>2025-04-19</lastmod>
     </url>
     <url>
+        <loc>https://darellanodev.github.io/blog/20250427-lazyvim/</loc>
+        <lastmod>2025-04-27</lastmod>
+    </url>
+    <url>
         <loc>https://darellanodev.github.io/blog/bookmarks/</loc>
         <lastmod>2024-07-20</lastmod>
     </url>
@@ -177,6 +181,12 @@
     </url>
     <url>
         <loc>https://darellanodev.github.io/tags/jspatterns/</loc>
+    </url>
+    <url>
+        <loc>https://darellanodev.github.io/tags/lazyvim/</loc>
+    </url>
+    <url>
+        <loc>https://darellanodev.github.io/tags/neovim/</loc>
     </url>
     <url>
         <loc>https://darellanodev.github.io/tags/news/</loc>
