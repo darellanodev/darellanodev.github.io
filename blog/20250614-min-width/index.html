@@ -1,0 +1,413 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="base" content="https://darellanodev.github.io/">
+
+    
+    <title>Darellanodev • Using min-width instead of max-width for a mobile-first approach</title>
+
+    
+    
+        <link rel="icon" type="image/png" href="https://darellanodev.github.io/img/seedling.png"/>
+    
+    
+        <link rel=icon href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 105 55"><text y=".7em" font-size="82">🌱</text></svg>'>
+    
+
+    
+    <link rel="alternate" type="application/atom+xml" title="Darellanodev" href="https://darellanodev.github.io/atom.xml">
+
+    
+    
+    
+        <link rel="stylesheet" href="https://darellanodev.github.io/custom_subset.css?h=6de30382822eb2c02ee0">
+    
+
+    
+        <link rel="stylesheet" href="https://darellanodev.github.io/main.css?h=de047491fc5a0c0fe7df" />
+
+    <meta name="color-scheme" content="light dark" />
+        <meta name="theme-color" content="#087e96" />
+        <meta name="description" content="I learned that using min-width is better than max-width for a mobile-first approach" />
+        <meta property="og:description" content="I learned that using min-width is better than max-width for a mobile-first approach" />
+
+    
+        <meta name="robots" content="index, nofollow" />
+    
+
+    <meta property="og:title" content="Using min-width instead of max-width for a mobile-first approach" />
+    <meta property="og:type" content="article" />
+
+    
+        
+        
+        
+
+        
+        
+            
+            
+            
+                
+            
+        
+
+        
+        <meta property="og:image" content="https://darellanodev.github.io/social_cards/index.jpg?h=d8be352f1d2fb154df81" />
+        <meta property="og:image:width" content="1400" />
+        <meta property="og:image:height" content="800" />
+        <meta name="twitter:image" content="https://darellanodev.github.io/social_cards/index.jpg?h=d8be352f1d2fb154df81" />
+        <meta name="twitter:card" content="summary_large_image" />
+    
+
+    <meta property="og:locale" content="en_GB" />
+
+    <meta property="og:url" content="https:&#x2F;&#x2F;darellanodev.github.io&#x2F;blog&#x2F;20250614-min-width&#x2F;" /><meta property="og:site_name" content="Darellanodev">
+        <noscript><link rel="stylesheet" href="https://darellanodev.github.io/no_js.css"/></noscript>
+        <script type="text/javascript" src="https://darellanodev.github.io/js/initializeTheme.min.js"></script>
+        <script defer src="https://darellanodev.github.io/js/themeSwitcher.min.js"></script>
+
+
+
+
+    
+    
+
+
+
+        <script defer src="https://darellanodev.github.io/js/searchElasticlunr.min.js?h=2950d57f80c9fa78f37e"></script>
+
+        </head>
+
+
+<body>
+    <header>
+    <nav class="navbar">
+        <div class="nav-title">
+            <a href=https://darellanodev.github.io class="withoutbg">
+                <img src="https://darellanodev.github.io/img/darellanodev_logo.svg" alt="darellanodev logo">
+            </a>
+        </div>
+        <div class="nav-navs">
+            <ul>
+                
+                <li>
+                    
+                    
+
+                    <a class="nav-links no-hover-padding hvr-grow" href="https:&#x2F;&#x2F;github.com&#x2F;darellanodev">
+                        github
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    
+                    
+
+                    <a class="nav-links no-hover-padding hvr-grow"
+                        href="https://darellanodev.github.io/projects/">
+                        projects
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    
+                    
+
+                    <a class="nav-links no-hover-padding hvr-grow"
+                        href="https://darellanodev.github.io/artwork/">
+                        artwork
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    
+                    
+
+                    <a class="nav-links no-hover-padding hvr-grow"
+                        href="https://darellanodev.github.io/blog/">
+                        blog
+                    </a>
+                    
+                </li>
+                <li class="js">
+                    <div role="button" tabindex="0" id="search-button" class="search-icon interactive-icon"
+                        title="Click or press $SHORTCUT to open search" aria-label="Click or press $SHORTCUT to open search">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                            <path
+                                d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z" />
+                        </svg>
+                    </div>
+                </li>
+                
+                
+
+                <li class="theme-switcher-wrapper js"><div
+        title="Toggle dark&#x2F;light mode"
+        class="theme-switcher"
+        tabindex="0"
+        role="button"
+        aria-label="Toggle dark mode"
+        aria-pressed="false">
+    </div><div
+        title="Reset mode to default"
+        class="theme-resetter"
+        tabindex="0"
+        role="button"
+        aria-hidden="true"
+        aria-label="Reset mode to default">
+    </div>
+
+</li>
+</ul>
+        </div>
+        
+    </nav>
+</header>
+    <div class="content">
+
+        
+        
+
+
+
+
+<main>
+    <article>
+        <h1 class="article-title gradient-color">
+            Using min-width instead of max-width for a mobile-first approach
+        </h1>
+
+        <ul class="meta">
+            
+
+            
+                <li>
+
+
+
+
+
+    
+
+    
+        
+        
+            
+        
+    
+
+    
+    14th
+    
+        Jun 2025
+    
+
+
+</li>
+            
+
+            
+            
+                • <li title="171 words">1 min read</li>
+            •&nbsp;<li>Tags:&nbsp;</li><li><a href=https://darellanodev.github.io/tags/front-end/>Front-end</a>,&nbsp;</li><li><a href=https://darellanodev.github.io/tags/css/>CSS</a></li>
+                </ul><ul class="meta last-updated"><li>Last updated on 
+
+
+
+
+
+    
+
+    
+        
+        
+            
+        
+    
+
+    
+    14th
+    
+        Jun 2025
+    
+
+
+</li>
+                
+                
+            
+        </ul>
+
+        
+
+        
+        
+
+        <section class="body">
+            
+            
+            <p>Last week, while working on a project on Frontend Mentor, I learned about the benefits of using <code>min-width</code> instead of <code>max-width</code> for a mobile-first approach.</p>
+<p><img src="https://darellanodev.github.io/blog/20250614-min-width/./min-width.png" alt="min-width" /></p>
+<p>The advantages of using <code>min-width</code> over <code>max-width</code> are:</p>
+<ul>
+<li>The base CSS is applied to mobile devices and then, as the viewport grows, you can overwrite the styles for larger screens.</li>
+<li>Mobile devices only download the CSS they need, without unnecessary rules, which improves performance.</li>
+<li>It’s easier to add new breakpoints for larger screens.</li>
+</ul>
+<p>For example, if you have this media query:</p>
+<pre data-lang="css" class="language-css z-code"><code class="language-css" data-lang="css"><span class="z-source z-css"><span class="z-meta z-at-rule z-media z-css"><span class="z-keyword z-control z-at-rule z-media z-css"><span class="z-punctuation z-definition z-keyword z-css">@</span>media</span> <span class="z-punctuation z-definition z-group z-begin z-css">(</span><span class="z-support z-type z-property-name z-media z-css">max-width</span><span class="z-punctuation z-separator z-key-value z-css">:</span> <span class="z-constant z-numeric z-integer z-decimal z-css">23<span class="z-keyword z-other z-unit z-css">rem</span></span><span class="z-punctuation z-definition z-group z-end z-css">)</span> </span><span class="z-punctuation z-section z-property-list z-css">{</span>
+</span><span class="z-source z-css">  <span class="z-meta z-selector z-css"><span class="z-entity z-other z-pseudo-class z-css"><span class="z-punctuation z-definition z-entity z-css">:</span>root</span> </span><span class="z-meta z-property-list z-css"><span class="z-punctuation z-section z-property-list z-css">{</span>
+</span></span><span class="z-source z-css"><span class="z-meta z-property-list z-css">    <span class="z-meta z-property-name z-css"><span class="z-support z-type z-property-name z-css">font-size</span></span><span class="z-punctuation z-separator z-key-value z-css">:</span><span class="z-meta z-property-value z-css"> </span><span class="z-meta z-property-value z-css"><span class="z-constant z-numeric z-integer z-decimal z-css">0</span><span class="z-constant z-numeric z-float z-decimal z-css"><span class="z-punctuation z-separator z-decimal z-css">.</span>6<span class="z-keyword z-other z-unit z-css">rem</span></span></span><span class="z-punctuation z-terminator z-rule z-css">;</span>
+</span></span><span class="z-source z-css"><span class="z-meta z-property-list z-css"></span>  <span class="z-punctuation z-section z-property-list z-css">}</span>
+</span><span class="z-source z-css"><span class="z-punctuation z-section z-property-list z-css">}</span>
+</span></code></pre>
+<p>You can adapt by first defining the base size for mobiles (outside of the media query in the base CSS) and then use the min-width to increase the size in bigger screens:</p>
+<pre data-lang="css" class="language-css z-code"><code class="language-css" data-lang="css"><span class="z-source z-css"><span class="z-meta z-selector z-css"><span class="z-entity z-other z-pseudo-class z-css"><span class="z-punctuation z-definition z-entity z-css">:</span>root</span> </span><span class="z-meta z-property-list z-css"><span class="z-punctuation z-section z-property-list z-css">{</span>
+</span></span><span class="z-source z-css"><span class="z-meta z-property-list z-css">  <span class="z-meta z-property-name z-css"><span class="z-support z-type z-property-name z-css">font-size</span></span><span class="z-punctuation z-separator z-key-value z-css">:</span><span class="z-meta z-property-value z-css"> </span><span class="z-meta z-property-value z-css"><span class="z-constant z-numeric z-integer z-decimal z-css">0</span><span class="z-constant z-numeric z-float z-decimal z-css"><span class="z-punctuation z-separator z-decimal z-css">.</span>6<span class="z-keyword z-other z-unit z-css">rem</span></span></span><span class="z-punctuation z-terminator z-rule z-css">;</span>
+</span></span><span class="z-source z-css"><span class="z-meta z-property-list z-css"></span><span class="z-punctuation z-section z-property-list z-css">}</span>
+</span><span class="z-source z-css">
+</span><span class="z-source z-css"><span class="z-meta z-at-rule z-media z-css"><span class="z-keyword z-control z-at-rule z-media z-css"><span class="z-punctuation z-definition z-keyword z-css">@</span>media</span> <span class="z-punctuation z-definition z-group z-begin z-css">(</span><span class="z-support z-type z-property-name z-media z-css">min-width</span><span class="z-punctuation z-separator z-key-value z-css">:</span> <span class="z-constant z-numeric z-integer z-decimal z-css">23<span class="z-keyword z-other z-unit z-css">rem</span></span><span class="z-punctuation z-definition z-group z-end z-css">)</span> </span><span class="z-punctuation z-section z-property-list z-css">{</span>
+</span><span class="z-source z-css">  <span class="z-meta z-selector z-css"><span class="z-entity z-other z-pseudo-class z-css"><span class="z-punctuation z-definition z-entity z-css">:</span>root</span> </span><span class="z-meta z-property-list z-css"><span class="z-punctuation z-section z-property-list z-css">{</span>
+</span></span><span class="z-source z-css"><span class="z-meta z-property-list z-css">    <span class="z-meta z-property-name z-css"><span class="z-support z-type z-property-name z-css">font-size</span></span><span class="z-punctuation z-separator z-key-value z-css">:</span><span class="z-meta z-property-value z-css"> </span><span class="z-meta z-property-value z-css"><span class="z-constant z-numeric z-integer z-decimal z-css">1<span class="z-keyword z-other z-unit z-css">rem</span></span></span><span class="z-punctuation z-terminator z-rule z-css">;</span>
+</span></span><span class="z-source z-css"><span class="z-meta z-property-list z-css"></span>  <span class="z-punctuation z-section z-property-list z-css">}</span>
+</span><span class="z-source z-css"><span class="z-punctuation z-section z-property-list z-css">}</span>
+</span></code></pre>
+<p>So now mobile devices use 0.6rem and larger devices use 1rem.</p>
+<p>Note: this is a simple example. If you only need to change the text size depending on the screen size, you can use the clamp CSS function instead of using media queries.</p>
+
+        </section>
+
+        
+        
+        
+        
+
+        
+            
+            
+            
+
+            
+        
+            
+            
+            
+
+            
+        
+            
+            
+            
+
+            
+        
+            
+            
+            
+
+            
+        
+
+        
+        
+
+        
+        
+
+    </article>
+</main>
+
+
+<span id="copy-success" class="hidden">
+        Copied!
+    </span>
+    <span id="copy-init" class="hidden">
+        Copy code to clipboard
+    </span>
+    <script defer src="https://darellanodev.github.io/js/copyCodeToClipboard.min.js"></script><script defer src="https://darellanodev.github.io/js/footnoteBacklinks.min.js"></script>
+    </div>
+    <footer>
+    <section>
+        <nav class="socials nav-navs">
+            <ul>
+                <li>
+                    <a class="nav-links no-hover-padding social" rel=" me" 
+                        href=https://github.com/darellanodev>
+                        <img alt=github title=github
+                            src="https://darellanodev.github.io/social_icons/github.svg">
+                    </a>
+                </li>
+                
+            </ul>
+            
+        </nav>
+
+        
+        <nav class="nav-navs">
+            <small>
+                <ul>
+                    
+                    <li><a class="nav-links no-hover-padding" href="https:&#x2F;&#x2F;darellanodev.github.io&#x2F;privacy&#x2F;">
+                            privacy policy
+                        </a>
+                    </li>
+                    
+                </ul>
+            </small>
+            
+        </nav>
+
+        <div class="credits">
+            <small>
+                
+
+                
+                Powered by
+                <a rel=""  href="https://www.getzola.org">Zola</a>
+                &amp;
+                <a rel=""  href="https://github.com/welpo/tabi">tabi</a>
+
+
+            </small>
+        </div>
+    </section>
+
+    <div id="searchModal" class="search-modal js" role="dialog" aria-labelledby="modalTitle">
+    <h1 id="modalTitle" class="visually-hidden">Search</h1>
+    <div id="modal-content">
+        <div id="searchBar">
+            <div class="search-icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                    <path d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"/>
+                </svg>
+            </div>
+            <input id="searchInput" role="combobox" autocomplete="off" spellcheck="false" aria-expanded="false" aria-controls="results-container" placeholder="Search…"/>
+            <div id="clear-search" class="close-icon interactive-icon" tabindex="0" role="button" title="Clear search">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/>
+                </svg>
+            </div>
+        </div>
+        <div id="results-container">
+            <div id="results-info"><span id="zero_results"> No results</span>
+                <span id="one_results"> $NUMBER result</span>
+                <span id="many_results"> $NUMBER results</span><span id="two_results"> $NUMBER results</span>
+                <span id="few_results"> $NUMBER results</span>
+            </div>
+        <div id="results" role="listbox"></div>
+    </div>
+</div>
+</footer>
+</body>
+
+</html>
