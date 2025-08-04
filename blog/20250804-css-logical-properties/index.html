@@ -1,0 +1,444 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="base" content="https://darellanodev.github.io/">
+
+    
+    <title>Darellanodev • Using CSS logical properties</title>
+
+    
+    
+        <link rel="icon" type="image/png" href="https://darellanodev.github.io/img/seedling.png"/>
+    
+    
+        <link rel=icon href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 105 55"><text y=".7em" font-size="82">🌱</text></svg>'>
+    
+
+    
+    <link rel="alternate" type="application/atom+xml" title="Darellanodev" href="https://darellanodev.github.io/atom.xml">
+
+    
+    
+    
+        <link rel="stylesheet" href="https://darellanodev.github.io/custom_subset.css?h=6de30382822eb2c02ee0">
+    
+
+    
+        <link rel="stylesheet" href="https://darellanodev.github.io/main.css?h=99437c957531ed56eb6d" />
+
+    <meta name="color-scheme" content="light dark" />
+        <meta name="theme-color" content="#087e96" />
+        <meta name="description" content="While practicing my front-end skills I learned a bit about CSS logical properties" />
+        <meta property="og:description" content="While practicing my front-end skills I learned a bit about CSS logical properties" />
+
+    
+        <meta name="robots" content="index, nofollow" />
+    
+
+    <meta property="og:title" content="Using CSS logical properties" />
+    <meta property="og:type" content="article" />
+
+    
+        
+        
+        
+
+        
+        
+            
+            
+            
+                
+            
+        
+
+        
+        <meta property="og:image" content="https://darellanodev.github.io/social_cards/index.jpg?h=d8be352f1d2fb154df81" />
+        <meta property="og:image:width" content="1400" />
+        <meta property="og:image:height" content="800" />
+        <meta name="twitter:image" content="https://darellanodev.github.io/social_cards/index.jpg?h=d8be352f1d2fb154df81" />
+        <meta name="twitter:card" content="summary_large_image" />
+    
+
+    <meta property="og:locale" content="en_GB" />
+
+    <meta property="og:url" content="https:&#x2F;&#x2F;darellanodev.github.io&#x2F;blog&#x2F;20250804-css-logical-properties&#x2F;" /><meta property="og:site_name" content="Darellanodev">
+        <noscript><link rel="stylesheet" href="https://darellanodev.github.io/no_js.css"/></noscript>
+        <script type="text/javascript" src="https://darellanodev.github.io/js/initializeTheme.min.js"></script>
+        <script defer src="https://darellanodev.github.io/js/themeSwitcher.min.js"></script>
+
+
+
+
+    
+    
+
+
+
+        <script defer src="https://darellanodev.github.io/js/searchElasticlunr.min.js?h=2950d57f80c9fa78f37e"></script>
+
+        </head>
+
+
+<body>
+    <header>
+    <nav class="navbar">
+        <div class="nav-title">
+            <a href=https://darellanodev.github.io class="withoutbg">
+                <img src="https://darellanodev.github.io/img/darellanodev_logo.svg" alt="darellanodev logo">
+            </a>
+        </div>
+        <div class="nav-navs">
+            <ul>
+                
+                <li>
+                    
+                    
+
+                    <a class="nav-links no-hover-padding hvr-grow" href="https:&#x2F;&#x2F;github.com&#x2F;darellanodev">
+                        github
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    
+                    
+
+                    <a class="nav-links no-hover-padding hvr-grow"
+                        href="https://darellanodev.github.io/projects/">
+                        projects
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    
+                    
+
+                    <a class="nav-links no-hover-padding hvr-grow"
+                        href="https://darellanodev.github.io/artwork/">
+                        artwork
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    
+                    
+
+                    <a class="nav-links no-hover-padding hvr-grow"
+                        href="https://darellanodev.github.io/blog/">
+                        blog
+                    </a>
+                    
+                </li>
+                <li class="js">
+                    <div role="button" tabindex="0" id="search-button" class="search-icon interactive-icon"
+                        title="Click or press $SHORTCUT to open search" aria-label="Click or press $SHORTCUT to open search">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                            <path
+                                d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z" />
+                        </svg>
+                    </div>
+                </li>
+                
+                
+
+                <li class="theme-switcher-wrapper js"><div
+        title="Toggle dark&#x2F;light mode"
+        class="theme-switcher"
+        tabindex="0"
+        role="button"
+        aria-label="Toggle dark mode"
+        aria-pressed="false">
+    </div><div
+        title="Reset mode to default"
+        class="theme-resetter"
+        tabindex="0"
+        role="button"
+        aria-hidden="true"
+        aria-label="Reset mode to default">
+    </div>
+
+</li>
+</ul>
+        </div>
+        
+    </nav>
+</header>
+    <div class="content">
+
+        
+        
+
+
+
+
+<main>
+    <article>
+        <h1 class="article-title gradient-color">
+            Using CSS logical properties
+        </h1>
+
+        <ul class="meta">
+            
+
+            
+                <li>
+
+
+
+
+
+    
+
+    
+        
+        
+            
+        
+    
+
+    
+    4th
+    
+        Aug 2025
+    
+
+
+</li>
+            
+
+            
+            
+                • <li title="497 words">3 min read</li>
+            •&nbsp;<li>Tags:&nbsp;</li><li><a href=https://darellanodev.github.io/tags/front-end/>Front-end</a>,&nbsp;</li><li><a href=https://darellanodev.github.io/tags/css/>CSS</a></li>
+                </ul><ul class="meta last-updated"><li>Last updated on 
+
+
+
+
+
+    
+
+    
+        
+        
+            
+        
+    
+
+    
+    4th
+    
+        Aug 2025
+    
+
+
+</li>
+                
+                
+            
+        </ul>
+
+        
+
+        
+        
+
+        <section class="body">
+            
+            
+            <p>I recently learned about CSS logical properties, which have been a game changer for me in designing web pages that are more accessible and scalable.</p>
+<!-- Lottie animation (no iframe, local script, background transparent) -->
+<script src="/lottie-player.js"></script>
+<div style="display: flex; justify-content: center; margin: 1.5em 0;">
+  <lottie-player
+    src="css-logical-properties.json"
+    background="transparent"
+    speed="1"
+    style="width: 400px; max-width: 100%; height: auto; border-radius: 6px;"
+    loop
+    autoplay
+    title="Lottie animation illustrating css-logical-properties media query">
+  </lottie-player>
+</div>
+<p>In the past, I used CSS physical properties (e.g., margin-top, padding-left) to set margins and paddings in my web projects. This approach works well for languages that read left to right but is not ideal for languages that read right to left or use vertical writing modes. CSS logical properties, instead, reference the writing flow rather than fixed physical directions on the screen.</p>
+<p>For example, consider this CSS class from one of my front-end projects:</p>
+<pre data-lang="css" class="language-css z-code"><code class="language-css" data-lang="css"><span class="z-source z-css"><span class="z-meta z-selector z-css"><span class="z-entity z-other z-attribute-name z-class z-css"><span class="z-punctuation z-definition z-entity z-css">.</span>blog-card__date</span> </span><span class="z-meta z-property-list z-css"><span class="z-punctuation z-section z-property-list z-css">{</span>
+</span></span><span class="z-source z-css"><span class="z-meta z-property-list z-css">  <span class="z-meta z-property-name z-css"><span class="z-support z-type z-property-name z-css">font-size</span></span><span class="z-punctuation z-separator z-key-value z-css">:</span><span class="z-meta z-property-value z-css"> </span><span class="z-meta z-property-value z-css"><span class="z-meta z-function-call z-css"><span class="z-support z-function z-var z-css">var</span><span class="z-meta z-group z-css"><span class="z-punctuation z-definition z-group z-begin z-css">(</span><span class="z-support z-type z-custom-property z-css"><span class="z-punctuation z-definition z-custom-property z-css">--</span><span class="z-support z-type z-custom-property z-name z-css">size-text-date</span></span></span><span class="z-meta z-group z-css"><span class="z-punctuation z-definition z-group z-end z-css">)</span></span></span></span><span class="z-punctuation z-terminator z-rule z-css">;</span>
+</span></span><span class="z-source z-css"><span class="z-meta z-property-list z-css">  <span class="z-meta z-property-name z-css"><span class="z-support z-type z-property-name z-css">margin-top</span></span><span class="z-punctuation z-separator z-key-value z-css">:</span><span class="z-meta z-property-value z-css"> </span><span class="z-meta z-property-value z-css"><span class="z-constant z-numeric z-float z-decimal z-css">-0<span class="z-punctuation z-separator z-decimal z-css">.</span>5<span class="z-keyword z-other z-unit z-css">rem</span></span></span><span class="z-punctuation z-terminator z-rule z-css">;</span>
+</span></span><span class="z-source z-css"><span class="z-meta z-property-list z-css"></span><span class="z-punctuation z-section z-property-list z-css">}</span>
+</span></code></pre>
+<p>However, I can use a CSS logical property instead of margin-top. Here is the equivalent using margin-block-start:</p>
+<pre data-lang="css" class="language-css z-code"><code class="language-css" data-lang="css"><span class="z-source z-css"><span class="z-meta z-selector z-css"><span class="z-entity z-other z-attribute-name z-class z-css"><span class="z-punctuation z-definition z-entity z-css">.</span>blog-card__date</span> </span><span class="z-meta z-property-list z-css"><span class="z-punctuation z-section z-property-list z-css">{</span>
+</span></span><span class="z-source z-css"><span class="z-meta z-property-list z-css">  <span class="z-meta z-property-name z-css"><span class="z-support z-type z-property-name z-css">font-size</span></span><span class="z-punctuation z-separator z-key-value z-css">:</span><span class="z-meta z-property-value z-css"> </span><span class="z-meta z-property-value z-css"><span class="z-meta z-function-call z-css"><span class="z-support z-function z-var z-css">var</span><span class="z-meta z-group z-css"><span class="z-punctuation z-definition z-group z-begin z-css">(</span><span class="z-support z-type z-custom-property z-css"><span class="z-punctuation z-definition z-custom-property z-css">--</span><span class="z-support z-type z-custom-property z-name z-css">size-text-date</span></span></span><span class="z-meta z-group z-css"><span class="z-punctuation z-definition z-group z-end z-css">)</span></span></span></span><span class="z-punctuation z-terminator z-rule z-css">;</span>
+</span></span><span class="z-source z-css"><span class="z-meta z-property-list z-css">  <span class="z-meta z-property-name z-css"><span class="z-support z-type z-property-name z-css">margin</span>-block-start</span><span class="z-punctuation z-separator z-key-value z-css">:</span><span class="z-meta z-property-value z-css"> </span><span class="z-meta z-property-value z-css"><span class="z-constant z-numeric z-float z-decimal z-css">-0<span class="z-punctuation z-separator z-decimal z-css">.</span>5<span class="z-keyword z-other z-unit z-css">rem</span></span></span><span class="z-punctuation z-terminator z-rule z-css">;</span>
+</span></span><span class="z-source z-css"><span class="z-meta z-property-list z-css"></span><span class="z-punctuation z-section z-property-list z-css">}</span>
+</span></code></pre>
+<p>The advantage of using margin-block-start over margin-top is that layouts become more adaptable to different writing systems, including traditional Japanese vertical text, making internationalization and scalability for multiple languages easier.</p>
+<p>Here is another example, this time for Arabic. Suppose I have this CSS class:</p>
+<pre data-lang="css" class="language-css z-code"><code class="language-css" data-lang="css"><span class="z-source z-css"><span class="z-meta z-selector z-css"><span class="z-entity z-other z-attribute-name z-class z-css"><span class="z-punctuation z-definition z-entity z-css">.</span>blog-card__description</span> </span><span class="z-meta z-property-list z-css"><span class="z-punctuation z-section z-property-list z-css">{</span>
+</span></span><span class="z-source z-css"><span class="z-meta z-property-list z-css">  <span class="z-meta z-property-name z-css"><span class="z-support z-type z-property-name z-css">font-size</span></span><span class="z-punctuation z-separator z-key-value z-css">:</span><span class="z-meta z-property-value z-css"> </span><span class="z-meta z-property-value z-css"><span class="z-meta z-function-call z-css"><span class="z-support z-function z-var z-css">var</span><span class="z-meta z-group z-css"><span class="z-punctuation z-definition z-group z-begin z-css">(</span><span class="z-support z-type z-custom-property z-css"><span class="z-punctuation z-definition z-custom-property z-css">--</span><span class="z-support z-type z-custom-property z-name z-css">size-text-description</span></span></span><span class="z-meta z-group z-css"><span class="z-punctuation z-definition z-group z-end z-css">)</span></span></span></span><span class="z-punctuation z-terminator z-rule z-css">;</span>
+</span></span><span class="z-source z-css"><span class="z-meta z-property-list z-css">  <span class="z-meta z-property-name z-css"><span class="z-support z-type z-property-name z-css">margin</span>-block-start</span><span class="z-punctuation z-separator z-key-value z-css">:</span><span class="z-meta z-property-value z-css"> </span><span class="z-meta z-property-value z-css"><span class="z-constant z-numeric z-integer z-decimal z-css">1<span class="z-keyword z-other z-unit z-css">rem</span></span></span><span class="z-punctuation z-terminator z-rule z-css">;</span>
+</span></span><span class="z-source z-css"><span class="z-meta z-property-list z-css"></span><span class="z-punctuation z-section z-property-list z-css">}</span>
+</span></code></pre>
+<p>In languages written left to right, the margin is applied to the left side, while in right-to-left languages like Arabic, the margin will be applied on the right side. This happens because the logical property adapts to the reading direction, rather than the fixed physical side.</p>
+<p>Here’s a concise and easy-to-remember table of CSS logical properties and their physical equivalents:</p>
+<p>Note: LTR (Left To Right), RTL (Right To Left)</p>
+<table><thead><tr><th>Physical (Classic)</th><th>Logical</th><th>Context</th></tr></thead><tbody>
+<tr><td>top / bottom</td><td>block-start / block-end</td><td>Block axis (vertical in LTR/RTL, horizontal in vertical writing modes)</td></tr>
+<tr><td>left / right</td><td>inline-start / inline-end</td><td>Inline axis (horizontal in LTR/RTL, vertical in vertical writing modes)</td></tr>
+<tr><td>width / height</td><td>inline-size / block-size</td><td>Size along the respective axis</td></tr>
+<tr><td>margin, padding, border-</td><td>margin / padding / border-block-* / inline-*</td><td>Used for top/bottom (block) or left/right (inline) sides respectively</td></tr>
+</tbody></table>
+<p>So, for example:</p>
+<ul>
+<li>margin-block-start corresponds to margin-top in standard horizontal text flow (LTR/RTL).</li>
+<li>margin-block-end corresponds to margin-bottom.</li>
+<li>margin-inline-start corresponds to margin-left in LTR, but margin-right in RTL.</li>
+<li>margin-inline-end corresponds to margin-right in LTR, but margin-left in RTL.</li>
+</ul>
+<p>This logic also applies to padding and border properties.</p>
+<p><strong>Quick keys to remember:</strong></p>
+<ul>
+<li><strong>block-*</strong> = top/bottom or start/end of block flow</li>
+<li><strong>inline-*</strong> = left/right or start/end of inline flow</li>
+<li><strong>-start</strong> = start (top or left depending on flow)</li>
+<li><strong>-end</strong> = end (bottom or right depending on flow)</li>
+</ul>
+<p>This means anything related to ‘top/bottom’ or ‘height’ uses block-* properties, while anything related to ‘left/right’ or ‘width’ uses inline-* properties, automatically adapting to the text direction.</p>
+
+        </section>
+
+        
+        
+        
+        
+
+        
+            
+            
+            
+
+            
+        
+            
+            
+            
+
+            
+        
+            
+            
+            
+
+            
+        
+            
+            
+            
+
+            
+        
+
+        
+        
+
+        
+        
+
+    </article>
+</main>
+
+
+<span id="copy-success" class="hidden">
+        Copied!
+    </span>
+    <span id="copy-init" class="hidden">
+        Copy code to clipboard
+    </span>
+    <script defer src="https://darellanodev.github.io/js/copyCodeToClipboard.min.js"></script><script defer src="https://darellanodev.github.io/js/footnoteBacklinks.min.js"></script>
+    </div>
+    <footer>
+    <section>
+        <nav class="socials nav-navs">
+            <ul>
+                <li>
+                    <a class="nav-links no-hover-padding social" rel=" me" 
+                        href=https://github.com/darellanodev>
+                        <img alt=github title=github
+                            src="https://darellanodev.github.io/social_icons/github.svg">
+                    </a>
+                </li>
+                
+            </ul>
+            
+        </nav>
+
+        
+        <nav class="nav-navs">
+            <small>
+                <ul>
+                    
+                    <li><a class="nav-links no-hover-padding" href="https:&#x2F;&#x2F;darellanodev.github.io&#x2F;privacy&#x2F;">
+                            privacy policy
+                        </a>
+                    </li>
+                    
+                </ul>
+            </small>
+            
+        </nav>
+
+        <div class="credits">
+            <small>
+                
+
+                
+                Powered by
+                <a rel=""  href="https://www.getzola.org">Zola</a>
+                &amp;
+                <a rel=""  href="https://github.com/welpo/tabi">tabi</a>
+
+
+            </small>
+        </div>
+    </section>
+
+    <div id="searchModal" class="search-modal js" role="dialog" aria-labelledby="modalTitle">
+    <h1 id="modalTitle" class="visually-hidden">Search</h1>
+    <div id="modal-content">
+        <div id="searchBar">
+            <div class="search-icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                    <path d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"/>
+                </svg>
+            </div>
+            <input id="searchInput" role="combobox" autocomplete="off" spellcheck="false" aria-expanded="false" aria-controls="results-container" placeholder="Search…"/>
+            <div id="clear-search" class="close-icon interactive-icon" tabindex="0" role="button" title="Clear search">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/>
+                </svg>
+            </div>
+        </div>
+        <div id="results-container">
+            <div id="results-info"><span id="zero_results"> No results</span>
+                <span id="one_results"> $NUMBER result</span>
+                <span id="many_results"> $NUMBER results</span><span id="two_results"> $NUMBER results</span>
+                <span id="few_results"> $NUMBER results</span>
+            </div>
+        <div id="results" role="listbox"></div>
+    </div>
+</div>
+</footer>
+</body>
+
+</html>

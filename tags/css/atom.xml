@@ -9,8 +9,18 @@
     <link href="https://darellanodev.github.io/tags/css/atom.xml" rel="self" type="application/atom+xml"/>
     <link href="https://darellanodev.github.io"/>
     <generator uri="https://www.getzola.org/">Zola</generator>
-    <updated>2025-06-14T00:00:00+00:00</updated>
+    <updated>2025-08-04T00:00:00+00:00</updated>
     <id>https://darellanodev.github.io/tags/css/atom.xml</id><entry xml:lang="en">
+        <title>Using CSS logical properties</title>
+        <published>2025-08-04T00:00:00+00:00</published>
+        <updated>2025-08-04T00:00:00+00:00</updated>
+        <author>
+            <name>Unknown</name>
+        </author>
+        <link rel="alternate" href="https://darellanodev.github.io/blog/20250804-css-logical-properties/" type="text/html"/>
+        <id>https://darellanodev.github.io/blog/20250804-css-logical-properties/</id>
+        <summary type="html">While practicing my front-end skills I learned a bit about CSS logical properties</summary>
+        </entry><entry xml:lang="en">
         <title>Using min-width instead of max-width for a mobile-first approach</title>
         <published>2025-06-14T00:00:00+00:00</published>
         <updated>2025-06-14T00:00:00+00:00</updated>
