@@ -17,8 +17,8 @@
         <author>
             <name>Unknown</name>
         </author>
-        <link rel="alternate" href="https://darellanodev.github.io/blog/newwebsite/" type="text/html"/>
-        <id>https://darellanodev.github.io/blog/newwebsite/</id>
+        <link rel="alternate" href="https://darellanodev.github.io/blog/20240630-newwebsite/" type="text/html"/>
+        <id>https://darellanodev.github.io/blog/20240630-newwebsite/</id>
         <summary type="html">This post is an announcement to show the new Darellanodev website using Zola and Tabi theme.</summary>
         </entry>
 </feed>

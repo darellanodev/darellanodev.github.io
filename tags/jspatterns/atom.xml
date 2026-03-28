@@ -17,8 +17,8 @@
         <author>
             <name>Unknown</name>
         </author>
-        <link rel="alternate" href="https://darellanodev.github.io/blog/bookmarks/" type="text/html"/>
-        <id>https://darellanodev.github.io/blog/bookmarks/</id>
+        <link rel="alternate" href="https://darellanodev.github.io/blog/20240720-bookmarks/" type="text/html"/>
+        <id>https://darellanodev.github.io/blog/20240720-bookmarks/</id>
         <summary type="html">An example of the Factory Pattern in JavaScript.</summary>
         </entry><entry xml:lang="en">
         <title>JavaScript Observer Pattern</title>
@@ -27,8 +27,8 @@
         <author>
             <name>Unknown</name>
         </author>
-        <link rel="alternate" href="https://darellanodev.github.io/blog/js-observer-pattern/" type="text/html"/>
-        <id>https://darellanodev.github.io/blog/js-observer-pattern/</id>
+        <link rel="alternate" href="https://darellanodev.github.io/blog/20240714-js-observer-pattern/" type="text/html"/>
+        <id>https://darellanodev.github.io/blog/20240714-js-observer-pattern/</id>
         <summary type="html">An example of the Observer Pattern in JavaScript.</summary>
         </entry>
 </feed>

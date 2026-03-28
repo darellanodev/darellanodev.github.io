@@ -1,0 +1,651 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="base" content="https://darellanodev.github.io/">
+
+    
+    <title>Darellanodev • Git review</title>
+
+    
+    
+        <link rel="icon" type="image/png" href="https://darellanodev.github.io/img/seedling.png"/>
+    
+    
+        <link rel=icon href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 105 55"><text y=".7em" font-size="82">🌱</text></svg>'>
+    
+
+    
+    <link rel="alternate" type="application/atom+xml" title="Darellanodev" href="https://darellanodev.github.io/atom.xml">
+
+    
+    
+    
+        <link rel="stylesheet" href="https://darellanodev.github.io/custom_subset.css?h=6de30382822eb2c02ee0">
+    
+
+    
+        <link rel="stylesheet" href="https://darellanodev.github.io/main.css?h=99437c957531ed56eb6d" />
+
+    <meta name="color-scheme" content="light dark" />
+        <meta name="theme-color" content="#087e96" />
+        <meta name="description" content="A review of Git commands." />
+        <meta property="og:description" content="A review of Git commands." />
+
+    
+        <meta name="robots" content="index, nofollow" />
+    
+
+    <meta property="og:title" content="Git review" />
+    <meta property="og:type" content="article" />
+
+    
+        
+        
+        
+
+        
+        
+            
+            
+            
+                
+            
+        
+
+        
+        <meta property="og:image" content="https://darellanodev.github.io/social_cards/index.jpg?h=d8be352f1d2fb154df81" />
+        <meta property="og:image:width" content="1400" />
+        <meta property="og:image:height" content="800" />
+        <meta name="twitter:image" content="https://darellanodev.github.io/social_cards/index.jpg?h=d8be352f1d2fb154df81" />
+        <meta name="twitter:card" content="summary_large_image" />
+    
+
+    <meta property="og:locale" content="en_GB" />
+
+    <meta property="og:url" content="https:&#x2F;&#x2F;darellanodev.github.io&#x2F;blog&#x2F;20240816-gitreview&#x2F;" /><meta property="og:site_name" content="Darellanodev">
+        <noscript><link rel="stylesheet" href="https://darellanodev.github.io/no_js.css"/></noscript>
+        <script type="text/javascript" src="https://darellanodev.github.io/js/initializeTheme.min.js"></script>
+        <script defer src="https://darellanodev.github.io/js/themeSwitcher.min.js"></script>
+
+
+
+
+    
+    
+
+
+
+        <script defer src="https://darellanodev.github.io/js/searchElasticlunr.min.js?h=2950d57f80c9fa78f37e"></script>
+
+        </head>
+
+
+<body>
+    <header>
+    <nav class="navbar">
+        <div class="nav-title">
+            <a href=https://darellanodev.github.io class="withoutbg">
+                <img src="https://darellanodev.github.io/img/darellanodev_logo.svg" alt="darellanodev logo">
+            </a>
+        </div>
+        <div class="nav-navs">
+            <ul>
+                
+                <li>
+                    
+                    
+
+                    <a class="nav-links no-hover-padding hvr-grow" href="https:&#x2F;&#x2F;github.com&#x2F;darellanodev">
+                        github
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    
+                    
+
+                    <a class="nav-links no-hover-padding hvr-grow"
+                        href="https://darellanodev.github.io/projects/">
+                        projects
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    
+                    
+
+                    <a class="nav-links no-hover-padding hvr-grow"
+                        href="https://darellanodev.github.io/artwork/">
+                        artwork
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    
+                    
+
+                    <a class="nav-links no-hover-padding hvr-grow"
+                        href="https://darellanodev.github.io/blog/">
+                        blog
+                    </a>
+                    
+                </li>
+                <li class="js">
+                    <div role="button" tabindex="0" id="search-button" class="search-icon interactive-icon"
+                        title="Click or press $SHORTCUT to open search" aria-label="Click or press $SHORTCUT to open search">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                            <path
+                                d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z" />
+                        </svg>
+                    </div>
+                </li>
+                
+                
+
+                <li class="theme-switcher-wrapper js"><div
+        title="Toggle dark&#x2F;light mode"
+        class="theme-switcher"
+        tabindex="0"
+        role="button"
+        aria-label="Toggle dark mode"
+        aria-pressed="false">
+    </div><div
+        title="Reset mode to default"
+        class="theme-resetter"
+        tabindex="0"
+        role="button"
+        aria-hidden="true"
+        aria-label="Reset mode to default">
+    </div>
+
+</li>
+</ul>
+        </div>
+        
+    </nav>
+</header>
+    <div class="content">
+
+        
+        
+
+
+
+
+<main>
+    <article>
+        <h1 class="article-title gradient-color">
+            Git review
+        </h1>
+
+        <ul class="meta">
+            
+
+            
+                <li>
+
+
+
+
+
+    
+
+    
+        
+        
+            
+        
+    
+
+    
+    26th
+    
+        Jul 2024
+    
+
+
+</li>
+            
+
+            
+            
+                • <li title="1122 words">6 min read</li>
+            •&nbsp;<li>Tags:&nbsp;</li><li><a href=https://darellanodev.github.io/tags/git/>Git</a></li>
+                </ul><ul class="meta last-updated"><li>Last updated on 
+
+
+
+
+
+    
+
+    
+        
+        
+            
+        
+    
+
+    
+    28th
+    
+        Jul 2024
+    
+
+
+</li>
+                
+                
+            
+        </ul>
+
+        
+
+        
+        
+
+        <section class="body">
+            
+            
+            <p>This is a review of Git commands</p>
+<h2 id="git-commands-review"><a class="header-anchor no-hover-padding" href="#git-commands-review" aria-label="Anchor link for: git-commands-review"><span class="link-icon" aria-hidden="true"></span></a>
+Git commands review</h2>
+<h3 id="basics"><a class="header-anchor no-hover-padding" href="#basics" aria-label="Anchor link for: basics"><span class="link-icon" aria-hidden="true"></span></a>
+Basics</h3>
+<ul>
+<li>
+<p>Configuration:</p>
+<ul>
+<li>View user name / email: <code>git config user.name</code> / <code>git config user.email</code></li>
+<li>Set globally user / email: <code>git config --global user.name "My name"</code> / <code>git config --global user.email "myemail@providermail.com"</code></li>
+</ul>
+</li>
+<li>
+<p>View the current status: <code>git status</code></p>
+</li>
+<li>
+<p>Initialize repository: <code>git init</code></p>
+</li>
+<li>
+<p>Basic workflow</p>
+<ul>
+<li>1: add
+<ul>
+<li>Add specific files to the staged area: <code>git add file1.txt file2.txt</code></li>
+<li>Or add all: <code>git add .</code></li>
+</ul>
+</li>
+<li>2: Commit:
+<ul>
+<li>Commit with a message: <code>git commit -m "start creating two sample files"</code></li>
+</ul>
+</li>
+<li>Also we can add everything and commit with message in one command: <code>git commit -am "first commit"</code></li>
+</ul>
+</li>
+<li>
+<p>View log:</p>
+<ul>
+<li>Display a list of the commits: <code>git log</code></li>
+<li>In one line <code>git log --oneline</code></li>
+</ul>
+</li>
+<li>
+<p>Amend:</p>
+<ul>
+<li>Amend without editing the message <code>git commit --amend --no-edit</code></li>
+<li>Amend the message <code>git commit --amend -m "my new message"</code></li>
+</ul>
+</li>
+<li>
+<p>Branches:</p>
+<ul>
+<li>
+<p>View all branches: <code>git branch</code></p>
+</li>
+<li>
+<p>Create / Switch:</p>
+<ul>
+<li>Create a branch: <code>git branch bugfix</code></li>
+<li>Switch to a branch: <code>git switch bugfix</code></li>
+<li>Create and switch to a branch: <code>git switch -c bugfix</code></li>
+<li>Old command: <code>git checkout -b bugfix</code></li>
+</ul>
+</li>
+<li>
+<p>Delete a branch:</p>
+<ul>
+<li>1: Move to other branch: <code>git switch main</code></li>
+<li>2: Delete the branch: <code>git branch -d bugfix</code></li>
+</ul>
+</li>
+<li>
+<p>Rename a branch:</p>
+<ul>
+<li>1: Switch to the branch: <code>git switch bugfix</code></li>
+<li>2: Rename it: <code>git branch -m errorfix</code></li>
+</ul>
+</li>
+<li>
+<p>Merge a branch:</p>
+<ul>
+<li>1: Go to the receiving branch: <code>git switch main</code></li>
+<li>2: Merge the desired branch into the actual branch: <code>git merge bugfix</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>See changes:</p>
+<ul>
+<li>In the working directory that are not staged: <code>git diff</code></li>
+<li>Since the last commit (no matters if staged or not): <code>git diff HEAD</code></li>
+<li>For the staged: <code>git diff --staged</code></li>
+<li>We can add a filename to the previous commands to limit to a specific file:
+<ul>
+<li><code>git diff HEAD colors.txt</code></li>
+</ul>
+</li>
+<li>List the changes between the tip of branch1 and branch2: <code>git diff branch1 branch2</code></li>
+<li>List the changes between two commits: <code>git diff 45bdd51 f3eaa49</code></li>
+</ul>
+</li>
+<li>
+<p>Stash:</p>
+<ul>
+<li>For save: <code>git stash</code></li>
+<li>Restore and remove from the stash: <code>git stash pop</code></li>
+<li>Other stash commands that are less used:
+<ul>
+<li>Restore but keep a copy in the stash (for example to apply the stash to multiples branches) <code>git stash apply</code></li>
+<li>If we keep more than one stashed thing: <code>git stash list</code></li>
+<li>Apply a specific stash: <code>git stash apply stash@{1}</code></li>
+<li>Delete a specific stash: <code>git stash drop stash@{1}</code></li>
+<li>Delete all the stash: <code>git stash clear</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Travel to make changes:</p>
+<ul>
+<li>
+<p>1: move HEAD to a specific commit <code>git checkout &lt;commit-hash&gt;</code></p>
+</li>
+<li>
+<p>2: then make a branch that starts for this commit, and we can make changes in a new branch</p>
+</li>
+<li>
+<p>Other method to move the head:</p>
+<ul>
+<li>to move one time back the HEAD to the previous commit <code>git checkout HEAD~1</code></li>
+<li>… two times back <code>git checkout HEAD~2</code></li>
+<li>… three times back<code>git checkout HEAD~3</code></li>
+<li>…</li>
+</ul>
+</li>
+<li>
+<p>After move HEAD to a specific commit we can return to the last commit of the branch using: <code>git switch -</code></p>
+</li>
+<li>
+<p>Discarding modified changes:</p>
+<ul>
+<li><code>git checkout HEAD file1.txt</code></li>
+<li>other method: <code>git checkout -- file1.txt</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Restoring things:</p>
+<ul>
+<li>Git restore (same to the previous git commands)
+<ul>
+<li><code>git restore file1.txt</code></li>
+</ul>
+</li>
+<li>To restore a file to what it was in a specific commit:
+<ul>
+<li>1: we can do (we can put the commit hash instead of HEAD~1): <code>git restore --source HEAD~1 file1.txt</code></li>
+<li>2: then we can also go back to the last commit of the file<code>git restore file1.txt</code></li>
+</ul>
+</li>
+<li>Unstaging files
+<ul>
+<li><code>git restore --staged file1.txt</code></li>
+</ul>
+</li>
+<li>Git reset
+<ul>
+<li>remove the commits but not the changes: <code>git reset &lt;commit-hash&gt;</code>
+<ul>
+<li>this is useful when we had made changes in the incorrect branch. First we delete the commits without loosing the changes and then we create a new branch.</li>
+</ul>
+</li>
+<li>remove the commits and the changes: <code>git reset --hard &lt;commit-hash&gt;</code></li>
+</ul>
+</li>
+<li>Git revert
+<ul>
+<li>Is similar to reset but it creates a new commit without removing any previous commits.</li>
+<li>It’s good because it does not alter the git history specially when we are collaborating with other persons.</li>
+<li>It can produce conflicts and then you have to resolve to make the new commit</li>
+<li><code>git revert &lt;bad-commit-hash-that-we-want-to-revert&gt;</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Working with the remote</p>
+<ul>
+<li>Git remote:
+<ul>
+<li>View the actual remotes: <code>git remote -v</code></li>
+<li>Add a remote with the name origin: <code>git remote add origin &lt;repo-url&gt;</code></li>
+<li>Rename the branch where we are to: <code>git branch -M main</code></li>
+<li>Push a branch: <code>git push origin main</code></li>
+<li>Set the upstream:
+<ul>
+<li>1: remember that the main branch of my local repo is connected with the main branch of the origin: <code>git push -u origin main</code></li>
+<li>2: then we can do <code>git push</code></li>
+</ul>
+</li>
+<li>View remote branches: <code>git branch -r</code></li>
+<li>To get locally a branch that is in remote but not in local (if the branch name exists in remote it will get the branch): <code>git switch branchname</code></li>
+</ul>
+</li>
+<li>Fetch:
+<ul>
+<li>Download the last changes of a branch without messing up the working directory: <code>git fetch</code> or <code>git fetch origin</code></li>
+<li>You can indicate a specific branch: <code>git fetch origin/responsivegui</code></li>
+<li>Then we can travel to it: <code>git checkout origin/responsivegui</code></li>
+</ul>
+</li>
+<li>Pull (is like a fetch and then a merge):
+<ul>
+<li><code>git pull origin responsivegui</code></li>
+<li>A tipically workflow when doing a pull cause conflicts is: resolve conflicts, and then push the fixed conflicts</li>
+<li>Short syntax: <code>git pull</code> (by default is origin, and the current branch)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="guis"><a class="header-anchor no-hover-padding" href="#guis" aria-label="Anchor link for: guis"><span class="link-icon" aria-hidden="true"></span></a>
+GUIs</h2>
+<ul>
+<li>VSCode:
+<ul>
+<li>Git Graph extension</li>
+</ul>
+</li>
+<li><a href="https://www.gitkraken.com/">GitKraken</a></li>
+</ul>
+<h2 id="other-interesting-links"><a class="header-anchor no-hover-padding" href="#other-interesting-links" aria-label="Anchor link for: other-interesting-links"><span class="link-icon" aria-hidden="true"></span></a>
+Other interesting links</h2>
+<ul>
+<li><a href="https://about.gitlab.com/blog/2018/08/08/git-happens/">https://about.gitlab.com/blog/2018/08/08/git-happens/</a></li>
+</ul>
+<h2 id="other-common-scenarios"><a class="header-anchor no-hover-padding" href="#other-common-scenarios" aria-label="Anchor link for: other-common-scenarios"><span class="link-icon" aria-hidden="true"></span></a>
+Other common scenarios</h2>
+<h3 id="when-you-put-something-to-ignore-but-it-is-commited-previously-and-now-i-want-to-ignore-it"><a class="header-anchor no-hover-padding" href="#when-you-put-something-to-ignore-but-it-is-commited-previously-and-now-i-want-to-ignore-it" aria-label="Anchor link for: when-you-put-something-to-ignore-but-it-is-commited-previously-and-now-i-want-to-ignore-it"><span class="link-icon" aria-hidden="true"></span></a>
+When you put something to ignore but it is commited previously and now I want to ignore it</h3>
+<pre class="z-code"><code><span class="z-text z-plain">Source: &lt;https://stackoverflow.com/questions/7527982/applying-gitignore-to-committed-files&gt;
+</span><span class="z-text z-plain">
+</span><span class="z-text z-plain">After editing .gitignore to match the ignored files, you can do git ls-files -ci --exclude-standard to see the files that are included in the exclude lists; you can then do
+</span><span class="z-text z-plain">
+</span><span class="z-text z-plain">    Linux/MacOS:
+</span><span class="z-text z-plain">        git ls-files -ci --exclude-standard -z | xargs -0 git rm --cached
+</span><span class="z-text z-plain">    Windows (PowerShell):
+</span><span class="z-text z-plain">        git ls-files -ci --exclude-standard | % { git rm --cached &quot;$_&quot; }
+</span><span class="z-text z-plain">    Windows (cmd.exe):
+</span><span class="z-text z-plain">        for /F &quot;tokens=*&quot; %a in (&#39;git ls-files -ci --exclude-standard&#39;) do @git rm --cached &quot;%a&quot;
+</span><span class="z-text z-plain">
+</span><span class="z-text z-plain">to remove them from the repository (without deleting them from disk).
+</span></code></pre>
+<h3 id="workflow-with-github-issues"><a class="header-anchor no-hover-padding" href="#workflow-with-github-issues" aria-label="Anchor link for: workflow-with-github-issues"><span class="link-icon" aria-hidden="true"></span></a>
+Workflow with GitHub Issues</h3>
+<p>Example Workflow:</p>
+<ol>
+<li>Create an issue: You open a new issue titled “Add form validation” and assign it the number #10.</li>
+<li>Work on the task: You create a new branch in your local repository to work on the task: git checkout -b add-form-validation.</li>
+<li>Make commits: As you progress, you make commits with messages referencing the issue: git commit -m “Add basic form validation #10”.</li>
+<li>Complete the task: Once the task is finished, you make a final commit that closes the issue: git commit -m “Complete form validation, closes #10”.</li>
+<li>Merge changes: You merge the branch into the main branch, and issue #10 is automatically closed on GitHub.</li>
+</ol>
+
+        </section>
+
+        
+        
+        
+        
+
+        
+            
+            
+            
+
+            
+        
+            
+            
+            
+
+            
+        
+            
+            
+            
+
+            
+        
+            
+            
+            
+
+            
+        
+
+        
+        
+
+        
+        
+
+    </article>
+</main>
+
+
+<span id="copy-success" class="hidden">
+        Copied!
+    </span>
+    <span id="copy-init" class="hidden">
+        Copy code to clipboard
+    </span>
+    <script defer src="https://darellanodev.github.io/js/copyCodeToClipboard.min.js"></script><script defer src="https://darellanodev.github.io/js/footnoteBacklinks.min.js"></script>
+    </div>
+    <footer>
+    <section>
+        <nav class="socials nav-navs">
+            <ul>
+                <li>
+                    <a class="nav-links no-hover-padding social" rel=" me" 
+                        href=https://github.com/darellanodev>
+                        <img alt=github title=github
+                            src="https://darellanodev.github.io/social_icons/github.svg">
+                    </a>
+                </li>
+                
+            </ul>
+            
+        </nav>
+
+        
+        <nav class="nav-navs">
+            <small>
+                <ul>
+                    
+                    <li><a class="nav-links no-hover-padding" href="https:&#x2F;&#x2F;darellanodev.github.io&#x2F;privacy&#x2F;">
+                            privacy policy
+                        </a>
+                    </li>
+                    
+                </ul>
+            </small>
+            
+        </nav>
+
+        <div class="credits">
+            <small>
+                
+
+                
+                Powered by
+                <a rel=""  href="https://www.getzola.org">Zola</a>
+                &amp;
+                <a rel=""  href="https://github.com/welpo/tabi">tabi</a>
+
+
+            </small>
+        </div>
+    </section>
+
+    <div id="searchModal" class="search-modal js" role="dialog" aria-labelledby="modalTitle">
+    <h1 id="modalTitle" class="visually-hidden">Search</h1>
+    <div id="modal-content">
+        <div id="searchBar">
+            <div class="search-icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                    <path d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"/>
+                </svg>
+            </div>
+            <input id="searchInput" role="combobox" autocomplete="off" spellcheck="false" aria-expanded="false" aria-controls="results-container" placeholder="Search…"/>
+            <div id="clear-search" class="close-icon interactive-icon" tabindex="0" role="button" title="Clear search">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/>
+                </svg>
+            </div>
+        </div>
+        <div id="results-container">
+            <div id="results-info"><span id="zero_results"> No results</span>
+                <span id="one_results"> $NUMBER result</span>
+                <span id="many_results"> $NUMBER results</span><span id="two_results"> $NUMBER results</span>
+                <span id="few_results"> $NUMBER results</span>
+            </div>
+        <div id="results" role="listbox"></div>
+    </div>
+</div>
+</footer>
+</body>
+
+</html>
