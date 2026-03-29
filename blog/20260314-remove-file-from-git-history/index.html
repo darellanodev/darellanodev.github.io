@@ -1,0 +1,433 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="base" content="https://darellanodev.github.io/">
+
+    
+    <title>Darellanodev • Remove file from Git history</title>
+
+    
+    
+        <link rel="icon" type="image/png" href="https://darellanodev.github.io/img/seedling.png"/>
+    
+    
+        <link rel=icon href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 105 55"><text y=".7em" font-size="82">🌱</text></svg>'>
+    
+
+    
+    <link rel="alternate" type="application/atom+xml" title="Darellanodev" href="https://darellanodev.github.io/atom.xml">
+
+    
+    
+    
+        <link rel="stylesheet" href="https://darellanodev.github.io/custom_subset.css?h=6de30382822eb2c02ee0">
+    
+
+    
+        <link rel="stylesheet" href="https://darellanodev.github.io/main.css?h=99437c957531ed56eb6d" />
+
+    <meta name="color-scheme" content="light dark" />
+        <meta name="theme-color" content="#087e96" />
+        <meta name="description" content="I share my experience removing a file from Git history using git-filter-repo while keeping the file in the project as untracked" />
+        <meta property="og:description" content="I share my experience removing a file from Git history using git-filter-repo while keeping the file in the project as untracked" />
+
+    
+        <meta name="robots" content="index, nofollow" />
+    
+
+    <meta property="og:title" content="Remove file from Git history" />
+    <meta property="og:type" content="article" />
+
+    
+        
+        
+        
+
+        
+        
+            
+            
+            
+                
+            
+        
+
+        
+        <meta property="og:image" content="https://darellanodev.github.io/social_cards/index.jpg?h=d8be352f1d2fb154df81" />
+        <meta property="og:image:width" content="1400" />
+        <meta property="og:image:height" content="800" />
+        <meta name="twitter:image" content="https://darellanodev.github.io/social_cards/index.jpg?h=d8be352f1d2fb154df81" />
+        <meta name="twitter:card" content="summary_large_image" />
+    
+
+    <meta property="og:locale" content="en_GB" />
+
+    <meta property="og:url" content="https:&#x2F;&#x2F;darellanodev.github.io&#x2F;blog&#x2F;20260314-remove-file-from-git-history&#x2F;" /><meta property="og:site_name" content="Darellanodev">
+        <noscript><link rel="stylesheet" href="https://darellanodev.github.io/no_js.css"/></noscript>
+        <script type="text/javascript" src="https://darellanodev.github.io/js/initializeTheme.min.js"></script>
+        <script defer src="https://darellanodev.github.io/js/themeSwitcher.min.js"></script>
+
+
+
+
+    
+    
+
+
+
+        <script defer src="https://darellanodev.github.io/js/searchElasticlunr.min.js?h=2950d57f80c9fa78f37e"></script>
+
+        </head>
+
+
+<body>
+    <header>
+    <nav class="navbar">
+        <div class="nav-title">
+            <a href=https://darellanodev.github.io class="withoutbg">
+                <img src="https://darellanodev.github.io/img/darellanodev_logo.svg" alt="darellanodev logo">
+            </a>
+        </div>
+        <div class="nav-navs">
+            <ul>
+                
+                <li>
+                    
+                    
+
+                    <a class="nav-links no-hover-padding hvr-grow" href="https:&#x2F;&#x2F;github.com&#x2F;darellanodev">
+                        github
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    
+                    
+
+                    <a class="nav-links no-hover-padding hvr-grow"
+                        href="https://darellanodev.github.io/projects/">
+                        projects
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    
+                    
+
+                    <a class="nav-links no-hover-padding hvr-grow"
+                        href="https://darellanodev.github.io/artwork/">
+                        artwork
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    
+                    
+
+                    <a class="nav-links no-hover-padding hvr-grow"
+                        href="https://darellanodev.github.io/blog/">
+                        blog
+                    </a>
+                    
+                </li>
+                <li class="js">
+                    <div role="button" tabindex="0" id="search-button" class="search-icon interactive-icon"
+                        title="Click or press $SHORTCUT to open search" aria-label="Click or press $SHORTCUT to open search">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                            <path
+                                d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z" />
+                        </svg>
+                    </div>
+                </li>
+                
+                
+
+                <li class="theme-switcher-wrapper js"><div
+        title="Toggle dark&#x2F;light mode"
+        class="theme-switcher"
+        tabindex="0"
+        role="button"
+        aria-label="Toggle dark mode"
+        aria-pressed="false">
+    </div><div
+        title="Reset mode to default"
+        class="theme-resetter"
+        tabindex="0"
+        role="button"
+        aria-hidden="true"
+        aria-label="Reset mode to default">
+    </div>
+
+</li>
+</ul>
+        </div>
+        
+    </nav>
+</header>
+    <div class="content">
+
+        
+        
+
+
+
+
+<main>
+    <article>
+        <h1 class="article-title gradient-color">
+            Remove file from Git history
+        </h1>
+
+        <ul class="meta">
+            
+
+            
+                <li>
+
+
+
+
+
+    
+
+    
+        
+        
+            
+        
+    
+
+    
+    14th
+    
+        Mar 2026
+    
+
+
+</li>
+            
+
+            
+            
+                • <li title="558 words">3 min read</li>
+            •&nbsp;<li>Tags:&nbsp;</li><li><a href=https://darellanodev.github.io/tags/git/>Git</a></li>
+                </ul><ul class="meta last-updated"><li>Last updated on 
+
+
+
+
+
+    
+
+    
+        
+        
+            
+        
+    
+
+    
+    14th
+    
+        Mar 2026
+    
+
+
+</li>
+                
+                
+            
+        </ul>
+
+        
+
+        
+        
+
+        <section class="body">
+            
+            
+            <h2 id="the-problem"><a class="header-anchor no-hover-padding" href="#the-problem" aria-label="Anchor link for: the-problem"><span class="link-icon" aria-hidden="true"></span></a>
+The problem</h2>
+<p>Imagine you have a file in your project that you never wanted to be part of the Git history. Maybe you added it by mistake in the very first commits, or maybe it was a config file with sensitive info that should never have been tracked.</p>
+<p><img src="https://darellanodev.github.io/blog/20260314-remove-file-from-git-history/./remove_file_from_git_history.png" alt="remove_file_from_git_history" /></p>
+<p>That happened to me with a file called <code>prompt.txt</code>. I added it to the project from the very first commit, and although I always wanted to ignore it, I never set it up correctly in the <code>.gitignore</code>. The problem is that even if I added the file to <code>.gitignore</code> later, <strong>Git would still track it</strong>.</p>
+<p>Every time someone did a <code>git clone</code> or checked the project history, they would see that file in the old commits. And that was exactly what I wanted to avoid.</p>
+<h2 id="why-gitignore-alone-doesn-t-work"><a class="header-anchor no-hover-padding" href="#why-gitignore-alone-doesn-t-work" aria-label="Anchor link for: why-gitignore-alone-doesn-t-work"><span class="link-icon" aria-hidden="true"></span></a>
+Why .gitignore alone doesn’t work</h2>
+<p>The <code>.gitignore</code> file only tells Git what <em>new</em> files to ignore. If a file was already added in a previous commit, Git will keep tracking it forever, even if it’s in <code>.gitignore</code>.</p>
+<p>To fix this, we need to <strong>rewrite the Git history</strong>. This means changing all existing commits so the file never existed in them.</p>
+<h2 id="the-solution-git-filter-repo"><a class="header-anchor no-hover-padding" href="#the-solution-git-filter-repo" aria-label="Anchor link for: the-solution-git-filter-repo"><span class="link-icon" aria-hidden="true"></span></a>
+The solution: git filter-repo</h2>
+<p>Git doesn’t have a built-in tool for this, but there’s an external utility called <code>git-filter-repo</code> that is the recommended way to do this today (it’s newer than the old <code>git filter-branch</code>).</p>
+<h3 id="step-1-install-git-filter-repo"><a class="header-anchor no-hover-padding" href="#step-1-install-git-filter-repo" aria-label="Anchor link for: step-1-install-git-filter-repo"><span class="link-icon" aria-hidden="true"></span></a>
+Step 1: install git filter-repo</h3>
+<p>The first thing we need is to install this tool. Since it’s written in Python, we can use pip:</p>
+<pre data-lang="bash" class="language-bash z-code"><code class="language-bash" data-lang="bash"><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-variable z-function z-shell">pip</span></span><span class="z-meta z-function-call z-arguments z-shell"> install git-filter-repo</span>
+</span></code></pre>
+<p>This will download and install the tool so we can use it on our system.</p>
+<h3 id="step-2-run-the-cleanup"><a class="header-anchor no-hover-padding" href="#step-2-run-the-cleanup" aria-label="Anchor link for: step-2-run-the-cleanup"><span class="link-icon" aria-hidden="true"></span></a>
+Step 2: run the cleanup</h3>
+<p>Once it’s installed, we go to our project folder and run:</p>
+<pre data-lang="bash" class="language-bash z-code"><code class="language-bash" data-lang="bash"><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-variable z-function z-shell">git</span></span><span class="z-meta z-function-call z-arguments z-shell"> filter-repo<span class="z-variable z-parameter z-option z-shell"><span class="z-punctuation z-definition z-parameter z-shell"> --</span>path</span> prompt.txt<span class="z-variable z-parameter z-option z-shell"><span class="z-punctuation z-definition z-parameter z-shell"> --</span>invert-paths</span><span class="z-variable z-parameter z-option z-shell"><span class="z-punctuation z-definition z-parameter z-shell"> --</span>force</span></span>
+</span></code></pre>
+<p>Let’s see what each part does:</p>
+<ul>
+<li><code>--path prompt.txt</code>: Tells the tool which file we want to remove from history</li>
+<li><code>--invert-paths</code>: Instead of keeping only that file (which would be the default behavior), we’re asking for the opposite: exclude that file from all commits</li>
+<li><code>--force</code>: Forces the execution. Git asks us to do this when it detects we’re not on a freshly cloned repo, as a safety measure</li>
+</ul>
+<h2 id="what-happens-to-the-remote-repository"><a class="header-anchor no-hover-padding" href="#what-happens-to-the-remote-repository" aria-label="Anchor link for: what-happens-to-the-remote-repository"><span class="link-icon" aria-hidden="true"></span></a>
+What happens to the remote repository</h2>
+<p>Here’s a crucial point: the remote repository (GitHub, GitLab, etc.) <strong>still has the old history</strong> with the file in it.</p>
+<p>If we do a <code>git push</code> now, Git will complain because the local and remote histories are different. To upload our changes, we need to force the push:</p>
+<pre data-lang="bash" class="language-bash z-code"><code class="language-bash" data-lang="bash"><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-variable z-function z-shell">git</span></span><span class="z-meta z-function-call z-arguments z-shell"> push<span class="z-variable z-parameter z-option z-shell"><span class="z-punctuation z-definition z-parameter z-shell"> --</span>force</span> origin main</span>
+</span></code></pre>
+<p>⚠️ <strong>Important warning</strong>: The <code>git push --force</code> will rewrite the remote repository’s history. This can affect other people working on the project. If there are other collaborators, we should coordinate with them so they clone again after the update.</p>
+<h2 id="when-not-to-do-this"><a class="header-anchor no-hover-padding" href="#when-not-to-do-this" aria-label="Anchor link for: when-not-to-do-this"><span class="link-icon" aria-hidden="true"></span></a>
+When not to do this</h2>
+<ul>
+<li>If the project has many active collaborators</li>
+<li>If the repository has a very long history (the process can take a while)</li>
+<li>If there are open pull requests that could be affected</li>
+</ul>
+<h2 id="conclusion"><a class="header-anchor no-hover-padding" href="#conclusion" aria-label="Anchor link for: conclusion"><span class="link-icon" aria-hidden="true"></span></a>
+Conclusion</h2>
+<p>The command <code>git filter-repo --invert-paths</code> is a powerful tool for cleaning up Git history. In my case, it let me remove a file from history while keeping the file in my project as an untracked file.</p>
+<p>It’s one of those tools you hope you never need, but when you need it, it’s a lifesaver. I hope this guide helps if you ever find yourself in a similar situation.</p>
+
+        </section>
+
+        
+        
+        
+        
+
+        
+            
+            
+            
+
+            
+        
+            
+            
+            
+
+            
+        
+            
+            
+            
+
+            
+        
+            
+            
+            
+
+            
+        
+
+        
+        
+
+        
+        
+
+    </article>
+</main>
+
+
+<span id="copy-success" class="hidden">
+        Copied!
+    </span>
+    <span id="copy-init" class="hidden">
+        Copy code to clipboard
+    </span>
+    <script defer src="https://darellanodev.github.io/js/copyCodeToClipboard.min.js"></script><script defer src="https://darellanodev.github.io/js/footnoteBacklinks.min.js"></script>
+    </div>
+    <footer>
+    <section>
+        <nav class="socials nav-navs">
+            <ul>
+                <li>
+                    <a class="nav-links no-hover-padding social" rel=" me" 
+                        href=https://github.com/darellanodev>
+                        <img alt=github title=github
+                            src="https://darellanodev.github.io/social_icons/github.svg">
+                    </a>
+                </li>
+                
+            </ul>
+            
+        </nav>
+
+        
+        <nav class="nav-navs">
+            <small>
+                <ul>
+                    
+                    <li><a class="nav-links no-hover-padding" href="https:&#x2F;&#x2F;darellanodev.github.io&#x2F;privacy&#x2F;">
+                            privacy policy
+                        </a>
+                    </li>
+                    
+                </ul>
+            </small>
+            
+        </nav>
+
+        <div class="credits">
+            <small>
+                
+
+                
+                Powered by
+                <a rel=""  href="https://www.getzola.org">Zola</a>
+                &amp;
+                <a rel=""  href="https://github.com/welpo/tabi">tabi</a>
+
+
+            </small>
+        </div>
+    </section>
+
+    <div id="searchModal" class="search-modal js" role="dialog" aria-labelledby="modalTitle">
+    <h1 id="modalTitle" class="visually-hidden">Search</h1>
+    <div id="modal-content">
+        <div id="searchBar">
+            <div class="search-icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                    <path d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"/>
+                </svg>
+            </div>
+            <input id="searchInput" role="combobox" autocomplete="off" spellcheck="false" aria-expanded="false" aria-controls="results-container" placeholder="Search…"/>
+            <div id="clear-search" class="close-icon interactive-icon" tabindex="0" role="button" title="Clear search">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/>
+                </svg>
+            </div>
+        </div>
+        <div id="results-container">
+            <div id="results-info"><span id="zero_results"> No results</span>
+                <span id="one_results"> $NUMBER result</span>
+                <span id="many_results"> $NUMBER results</span><span id="two_results"> $NUMBER results</span>
+                <span id="few_results"> $NUMBER results</span>
+            </div>
+        <div id="results" role="listbox"></div>
+    </div>
+</div>
+</footer>
+</body>
+
+</html>
