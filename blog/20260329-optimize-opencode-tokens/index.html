@@ -10,7 +10,7 @@
     <meta name="base" content="https://darellanodev.github.io/">
 
     
-    <title>Darellanodev • Blog</title>
+    <title>Darellanodev • Optimize OpenCode tokens with DCP and RTK</title>
 
     
     
@@ -34,14 +34,14 @@
 
     <meta name="color-scheme" content="light dark" />
         <meta name="theme-color" content="#087e96" />
-        <meta name="description" content="" />
-        <meta property="og:description" content="" />
+        <meta name="description" content="How to save tokens in OpenCode using Dynamic Context Pruning (DCP) and Rust Token Killer (RTK) - achieve 60-90% reductions in common operations" />
+        <meta property="og:description" content="How to save tokens in OpenCode using Dynamic Context Pruning (DCP) and Rust Token Killer (RTK) - achieve 60-90% reductions in common operations" />
 
     
         <meta name="robots" content="index, nofollow" />
     
 
-    <meta property="og:title" content="Darellanodev" />
+    <meta property="og:title" content="Optimize OpenCode tokens with DCP and RTK" />
     <meta property="og:type" content="article" />
 
     
@@ -51,6 +51,10 @@
 
         
         
+            
+            
+            
+                
             
         
 
@@ -64,7 +68,7 @@
 
     <meta property="og:locale" content="en_GB" />
 
-    <meta property="og:url" content="https:&#x2F;&#x2F;darellanodev.github.io&#x2F;blog&#x2F;page&#x2F;5&#x2F;" /><meta property="og:site_name" content="Darellanodev">
+    <meta property="og:url" content="https:&#x2F;&#x2F;darellanodev.github.io&#x2F;blog&#x2F;20260329-optimize-opencode-tokens&#x2F;" /><meta property="og:site_name" content="Darellanodev">
         <noscript><link rel="stylesheet" href="https://darellanodev.github.io/no_js.css"/></noscript>
         <script type="text/javascript" src="https://darellanodev.github.io/js/initializeTheme.min.js"></script>
         <script defer src="https://darellanodev.github.io/js/themeSwitcher.min.js"></script>
@@ -174,282 +178,186 @@
         
         
 
+
+
+
 <main>
-<div class="list">
-    <div>
+    <article>
+        <h1 class="article-title gradient-color">
+            Optimize OpenCode tokens with DCP and RTK
+        </h1>
+
+        <ul class="meta">
+            
+
+            
+                <li>
+
+
+
+
+
+    
+
+    
         
-<h1 class="title-container section-title bottom-divider gradient-color">
-    Blog
-</h1>
-
-    </div>
+        
+            
+        
     
 
-<div class="bloglist-container">
     
-     
-            <section class="bloglist-row bottom-divider">
+    29th
+    
+        Mar 2026
+    
+
+
+</li>
+            
+
+            
+            
+                • <li title="371 words">2 min read</li>
+            •&nbsp;<li>Tags:&nbsp;</li><li><a href=https://darellanodev.github.io/tags/opencode/>OpenCode</a>,&nbsp;</li><li><a href=https://darellanodev.github.io/tags/tools/>Tools</a>,&nbsp;</li><li><a href=https://darellanodev.github.io/tags/ai/>AI</a></li>
+                </ul><ul class="meta last-updated"><li>Last updated on 
+
+
+
+
+
+    
+
+    
+        
+        
+            
+        
+    
+
+    
+    29th
+    
+        Mar 2026
+    
+
+
+</li>
                 
-
-                <ul class="bloglist-meta">
-
-                    
-                    
-                    <li class="date">
-
-
-
-
-
-    20 July 2024
-
-
-</li>
-                    
-                    
-                </ul>
-                <div class="bloglist-content">
-                    <h2 class="bloglist-title">
-                        <a href="https:&#x2F;&#x2F;darellanodev.github.io&#x2F;blog&#x2F;20240720-bookmarks&#x2F;">JavaScript Factory Pattern</a>
-                    </h2>
-
-                    
-                    <div class="bloglist-tags">
-                        
-                        <a class="tag" href="https://darellanodev.github.io/tags/jspatterns/">JSPatterns</a>
-                        
-                    </div>
-                    
-
-                    <div class="description">
-                        
-                        <p>An example of the Factory Pattern in JavaScript.</p>
-                        
-                    </div>
-                    <a class="readmore" href=https:&#x2F;&#x2F;darellanodev.github.io&#x2F;blog&#x2F;20240720-bookmarks&#x2F;>Read more&nbsp;<span class="arrow">→</span></a>
-                </div>
-            </section>
-            
-            
-            
-            
-            
-     
-            <section class="bloglist-row bottom-divider">
                 
+            
+        </ul>
 
-                <ul class="bloglist-meta">
+        
 
-                    
-                    
-                    <li class="date">
+        
+        
 
+        <section class="body">
+            
+            
+            <p>RTK eliminates noise from terminal outputs, achieving 60-90% reductions in common operations.</p>
+<p>DCP cleans old information from the context to prevent accumulation of unnecessary messages or results.</p>
+<p>In practice, this means fewer tokens per iteration, lighter contexts, and more efficient model usage. This helps make better use of free models and reduce costs on paid ones.</p>
+<p><img src="https://darellanodev.github.io/blog/20260329-optimize-opencode-tokens/./optimize_opencode_tokens.png" alt="optimize_opencode_tokens" /></p>
+<p>Here are the steps I followed on Windows:</p>
+<h2 id="updating-opencode"><a class="header-anchor no-hover-padding" href="#updating-opencode" aria-label="Anchor link for: updating-opencode"><span class="link-icon" aria-hidden="true"></span></a>
+Updating OpenCode</h2>
+<p>First, update OpenCode with <code>choco upgrade opencode</code> in PowerShell as administrator.</p>
+<h2 id="installing-dynamic-context-pruning-dcp"><a class="header-anchor no-hover-padding" href="#installing-dynamic-context-pruning-dcp" aria-label="Anchor link for: installing-dynamic-context-pruning-dcp"><span class="link-icon" aria-hidden="true"></span></a>
+Installing Dynamic Context Pruning (DCP)</h2>
+<p>To install DCP, follow the instructions from <a href="https://github.com/Opencode-DCP/opencode-dynamic-context-pruning">Dynamic Context Pruning</a> (as of this tutorial):</p>
+<p>Edit <code>C:\Users\[MyUser]\.config\opencode\opencode.jsonc</code> and set:</p>
+<pre data-lang="jsonc" class="language-jsonc z-code"><code class="language-jsonc" data-lang="jsonc"><span class="z-text z-plain">{
+</span><span class="z-text z-plain">  &quot;plugin&quot;: [&quot;@tarquinen/opencode-dcp@latest&quot;],
+</span><span class="z-text z-plain">}
+</span></code></pre>
+<p>Also create a <code>dcp.jsonc</code> file and paste the “Default Configuration” from the GitHub repo documentation.</p>
+<p>Modify some of these values in <code>dcp.jsonc</code> since by default it has high values that might not have any effect on some low-context models:</p>
+<pre data-lang="jsonc" class="language-jsonc z-code"><code class="language-jsonc" data-lang="jsonc"><span class="z-text z-plain">{
+</span><span class="z-text z-plain">  &quot;compress&quot;: {
+</span><span class="z-text z-plain">    &quot;mode&quot;: &quot;range&quot;,
+</span><span class="z-text z-plain">    &quot;permission&quot;: &quot;allow&quot;,
+</span><span class="z-text z-plain">    &quot;summaryBuffer&quot;: true,
+</span><span class="z-text z-plain">    &quot;maxContextLimit&quot;: 20000,
+</span><span class="z-text z-plain">    &quot;maxTokenLimit&quot;: 10000,
+</span><span class="z-text z-plain">    &quot;minContextLimit&quot;: 10000,
+</span><span class="z-text z-plain">    &quot;nudgeFrequency&quot;: 1,
+</span><span class="z-text z-plain">    &quot;nudgeForce&quot;: &quot;strong&quot;,
+</span><span class="z-text z-plain">    &quot;iterationNudgeThreshold&quot;: 5,
+</span><span class="z-text z-plain">  },
+</span><span class="z-text z-plain">}
+</span></code></pre>
+<h2 id="installing-rust-token-killer-rtk"><a class="header-anchor no-hover-padding" href="#installing-rust-token-killer-rtk" aria-label="Anchor link for: installing-rust-token-killer-rtk"><span class="link-icon" aria-hidden="true"></span></a>
+Installing Rust Token Killer (RTK)</h2>
+<p>To install RTK, follow the instructions from <a href="https://github.com/rtk-ai/rtk/">Rust Token Killer</a> (as of this tutorial):</p>
+<p>On Windows, download <code>rtk-x86_64-pc-windows-msvc.zip</code> from the <a href="https://github.com/rtk-ai/rtk/releases">releases section</a> of the GitHub repo, extract it and place <code>rtk.exe</code> in a fixed path, for example <code>C:\Programas\rtk\rtk.exe</code></p>
+<p>In the system environment variables, add the previous path to the “Path” (<code>C:\Programas\rtk\</code>)</p>
+<p>Open another command prompt and verify with <code>rtk --version</code> and <code>rtk init --show</code></p>
+<p>Also, with <code>rtk gain</code> you can see the saved tokens stats that initially are zero because it hasn’t been used yet.</p>
+<p>Run <code>rtk init -g --opencode</code></p>
+<p>Finally add the RTK plugin to “opencode.jsonc”, so the file would look like:</p>
+<pre data-lang="jsonc" class="language-jsonc z-code"><code class="language-jsonc" data-lang="jsonc"><span class="z-text z-plain">{
+</span><span class="z-text z-plain">  &quot;plugin&quot;: [&quot;@tarquinen/opencode-dcp@latest&quot;, &quot;@rtk/opencode-plugin@latest&quot;],
+</span><span class="z-text z-plain">}
+</span></code></pre>
+<p>Finally, open OpenCode and press Ctrl+P &gt; View Status (in the System category) and verify that both plugins, dcp and rtk, are visible.</p>
+<p>From now on, you can use them and as you have interactions with the agents, these plugins will be used to save tokens.</p>
+<h2 id="checking-token-savings"><a class="header-anchor no-hover-padding" href="#checking-token-savings" aria-label="Anchor link for: checking-token-savings"><span class="link-icon" aria-hidden="true"></span></a>
+Checking token savings</h2>
+<p>To check token savings in OpenCode, you can run the <code>/dcp stats</code> command, and to see savings with rtk, run <code>rtk gain</code> in a command prompt.</p>
+<p>YouTube video of the process (Spanish audio): <a href="https://youtu.be/68Bs81B4rJg">YouTube video</a></p>
 
+        </section>
 
+        
+        
+        
+        
 
-
-    20 July 2024
-
-
-</li>
-                    
-                    
-                </ul>
-                <div class="bloglist-content">
-                    <h2 class="bloglist-title">
-                        <a href="https:&#x2F;&#x2F;darellanodev.github.io&#x2F;blog&#x2F;20240720-js-factory-pattern&#x2F;">Bookmarks</a>
-                    </h2>
-
-                    
-                    <div class="bloglist-tags">
-                        
-                        <a class="tag" href="https://darellanodev.github.io/tags/bookmarks/">Bookmarks</a>
-                        
-                    </div>
-                    
-
-                    <div class="description">
-                        
-                        <p>Bookmarks to my favorites websites.</p>
-                        
-                    </div>
-                    <a class="readmore" href=https:&#x2F;&#x2F;darellanodev.github.io&#x2F;blog&#x2F;20240720-js-factory-pattern&#x2F;>Read more&nbsp;<span class="arrow">→</span></a>
-                </div>
-            </section>
+        
             
             
             
+
             
-            
-     
-            <section class="bloglist-row bottom-divider">
-                
-
-                <ul class="bloglist-meta">
-
-                    
-                    
-                    <li class="date">
-
-
-
-
-
-    14 July 2024
-
-
-</li>
-                    
-                    
-                </ul>
-                <div class="bloglist-content">
-                    <h2 class="bloglist-title">
-                        <a href="https:&#x2F;&#x2F;darellanodev.github.io&#x2F;blog&#x2F;20240714-js-observer-pattern&#x2F;">JavaScript Observer Pattern</a>
-                    </h2>
-
-                    
-                    <div class="bloglist-tags">
-                        
-                        <a class="tag" href="https://darellanodev.github.io/tags/jspatterns/">JSPatterns</a>
-                        
-                    </div>
-                    
-
-                    <div class="description">
-                        
-                        <p>An example of the Observer Pattern in JavaScript.</p>
-                        
-                    </div>
-                    <a class="readmore" href=https:&#x2F;&#x2F;darellanodev.github.io&#x2F;blog&#x2F;20240714-js-observer-pattern&#x2F;>Read more&nbsp;<span class="arrow">→</span></a>
-                </div>
-            </section>
+        
             
             
             
+
             
-            
-     
-            <section class="bloglist-row bottom-divider">
-                
-
-                <ul class="bloglist-meta">
-
-                    
-                    
-                    <li class="date">
-
-
-
-
-
-    14 July 2024
-
-
-</li>
-                    
-                    
-                </ul>
-                <div class="bloglist-content">
-                    <h2 class="bloglist-title">
-                        <a href="https:&#x2F;&#x2F;darellanodev.github.io&#x2F;blog&#x2F;20240726-devquotes&#x2F;">Dev Quotes</a>
-                    </h2>
-
-                    
-                    <div class="bloglist-tags">
-                        
-                        <a class="tag" href="https://darellanodev.github.io/tags/quotes/">Quotes</a>
-                        
-                    </div>
-                    
-
-                    <div class="description">
-                        
-                        <p>A list of my Favorite Dev Quotes.</p>
-                        
-                    </div>
-                    <a class="readmore" href=https:&#x2F;&#x2F;darellanodev.github.io&#x2F;blog&#x2F;20240726-devquotes&#x2F;>Read more&nbsp;<span class="arrow">→</span></a>
-                </div>
-            </section>
+        
             
             
             
+
             
-            
-     
-        <section class="bloglist-row">
-            
-
-                <ul class="bloglist-meta">
-
-                    
-                    
-                    <li class="date">
-
-
-
-
-
-    30 June 2024
-
-
-</li>
-                    
-                    
-                </ul>
-                <div class="bloglist-content">
-                    <h2 class="bloglist-title">
-                        <a href="https:&#x2F;&#x2F;darellanodev.github.io&#x2F;blog&#x2F;20240722-vimvscode&#x2F;">VIM in VSCode</a>
-                    </h2>
-
-                    
-                    <div class="bloglist-tags">
-                        
-                        <a class="tag" href="https://darellanodev.github.io/tags/vim/">VIM</a>
-                        
-                        <a class="tag" href="https://darellanodev.github.io/tags/vscode/">VSCode</a>
-                        
-                    </div>
-                    
-
-                    <div class="description">
-                        
-                        <p>For a few weeks ago I returned to use VIM extension in VSCode to code more confortable.</p>
-                        
-                    </div>
-                    <a class="readmore" href=https:&#x2F;&#x2F;darellanodev.github.io&#x2F;blog&#x2F;20240722-vimvscode&#x2F;>Read more&nbsp;<span class="arrow">→</span></a>
-                </div>
-            </section>
+        
             
             
             
-</div>
 
+            
+        
 
-</div>
+        
+        
+
+        
+        
+
+    </article>
 </main>
 
 
-    <ul class="pagination">
-        
-            <li class="page-item page-prev">
-                <a href="https:&#x2F;&#x2F;darellanodev.github.io&#x2F;blog&#x2F;page&#x2F;4&#x2F;" class="page-link" aria-label="Prev"><span class="arrow">←</span> Prev</a>
-            </li>
-        
-
-        <li class="page-item page-numbers">
-            5 of 6
-        </li>
-
-        
-            <li class="page-item page-next">
-                <a href="https:&#x2F;&#x2F;darellanodev.github.io&#x2F;blog&#x2F;page&#x2F;6&#x2F;" class="page-link" aria-label="Next">Next <span class="arrow">→</span></a>
-            </li>
-        
-    </ul>
-
-
-
-
+<span id="copy-success" class="hidden">
+        Copied!
+    </span>
+    <span id="copy-init" class="hidden">
+        Copy code to clipboard
+    </span>
+    <script defer src="https://darellanodev.github.io/js/copyCodeToClipboard.min.js"></script><script defer src="https://darellanodev.github.io/js/footnoteBacklinks.min.js"></script>
     </div>
     <footer>
     <section>

@@ -118,6 +118,10 @@
         <lastmod>2026-03-14</lastmod>
     </url>
     <url>
+        <loc>https://darellanodev.github.io/blog/20260329-optimize-opencode-tokens/</loc>
+        <lastmod>2026-03-29</lastmod>
+    </url>
+    <url>
         <loc>https://darellanodev.github.io/blog/page/1/</loc>
     </url>
     <url>
@@ -131,6 +135,9 @@
     </url>
     <url>
         <loc>https://darellanodev.github.io/blog/page/5/</loc>
+    </url>
+    <url>
+        <loc>https://darellanodev.github.io/blog/page/6/</loc>
     </url>
     <url>
         <loc>https://darellanodev.github.io/privacy/</loc>
@@ -183,6 +190,9 @@
     </url>
     <url>
         <loc>https://darellanodev.github.io/tags/</loc>
+    </url>
+    <url>
+        <loc>https://darellanodev.github.io/tags/ai/</loc>
     </url>
     <url>
         <loc>https://darellanodev.github.io/tags/bash/</loc>
@@ -239,6 +249,9 @@
         <loc>https://darellanodev.github.io/tags/news/</loc>
     </url>
     <url>
+        <loc>https://darellanodev.github.io/tags/opencode/</loc>
+    </url>
+    <url>
         <loc>https://darellanodev.github.io/tags/plugins/</loc>
     </url>
     <url>
@@ -252,6 +265,9 @@
     </url>
     <url>
         <loc>https://darellanodev.github.io/tags/svg/</loc>
+    </url>
+    <url>
+        <loc>https://darellanodev.github.io/tags/tools/</loc>
     </url>
     <url>
         <loc>https://darellanodev.github.io/tags/typescript/</loc>
