@@ -218,7 +218,7 @@
 
             
             
-                • <li title="371 words">2 min read</li>
+                • <li title="391 words">2 min read</li>
             •&nbsp;<li>Tags:&nbsp;</li><li><a href=https://darellanodev.github.io/tags/opencode/>OpenCode</a>,&nbsp;</li><li><a href=https://darellanodev.github.io/tags/tools/>Tools</a>,&nbsp;</li><li><a href=https://darellanodev.github.io/tags/ai/>AI</a></li>
                 </ul><ul class="meta last-updated"><li>Last updated on 
 
@@ -274,20 +274,13 @@ Installing Dynamic Context Pruning (DCP)</h2>
 </span></code></pre>
 <p>Also create a <code>dcp.jsonc</code> file and paste the “Default Configuration” from the GitHub repo documentation.</p>
 <p>Modify some of these values in <code>dcp.jsonc</code> since by default it has high values that might not have any effect on some low-context models:</p>
-<pre data-lang="jsonc" class="language-jsonc z-code"><code class="language-jsonc" data-lang="jsonc"><span class="z-text z-plain">{
-</span><span class="z-text z-plain">  &quot;compress&quot;: {
-</span><span class="z-text z-plain">    &quot;mode&quot;: &quot;range&quot;,
-</span><span class="z-text z-plain">    &quot;permission&quot;: &quot;allow&quot;,
-</span><span class="z-text z-plain">    &quot;summaryBuffer&quot;: true,
-</span><span class="z-text z-plain">    &quot;maxContextLimit&quot;: 20000,
-</span><span class="z-text z-plain">    &quot;maxTokenLimit&quot;: 10000,
-</span><span class="z-text z-plain">    &quot;minContextLimit&quot;: 10000,
-</span><span class="z-text z-plain">    &quot;nudgeFrequency&quot;: 1,
-</span><span class="z-text z-plain">    &quot;nudgeForce&quot;: &quot;strong&quot;,
-</span><span class="z-text z-plain">    &quot;iterationNudgeThreshold&quot;: 5,
-</span><span class="z-text z-plain">  },
-</span><span class="z-text z-plain">}
-</span></code></pre>
+<ul>
+<li>“maxContextLimit”: 100000, ➡️ ”maxContextLimit“: 50000,</li>
+<li>“minContextLimit”: 50000, ➡️ ”maxContextLimit“: 20000,</li>
+<li>“nudgeFrequency”: 5, ➡️ “nudgeFrequency”: 1,</li>
+<li>“nudgeForce”: “soft”, ➡️ “nudgeForce”: “strong”,</li>
+<li>“iterationNudgeThreshold”: 15, ➡️ “iterationNudgeThreshold”: 5,</li>
+</ul>
 <h2 id="installing-rust-token-killer-rtk"><a class="header-anchor no-hover-padding" href="#installing-rust-token-killer-rtk" aria-label="Anchor link for: installing-rust-token-killer-rtk"><span class="link-icon" aria-hidden="true"></span></a>
 Installing Rust Token Killer (RTK)</h2>
 <p>To install RTK, follow the instructions from <a href="https://github.com/rtk-ai/rtk/">Rust Token Killer</a> (as of this tutorial):</p>
