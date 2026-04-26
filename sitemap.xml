@@ -130,6 +130,10 @@
         <lastmod>2026-04-17</lastmod>
     </url>
     <url>
+        <loc>https://darellanodev.github.io/blog/20260425-pattern-lab-php/</loc>
+        <lastmod>2026-04-25</lastmod>
+    </url>
+    <url>
         <loc>https://darellanodev.github.io/blog/page/1/</loc>
     </url>
     <url>
@@ -215,6 +219,9 @@
         <loc>https://darellanodev.github.io/tags/css/</loc>
     </url>
     <url>
+        <loc>https://darellanodev.github.io/tags/design-patterns/</loc>
+    </url>
+    <url>
         <loc>https://darellanodev.github.io/tags/english/</loc>
     </url>
     <url>
@@ -257,7 +264,13 @@
         <loc>https://darellanodev.github.io/tags/news/</loc>
     </url>
     <url>
+        <loc>https://darellanodev.github.io/tags/oop/</loc>
+    </url>
+    <url>
         <loc>https://darellanodev.github.io/tags/opencode/</loc>
+    </url>
+    <url>
+        <loc>https://darellanodev.github.io/tags/php/</loc>
     </url>
     <url>
         <loc>https://darellanodev.github.io/tags/plugins/</loc>
