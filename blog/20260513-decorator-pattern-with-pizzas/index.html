@@ -1,0 +1,508 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="base" content="https://darellanodev.github.io/">
+
+    
+    <title>Darellanodev • Decorator pattern with pizzas</title>
+
+    
+    
+        <link rel="icon" type="image/png" href="https://darellanodev.github.io/img/seedling.png"/>
+    
+    
+        <link rel=icon href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 105 55"><text y=".7em" font-size="82">🌱</text></svg>'>
+    
+
+    
+    <link rel="alternate" type="application/atom+xml" title="Darellanodev" href="https://darellanodev.github.io/atom.xml">
+
+    
+    
+    
+        <link rel="stylesheet" href="https://darellanodev.github.io/custom_subset.css?h=6de30382822eb2c02ee0">
+    
+
+    
+        <link rel="stylesheet" href="https://darellanodev.github.io/main.css?h=99437c957531ed56eb6d" />
+
+    <meta name="color-scheme" content="light dark" />
+        <meta name="theme-color" content="#087e96" />
+        <meta name="description" content="We practice the Decorator pattern in a pizzeria to add ingredients dynamically, without creating a class for each possible combination" />
+        <meta property="og:description" content="We practice the Decorator pattern in a pizzeria to add ingredients dynamically, without creating a class for each possible combination" />
+
+    
+        <meta name="robots" content="index, nofollow" />
+    
+
+    <meta property="og:title" content="Decorator pattern with pizzas" />
+    <meta property="og:type" content="article" />
+
+    
+        
+        
+        
+
+        
+        
+            
+            
+            
+                
+            
+        
+
+        
+        <meta property="og:image" content="https://darellanodev.github.io/social_cards/index.jpg?h=d8be352f1d2fb154df81" />
+        <meta property="og:image:width" content="1400" />
+        <meta property="og:image:height" content="800" />
+        <meta name="twitter:image" content="https://darellanodev.github.io/social_cards/index.jpg?h=d8be352f1d2fb154df81" />
+        <meta name="twitter:card" content="summary_large_image" />
+    
+
+    <meta property="og:locale" content="en_GB" />
+
+    <meta property="og:url" content="https:&#x2F;&#x2F;darellanodev.github.io&#x2F;blog&#x2F;20260513-decorator-pattern-with-pizzas&#x2F;" /><meta property="og:site_name" content="Darellanodev">
+        <noscript><link rel="stylesheet" href="https://darellanodev.github.io/no_js.css"/></noscript>
+        <script type="text/javascript" src="https://darellanodev.github.io/js/initializeTheme.min.js"></script>
+        <script defer src="https://darellanodev.github.io/js/themeSwitcher.min.js"></script>
+
+
+
+
+    
+    
+
+
+
+        <script defer src="https://darellanodev.github.io/js/searchElasticlunr.min.js?h=2950d57f80c9fa78f37e"></script>
+
+        </head>
+
+
+<body>
+    <header>
+    <nav class="navbar">
+        <div class="nav-title">
+            <a href=https://darellanodev.github.io class="withoutbg">
+                <img src="https://darellanodev.github.io/img/darellanodev_logo.svg" alt="darellanodev logo">
+            </a>
+        </div>
+        <div class="nav-navs">
+            <ul>
+                
+                <li>
+                    
+                    
+
+                    <a class="nav-links no-hover-padding hvr-grow" href="https:&#x2F;&#x2F;github.com&#x2F;darellanodev">
+                        github
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    
+                    
+
+                    <a class="nav-links no-hover-padding hvr-grow"
+                        href="https://darellanodev.github.io/projects/">
+                        projects
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    
+                    
+
+                    <a class="nav-links no-hover-padding hvr-grow"
+                        href="https://darellanodev.github.io/artwork/">
+                        artwork
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    
+                    
+
+                    <a class="nav-links no-hover-padding hvr-grow"
+                        href="https://darellanodev.github.io/blog/">
+                        blog
+                    </a>
+                    
+                </li>
+                <li class="js">
+                    <div role="button" tabindex="0" id="search-button" class="search-icon interactive-icon"
+                        title="Click or press $SHORTCUT to open search" aria-label="Click or press $SHORTCUT to open search">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                            <path
+                                d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z" />
+                        </svg>
+                    </div>
+                </li>
+                
+                
+
+                <li class="theme-switcher-wrapper js"><div
+        title="Toggle dark&#x2F;light mode"
+        class="theme-switcher"
+        tabindex="0"
+        role="button"
+        aria-label="Toggle dark mode"
+        aria-pressed="false">
+    </div><div
+        title="Reset mode to default"
+        class="theme-resetter"
+        tabindex="0"
+        role="button"
+        aria-hidden="true"
+        aria-label="Reset mode to default">
+    </div>
+
+</li>
+</ul>
+        </div>
+        
+    </nav>
+</header>
+    <div class="content">
+
+        
+        
+
+
+
+
+<main>
+    <article>
+        <h1 class="article-title gradient-color">
+            Decorator pattern with pizzas
+        </h1>
+
+        <ul class="meta">
+            
+
+            
+                <li>
+
+
+
+
+
+    
+
+    
+        
+    
+
+    
+    13th
+    
+        May 2026
+    
+
+
+</li>
+            
+
+            
+            
+                • <li title="296 words">2 min read</li>
+            •&nbsp;<li>Tags:&nbsp;</li><li><a href=https://darellanodev.github.io/tags/php/>PHP</a>,&nbsp;</li><li><a href=https://darellanodev.github.io/tags/oop/>OOP</a>,&nbsp;</li><li><a href=https://darellanodev.github.io/tags/design-patterns/>Design Patterns</a></li>
+                </ul><ul class="meta last-updated"><li>Last updated on 
+
+
+
+
+
+    
+
+    
+        
+    
+
+    
+    13th
+    
+        May 2026
+    
+
+
+</li>
+                
+                
+            
+        </ul>
+
+        
+
+        
+        
+
+        <section class="body">
+            
+            
+            <p>Hello developer 👋 In this post, we’re going to practice the Decorator pattern in a pizzeria 🍕 to add ingredients dynamically, without creating a class for each possible combination.</p>
+<p><img src="https://darellanodev.github.io/blog/20260513-decorator-pattern-with-pizzas/./php-decorator-design-pattern.png" alt="php-decorator-design-pattern" /></p>
+<p>🍕 Act 1 — The starting point</p>
+<p>As developers, we’ve created an application to manage a pizzeria. For now, it’s very simple and we only have a Pizza class that represents the only pizza sold, which gives us its description (Simple pizza) and its cost (5 euros):</p>
+<pre data-lang="php" class="language-php z-code"><code class="language-php" data-lang="php"><span class="z-embedding z-php"><span class="z-text z-html z-basic">class Pizza
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">{
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">    public function getDescription(): string
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">    {
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">        return &#39;Simple pizza&#39;;
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">    }
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">    public function getCost(): float
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">    {
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">        return 5.00;
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">    }
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">}
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">$pizza = new Pizza();
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">echo $pizza-&gt;getDescription(); // Simple pizza
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">echo $pizza-&gt;getCost(); // 5.00
+</span></span></code></pre>
+<p>💥 Act 2 — The problem grows</p>
+<p>The business grows and the owner wants to offer extra ingredients. Our first idea as developers is to create a subclass for each variant, but with just 2 ingredients, 3 classes already appear. Adding more ingredients escalates the combinations: the code becomes unmanageable.</p>
+<pre data-lang="php" class="language-php z-code"><code class="language-php" data-lang="php"><span class="z-embedding z-php"><span class="z-text z-html z-basic">class PizzaWithCheese extends Pizza
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">{
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">    public function getDescription(): string
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">    {
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">        return &#39;Simple pizza, cheese&#39;;
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">    }
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">    public function getCost(): float
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">    {
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">        return parent::getCost() + 1.50;
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">    }
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">}
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">class PizzaWithHam extends Pizza
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">{
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">    public function getDescription(): string
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">    {
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">        return &#39;Simple pizza, ham&#39;;
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">    }
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">    public function getCost(): float
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">    {
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">        return parent::getCost() + 2.00;
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">    }
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">}
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">class PizzaWithCheeseAndHam extends Pizza
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">{
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">    public function getDescription(): string
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">    {
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">        return &#39;Simple pizza, cheese, ham&#39;;
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">    }
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">    public function getCost(): float
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">    {
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">        return parent::getCost() + 1.50 + 2.00;
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">    }
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">}
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">// ... and we keep creating classes 😰
+</span></span></code></pre>
+<p>💡 Act 3 — The revelation</p>
+<p>Let’s better apply the Decorator pattern, which allows us to wrap a pizza with ingredients dynamically, without creating new subclasses.</p>
+<pre data-lang="php" class="language-php z-code"><code class="language-php" data-lang="php"><span class="z-embedding z-php"><span class="z-text z-html z-basic">
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">// 1. Common interface
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">interface PizzaInterface
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">{
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">    public function getDescription(): string;
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">    public function getCost(): float;
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">}
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">// 2. Base pizza
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">class SimplePizza implements PizzaInterface
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">{
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">    public function getDescription(): string { return &#39;Simple pizza&#39;; }
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">    public function getCost(): float { return 5.00; }
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">}
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">// 3. Abstract decorator
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">abstract class PizzaDecorator implements PizzaInterface
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">{
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">    public function __construct(protected PizzaInterface $pizza) {}
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">    public function getDescription(): string { return $this-&gt;pizza-&gt;getDescription(); }
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">    public function getCost(): float { return $this-&gt;pizza-&gt;getCost(); }
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">}
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">// 4. Concrete decorators
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">class CheeseDecorator extends PizzaDecorator
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">{
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">    public function getDescription(): string { return $this-&gt;pizza-&gt;getDescription() . &#39;, cheese&#39;; }
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">    public function getCost(): float { return $this-&gt;pizza-&gt;getCost() + 1.50; }
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">}
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">class HamDecorator extends PizzaDecorator
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">{
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">    public function getDescription(): string { return $this-&gt;pizza-&gt;getDescription() . &#39;, ham&#39;; }
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">    public function getCost(): float { return $this-&gt;pizza-&gt;getCost() + 2.00; }
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">}
+</span></span></code></pre>
+<p><code>PizzaDecorator</code> is abstract for two reasons:</p>
+<ol>
+<li>It doesn’t make sense to instantiate it alone; we always need a concrete decorator like <code>CheeseDecorator</code>.</li>
+<li>It centralizes the common logic: the constructor that receives the pizza and the delegation of <code>getDescription()</code> and <code>getCost()</code>. So each concrete decorator only writes what it adds, without repeating code.</li>
+</ol>
+<p><code>PizzaInterface</code> is the contract that ensures that everything that goes into a decorator — whether it’s the base pizza or another decorator — will always have the same methods. Without that contract, we couldn’t nest decorators.</p>
+<p>✅ Act 4 — The result</p>
+<pre data-lang="php" class="language-php z-code"><code class="language-php" data-lang="php"><span class="z-embedding z-php"><span class="z-text z-html z-basic">
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">$pizza = new SimplePizza();
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">$pizza = new CheeseDecorator($pizza);
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">$pizza = new HamDecorator($pizza);
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">echo $pizza-&gt;getDescription(); // Simple pizza, cheese, ham
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">echo $pizza-&gt;getCost();        // 8.50
+</span></span></code></pre>
+<p>🎯 Act 5 — Conclusion</p>
+<p>Thanks to the Decorator pattern, we’ve gone from needing a class for each possible combination, to needing only one class per ingredient. Adding a new ingredient is as simple as creating another decorator, without touching anything existing.</p>
+<pre data-lang="php" class="language-php z-code"><code class="language-php" data-lang="php"><span class="z-embedding z-php"><span class="z-text z-html z-basic">class PepperoniDecorator extends PizzaDecorator
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">{
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">    public function getDescription(): string { return $this-&gt;pizza-&gt;getDescription() . &#39;, pepperoni&#39;; }
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">    public function getCost(): float { return $this-&gt;pizza-&gt;getCost() + 1.80; }
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">}
+</span></span></code></pre>
+<p>You can watch the video of the process here:</p>
+<div style="width: 100%; max-width: 560px; margin: 1rem 0;">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/uEfenDpLMCo" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; fullscreen" title="Media Embed" style="border: 0px; width: 100%; height: auto;"></iframe>
+</div>
+        </section>
+
+        
+        
+        
+        
+
+        
+            
+            
+            
+
+            
+        
+            
+            
+            
+
+            
+        
+            
+            
+            
+
+            
+        
+            
+            
+            
+
+            
+        
+
+        
+        
+
+        
+        
+
+    </article>
+</main>
+
+
+<span id="copy-success" class="hidden">
+        Copied!
+    </span>
+    <span id="copy-init" class="hidden">
+        Copy code to clipboard
+    </span>
+    <script defer src="https://darellanodev.github.io/js/copyCodeToClipboard.min.js"></script><script defer src="https://darellanodev.github.io/js/footnoteBacklinks.min.js"></script>
+    </div>
+    <footer>
+    <section>
+        <nav class="socials nav-navs">
+            <ul>
+                <li>
+                    <a class="nav-links no-hover-padding social" rel=" me" 
+                        href=https://github.com/darellanodev>
+                        <img alt=github title=github
+                            src="https://darellanodev.github.io/social_icons/github.svg">
+                    </a>
+                </li>
+                
+            </ul>
+            
+        </nav>
+
+        
+        <nav class="nav-navs">
+            <small>
+                <ul>
+                    
+                    <li><a class="nav-links no-hover-padding" href="https:&#x2F;&#x2F;darellanodev.github.io&#x2F;privacy&#x2F;">
+                            privacy policy
+                        </a>
+                    </li>
+                    
+                </ul>
+            </small>
+            
+        </nav>
+
+        <div class="credits">
+            <small>
+                
+
+                
+                Powered by
+                <a rel=""  href="https://www.getzola.org">Zola</a>
+                &amp;
+                <a rel=""  href="https://github.com/welpo/tabi">tabi</a>
+
+
+            </small>
+        </div>
+    </section>
+
+    <div id="searchModal" class="search-modal js" role="dialog" aria-labelledby="modalTitle">
+    <h1 id="modalTitle" class="visually-hidden">Search</h1>
+    <div id="modal-content">
+        <div id="searchBar">
+            <div class="search-icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                    <path d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"/>
+                </svg>
+            </div>
+            <input id="searchInput" role="combobox" autocomplete="off" spellcheck="false" aria-expanded="false" aria-controls="results-container" placeholder="Search…"/>
+            <div id="clear-search" class="close-icon interactive-icon" tabindex="0" role="button" title="Clear search">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/>
+                </svg>
+            </div>
+        </div>
+        <div id="results-container">
+            <div id="results-info"><span id="zero_results"> No results</span>
+                <span id="one_results"> $NUMBER result</span>
+                <span id="many_results"> $NUMBER results</span><span id="two_results"> $NUMBER results</span>
+                <span id="few_results"> $NUMBER results</span>
+            </div>
+        <div id="results" role="listbox"></div>
+    </div>
+</div>
+</footer>
+</body>
+
+</html>
