@@ -9,8 +9,18 @@
     <link href="https://darellanodev.github.io/tags/opencode/atom.xml" rel="self" type="application/atom+xml"/>
     <link href="https://darellanodev.github.io"/>
     <generator uri="https://www.getzola.org/">Zola</generator>
-    <updated>2026-05-24T00:00:00+00:00</updated>
+    <updated>2026-05-31T00:00:00+00:00</updated>
     <id>https://darellanodev.github.io/tags/opencode/atom.xml</id><entry xml:lang="en">
+        <title>React Doctor with OpenCode</title>
+        <published>2026-05-31T00:00:00+00:00</published>
+        <updated>2026-05-31T00:00:00+00:00</updated>
+        <author>
+            <name>Unknown</name>
+        </author>
+        <link rel="alternate" href="https://darellanodev.github.io/blog/20260531-react-doctor-with-opencode/" type="text/html"/>
+        <id>https://darellanodev.github.io/blog/20260531-react-doctor-with-opencode/</id>
+        <summary type="html">Using React Doctor for a deterministic analysis of a React project, then installing the react-doctor skill in OpenCode to fix issues with AI</summary>
+        </entry><entry xml:lang="en">
         <title>Creating diagrams with Excalidraw MCP</title>
         <published>2026-05-24T00:00:00+00:00</published>
         <updated>2026-05-24T00:00:00+00:00</updated>

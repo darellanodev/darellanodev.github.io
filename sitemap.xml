@@ -150,6 +150,10 @@
         <lastmod>2026-05-24</lastmod>
     </url>
     <url>
+        <loc>https://darellanodev.github.io/blog/20260531-react-doctor-with-opencode/</loc>
+        <lastmod>2026-05-31</lastmod>
+    </url>
+    <url>
         <loc>https://darellanodev.github.io/blog/page/1/</loc>
     </url>
     <url>
@@ -296,6 +300,9 @@
     </url>
     <url>
         <loc>https://darellanodev.github.io/tags/quotes/</loc>
+    </url>
+    <url>
+        <loc>https://darellanodev.github.io/tags/react/</loc>
     </url>
     <url>
         <loc>https://darellanodev.github.io/tags/refactor/</loc>
