@@ -1,0 +1,565 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="base" content="https://darellanodev.github.io/">
+
+    
+    <title>Darellanodev • Bridge pattern for notifications in PHP</title>
+
+    
+    
+        <link rel="icon" type="image/png" href="https://darellanodev.github.io/img/seedling.png"/>
+    
+    
+        <link rel=icon href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 105 55"><text y=".7em" font-size="82">🌱</text></svg>'>
+    
+
+    
+    <link rel="alternate" type="application/atom+xml" title="Darellanodev" href="https://darellanodev.github.io/atom.xml">
+
+    
+    
+    
+        <link rel="stylesheet" href="https://darellanodev.github.io/custom_subset.css?h=6de30382822eb2c02ee0">
+    
+
+    
+        <link rel="stylesheet" href="https://darellanodev.github.io/main.css?h=99437c957531ed56eb6d" />
+
+    <meta name="color-scheme" content="light dark" />
+        <meta name="theme-color" content="#087e96" />
+        <meta name="description" content="We practice the Bridge pattern in PHP to separate notification types from delivery channels, avoiding class explosion when adding new features" />
+        <meta property="og:description" content="We practice the Bridge pattern in PHP to separate notification types from delivery channels, avoiding class explosion when adding new features" />
+
+    
+        <meta name="robots" content="index, nofollow" />
+    
+
+    <meta property="og:title" content="Bridge pattern for notifications in PHP" />
+    <meta property="og:type" content="article" />
+
+    
+        
+        
+        
+
+        
+        
+            
+            
+            
+                
+            
+        
+
+        
+        <meta property="og:image" content="https://darellanodev.github.io/social_cards/index.jpg?h=d8be352f1d2fb154df81" />
+        <meta property="og:image:width" content="1400" />
+        <meta property="og:image:height" content="800" />
+        <meta name="twitter:image" content="https://darellanodev.github.io/social_cards/index.jpg?h=d8be352f1d2fb154df81" />
+        <meta name="twitter:card" content="summary_large_image" />
+    
+
+    <meta property="og:locale" content="en_GB" />
+
+    <meta property="og:url" content="https:&#x2F;&#x2F;darellanodev.github.io&#x2F;blog&#x2F;20260607-bridge-pattern-in-php&#x2F;" /><meta property="og:site_name" content="Darellanodev">
+        <noscript><link rel="stylesheet" href="https://darellanodev.github.io/no_js.css"/></noscript>
+        <script type="text/javascript" src="https://darellanodev.github.io/js/initializeTheme.min.js"></script>
+        <script defer src="https://darellanodev.github.io/js/themeSwitcher.min.js"></script>
+
+
+
+
+    
+    
+
+
+
+        <script defer src="https://darellanodev.github.io/js/searchElasticlunr.min.js?h=2950d57f80c9fa78f37e"></script>
+
+        </head>
+
+
+<body>
+    <header>
+    <nav class="navbar">
+        <div class="nav-title">
+            <a href=https://darellanodev.github.io class="withoutbg">
+                <img src="https://darellanodev.github.io/img/darellanodev_logo.svg" alt="darellanodev logo">
+            </a>
+        </div>
+        <div class="nav-navs">
+            <ul>
+                
+                <li>
+                    
+                    
+
+                    <a class="nav-links no-hover-padding hvr-grow" href="https:&#x2F;&#x2F;github.com&#x2F;darellanodev">
+                        github
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    
+                    
+
+                    <a class="nav-links no-hover-padding hvr-grow"
+                        href="https://darellanodev.github.io/projects/">
+                        projects
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    
+                    
+
+                    <a class="nav-links no-hover-padding hvr-grow"
+                        href="https://darellanodev.github.io/artwork/">
+                        artwork
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    
+                    
+
+                    <a class="nav-links no-hover-padding hvr-grow"
+                        href="https://darellanodev.github.io/blog/">
+                        blog
+                    </a>
+                    
+                </li>
+                <li class="js">
+                    <div role="button" tabindex="0" id="search-button" class="search-icon interactive-icon"
+                        title="Click or press $SHORTCUT to open search" aria-label="Click or press $SHORTCUT to open search">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                            <path
+                                d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z" />
+                        </svg>
+                    </div>
+                </li>
+                
+                
+
+                <li class="theme-switcher-wrapper js"><div
+        title="Toggle dark&#x2F;light mode"
+        class="theme-switcher"
+        tabindex="0"
+        role="button"
+        aria-label="Toggle dark mode"
+        aria-pressed="false">
+    </div><div
+        title="Reset mode to default"
+        class="theme-resetter"
+        tabindex="0"
+        role="button"
+        aria-hidden="true"
+        aria-label="Reset mode to default">
+    </div>
+
+</li>
+</ul>
+        </div>
+        
+    </nav>
+</header>
+    <div class="content">
+
+        
+        
+
+
+
+
+<main>
+    <article>
+        <h1 class="article-title gradient-color">
+            Bridge pattern for notifications in PHP
+        </h1>
+
+        <ul class="meta">
+            
+
+            
+                <li>
+
+
+
+
+
+    
+
+    
+        
+        
+            
+        
+    
+
+    
+    7th
+    
+        Jun 2026
+    
+
+
+</li>
+            
+
+            
+            
+                • <li title="334 words">2 min read</li>
+            •&nbsp;<li>Tags:&nbsp;</li><li><a href=https://darellanodev.github.io/tags/php/>PHP</a>,&nbsp;</li><li><a href=https://darellanodev.github.io/tags/oop/>OOP</a>,&nbsp;</li><li><a href=https://darellanodev.github.io/tags/design-patterns/>Design Patterns</a>,&nbsp;</li><li><a href=https://darellanodev.github.io/tags/youtube/>YouTube</a></li>
+                </ul><ul class="meta last-updated"><li>Last updated on 
+
+
+
+
+
+    
+
+    
+        
+        
+            
+        
+    
+
+    
+    7th
+    
+        Jun 2026
+    
+
+
+</li>
+                
+                
+            
+        </ul>
+
+        
+
+        
+        
+
+        <section class="body">
+            
+            
+            <p>Hello developer 👋 In this post we practice the Bridge pattern in PHP through a notification application that sends messages across different channels. This pattern allows us to extend two dimensions separately: what type of notification we want to send and which channel sends it ✨</p>
+<p><img src="https://darellanodev.github.io/blog/20260607-bridge-pattern-in-php/./bridge-design-pattern-in-php.png" alt="bridge-design-pattern-in-php" /></p>
+<p>🚀 Act 1 — The beginning of the application</p>
+<p>As developers, we need to create an application to send notifications. For now, the system only needs to send messages by email, so we start with a simple solution.</p>
+<p>To keep things simple, we use a return string to simulate all the code needed.</p>
+<pre data-lang="php" class="language-php z-code"><code class="language-php" data-lang="php"><span class="z-embedding z-php"><span class="z-text z-html z-basic">class EmailNotification
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">{
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">    public function send(string $message): string
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">    {
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">        return &quot;Sending by email: {$message}\n&quot;;
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">    }
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">}
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">// Client code
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">$notification = new EmailNotification();
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">echo $notification-&gt;send(&quot;Server is down&quot;);
+</span></span></code></pre>
+<p>📬 Act 2 — A new need appears</p>
+<p>Soon after, we need the application to also send notifications by SMS. If we follow the previous approach, we create another class for this new channel.</p>
+<pre data-lang="php" class="language-php z-code"><code class="language-php" data-lang="php"><span class="z-embedding z-php"><span class="z-text z-html z-basic">class EmailNotification
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">{
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">    public function send(string $message): string
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">    {
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">        return &quot;Sending by email: {$message}\n&quot;;
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">    }
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">}
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">class SmsNotification
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">{
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">    public function send(string $message): string
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">    {
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">        return &quot;Sending by SMS: {$message}\n&quot;;
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">    }
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">}
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">// Client code
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">$email = new EmailNotification();
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">echo $email-&gt;send(&quot;Server is down&quot;);
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">$sms = new SmsNotification();
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">echo $sms-&gt;send(&quot;Meeting at 5 PM&quot;);
+</span></span></code></pre>
+<p>📈 Act 3 — The system starts to grow</p>
+<p>Later, the business asks for different types of notifications. Now we have not only normal messages, but also alerts, reminders, and welcome messages.</p>
+<p>If we also want to keep supporting multiple channels, many combinations start to appear.</p>
+<pre data-lang="php" class="language-php z-code"><code class="language-php" data-lang="php"><span class="z-embedding z-php"><span class="z-text z-html z-basic">class AlertEmailNotification
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">{
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">    public function send(string $message): string
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">    {
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">        return &quot;[ALERT] Sending by email: {$message}\n&quot;;
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">    }
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">}
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">class AlertSmsNotification
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">{
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">    public function send(string $message): string
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">    {
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">        return &quot;[ALERT] Sending by SMS: {$message}\n&quot;;
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">    }
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">}
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">class ReminderEmailNotification
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">{
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">    public function send(string $message): string
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">    {
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">        return &quot;[REMINDER] Sending by email: {$message}\n&quot;;
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">    }
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">}
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">class ReminderSmsNotification
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">{
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">    public function send(string $message): string
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">    {
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">        return &quot;[REMINDER] Sending by SMS: {$message}\n&quot;;
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">    }
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">}
+</span></span></code></pre>
+<p>⚠️ Act 4 — The problem becomes clear</p>
+<p>As we add more notification types and more delivery channels, the number of classes grows too much. Each new combination forces us to create a new class, and that makes the design hard to maintain.</p>
+<pre data-lang="php" class="language-php z-code"><code class="language-php" data-lang="php"><span class="z-embedding z-php"><span class="z-text z-html z-basic">class WelcomeEmailNotification
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">{
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">    public function send(string $message): string
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">    {
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">        return &quot;[WELCOME] Sending by email: {$message}\n&quot;;
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">    }
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">}
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">class WelcomeSmsNotification
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">{
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">    public function send(string $message): string
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">    {
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">        return &quot;[WELCOME] Sending by SMS: {$message}\n&quot;;
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">    }
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">}
+</span></span></code></pre>
+<p>🔧 Act 5 — We apply Bridge</p>
+<p>To avoid this class explosion, we apply the Bridge pattern. Bridge separates two dimensions that change independently: the notification type and the delivery channel.</p>
+<p>For the channels:</p>
+<pre data-lang="php" class="language-php z-code"><code class="language-php" data-lang="php"><span class="z-embedding z-php"><span class="z-text z-html z-basic">interface NotificationChannel
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">{
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">    public function send(string $message): string;
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">}
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">class EmailChannel implements NotificationChannel
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">{
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">    public function send(string $message): string
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">    {
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">        return &quot;Sending by email: {$message}\n&quot;;
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">    }
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">}
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">class SmsChannel implements NotificationChannel
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">{
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">    public function send(string $message): string
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">    {
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">        return &quot;Sending by SMS: {$message}\n&quot;;
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">    }
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">}
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">class PushChannel implements NotificationChannel
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">{
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">    public function send(string $message): string
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">    {
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">        return &quot;Sending by push: {$message}\n&quot;;
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">    }
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">}
+</span></span></code></pre>
+<p>For the notifications:</p>
+<pre data-lang="php" class="language-php z-code"><code class="language-php" data-lang="php"><span class="z-embedding z-php"><span class="z-text z-html z-basic">abstract class Notification
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">{
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">    protected NotificationChannel $channel;
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">    public function __construct(NotificationChannel $channel)
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">    {
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">        $this-&gt;channel = $channel;
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">    }
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">    abstract public function notify(string $text): string;
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">}
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">class AlertNotification extends Notification
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">{
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">    public function notify(string $text): string
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">    {
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">        return $this-&gt;channel-&gt;send(&quot;[ALERT] {$text}&quot;);
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">    }
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">}
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">class ReminderNotification extends Notification
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">{
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">    public function notify(string $text): string
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">    {
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">        return $this-&gt;channel-&gt;send(&quot;[REMINDER] {$text}&quot;);
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">    }
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">}
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">class WelcomeNotification extends Notification
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">{
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">    public function notify(string $text): string
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">    {
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">        return $this-&gt;channel-&gt;send(&quot;[WELCOME] {$text}&quot;);
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">    }
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">}
+</span></span></code></pre>
+<p>🎯 Act 6 — The client uses both parts</p>
+<p>Now we can combine any notification type with any channel without multiplying classes. The abstraction decides what message is sent, and the implementor decides how it is sent.</p>
+<pre data-lang="php" class="language-php z-code"><code class="language-php" data-lang="php"><span class="z-embedding z-php"><span class="z-text z-html z-basic">$alertByEmail = new AlertNotification(new EmailChannel());
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">echo $alertByEmail-&gt;notify(&quot;Server is down&quot;);
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">$reminderBySms = new ReminderNotification(new SmsChannel());
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">echo $reminderBySms-&gt;notify(&quot;Meeting at 5 PM&quot;);
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">$welcomeByPush = new WelcomeNotification(new PushChannel());
+</span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">echo $welcomeByPush-&gt;notify(&quot;New user registered&quot;);
+</span></span></code></pre>
+<p>You can see the process I followed in <a href="https://youtu.be/xzHdSNMW0y0">this video</a> (Spanish audio).</p>
+<div style="width: 100%; max-width: 560px; margin: 1rem 0;">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/xzHdSNMW0y0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; fullscreen" title="Media Embed" style="border: 0px; width: 100%; height: auto;"></iframe>
+</div>
+<p>Bridge separates what is sent from how it is sent. This gives us a more flexible, cleaner structure that is much easier to extend.</p>
+
+        </section>
+
+        
+        
+        
+        
+
+        
+            
+            
+            
+
+            
+        
+            
+            
+            
+
+            
+        
+            
+            
+            
+
+            
+        
+            
+            
+            
+
+            
+        
+
+        
+        
+
+        
+        
+
+    </article>
+</main>
+
+
+<span id="copy-success" class="hidden">
+        Copied!
+    </span>
+    <span id="copy-init" class="hidden">
+        Copy code to clipboard
+    </span>
+    <script defer src="https://darellanodev.github.io/js/copyCodeToClipboard.min.js"></script><script defer src="https://darellanodev.github.io/js/footnoteBacklinks.min.js"></script>
+    </div>
+    <footer>
+    <section>
+        <nav class="socials nav-navs">
+            <ul>
+                <li>
+                    <a class="nav-links no-hover-padding social" rel=" me" 
+                        href=https://github.com/darellanodev>
+                        <img alt=github title=github
+                            src="https://darellanodev.github.io/social_icons/github.svg">
+                    </a>
+                </li>
+                
+            </ul>
+            
+        </nav>
+
+        
+        <nav class="nav-navs">
+            <small>
+                <ul>
+                    
+                    <li><a class="nav-links no-hover-padding" href="https:&#x2F;&#x2F;darellanodev.github.io&#x2F;privacy&#x2F;">
+                            privacy policy
+                        </a>
+                    </li>
+                    
+                </ul>
+            </small>
+            
+        </nav>
+
+        <div class="credits">
+            <small>
+                
+
+                
+                Powered by
+                <a rel=""  href="https://www.getzola.org">Zola</a>
+                &amp;
+                <a rel=""  href="https://github.com/welpo/tabi">tabi</a>
+
+
+            </small>
+        </div>
+    </section>
+
+    <div id="searchModal" class="search-modal js" role="dialog" aria-labelledby="modalTitle">
+    <h1 id="modalTitle" class="visually-hidden">Search</h1>
+    <div id="modal-content">
+        <div id="searchBar">
+            <div class="search-icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                    <path d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"/>
+                </svg>
+            </div>
+            <input id="searchInput" role="combobox" autocomplete="off" spellcheck="false" aria-expanded="false" aria-controls="results-container" placeholder="Search…"/>
+            <div id="clear-search" class="close-icon interactive-icon" tabindex="0" role="button" title="Clear search">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/>
+                </svg>
+            </div>
+        </div>
+        <div id="results-container">
+            <div id="results-info"><span id="zero_results"> No results</span>
+                <span id="one_results"> $NUMBER result</span>
+                <span id="many_results"> $NUMBER results</span><span id="two_results"> $NUMBER results</span>
+                <span id="few_results"> $NUMBER results</span>
+            </div>
+        <div id="results" role="listbox"></div>
+    </div>
+</div>
+</footer>
+</body>
+
+</html>
