@@ -9,8 +9,18 @@
     <link href="https://darellanodev.github.io/tags/ai/atom.xml" rel="self" type="application/atom+xml"/>
     <link href="https://darellanodev.github.io"/>
     <generator uri="https://www.getzola.org/">Zola</generator>
-    <updated>2026-05-31T00:00:00+00:00</updated>
+    <updated>2026-06-11T00:00:00+00:00</updated>
     <id>https://darellanodev.github.io/tags/ai/atom.xml</id><entry xml:lang="en">
+        <title>Caveman skill with OpenCode</title>
+        <published>2026-06-11T00:00:00+00:00</published>
+        <updated>2026-06-11T00:00:00+00:00</updated>
+        <author>
+            <name>Unknown</name>
+        </author>
+        <link rel="alternate" href="https://darellanodev.github.io/blog/20260611-caveman-skill-with-opencode/" type="text/html"/>
+        <id>https://darellanodev.github.io/blog/20260611-caveman-skill-with-opencode/</id>
+        <summary type="html">Testing the Caveman skill for OpenCode to make AI agents respond more concisely and reduce token output without losing technical precision</summary>
+        </entry><entry xml:lang="en">
         <title>React Doctor with OpenCode</title>
         <published>2026-05-31T00:00:00+00:00</published>
         <updated>2026-05-31T00:00:00+00:00</updated>
