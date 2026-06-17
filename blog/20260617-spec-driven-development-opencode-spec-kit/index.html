@@ -1,0 +1,459 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="base" content="https://darellanodev.github.io/">
+
+    
+    <title>Darellanodev • Spec-Driven Development with OpenCode and Spec Kit</title>
+
+    
+    
+        <link rel="icon" type="image/png" href="https://darellanodev.github.io/img/seedling.png"/>
+    
+    
+        <link rel=icon href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 105 55"><text y=".7em" font-size="82">🌱</text></svg>'>
+    
+
+    
+    <link rel="alternate" type="application/atom+xml" title="Darellanodev" href="https://darellanodev.github.io/atom.xml">
+
+    
+    
+    
+        <link rel="stylesheet" href="https://darellanodev.github.io/custom_subset.css?h=6de30382822eb2c02ee0">
+    
+
+    
+        <link rel="stylesheet" href="https://darellanodev.github.io/main.css?h=99437c957531ed56eb6d" />
+
+    <meta name="color-scheme" content="light dark" />
+        <meta name="theme-color" content="#087e96" />
+        <meta name="description" content="I explore Spec-Driven Development using GitHub Spec Kit and OpenCode AI agents to build a CLI flashcard app called study-cards-cli" />
+        <meta property="og:description" content="I explore Spec-Driven Development using GitHub Spec Kit and OpenCode AI agents to build a CLI flashcard app called study-cards-cli" />
+
+    
+        <meta name="robots" content="index, nofollow" />
+    
+
+    <meta property="og:title" content="Spec-Driven Development with OpenCode and Spec Kit" />
+    <meta property="og:type" content="article" />
+
+    
+        
+        
+        
+
+        
+        
+            
+            
+            
+                
+            
+        
+
+        
+        <meta property="og:image" content="https://darellanodev.github.io/social_cards/index.jpg?h=d8be352f1d2fb154df81" />
+        <meta property="og:image:width" content="1400" />
+        <meta property="og:image:height" content="800" />
+        <meta name="twitter:image" content="https://darellanodev.github.io/social_cards/index.jpg?h=d8be352f1d2fb154df81" />
+        <meta name="twitter:card" content="summary_large_image" />
+    
+
+    <meta property="og:locale" content="en_GB" />
+
+    <meta property="og:url" content="https:&#x2F;&#x2F;darellanodev.github.io&#x2F;blog&#x2F;20260617-spec-driven-development-opencode-spec-kit&#x2F;" /><meta property="og:site_name" content="Darellanodev">
+        <noscript><link rel="stylesheet" href="https://darellanodev.github.io/no_js.css"/></noscript>
+        <script type="text/javascript" src="https://darellanodev.github.io/js/initializeTheme.min.js"></script>
+        <script defer src="https://darellanodev.github.io/js/themeSwitcher.min.js"></script>
+
+
+
+
+    
+    
+
+
+
+        <script defer src="https://darellanodev.github.io/js/searchElasticlunr.min.js?h=2950d57f80c9fa78f37e"></script>
+
+        </head>
+
+
+<body>
+    <header>
+    <nav class="navbar">
+        <div class="nav-title">
+            <a href=https://darellanodev.github.io class="withoutbg">
+                <img src="https://darellanodev.github.io/img/darellanodev_logo.svg" alt="darellanodev logo">
+            </a>
+        </div>
+        <div class="nav-navs">
+            <ul>
+                
+                <li>
+                    
+                    
+
+                    <a class="nav-links no-hover-padding hvr-grow" href="https:&#x2F;&#x2F;github.com&#x2F;darellanodev">
+                        github
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    
+                    
+
+                    <a class="nav-links no-hover-padding hvr-grow"
+                        href="https://darellanodev.github.io/projects/">
+                        projects
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    
+                    
+
+                    <a class="nav-links no-hover-padding hvr-grow"
+                        href="https://darellanodev.github.io/artwork/">
+                        artwork
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    
+                    
+
+                    <a class="nav-links no-hover-padding hvr-grow"
+                        href="https://darellanodev.github.io/blog/">
+                        blog
+                    </a>
+                    
+                </li>
+                <li class="js">
+                    <div role="button" tabindex="0" id="search-button" class="search-icon interactive-icon"
+                        title="Click or press $SHORTCUT to open search" aria-label="Click or press $SHORTCUT to open search">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                            <path
+                                d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z" />
+                        </svg>
+                    </div>
+                </li>
+                
+                
+
+                <li class="theme-switcher-wrapper js"><div
+        title="Toggle dark&#x2F;light mode"
+        class="theme-switcher"
+        tabindex="0"
+        role="button"
+        aria-label="Toggle dark mode"
+        aria-pressed="false">
+    </div><div
+        title="Reset mode to default"
+        class="theme-resetter"
+        tabindex="0"
+        role="button"
+        aria-hidden="true"
+        aria-label="Reset mode to default">
+    </div>
+
+</li>
+</ul>
+        </div>
+        
+    </nav>
+</header>
+    <div class="content">
+
+        
+        
+
+
+
+
+<main>
+    <article>
+        <h1 class="article-title gradient-color">
+            Spec-Driven Development with OpenCode and Spec Kit
+        </h1>
+
+        <ul class="meta">
+            
+
+            
+                <li>
+
+
+
+
+
+    
+
+    
+        
+        
+            
+        
+    
+
+    
+    17th
+    
+        Jun 2026
+    
+
+
+</li>
+            
+
+            
+            
+                • <li title="280 words">2 min read</li>
+            •&nbsp;<li>Tags:&nbsp;</li><li><a href=https://darellanodev.github.io/tags/opencode/>OpenCode</a>,&nbsp;</li><li><a href=https://darellanodev.github.io/tags/ai/>AI</a>,&nbsp;</li><li><a href=https://darellanodev.github.io/tags/youtube/>YouTube</a>,&nbsp;</li><li><a href=https://darellanodev.github.io/tags/sdd/>SDD</a></li>
+                </ul><ul class="meta last-updated"><li>Last updated on 
+
+
+
+
+
+    
+
+    
+        
+        
+            
+        
+    
+
+    
+    17th
+    
+        Jun 2026
+    
+
+
+</li>
+                
+                
+            
+        </ul>
+
+        
+
+        
+        
+
+        <section class="body">
+            
+            
+            <p>We build a mini application called <code>study-cards-cli</code>, designed to review theoretical concepts from the terminal using a Markdown file. It works like a flashcard app.</p>
+<p><img src="https://darellanodev.github.io/blog/20260617-spec-driven-development-opencode-spec-kit/./speckit.png" alt="speckit" /></p>
+<h2 id="installing-spec-kit"><a class="header-anchor no-hover-padding" href="#installing-spec-kit" aria-label="Anchor link for: installing-spec-kit"><span class="link-icon" aria-hidden="true"></span></a>
+Installing Spec Kit</h2>
+<p>First install <a href="https://docs.astral.sh/uv/getting-started/installation/#standalone-installer">UV</a>, a Python package manager. On Windows, run this in PowerShell:</p>
+<pre data-lang="powershell" class="language-powershell z-code"><code class="language-powershell" data-lang="powershell"><span class="z-source z-powershell">powershell <span class="z-keyword z-operator z-assignment z-powershell">-</span>ExecutionPolicy ByPass <span class="z-keyword z-operator z-assignment z-powershell">-</span>c <span class="z-string z-quoted z-double z-powershell"><span class="z-punctuation z-definition z-string z-begin z-powershell">&quot;</span>irm https://astral.sh/uv/install.ps1 | iex<span class="z-punctuation z-definition z-string z-end z-powershell">&quot;</span></span>
+</span></code></pre>
+<p>Then install Spec Kit:</p>
+<pre data-lang="bash" class="language-bash z-code"><code class="language-bash" data-lang="bash"><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-variable z-function z-shell">uv</span></span><span class="z-meta z-function-call z-arguments z-shell"> tool install specify-cli<span class="z-variable z-parameter z-option z-shell"><span class="z-punctuation z-definition z-parameter z-shell"> --</span>from</span> git+https://github.com/github/spec-kit.git@v0.10.2</span>
+</span></code></pre>
+<p>Always check the <a href="https://github.com/github/spec-kit/releases">latest release</a> for the most recent version.</p>
+<h2 id="creating-the-project"><a class="header-anchor no-hover-padding" href="#creating-the-project" aria-label="Anchor link for: creating-the-project"><span class="link-icon" aria-hidden="true"></span></a>
+Creating the project</h2>
+<pre data-lang="bash" class="language-bash z-code"><code class="language-bash" data-lang="bash"><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-variable z-function z-shell">specify</span></span><span class="z-meta z-function-call z-arguments z-shell"> init study-cards-cli<span class="z-variable z-parameter z-option z-shell"><span class="z-punctuation z-definition z-parameter z-shell"> --</span>integration</span> opencode</span>
+</span></code></pre>
+<p>This creates the project with integration ready for OpenCode.</p>
+<h2 id="the-spec-kit-workflow"><a class="header-anchor no-hover-padding" href="#the-spec-kit-workflow" aria-label="Anchor link for: the-spec-kit-workflow"><span class="link-icon" aria-hidden="true"></span></a>
+The Spec Kit workflow</h2>
+<p>Spec Kit provides slash commands to guide the development process:</p>
+<ol>
+<li><code>/speckit.constitution</code> - Establish project principles</li>
+<li><code>/speckit.specify</code> - Create baseline specification</li>
+<li><code>/speckit.plan</code> - Create implementation plan</li>
+<li><code>/speckit.tasks</code> - Generate actionable tasks</li>
+<li><code>/speckit.implement</code> - Execute implementation</li>
+</ol>
+<p>Optional commands include <code>/speckit.clarify</code>, <code>/speckit.analyze</code>, and <code>/speckit.checklist</code>.</p>
+<h3 id="1-constitution"><a class="header-anchor no-hover-padding" href="#1-constitution" aria-label="Anchor link for: 1-constitution"><span class="link-icon" aria-hidden="true"></span></a>
+1. Constitution</h3>
+<p>The constitution defines the “rules of the game” for the project. It describes how to build the software, not what features to build.</p>
+<p>I used:</p>
+<pre class="z-code"><code><span class="z-text z-plain">/speckit.constitution Create principles for a simple CLI flashcard application
+</span><span class="z-text z-plain">using Markdown built with Node.js and TypeScript. Prioritize simplicity,
+</span><span class="z-text z-plain">maintainability, clear terminal UX, testability, and avoid over-engineering.
+</span></code></pre>
+<p>This created <code>.specify/memory/constitution.md</code>.</p>
+<h3 id="2-specification"><a class="header-anchor no-hover-padding" href="#2-specification" aria-label="Anchor link for: 2-specification"><span class="link-icon" aria-hidden="true"></span></a>
+2. Specification</h3>
+<p>Focus on the what and why, not the tech stack.</p>
+<pre class="z-code"><code><span class="z-text z-plain">/speckit.specify Create a minimal CLI app called study-cards-cli for practicing
+</span><span class="z-text z-plain">flashcards from the terminal using Markdown files. The user loads a questions.md
+</span><span class="z-text z-plain">file, starts an interactive review session, answers questions, and gets
+</span><span class="z-text z-plain">immediate feedback. At the end show a summary with total questions, correct and
+</span><span class="z-text z-plain">incorrect answers. If there are errors, run a second round with only the failed
+</span><span class="z-text z-plain">questions.
+</span></code></pre>
+<p>This created <code>specs/001-study-cards-cli/spec.md</code> and a requirements checklist.</p>
+<h3 id="3-plan"><a class="header-anchor no-hover-padding" href="#3-plan" aria-label="Anchor link for: 3-plan"><span class="link-icon" aria-hidden="true"></span></a>
+3. Plan</h3>
+<p>The plan provides the tech stack and architecture decisions.</p>
+<pre class="z-code"><code><span class="z-text z-plain">/speckit.plan The app will use Node.js and TypeScript with a minimal approach.
+</span><span class="z-text z-plain">No unnecessary frameworks. Use native Node.js APIs and custom Markdown parsing.
+</span><span class="z-text z-plain">Flashcards are stored in a local file read directly from the filesystem.
+</span><span class="z-text z-plain">Separate modules for Markdown parsing, answer evaluation, and terminal
+</span><span class="z-text z-plain">interaction. Business logic decoupled from CLI input/output for testability.
+</span><span class="z-text z-plain">Use Vitest for unit tests.
+</span></code></pre>
+<h3 id="4-tasks-and-implementation"><a class="header-anchor no-hover-padding" href="#4-tasks-and-implementation" aria-label="Anchor link for: 4-tasks-and-implementation"><span class="link-icon" aria-hidden="true"></span></a>
+4. Tasks and implementation</h3>
+<p>Run <code>/speckit.tasks</code> to generate actionable tasks, then <code>/speckit.implement</code> to execute them.</p>
+<p>The agent created the full implementation automatically.</p>
+<h2 id="running-the-application"><a class="header-anchor no-hover-padding" href="#running-the-application" aria-label="Anchor link for: running-the-application"><span class="link-icon" aria-hidden="true"></span></a>
+Running the application</h2>
+<p>After implementation, run the app:</p>
+<pre data-lang="bash" class="language-bash z-code"><code class="language-bash" data-lang="bash"><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-variable z-function z-shell">node</span></span><span class="z-meta z-function-call z-arguments z-shell"> dist/cli/cli.js questions.md</span>
+</span></code></pre>
+<h2 id="conclusion"><a class="header-anchor no-hover-padding" href="#conclusion" aria-label="Anchor link for: conclusion"><span class="link-icon" aria-hidden="true"></span></a>
+Conclusion</h2>
+<p>Spec Kit combined with OpenCode AI agents makes Spec-Driven Development practical and efficient. The structured workflow helps maintain clarity from the initial idea to the final implementation, while keeping the code simple and well-tested.</p>
+<h2 id="video"><a class="header-anchor no-hover-padding" href="#video" aria-label="Anchor link for: video"><span class="link-icon" aria-hidden="true"></span></a>
+Video</h2>
+<p>In the following video you can see the complete process (Spanish audio).</p>
+<div style="width: 100%; max-width: 560px; margin: 1rem 0;">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/2kXr9PvOoPc" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; fullscreen" title="Media Embed" style="border: 0px; width: 100%; height: auto;"></iframe>
+</div>
+        </section>
+
+        
+        
+        
+        
+
+        
+            
+            
+            
+
+            
+        
+            
+            
+            
+
+            
+        
+            
+            
+            
+
+            
+        
+            
+            
+            
+
+            
+        
+
+        
+        
+
+        
+        
+
+    </article>
+</main>
+
+
+<span id="copy-success" class="hidden">
+        Copied!
+    </span>
+    <span id="copy-init" class="hidden">
+        Copy code to clipboard
+    </span>
+    <script defer src="https://darellanodev.github.io/js/copyCodeToClipboard.min.js"></script><script defer src="https://darellanodev.github.io/js/footnoteBacklinks.min.js"></script>
+    </div>
+    <footer>
+    <section>
+        <nav class="socials nav-navs">
+            <ul>
+                <li>
+                    <a class="nav-links no-hover-padding social" rel=" me" 
+                        href=https://github.com/darellanodev>
+                        <img alt=github title=github
+                            src="https://darellanodev.github.io/social_icons/github.svg">
+                    </a>
+                </li>
+                
+            </ul>
+            
+        </nav>
+
+        
+        <nav class="nav-navs">
+            <small>
+                <ul>
+                    
+                    <li><a class="nav-links no-hover-padding" href="https:&#x2F;&#x2F;darellanodev.github.io&#x2F;privacy&#x2F;">
+                            privacy policy
+                        </a>
+                    </li>
+                    
+                </ul>
+            </small>
+            
+        </nav>
+
+        <div class="credits">
+            <small>
+                
+
+                
+                Powered by
+                <a rel=""  href="https://www.getzola.org">Zola</a>
+                &amp;
+                <a rel=""  href="https://github.com/welpo/tabi">tabi</a>
+
+
+            </small>
+        </div>
+    </section>
+
+    <div id="searchModal" class="search-modal js" role="dialog" aria-labelledby="modalTitle">
+    <h1 id="modalTitle" class="visually-hidden">Search</h1>
+    <div id="modal-content">
+        <div id="searchBar">
+            <div class="search-icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                    <path d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"/>
+                </svg>
+            </div>
+            <input id="searchInput" role="combobox" autocomplete="off" spellcheck="false" aria-expanded="false" aria-controls="results-container" placeholder="Search…"/>
+            <div id="clear-search" class="close-icon interactive-icon" tabindex="0" role="button" title="Clear search">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/>
+                </svg>
+            </div>
+        </div>
+        <div id="results-container">
+            <div id="results-info"><span id="zero_results"> No results</span>
+                <span id="one_results"> $NUMBER result</span>
+                <span id="many_results"> $NUMBER results</span><span id="two_results"> $NUMBER results</span>
+                <span id="few_results"> $NUMBER results</span>
+            </div>
+        <div id="results" role="listbox"></div>
+    </div>
+</div>
+</footer>
+</body>
+
+</html>

@@ -162,6 +162,10 @@
         <lastmod>2026-06-11</lastmod>
     </url>
     <url>
+        <loc>https://darellanodev.github.io/blog/20260617-spec-driven-development-opencode-spec-kit/</loc>
+        <lastmod>2026-06-17</lastmod>
+    </url>
+    <url>
         <loc>https://darellanodev.github.io/blog/page/1/</loc>
     </url>
     <url>
@@ -317,6 +321,9 @@
     </url>
     <url>
         <loc>https://darellanodev.github.io/tags/refactor/</loc>
+    </url>
+    <url>
+        <loc>https://darellanodev.github.io/tags/sdd/</loc>
     </url>
     <url>
         <loc>https://darellanodev.github.io/tags/showcase/</loc>
