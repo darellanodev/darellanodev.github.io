@@ -9,8 +9,18 @@
     <link href="https://darellanodev.github.io/tags/opencode/atom.xml" rel="self" type="application/atom+xml"/>
     <link href="https://darellanodev.github.io"/>
     <generator uri="https://www.getzola.org/">Zola</generator>
-    <updated>2026-06-17T00:00:00+00:00</updated>
+    <updated>2026-06-23T00:00:00+00:00</updated>
     <id>https://darellanodev.github.io/tags/opencode/atom.xml</id><entry xml:lang="en">
+        <title>Ponytail in OpenCode: The Agent That Writes Less Code</title>
+        <published>2026-06-23T00:00:00+00:00</published>
+        <updated>2026-06-23T00:00:00+00:00</updated>
+        <author>
+            <name>Unknown</name>
+        </author>
+        <link rel="alternate" href="https://darellanodev.github.io/blog/20260623-ponytail-agent-writes-less-code/" type="text/html"/>
+        <id>https://darellanodev.github.io/blog/20260623-ponytail-agent-writes-less-code/</id>
+        <summary type="html">How to avoid over-engineering with a personality plugin for your AI agent</summary>
+        </entry><entry xml:lang="en">
         <title>Spec-Driven Development with OpenCode and Spec Kit</title>
         <published>2026-06-17T00:00:00+00:00</published>
         <updated>2026-06-17T00:00:00+00:00</updated>
