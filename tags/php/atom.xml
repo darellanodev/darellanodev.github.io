@@ -9,8 +9,18 @@
     <link href="https://darellanodev.github.io/tags/php/atom.xml" rel="self" type="application/atom+xml"/>
     <link href="https://darellanodev.github.io"/>
     <generator uri="https://www.getzola.org/">Zola</generator>
-    <updated>2026-06-07T00:00:00+00:00</updated>
+    <updated>2026-06-29T00:00:00+00:00</updated>
     <id>https://darellanodev.github.io/tags/php/atom.xml</id><entry xml:lang="en">
+        <title>Composite pattern in PHP</title>
+        <published>2026-06-29T00:00:00+00:00</published>
+        <updated>2026-06-29T00:00:00+00:00</updated>
+        <author>
+            <name>Unknown</name>
+        </author>
+        <link rel="alternate" href="https://darellanodev.github.io/blog/20260629-composite-pattern-in-php/" type="text/html"/>
+        <id>https://darellanodev.github.io/blog/20260629-composite-pattern-in-php/</id>
+        <summary type="html">We practice the Composite pattern in PHP using a file system structure with directories and files as components</summary>
+        </entry><entry xml:lang="en">
         <title>Bridge pattern for notifications in PHP</title>
         <published>2026-06-07T00:00:00+00:00</published>
         <updated>2026-06-07T00:00:00+00:00</updated>
