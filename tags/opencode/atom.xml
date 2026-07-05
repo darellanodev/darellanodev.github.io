@@ -9,8 +9,18 @@
     <link href="https://darellanodev.github.io/tags/opencode/atom.xml" rel="self" type="application/atom+xml"/>
     <link href="https://darellanodev.github.io"/>
     <generator uri="https://www.getzola.org/">Zola</generator>
-    <updated>2026-06-23T00:00:00+00:00</updated>
+    <updated>2026-07-05T00:00:00+00:00</updated>
     <id>https://darellanodev.github.io/tags/opencode/atom.xml</id><entry xml:lang="en">
+        <title>Creating videos with HyperFrames</title>
+        <published>2026-07-05T00:00:00+00:00</published>
+        <updated>2026-07-05T00:00:00+00:00</updated>
+        <author>
+            <name>Unknown</name>
+        </author>
+        <link rel="alternate" href="https://darellanodev.github.io/blog/20260705-creating-videos-with-hyperframes/" type="text/html"/>
+        <id>https://darellanodev.github.io/blog/20260705-creating-videos-with-hyperframes/</id>
+        <summary type="html">How to create videos using HTML and GSAP with the HyperFrames CLI tool</summary>
+        </entry><entry xml:lang="en">
         <title>Ponytail in OpenCode: The Agent That Writes Less Code</title>
         <published>2026-06-23T00:00:00+00:00</published>
         <updated>2026-06-23T00:00:00+00:00</updated>

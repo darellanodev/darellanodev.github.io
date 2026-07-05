@@ -261,31 +261,31 @@ Installation</h2>
 <h2 id="file-compression"><a class="header-anchor no-hover-padding" href="#file-compression" aria-label="Anchor link for: file-compression"><span class="link-icon" aria-hidden="true"></span></a>
 File compression</h2>
 <p>Test file compression with:</p>
-<pre data-lang="text" class="language-text z-code"><code class="language-text" data-lang="text"><span class="z-text z-plain">/caveman-compress AGENTS.md
+<pre class="z-code"><code><span class="z-text z-plain">/caveman-compress AGENTS.md
 </span></code></pre>
 <p>It creates a backup <code>AGENTS.original.md</code> and compresses natural text without touching code blocks, URLs, or important technical terms. If satisfied, delete the backup. Git also allows you to revert.</p>
 <h2 id="activating-caveman-lite"><a class="header-anchor no-hover-padding" href="#activating-caveman-lite" aria-label="Anchor link for: activating-caveman-lite"><span class="link-icon" aria-hidden="true"></span></a>
 Activating caveman lite</h2>
 <p>There are 4 modes available. Activate the lite mode:</p>
-<pre data-lang="text" class="language-text z-code"><code class="language-text" data-lang="text"><span class="z-text z-plain">/caveman lite
+<pre class="z-code"><code><span class="z-text z-plain">/caveman lite
 </span></code></pre>
 <p>It activates for the session. You can also modify <code>AGENTS.md</code> to auto-start caveman in lite mode.</p>
 <h2 id="testing-plan-and-build-modes"><a class="header-anchor no-hover-padding" href="#testing-plan-and-build-modes" aria-label="Anchor link for: testing-plan-and-build-modes"><span class="link-icon" aria-hidden="true"></span></a>
 Testing plan and build modes</h2>
 <p>In Plan mode, ask for a code review:</p>
-<pre data-lang="text" class="language-text z-code"><code class="language-text" data-lang="text"><span class="z-text z-plain">In src/DoorManager.ts the use of player.isLocked is confusing since locked sounds like blocked. Could we use a term like isMouseCaptured?
+<pre class="z-code"><code><span class="z-text z-plain">In src/DoorManager.ts the use of player.isLocked is confusing since locked sounds like blocked. Could we use a term like isMouseCaptured?
 </span></code></pre>
 <p>The output should be more concise. Switch to Build mode and ask to implement the change. Observe the response style.</p>
 <h2 id="code-review"><a class="header-anchor no-hover-padding" href="#code-review" aria-label="Anchor link for: code-review"><span class="link-icon" aria-hidden="true"></span></a>
 Code review</h2>
 <p>Run a full review of the project:</p>
-<pre data-lang="text" class="language-text z-code"><code class="language-text" data-lang="text"><span class="z-text z-plain">/caveman-review review the project code
+<pre class="z-code"><code><span class="z-text z-plain">/caveman-review review the project code
 </span></code></pre>
 <p>The feedback includes nits — comments of little importance that don’t affect functionality or security.</p>
 <h2 id="fix-issues-and-commit"><a class="header-anchor no-hover-padding" href="#fix-issues-and-commit" aria-label="Anchor link for: fix-issues-and-commit"><span class="link-icon" aria-hidden="true"></span></a>
 Fix issues and commit</h2>
 <p>Correct an issue from the review and commit with:</p>
-<pre data-lang="text" class="language-text z-code"><code class="language-text" data-lang="text"><span class="z-text z-plain">/caveman-commit
+<pre class="z-code"><code><span class="z-text z-plain">/caveman-commit
 </span></code></pre>
 <p>It uses <a href="https://www.conventionalcommits.org/en/v1.0.0/">Conventional Commits</a> conventions.</p>
 <h2 id="video"><a class="header-anchor no-hover-padding" href="#video" aria-label="Anchor link for: video"><span class="link-icon" aria-hidden="true"></span></a>
