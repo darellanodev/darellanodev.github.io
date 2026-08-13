@@ -9,8 +9,18 @@
     <link href="https://darellanodev.github.io/tags/tools/atom.xml" rel="self" type="application/atom+xml"/>
     <link href="https://darellanodev.github.io"/>
     <generator uri="https://www.getzola.org/">Zola</generator>
-    <updated>2026-08-07T00:00:00+00:00</updated>
+    <updated>2026-08-13T00:00:00+00:00</updated>
     <id>https://darellanodev.github.io/tags/tools/atom.xml</id><entry xml:lang="en">
+        <title>Chrome DevTools MCP with OpenCode</title>
+        <published>2026-08-13T00:00:00+00:00</published>
+        <updated>2026-08-13T00:00:00+00:00</updated>
+        <author>
+            <name>Unknown</name>
+        </author>
+        <link rel="alternate" href="https://darellanodev.github.io/blog/20260813-chrome-devtools-mcp/" type="text/html"/>
+        <id>https://darellanodev.github.io/blog/20260813-chrome-devtools-mcp/</id>
+        <summary type="html">How to set up Chrome DevTools MCP in OpenCode and use it to debug a real page: the AI opens Chrome, clicks the button, reads the console and fixes the error itself</summary>
+        </entry><entry xml:lang="en">
         <title>Book to skill with OpenCode</title>
         <published>2026-08-07T00:00:00+00:00</published>
         <updated>2026-08-07T00:00:00+00:00</updated>

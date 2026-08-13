@@ -1,0 +1,439 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="base" content="https://darellanodev.github.io/">
+
+    
+    <title>Darellanodev • Chrome DevTools MCP with OpenCode</title>
+
+    
+    
+        <link rel="icon" type="image/png" href="https://darellanodev.github.io/img/seedling.png"/>
+    
+    
+        <link rel=icon href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 105 55"><text y=".7em" font-size="82">🌱</text></svg>'>
+    
+
+    
+    <link rel="alternate" type="application/atom+xml" title="Darellanodev" href="https://darellanodev.github.io/atom.xml">
+
+    
+    
+    
+        <link rel="stylesheet" href="https://darellanodev.github.io/custom_subset.css?h=6de30382822eb2c02ee0">
+    
+
+    
+        <link rel="stylesheet" href="https://darellanodev.github.io/main.css?h=99437c957531ed56eb6d" />
+
+    <meta name="color-scheme" content="light dark" />
+        <meta name="theme-color" content="#087e96" />
+        <meta name="description" content="How to set up Chrome DevTools MCP in OpenCode and use it to debug a real page: the AI opens Chrome, clicks the button, reads the console and fixes the error itself" />
+        <meta property="og:description" content="How to set up Chrome DevTools MCP in OpenCode and use it to debug a real page: the AI opens Chrome, clicks the button, reads the console and fixes the error itself" />
+
+    
+        <meta name="robots" content="index, nofollow" />
+    
+
+    <meta property="og:title" content="Chrome DevTools MCP with OpenCode" />
+    <meta property="og:type" content="article" />
+
+    
+        
+        
+        
+
+        
+        
+            
+            
+            
+                
+            
+        
+
+        
+        <meta property="og:image" content="https://darellanodev.github.io/social_cards/index.jpg?h=d8be352f1d2fb154df81" />
+        <meta property="og:image:width" content="1400" />
+        <meta property="og:image:height" content="800" />
+        <meta name="twitter:image" content="https://darellanodev.github.io/social_cards/index.jpg?h=d8be352f1d2fb154df81" />
+        <meta name="twitter:card" content="summary_large_image" />
+    
+
+    <meta property="og:locale" content="en_GB" />
+
+    <meta property="og:url" content="https:&#x2F;&#x2F;darellanodev.github.io&#x2F;blog&#x2F;20260813-chrome-devtools-mcp&#x2F;" /><meta property="og:site_name" content="Darellanodev">
+        <noscript><link rel="stylesheet" href="https://darellanodev.github.io/no_js.css"/></noscript>
+        <script type="text/javascript" src="https://darellanodev.github.io/js/initializeTheme.min.js"></script>
+        <script defer src="https://darellanodev.github.io/js/themeSwitcher.min.js"></script>
+
+
+
+
+    
+    
+
+
+
+        <script defer src="https://darellanodev.github.io/js/searchElasticlunr.min.js?h=2950d57f80c9fa78f37e"></script>
+
+        </head>
+
+
+<body>
+    <header>
+    <nav class="navbar">
+        <div class="nav-title">
+            <a href=https://darellanodev.github.io class="withoutbg">
+                <img src="https://darellanodev.github.io/img/darellanodev_logo.svg" alt="darellanodev logo">
+            </a>
+        </div>
+        <div class="nav-navs">
+            <ul>
+                
+                <li>
+                    
+                    
+
+                    <a class="nav-links no-hover-padding hvr-grow" href="https:&#x2F;&#x2F;github.com&#x2F;darellanodev">
+                        github
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    
+                    
+
+                    <a class="nav-links no-hover-padding hvr-grow"
+                        href="https://darellanodev.github.io/projects/">
+                        projects
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    
+                    
+
+                    <a class="nav-links no-hover-padding hvr-grow"
+                        href="https://darellanodev.github.io/artwork/">
+                        artwork
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    
+                    
+
+                    <a class="nav-links no-hover-padding hvr-grow"
+                        href="https://darellanodev.github.io/blog/">
+                        blog
+                    </a>
+                    
+                </li>
+                <li class="js">
+                    <div role="button" tabindex="0" id="search-button" class="search-icon interactive-icon"
+                        title="Click or press $SHORTCUT to open search" aria-label="Click or press $SHORTCUT to open search">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                            <path
+                                d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z" />
+                        </svg>
+                    </div>
+                </li>
+                
+                
+
+                <li class="theme-switcher-wrapper js"><div
+        title="Toggle dark&#x2F;light mode"
+        class="theme-switcher"
+        tabindex="0"
+        role="button"
+        aria-label="Toggle dark mode"
+        aria-pressed="false">
+    </div><div
+        title="Reset mode to default"
+        class="theme-resetter"
+        tabindex="0"
+        role="button"
+        aria-hidden="true"
+        aria-label="Reset mode to default">
+    </div>
+
+</li>
+</ul>
+        </div>
+        
+    </nav>
+</header>
+    <div class="content">
+
+        
+        
+
+
+
+
+<main>
+    <article>
+        <h1 class="article-title gradient-color">
+            Chrome DevTools MCP with OpenCode
+        </h1>
+
+        <ul class="meta">
+            
+
+            
+                <li>
+
+
+
+
+
+    
+
+    
+        
+    
+
+    
+    13th
+    
+        Aug 2026
+    
+
+
+</li>
+            
+
+            
+            
+                • <li title="651 words">4 min read</li>
+            •&nbsp;<li>Tags:&nbsp;</li><li><a href=https://darellanodev.github.io/tags/opencode/>OpenCode</a>,&nbsp;</li><li><a href=https://darellanodev.github.io/tags/mcp/>MCP</a>,&nbsp;</li><li><a href=https://darellanodev.github.io/tags/tools/>Tools</a>,&nbsp;</li><li><a href=https://darellanodev.github.io/tags/ai/>AI</a>,&nbsp;</li><li><a href=https://darellanodev.github.io/tags/youtube/>YouTube</a></li>
+                </ul><ul class="meta last-updated"><li>Last updated on 
+
+
+
+
+
+    
+
+    
+        
+    
+
+    
+    13th
+    
+        Aug 2026
+    
+
+
+</li>
+                
+                
+            
+        </ul>
+
+        
+
+        
+        
+
+        <section class="body">
+            
+            
+            <p>Hello developer 👋 Have you ever had a web page with a button that does not work and you do not know why? In this post we try <a href="https://github.com/ChromeDevTools/chrome-devtools-mcp">Chrome DevTools MCP</a>, an open source project that gives AI agents access to Chrome DevTools. We configure it in OpenCode and apply it to a real debugging case: a cart button that does not respond.</p>
+<p><img src="https://darellanodev.github.io/blog/20260813-chrome-devtools-mcp/./mcp-chrome-devtools.png" alt="chrome-devtools-mcp" /></p>
+<h2 id="what-is-chrome-devtools-mcp"><a class="header-anchor no-hover-padding" href="#what-is-chrome-devtools-mcp" aria-label="Anchor link for: what-is-chrome-devtools-mcp"><span class="link-icon" aria-hidden="true"></span></a>
+What is Chrome DevTools MCP</h2>
+<p>Chrome DevTools MCP lets your AI agent drive a real Chrome browser. The key difference: the AI does not guess the code. It opens Chrome, clicks the button, reads the console and finds the error. And it does not stop there: it fixes the bug and tests the button again to confirm everything works.</p>
+<h2 id="the-example"><a class="header-anchor no-hover-padding" href="#the-example" aria-label="Anchor link for: the-example"><span class="link-icon" aria-hidden="true"></span></a>
+The example</h2>
+<p>The example is a web page with a cart button that does not work. Instead of looking at the code blindly, we let the AI use a real Chrome browser to find the problem.</p>
+<p>Looking at <code>index.html</code> we see the bug: it is a typo. The call should be <code>updateCartTotal()</code>, not <code>updateCartTotall(cartTotal)</code>.</p>
+<p>We open <code>index.html</code> with <code>pnpm dlx live-server</code> in the Zed terminal and click the “Add to cart” button on the page. It does not work.</p>
+<h2 id="configuring-the-mcp"><a class="header-anchor no-hover-padding" href="#configuring-the-mcp" aria-label="Anchor link for: configuring-the-mcp"><span class="link-icon" aria-hidden="true"></span></a>
+Configuring the MCP</h2>
+<p>On the GitHub page we search for “OpenCode” with Ctrl+F and create the JSON file. The documentation suggests creating it globally, which makes sense to use it in multiple projects: <code>~/.config/opencode/opencode.json</code>. For this practice I created an <code>opencode.json</code> only for the project.</p>
+<p>The documentation gives the code for npm, but in OpenCode I use it with pnpm:</p>
+<pre data-lang="json" class="language-json z-code"><code class="language-json" data-lang="json"><span class="z-source z-json"><span class="z-meta z-mapping z-json"><span class="z-punctuation z-section z-mapping z-begin z-json">{</span>
+</span></span><span class="z-source z-json"><span class="z-meta z-mapping z-json">  </span><span class="z-meta z-mapping z-key z-json"><span class="z-string z-quoted z-double z-json"><span class="z-punctuation z-definition z-string z-begin z-json">&quot;</span>$schema<span class="z-punctuation z-definition z-string z-end z-json">&quot;</span></span></span><span class="z-meta z-mapping z-json"><span class="z-punctuation z-separator z-mapping z-key-value z-json">:</span> </span><span class="z-meta z-mapping z-value z-json"><span class="z-string z-quoted z-double z-json"><span class="z-punctuation z-definition z-string z-begin z-json">&quot;</span>https://opencode.ai/config.json<span class="z-punctuation z-definition z-string z-end z-json">&quot;</span></span><span class="z-punctuation z-separator z-mapping z-pair z-json">,</span>
+</span></span><span class="z-source z-json"><span class="z-meta z-mapping z-value z-json">  </span><span class="z-meta z-mapping z-key z-json"><span class="z-string z-quoted z-double z-json"><span class="z-punctuation z-definition z-string z-begin z-json">&quot;</span>mcp<span class="z-punctuation z-definition z-string z-end z-json">&quot;</span></span></span><span class="z-meta z-mapping z-value z-json"><span class="z-punctuation z-separator z-mapping z-key-value z-json">:</span> </span><span class="z-meta z-mapping z-value z-json"><span class="z-meta z-mapping z-json"><span class="z-punctuation z-section z-mapping z-begin z-json">{</span>
+</span></span></span><span class="z-source z-json"><span class="z-meta z-mapping z-value z-json"><span class="z-meta z-mapping z-json">    </span><span class="z-meta z-mapping z-key z-json"><span class="z-string z-quoted z-double z-json"><span class="z-punctuation z-definition z-string z-begin z-json">&quot;</span>chrome-devtools<span class="z-punctuation z-definition z-string z-end z-json">&quot;</span></span></span><span class="z-meta z-mapping z-json"><span class="z-punctuation z-separator z-mapping z-key-value z-json">:</span> </span><span class="z-meta z-mapping z-value z-json"><span class="z-meta z-mapping z-json"><span class="z-punctuation z-section z-mapping z-begin z-json">{</span>
+</span></span></span></span><span class="z-source z-json"><span class="z-meta z-mapping z-value z-json"><span class="z-meta z-mapping z-value z-json"><span class="z-meta z-mapping z-json">      </span><span class="z-meta z-mapping z-key z-json"><span class="z-string z-quoted z-double z-json"><span class="z-punctuation z-definition z-string z-begin z-json">&quot;</span>type<span class="z-punctuation z-definition z-string z-end z-json">&quot;</span></span></span><span class="z-meta z-mapping z-json"><span class="z-punctuation z-separator z-mapping z-key-value z-json">:</span> </span><span class="z-meta z-mapping z-value z-json"><span class="z-string z-quoted z-double z-json"><span class="z-punctuation z-definition z-string z-begin z-json">&quot;</span>local<span class="z-punctuation z-definition z-string z-end z-json">&quot;</span></span><span class="z-punctuation z-separator z-mapping z-pair z-json">,</span>
+</span></span></span></span><span class="z-source z-json"><span class="z-meta z-mapping z-value z-json"><span class="z-meta z-mapping z-value z-json"><span class="z-meta z-mapping z-value z-json">      </span><span class="z-meta z-mapping z-key z-json"><span class="z-string z-quoted z-double z-json"><span class="z-punctuation z-definition z-string z-begin z-json">&quot;</span>command<span class="z-punctuation z-definition z-string z-end z-json">&quot;</span></span></span><span class="z-meta z-mapping z-value z-json"><span class="z-punctuation z-separator z-mapping z-key-value z-json">:</span> </span><span class="z-meta z-mapping z-value z-json"><span class="z-meta z-sequence z-json"><span class="z-punctuation z-section z-sequence z-begin z-json">[</span><span class="z-string z-quoted z-double z-json"><span class="z-punctuation z-definition z-string z-begin z-json">&quot;</span>pnpm<span class="z-punctuation z-definition z-string z-end z-json">&quot;</span></span><span class="z-punctuation z-separator z-sequence z-json">,</span> <span class="z-string z-quoted z-double z-json"><span class="z-punctuation z-definition z-string z-begin z-json">&quot;</span>dlx<span class="z-punctuation z-definition z-string z-end z-json">&quot;</span></span><span class="z-punctuation z-separator z-sequence z-json">,</span> <span class="z-string z-quoted z-double z-json"><span class="z-punctuation z-definition z-string z-begin z-json">&quot;</span>chrome-devtools-mcp@latest<span class="z-punctuation z-definition z-string z-end z-json">&quot;</span></span><span class="z-punctuation z-section z-sequence z-end z-json">]</span></span>
+</span></span></span></span><span class="z-source z-json"><span class="z-meta z-mapping z-value z-json"><span class="z-meta z-mapping z-value z-json"><span class="z-meta z-mapping z-value z-json">    <span class="z-punctuation z-section z-mapping z-end z-json">}</span></span>
+</span></span></span><span class="z-source z-json"><span class="z-meta z-mapping z-value z-json"><span class="z-meta z-mapping z-value z-json">  <span class="z-punctuation z-section z-mapping z-end z-json">}</span></span>
+</span></span><span class="z-source z-json"><span class="z-meta z-mapping z-value z-json"><span class="z-punctuation z-section z-mapping z-end z-json">}</span></span>
+</span></code></pre>
+<p>Then we open OpenCode and verify that the MCP is loaded. There is usually a command or panel to see the connected MCP servers. If you type <code>/mcps</code> you can see the available MCPs.</p>
+<h2 id="using-it-in-plan-mode"><a class="header-anchor no-hover-padding" href="#using-it-in-plan-mode" aria-label="Anchor link for: using-it-in-plan-mode"><span class="link-icon" aria-hidden="true"></span></a>
+Using it in Plan mode</h2>
+<p>With <code>index.html</code> running on Live Server, we write the prompt in Plan mode:</p>
+<pre class="z-code"><code><span class="z-text z-plain">Use the chrome-devtools MCP and open http://127.0.0.1:5500/index.html, click the &#39;Add to cart&#39; button and tell me why the cart does not work.
+</span></code></pre>
+<h2 id="how-it-works"><a class="header-anchor no-hover-padding" href="#how-it-works" aria-label="Anchor link for: how-it-works"><span class="link-icon" aria-hidden="true"></span></a>
+How it works</h2>
+<p>Why does a Chrome window open? The MCP launches a real Chrome instance (not headless by default) so it can interact with the actual page. That is why you see the window open with <code>new_page</code>.</p>
+<p>About the snapshot, here is the important nuance: <code>take_snapshot</code> is not a screenshot. It is a snapshot of the accessibility/DOM tree of the page: a text representation of all the elements (buttons, text, inputs) with a unique id (<code>uid</code>) for each one. That is why it does not generate any image file.</p>
+<p>Look at the sequence:</p>
+<ul>
+<li><code>take_snapshot</code> gets the list of elements, including the button with <code>uid=1_4</code>.</li>
+<li><code>click [uid=1_4]</code> uses that exact identifier to click, without x/y coordinates and without “looking” at an image.</li>
+</ul>
+<p>This is what the repository calls “reliable automation”: instead of the AI trying to guess where a button is in a screenshot (fragile and imprecise), it interacts directly with the real DOM structure. If you want a literal image, there is a different tool: <code>take_screenshot</code>.</p>
+<p>The rest of the sequence, in short:</p>
+<ul>
+<li><code>evaluate_script</code> reads the real HTML/JS of the page to locate the typo in the code.</li>
+<li><code>list_console_messages</code> confirms the error exactly as the browser throws it (a <code>ReferenceError</code>), not a guess.</li>
+</ul>
+<p>This contrast between <code>take_snapshot</code> and <code>take_screenshot</code> shows why this tool is more reliable than an agent that only “looks” at screenshots.</p>
+<h2 id="fixing-the-error-in-build-mode"><a class="header-anchor no-hover-padding" href="#fixing-the-error-in-build-mode" aria-label="Anchor link for: fixing-the-error-in-build-mode"><span class="link-icon" aria-hidden="true"></span></a>
+Fixing the error in Build mode</h2>
+<p>Now we write the prompt in Build mode:</p>
+<pre class="z-code"><code><span class="z-text z-plain">Yes, fix it and test the button again to confirm that the cart updates.
+</span></code></pre>
+<p>And you can see how it checks the final results by testing the button again.</p>
+<h2 id="conclusion"><a class="header-anchor no-hover-padding" href="#conclusion" aria-label="Anchor link for: conclusion"><span class="link-icon" aria-hidden="true"></span></a>
+Conclusion</h2>
+<p>That is the key difference: it does not just tell you what is wrong, it really verifies it, opening the browser, clicking and reading the console. Chrome DevTools MCP turns your AI into someone who debugs the way you would, not someone who guesses the code.</p>
+<h2 id="video"><a class="header-anchor no-hover-padding" href="#video" aria-label="Anchor link for: video"><span class="link-icon" aria-hidden="true"></span></a>
+Video</h2>
+<p>In the following video you can see the complete process (Spanish audio).</p>
+<div style="width: 100%; max-width: 560px; margin: 1rem 0;">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/jOvlDgLXuJI" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; fullscreen" title="Media Embed" style="border: 0px; width: 100%; height: auto;"></iframe>
+</div>
+        </section>
+
+        
+        
+        
+        
+
+        
+            
+            
+            
+
+            
+        
+            
+            
+            
+
+            
+        
+            
+            
+            
+
+            
+        
+            
+            
+            
+
+            
+        
+
+        
+        
+
+        
+        
+
+    </article>
+</main>
+
+
+<span id="copy-success" class="hidden">
+        Copied!
+    </span>
+    <span id="copy-init" class="hidden">
+        Copy code to clipboard
+    </span>
+    <script defer src="https://darellanodev.github.io/js/copyCodeToClipboard.min.js"></script><script defer src="https://darellanodev.github.io/js/footnoteBacklinks.min.js"></script>
+    </div>
+    <footer>
+    <section>
+        <nav class="socials nav-navs">
+            <ul>
+                <li>
+                    <a class="nav-links no-hover-padding social" rel=" me" 
+                        href=https://github.com/darellanodev>
+                        <img alt=github title=github
+                            src="https://darellanodev.github.io/social_icons/github.svg">
+                    </a>
+                </li>
+                
+            </ul>
+            
+        </nav>
+
+        
+        <nav class="nav-navs">
+            <small>
+                <ul>
+                    
+                    <li><a class="nav-links no-hover-padding" href="https:&#x2F;&#x2F;darellanodev.github.io&#x2F;privacy&#x2F;">
+                            privacy policy
+                        </a>
+                    </li>
+                    
+                </ul>
+            </small>
+            
+        </nav>
+
+        <div class="credits">
+            <small>
+                
+
+                
+                Powered by
+                <a rel=""  href="https://www.getzola.org">Zola</a>
+                &amp;
+                <a rel=""  href="https://github.com/welpo/tabi">tabi</a>
+
+
+            </small>
+        </div>
+    </section>
+
+    <div id="searchModal" class="search-modal js" role="dialog" aria-labelledby="modalTitle">
+    <h1 id="modalTitle" class="visually-hidden">Search</h1>
+    <div id="modal-content">
+        <div id="searchBar">
+            <div class="search-icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                    <path d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"/>
+                </svg>
+            </div>
+            <input id="searchInput" role="combobox" autocomplete="off" spellcheck="false" aria-expanded="false" aria-controls="results-container" placeholder="Search…"/>
+            <div id="clear-search" class="close-icon interactive-icon" tabindex="0" role="button" title="Clear search">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/>
+                </svg>
+            </div>
+        </div>
+        <div id="results-container">
+            <div id="results-info"><span id="zero_results"> No results</span>
+                <span id="one_results"> $NUMBER result</span>
+                <span id="many_results"> $NUMBER results</span><span id="two_results"> $NUMBER results</span>
+                <span id="few_results"> $NUMBER results</span>
+            </div>
+        <div id="results" role="listbox"></div>
+    </div>
+</div>
+</footer>
+</body>
+
+</html>
