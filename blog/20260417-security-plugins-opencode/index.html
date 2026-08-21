@@ -10,7 +10,7 @@
     <meta name="base" content="https://darellanodev.github.io/">
 
     
-    <title>Darellanodev • Security plugins for OpenCode</title>
+    <title>Darellanodev • Security plugins for OpenCode.</title>
 
     
     
@@ -40,14 +40,14 @@
 
     <meta name="color-scheme" content="light dark" />
         <meta name="theme-color" content="#087e96" />
-        <meta name="description" content="I share my experience testing security plugins for OpenCode: Claude Code Safety Net and Envsitter Guard" />
-        <meta property="og:description" content="I share my experience testing security plugins for OpenCode: Claude Code Safety Net and Envsitter Guard" />
+        <meta name="description" content="I share my experience testing security plugins for OpenCode: Claude Code Safety Net and Envsitter Guard." />
+        <meta property="og:description" content="I share my experience testing security plugins for OpenCode: Claude Code Safety Net and Envsitter Guard." />
 
     
         <meta name="robots" content="index, nofollow" />
     
 
-    <meta property="og:title" content="Security plugins for OpenCode" />
+    <meta property="og:title" content="Security plugins for OpenCode." />
     <meta property="og:type" content="article" />
 
     
@@ -195,7 +195,7 @@
 <main>
     <article>
         <h1 class="article-title gradient-color">
-            Security plugins for OpenCode
+            Security plugins for OpenCode.
         </h1>
 
         <ul class="meta">
@@ -231,7 +231,7 @@
 
             
             
-                • <li title="267 words">2 min read</li>
+                • <li title="270 words">2 min read</li>
             •&nbsp;<li>Tags:&nbsp;</li><li><a href=https://darellanodev.github.io/tags/opencode/>OpenCode</a>,&nbsp;</li><li><a href=https://darellanodev.github.io/tags/tools/>Tools</a>,&nbsp;</li><li><a href=https://darellanodev.github.io/tags/ai/>AI</a>,&nbsp;</li><li><a href=https://darellanodev.github.io/tags/youtube/>YouTube</a></li>
                 </ul><ul class="meta last-updated"><li>Last updated on 
 
@@ -273,10 +273,10 @@
 <p><img src="https://darellanodev.github.io/blog/20260417-security-plugins-opencode/./security-plugins-opencode.png" alt="security-plugins-opencode" /></p>
 <h2 id="claude-code-safety-net"><a class="header-anchor no-hover-padding" href="#claude-code-safety-net" aria-label="Anchor link for: claude-code-safety-net"><span class="link-icon" aria-hidden="true"></span></a>
 Claude Code Safety Net</h2>
-<p>The first one is called <a href="https://github.com/kenryu42/claude-code-safety-net">Claude Code Safety Net</a> and intercepts dangerous git and filesystem commands before they execute.</p>
+<p>The first one is called <a href="https://github.com/kenryu42/claude-code-safety-net">Claude Code Safety Net</a>, and it intercepts dangerous git and filesystem commands before they execute.</p>
 <p>The GitHub documentation covers interesting topics like:</p>
 <ul>
-<li>Why use it instead of denial permission rules</li>
+<li>Why use it instead of permission denial rules</li>
 <li>Permission rules have known ways to bypass them</li>
 <li>Safety Net can handle things patterns can’t</li>
 </ul>
@@ -294,10 +294,10 @@ Claude Code Safety Net</h2>
 <p>We can run a diagnostic using:</p>
 <pre data-lang="bash" class="language-bash z-code"><code class="language-bash" data-lang="bash"><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-variable z-function z-shell">npx</span></span><span class="z-meta z-function-call z-arguments z-shell"> cc-safety-net doctor</span>
 </span></code></pre>
-<p>We can also see why a specific command gets blocked (for example “git reset –hard”) using:</p>
+<p>We can also see why a specific command gets blocked (for example “git reset –hard”) by running:</p>
 <pre data-lang="bash" class="language-bash z-code"><code class="language-bash" data-lang="bash"><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-variable z-function z-shell">npx</span></span><span class="z-meta z-function-call z-arguments z-shell"> cc-safety-net explain <span class="z-string z-quoted z-double z-shell"><span class="z-punctuation z-definition z-string z-begin z-shell">&quot;</span>git reset --hard<span class="z-punctuation z-definition z-string z-end z-shell">&quot;</span></span></span>
 </span></code></pre>
-<p>We can test it inside OpenCode in a test project with a README.md that has changes, by asking the agent to execute the dangerous command:</p>
+<p>We can test it inside OpenCode in a test project with a README.md file that has changes, by asking the agent to execute the dangerous command:</p>
 <pre data-lang="bash" class="language-bash z-code"><code class="language-bash" data-lang="bash"><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-variable z-function z-shell">git</span></span><span class="z-meta z-function-call z-arguments z-shell"> checkout<span class="z-keyword z-operator z-end-of-options z-shell"> --</span></span><span class="z-meta z-function-call z-arguments z-shell"> README.md</span>
 </span></code></pre>
 <p><img src="https://darellanodev.github.io/blog/20260417-security-plugins-opencode/./screenshot1.png" alt="screenshot1" /></p>

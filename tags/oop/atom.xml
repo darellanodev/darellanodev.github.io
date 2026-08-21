@@ -11,7 +11,7 @@
     <generator uri="https://www.getzola.org/">Zola</generator>
     <updated>2026-07-11T00:00:00+00:00</updated>
     <id>https://darellanodev.github.io/tags/oop/atom.xml</id><entry xml:lang="en">
-        <title>Facade pattern in PHP</title>
+        <title>Facade pattern in PHP.</title>
         <published>2026-07-11T00:00:00+00:00</published>
         <updated>2026-07-11T00:00:00+00:00</updated>
         <author>
@@ -19,9 +19,9 @@
         </author>
         <link rel="alternate" href="https://darellanodev.github.io/blog/20260711-facade-pattern-in-php/" type="text/html"/>
         <id>https://darellanodev.github.io/blog/20260711-facade-pattern-in-php/</id>
-        <summary type="html">We practice the Facade pattern in PHP using a home automation example to simplify complex subsystem interactions into a single, clean interface</summary>
+        <summary type="html">We practice the Facade pattern in PHP using a home automation example to simplify complex subsystem interactions into a single, clean interface.</summary>
         </entry><entry xml:lang="en">
-        <title>Composite pattern in PHP</title>
+        <title>Composite pattern in PHP.</title>
         <published>2026-06-29T00:00:00+00:00</published>
         <updated>2026-06-29T00:00:00+00:00</updated>
         <author>
@@ -29,9 +29,9 @@
         </author>
         <link rel="alternate" href="https://darellanodev.github.io/blog/20260629-composite-pattern-in-php/" type="text/html"/>
         <id>https://darellanodev.github.io/blog/20260629-composite-pattern-in-php/</id>
-        <summary type="html">We practice the Composite pattern in PHP using a file system structure with directories and files as components</summary>
+        <summary type="html">We practice the Composite pattern in PHP using a file system structure with directories and files as components.</summary>
         </entry><entry xml:lang="en">
-        <title>Bridge pattern for notifications in PHP</title>
+        <title>Bridge pattern for notifications in PHP.</title>
         <published>2026-06-07T00:00:00+00:00</published>
         <updated>2026-06-07T00:00:00+00:00</updated>
         <author>
@@ -39,9 +39,9 @@
         </author>
         <link rel="alternate" href="https://darellanodev.github.io/blog/20260607-bridge-pattern-in-php/" type="text/html"/>
         <id>https://darellanodev.github.io/blog/20260607-bridge-pattern-in-php/</id>
-        <summary type="html">We practice the Bridge pattern in PHP to separate notification types from delivery channels, avoiding class explosion when adding new features</summary>
+        <summary type="html">We practice the Bridge pattern in PHP to separate notification types from delivery channels, avoiding class explosion when adding new features.</summary>
         </entry><entry xml:lang="en">
-        <title>Decorator pattern with pizzas</title>
+        <title>Decorator pattern with pizzas.</title>
         <published>2026-05-13T00:00:00+00:00</published>
         <updated>2026-05-13T00:00:00+00:00</updated>
         <author>
@@ -49,9 +49,9 @@
         </author>
         <link rel="alternate" href="https://darellanodev.github.io/blog/20260513-decorator-pattern-with-pizzas/" type="text/html"/>
         <id>https://darellanodev.github.io/blog/20260513-decorator-pattern-with-pizzas/</id>
-        <summary type="html">We practice the Decorator pattern in a pizzeria to add ingredients dynamically, without creating a class for each possible combination</summary>
+        <summary type="html">We practice the Decorator pattern in a pizzeria to add ingredients dynamically, without creating a class for each possible combination.</summary>
         </entry><entry xml:lang="en">
-        <title>PHP Adapter Design Pattern</title>
+        <title>PHP Adapter Design Pattern.</title>
         <published>2026-05-07T00:00:00+00:00</published>
         <updated>2026-05-07T00:00:00+00:00</updated>
         <author>
@@ -59,9 +59,9 @@
         </author>
         <link rel="alternate" href="https://darellanodev.github.io/blog/20260507-php-adapter-pattern/" type="text/html"/>
         <id>https://darellanodev.github.io/blog/20260507-php-adapter-pattern/</id>
-        <summary type="html">A clear guide to the Adapter pattern in PHP, showing how to add new features by adapting external library code without modifying the library itself</summary>
+        <summary type="html">A clear guide to the Adapter pattern in PHP, showing how to add new features by adapting external library code without modifying the library itself.</summary>
         </entry><entry xml:lang="en">
-        <title>A PHP app to practice design patterns</title>
+        <title>A PHP app to practice design patterns.</title>
         <published>2026-04-25T00:00:00+00:00</published>
         <updated>2026-04-25T00:00:00+00:00</updated>
         <author>
@@ -69,6 +69,6 @@
         </author>
         <link rel="alternate" href="https://darellanodev.github.io/blog/20260425-pattern-lab-php/" type="text/html"/>
         <id>https://darellanodev.github.io/blog/20260425-pattern-lab-php/</id>
-        <summary type="html">I share how I built a PHP app to practice design patterns using AI</summary>
+        <summary type="html">I share how I built a PHP app to practice design patterns using AI.</summary>
         </entry>
 </feed>

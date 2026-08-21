@@ -9,9 +9,19 @@
     <link href="https://darellanodev.github.io/tags/youtube/atom.xml" rel="self" type="application/atom+xml"/>
     <link href="https://darellanodev.github.io"/>
     <generator uri="https://www.getzola.org/">Zola</generator>
-    <updated>2026-08-13T00:00:00+00:00</updated>
+    <updated>2026-08-25T00:00:00+00:00</updated>
     <id>https://darellanodev.github.io/tags/youtube/atom.xml</id><entry xml:lang="en">
-        <title>Chrome DevTools MCP with OpenCode</title>
+        <title>HyperFrames storyboard practice.</title>
+        <published>2026-08-25T00:00:00+00:00</published>
+        <updated>2026-08-25T00:00:00+00:00</updated>
+        <author>
+            <name>Unknown</name>
+        </author>
+        <link rel="alternate" href="https://darellanodev.github.io/blog/20260825-hyperframes-storyboard-practice/" type="text/html"/>
+        <id>https://darellanodev.github.io/blog/20260825-hyperframes-storyboard-practice/</id>
+        <summary type="html">How to use the HyperFrames storyboard feature with OpenCode to plan a video before generating the final result with animations and effects.</summary>
+        </entry><entry xml:lang="en">
+        <title>Chrome DevTools MCP with OpenCode.</title>
         <published>2026-08-13T00:00:00+00:00</published>
         <updated>2026-08-13T00:00:00+00:00</updated>
         <author>
@@ -19,9 +29,9 @@
         </author>
         <link rel="alternate" href="https://darellanodev.github.io/blog/20260813-chrome-devtools-mcp/" type="text/html"/>
         <id>https://darellanodev.github.io/blog/20260813-chrome-devtools-mcp/</id>
-        <summary type="html">How to set up Chrome DevTools MCP in OpenCode and use it to debug a real page: the AI opens Chrome, clicks the button, reads the console and fixes the error itself</summary>
+        <summary type="html">How to set up Chrome DevTools MCP in OpenCode and use it to debug a real page: the AI opens Chrome, clicks the button, reads the console and fixes the error itself.</summary>
         </entry><entry xml:lang="en">
-        <title>Book to skill with OpenCode</title>
+        <title>Book to skill with OpenCode.</title>
         <published>2026-08-07T00:00:00+00:00</published>
         <updated>2026-08-07T00:00:00+00:00</updated>
         <author>
@@ -29,9 +39,9 @@
         </author>
         <link rel="alternate" href="https://darellanodev.github.io/blog/20260807-book-to-skill-with-opencode/" type="text/html"/>
         <id>https://darellanodev.github.io/blog/20260807-book-to-skill-with-opencode/</id>
-        <summary type="html">I try book-to-skill, an open source tool that turns a technical book into a skill your AI agent can consult on demand, using far fewer tokens than pasting the whole book</summary>
+        <summary type="html">I try book-to-skill, an open source tool that turns a technical book into a skill your AI agent can consult on demand, using far fewer tokens than pasting the whole book.</summary>
         </entry><entry xml:lang="en">
-        <title>OmniRoute with OpenCode</title>
+        <title>OmniRoute with OpenCode.</title>
         <published>2026-07-25T00:00:00+00:00</published>
         <updated>2026-07-25T00:00:00+00:00</updated>
         <author>
@@ -39,9 +49,9 @@
         </author>
         <link rel="alternate" href="https://darellanodev.github.io/blog/20260725-omniroute-with-opencode/" type="text/html"/>
         <id>https://darellanodev.github.io/blog/20260725-omniroute-with-opencode/</id>
-        <summary type="html">How to set up OmniRoute, a free and open source local gateway that connects your editor or CLI to more than 90 AI providers with free tiers</summary>
+        <summary type="html">How to set up OmniRoute, a free and open source local gateway that connects your editor or CLI to more than 90 AI providers with free tiers.</summary>
         </entry><entry xml:lang="en">
-        <title>OpenSpec workflow with OpenCode</title>
+        <title>OpenSpec workflow with OpenCode.</title>
         <published>2026-07-18T00:00:00+00:00</published>
         <updated>2026-07-18T00:00:00+00:00</updated>
         <author>
@@ -49,9 +59,9 @@
         </author>
         <link rel="alternate" href="https://darellanodev.github.io/blog/20260718-openspec-workflow-with-opencode/" type="text/html"/>
         <id>https://darellanodev.github.io/blog/20260718-openspec-workflow-with-opencode/</id>
-        <summary type="html">I explore Spec-Driven Development with OpenSpec and OpenCode, a practical workflow to plan just enough before coding without falling into heavy documentation</summary>
+        <summary type="html">I explore Spec-Driven Development with OpenSpec and OpenCode, a practical workflow to plan just enough before coding without falling into heavy documentation.</summary>
         </entry><entry xml:lang="en">
-        <title>Facade pattern in PHP</title>
+        <title>Facade pattern in PHP.</title>
         <published>2026-07-11T00:00:00+00:00</published>
         <updated>2026-07-11T00:00:00+00:00</updated>
         <author>
@@ -59,9 +69,9 @@
         </author>
         <link rel="alternate" href="https://darellanodev.github.io/blog/20260711-facade-pattern-in-php/" type="text/html"/>
         <id>https://darellanodev.github.io/blog/20260711-facade-pattern-in-php/</id>
-        <summary type="html">We practice the Facade pattern in PHP using a home automation example to simplify complex subsystem interactions into a single, clean interface</summary>
+        <summary type="html">We practice the Facade pattern in PHP using a home automation example to simplify complex subsystem interactions into a single, clean interface.</summary>
         </entry><entry xml:lang="en">
-        <title>Creating videos with HyperFrames</title>
+        <title>Creating videos with HyperFrames.</title>
         <published>2026-07-05T00:00:00+00:00</published>
         <updated>2026-07-05T00:00:00+00:00</updated>
         <author>
@@ -69,9 +79,9 @@
         </author>
         <link rel="alternate" href="https://darellanodev.github.io/blog/20260705-creating-videos-with-hyperframes/" type="text/html"/>
         <id>https://darellanodev.github.io/blog/20260705-creating-videos-with-hyperframes/</id>
-        <summary type="html">How to create videos using HTML and GSAP with the HyperFrames CLI tool</summary>
+        <summary type="html">How to create videos using HTML and GSAP with the HyperFrames CLI tool.</summary>
         </entry><entry xml:lang="en">
-        <title>Composite pattern in PHP</title>
+        <title>Composite pattern in PHP.</title>
         <published>2026-06-29T00:00:00+00:00</published>
         <updated>2026-06-29T00:00:00+00:00</updated>
         <author>
@@ -79,9 +89,9 @@
         </author>
         <link rel="alternate" href="https://darellanodev.github.io/blog/20260629-composite-pattern-in-php/" type="text/html"/>
         <id>https://darellanodev.github.io/blog/20260629-composite-pattern-in-php/</id>
-        <summary type="html">We practice the Composite pattern in PHP using a file system structure with directories and files as components</summary>
+        <summary type="html">We practice the Composite pattern in PHP using a file system structure with directories and files as components.</summary>
         </entry><entry xml:lang="en">
-        <title>Spec-Driven Development with OpenCode and Spec Kit</title>
+        <title>Spec-Driven Development with OpenCode and Spec Kit.</title>
         <published>2026-06-17T00:00:00+00:00</published>
         <updated>2026-06-17T00:00:00+00:00</updated>
         <author>
@@ -89,9 +99,9 @@
         </author>
         <link rel="alternate" href="https://darellanodev.github.io/blog/20260617-spec-driven-development-opencode-spec-kit/" type="text/html"/>
         <id>https://darellanodev.github.io/blog/20260617-spec-driven-development-opencode-spec-kit/</id>
-        <summary type="html">I explore Spec-Driven Development using GitHub Spec Kit and OpenCode AI agents to build a CLI flashcard app called study-cards-cli</summary>
+        <summary type="html">I explore Spec-Driven Development using GitHub Spec Kit and OpenCode AI agents to build a CLI flashcard app called study-cards-cli.</summary>
         </entry><entry xml:lang="en">
-        <title>Caveman skill with OpenCode</title>
+        <title>Caveman skill with OpenCode.</title>
         <published>2026-06-11T00:00:00+00:00</published>
         <updated>2026-06-11T00:00:00+00:00</updated>
         <author>
@@ -99,9 +109,9 @@
         </author>
         <link rel="alternate" href="https://darellanodev.github.io/blog/20260611-caveman-skill-with-opencode/" type="text/html"/>
         <id>https://darellanodev.github.io/blog/20260611-caveman-skill-with-opencode/</id>
-        <summary type="html">Testing the Caveman skill for OpenCode to make AI agents respond more concisely and reduce token output without losing technical precision</summary>
+        <summary type="html">Testing the Caveman skill for OpenCode to make AI agents respond more concisely and reduce token output without losing technical precision.</summary>
         </entry><entry xml:lang="en">
-        <title>Bridge pattern for notifications in PHP</title>
+        <title>Bridge pattern for notifications in PHP.</title>
         <published>2026-06-07T00:00:00+00:00</published>
         <updated>2026-06-07T00:00:00+00:00</updated>
         <author>
@@ -109,9 +119,9 @@
         </author>
         <link rel="alternate" href="https://darellanodev.github.io/blog/20260607-bridge-pattern-in-php/" type="text/html"/>
         <id>https://darellanodev.github.io/blog/20260607-bridge-pattern-in-php/</id>
-        <summary type="html">We practice the Bridge pattern in PHP to separate notification types from delivery channels, avoiding class explosion when adding new features</summary>
+        <summary type="html">We practice the Bridge pattern in PHP to separate notification types from delivery channels, avoiding class explosion when adding new features.</summary>
         </entry><entry xml:lang="en">
-        <title>React Doctor with OpenCode</title>
+        <title>React Doctor with OpenCode.</title>
         <published>2026-05-31T00:00:00+00:00</published>
         <updated>2026-05-31T00:00:00+00:00</updated>
         <author>
@@ -119,9 +129,9 @@
         </author>
         <link rel="alternate" href="https://darellanodev.github.io/blog/20260531-react-doctor-with-opencode/" type="text/html"/>
         <id>https://darellanodev.github.io/blog/20260531-react-doctor-with-opencode/</id>
-        <summary type="html">Using React Doctor for a deterministic analysis of a React project, then installing the react-doctor skill in OpenCode to fix issues with AI</summary>
+        <summary type="html">Using React Doctor for a deterministic analysis of a React project, then installing the react-doctor skill in OpenCode to fix issues with AI.</summary>
         </entry><entry xml:lang="en">
-        <title>Creating diagrams with Excalidraw MCP</title>
+        <title>Creating diagrams with Excalidraw MCP.</title>
         <published>2026-05-24T00:00:00+00:00</published>
         <updated>2026-05-24T00:00:00+00:00</updated>
         <author>
@@ -129,9 +139,9 @@
         </author>
         <link rel="alternate" href="https://darellanodev.github.io/blog/20260524-creating-diagrams-with-excalidraw-mcp/" type="text/html"/>
         <id>https://darellanodev.github.io/blog/20260524-creating-diagrams-with-excalidraw-mcp/</id>
-        <summary type="html">How to set up and use the Excalidraw MCP server with OpenCode to create architecture diagrams with AI</summary>
+        <summary type="html">How to set up and use the Excalidraw MCP server with OpenCode to create architecture diagrams with AI.</summary>
         </entry><entry xml:lang="en">
-        <title>Create MCP SQLite server for OpenCode</title>
+        <title>Creating an MCP SQLite Server for OpenCode.</title>
         <published>2026-05-18T00:00:00+00:00</published>
         <updated>2026-05-18T00:00:00+00:00</updated>
         <author>
@@ -139,9 +149,9 @@
         </author>
         <link rel="alternate" href="https://darellanodev.github.io/blog/20260518-mcp-sqlite-opencode/" type="text/html"/>
         <id>https://darellanodev.github.io/blog/20260518-mcp-sqlite-opencode/</id>
-        <summary type="html">Learn how to create a simple MCP server with TypeScript and SQLite, then connect it to OpenCode for natural language database queries</summary>
+        <summary type="html">Learn how to create a simple MCP server with TypeScript and SQLite, then connect it to OpenCode for natural language database queries.</summary>
         </entry><entry xml:lang="en">
-        <title>A PHP app to practice design patterns</title>
+        <title>A PHP app to practice design patterns.</title>
         <published>2026-04-25T00:00:00+00:00</published>
         <updated>2026-04-25T00:00:00+00:00</updated>
         <author>
@@ -149,9 +159,9 @@
         </author>
         <link rel="alternate" href="https://darellanodev.github.io/blog/20260425-pattern-lab-php/" type="text/html"/>
         <id>https://darellanodev.github.io/blog/20260425-pattern-lab-php/</id>
-        <summary type="html">I share how I built a PHP app to practice design patterns using AI</summary>
+        <summary type="html">I share how I built a PHP app to practice design patterns using AI.</summary>
         </entry><entry xml:lang="en">
-        <title>Security plugins for OpenCode</title>
+        <title>Security plugins for OpenCode.</title>
         <published>2026-04-17T00:00:00+00:00</published>
         <updated>2026-04-17T00:00:00+00:00</updated>
         <author>
@@ -159,9 +169,9 @@
         </author>
         <link rel="alternate" href="https://darellanodev.github.io/blog/20260417-security-plugins-opencode/" type="text/html"/>
         <id>https://darellanodev.github.io/blog/20260417-security-plugins-opencode/</id>
-        <summary type="html">I share my experience testing security plugins for OpenCode: Claude Code Safety Net and Envsitter Guard</summary>
+        <summary type="html">I share my experience testing security plugins for OpenCode: Claude Code Safety Net and Envsitter Guard.</summary>
         </entry><entry xml:lang="en">
-        <title>Installing Impeccable skill for OpenCode</title>
+        <title>Installing Impeccable skill for OpenCode.</title>
         <published>2026-04-10T00:00:00+00:00</published>
         <updated>2026-04-10T00:00:00+00:00</updated>
         <author>
@@ -169,9 +179,9 @@
         </author>
         <link rel="alternate" href="https://darellanodev.github.io/blog/20260410-impeccable-skill-opencode/" type="text/html"/>
         <id>https://darellanodev.github.io/blog/20260410-impeccable-skill-opencode/</id>
-        <summary type="html">A basic guide to install and use the Impeccable skill in OpenCode to audit and improve web pages</summary>
+        <summary type="html">A basic guide to install and use the Impeccable skill in OpenCode to audit and improve web pages.</summary>
         </entry><entry xml:lang="en">
-        <title>Optimize OpenCode tokens with DCP and RTK</title>
+        <title>Optimize OpenCode tokens with DCP and RTK.</title>
         <published>2026-03-29T00:00:00+00:00</published>
         <updated>2026-03-29T00:00:00+00:00</updated>
         <author>
@@ -179,6 +189,6 @@
         </author>
         <link rel="alternate" href="https://darellanodev.github.io/blog/20260329-optimize-opencode-tokens/" type="text/html"/>
         <id>https://darellanodev.github.io/blog/20260329-optimize-opencode-tokens/</id>
-        <summary type="html">How to save tokens in OpenCode using Dynamic Context Pruning (DCP) and Rust Token Killer (RTK) - achieve 60-90% reductions in common operations</summary>
+        <summary type="html">How to save tokens in OpenCode using Dynamic Context Pruning (DCP) and Rust Token Killer (RTK) - achieve 60-90% reductions in common operations.</summary>
         </entry>
 </feed>

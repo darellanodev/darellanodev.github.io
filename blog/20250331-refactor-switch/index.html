@@ -10,7 +10,7 @@
     <meta name="base" content="https://darellanodev.github.io/">
 
     
-    <title>Darellanodev • Changing a switch statement to an object-like structure</title>
+    <title>Darellanodev • Changing a switch statement to an object-like structure.</title>
 
     
     
@@ -47,7 +47,7 @@
         <meta name="robots" content="index, nofollow" />
     
 
-    <meta property="og:title" content="Changing a switch statement to an object-like structure" />
+    <meta property="og:title" content="Changing a switch statement to an object-like structure." />
     <meta property="og:type" content="article" />
 
     
@@ -195,7 +195,7 @@
 <main>
     <article>
         <h1 class="article-title gradient-color">
-            Changing a switch statement to an object-like structure
+            Changing a switch statement to an object-like structure.
         </h1>
 
         <ul class="meta">
@@ -231,7 +231,7 @@
 
             
             
-                • <li title="181 words">1 min read</li>
+                • <li title="182 words">1 min read</li>
             •&nbsp;<li>Tags:&nbsp;</li><li><a href=https://darellanodev.github.io/tags/typescript/>TypeScript</a>,&nbsp;</li><li><a href=https://darellanodev.github.io/tags/refactor/>Refactor</a></li>
                 </ul><ul class="meta last-updated"><li>Last updated on 
 
@@ -303,7 +303,7 @@
 </span><span class="z-source z-ts">       <span class="z-string z-quoted z-single z-ts"><span class="z-punctuation z-definition z-string z-begin z-ts">&#39;</span>ConstDirection.LEFT<span class="z-punctuation z-definition z-string z-end z-ts">&#39;</span></span>
 </span><span class="z-source z-ts">     <span class="z-meta z-brace z-round z-ts">)</span>
 </span></code></pre>
-<p>I also learned that you can use brackets in object keys to create expressions that evaluate to the returned values. For example:</p>
+<p>I also learned that you can use computed property names (brackets) in object keys to create dynamic keys that map to values. For example:</p>
 <p>Here’s the code before refactoring:</p>
 <pre data-lang="TypeScript" class="language-TypeScript z-code"><code class="language-TypeScript" data-lang="TypeScript"><span class="z-source z-ts">    <span class="z-meta z-var z-expr z-ts"><span class="z-storage z-type z-ts">let</span> <span class="z-meta z-var-single-variable z-expr z-ts"><span class="z-meta z-definition z-variable z-ts"><span class="z-variable z-other z-readwrite z-ts">canBuy</span></span> </span><span class="z-keyword z-operator z-assignment z-ts">=</span> <span class="z-constant z-language z-boolean z-false z-ts">false</span></span>
 </span><span class="z-source z-ts">
@@ -324,7 +324,7 @@
 </span><span class="z-source z-ts">
 </span><span class="z-source z-ts">     <span class="z-keyword z-control z-flow z-ts">return</span> <span class="z-variable z-other z-readwrite z-ts">canBuy</span>
 </span></code></pre>
-<p>And here’s the equivalent code after the refactor (here you can view the brackets in object keys):</p>
+<p>And here’s the equivalent code after the refactor (here you can see the computed property names):</p>
 <pre data-lang="TypeScript" class="language-TypeScript z-code"><code class="language-TypeScript" data-lang="TypeScript"><span class="z-source z-ts">    <span class="z-meta z-var z-expr z-ts"><span class="z-storage z-type z-ts">const</span> <span class="z-meta z-var-single-variable z-expr z-ts"><span class="z-meta z-definition z-variable z-ts"><span class="z-variable z-other z-constant z-ts">towerCosts</span></span> </span><span class="z-keyword z-operator z-assignment z-ts">=</span> <span class="z-meta z-objectliteral z-ts"><span class="z-punctuation z-definition z-block z-ts">{</span>
 </span></span></span><span class="z-source z-ts"><span class="z-meta z-var z-expr z-ts"><span class="z-meta z-objectliteral z-ts">       <span class="z-meta z-object z-member z-ts"><span class="z-meta z-object-literal z-key z-ts"><span class="z-meta z-array z-literal z-ts"><span class="z-meta z-brace z-square z-ts">[</span><span class="z-variable z-other z-object z-ts">TowerGreen</span><span class="z-punctuation z-accessor z-ts">.</span><span class="z-variable z-other z-constant z-property z-ts">ID</span><span class="z-meta z-brace z-square z-ts">]</span></span></span></span><span class="z-meta z-object z-member z-ts"><span class="z-meta z-object-literal z-key z-ts"><span class="z-punctuation z-separator z-key-value z-ts">:</span></span> <span class="z-variable z-other z-object z-ts">TowerGreen</span><span class="z-punctuation z-accessor z-ts">.</span><span class="z-variable z-other z-constant z-property z-ts">COST_UPGRADE</span></span><span class="z-punctuation z-separator z-comma z-ts">,</span>
 </span></span></span><span class="z-source z-ts"><span class="z-meta z-var z-expr z-ts"><span class="z-meta z-objectliteral z-ts">       <span class="z-meta z-object z-member z-ts"><span class="z-meta z-object-literal z-key z-ts"><span class="z-meta z-array z-literal z-ts"><span class="z-meta z-brace z-square z-ts">[</span><span class="z-variable z-other z-object z-ts">TowerRed</span><span class="z-punctuation z-accessor z-ts">.</span><span class="z-variable z-other z-constant z-property z-ts">ID</span><span class="z-meta z-brace z-square z-ts">]</span></span></span></span><span class="z-meta z-object z-member z-ts"><span class="z-meta z-object-literal z-key z-ts"><span class="z-punctuation z-separator z-key-value z-ts">:</span></span> <span class="z-variable z-other z-object z-ts">TowerRed</span><span class="z-punctuation z-accessor z-ts">.</span><span class="z-variable z-other z-constant z-property z-ts">COST_UPGRADE</span></span><span class="z-punctuation z-separator z-comma z-ts">,</span>

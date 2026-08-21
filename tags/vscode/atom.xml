@@ -11,7 +11,7 @@
     <generator uri="https://www.getzola.org/">Zola</generator>
     <updated>2024-07-22T00:00:00+00:00</updated>
     <id>https://darellanodev.github.io/tags/vscode/atom.xml</id><entry xml:lang="en">
-        <title>VIM in VSCode</title>
+        <title>VIM in VSCode.</title>
         <published>2024-06-30T00:00:00+00:00</published>
         <updated>2024-07-22T00:00:00+00:00</updated>
         <author>
@@ -19,6 +19,6 @@
         </author>
         <link rel="alternate" href="https://darellanodev.github.io/blog/20240722-vimvscode/" type="text/html"/>
         <id>https://darellanodev.github.io/blog/20240722-vimvscode/</id>
-        <summary type="html">For a few weeks ago I returned to use VIM extension in VSCode to code more confortable.</summary>
+        <summary type="html">A few weeks ago, I started using the Vim extension in VSCode to code more comfortably.</summary>
         </entry>
 </feed>

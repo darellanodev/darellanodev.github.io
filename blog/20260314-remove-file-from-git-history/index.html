@@ -10,7 +10,7 @@
     <meta name="base" content="https://darellanodev.github.io/">
 
     
-    <title>Darellanodev • Remove file from Git history</title>
+    <title>Darellanodev • Remove file from Git history.</title>
 
     
     
@@ -40,14 +40,14 @@
 
     <meta name="color-scheme" content="light dark" />
         <meta name="theme-color" content="#087e96" />
-        <meta name="description" content="I share my experience removing a file from Git history using git-filter-repo while keeping the file in the project as untracked" />
-        <meta property="og:description" content="I share my experience removing a file from Git history using git-filter-repo while keeping the file in the project as untracked" />
+        <meta name="description" content="I share my experience removing a file from Git history using git-filter-repo while keeping the file in the project as untracked." />
+        <meta property="og:description" content="I share my experience removing a file from Git history using git-filter-repo while keeping the file in the project as untracked." />
 
     
         <meta name="robots" content="index, nofollow" />
     
 
-    <meta property="og:title" content="Remove file from Git history" />
+    <meta property="og:title" content="Remove file from Git history." />
     <meta property="og:type" content="article" />
 
     
@@ -195,7 +195,7 @@
 <main>
     <article>
         <h1 class="article-title gradient-color">
-            Remove file from Git history
+            Remove file from Git history.
         </h1>
 
         <ul class="meta">
@@ -231,7 +231,7 @@
 
             
             
-                • <li title="558 words">3 min read</li>
+                • <li title="565 words">3 min read</li>
             •&nbsp;<li>Tags:&nbsp;</li><li><a href=https://darellanodev.github.io/tags/git/>Git</a></li>
                 </ul><ul class="meta last-updated"><li>Last updated on 
 
@@ -302,10 +302,10 @@ Step 2: run the cleanup</h3>
 <h2 id="what-happens-to-the-remote-repository"><a class="header-anchor no-hover-padding" href="#what-happens-to-the-remote-repository" aria-label="Anchor link for: what-happens-to-the-remote-repository"><span class="link-icon" aria-hidden="true"></span></a>
 What happens to the remote repository</h2>
 <p>Here’s a crucial point: the remote repository (GitHub, GitLab, etc.) <strong>still has the old history</strong> with the file in it.</p>
-<p>If we do a <code>git push</code> now, Git will complain because the local and remote histories are different. To upload our changes, we need to force the push:</p>
+<p>If we do a <code>git push</code> now, Git will reject it because the local and remote histories have diverged. To upload our changes, we need to force the push:</p>
 <pre data-lang="bash" class="language-bash z-code"><code class="language-bash" data-lang="bash"><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-variable z-function z-shell">git</span></span><span class="z-meta z-function-call z-arguments z-shell"> push<span class="z-variable z-parameter z-option z-shell"><span class="z-punctuation z-definition z-parameter z-shell"> --</span>force</span> origin main</span>
 </span></code></pre>
-<p>⚠️ <strong>Important warning</strong>: The <code>git push --force</code> will rewrite the remote repository’s history. This can affect other people working on the project. If there are other collaborators, we should coordinate with them so they clone again after the update.</p>
+<p>⚠️ <strong>Important warning</strong>: The <code>git push --force</code> will rewrite the remote repository’s history. This can affect other people working on the project. If there are other collaborators, we should coordinate with them so they re-clone or reset their local copies after the update.</p>
 <h2 id="when-not-to-do-this"><a class="header-anchor no-hover-padding" href="#when-not-to-do-this" aria-label="Anchor link for: when-not-to-do-this"><span class="link-icon" aria-hidden="true"></span></a>
 When not to do this</h2>
 <ul>
@@ -315,7 +315,7 @@ When not to do this</h2>
 </ul>
 <h2 id="conclusion"><a class="header-anchor no-hover-padding" href="#conclusion" aria-label="Anchor link for: conclusion"><span class="link-icon" aria-hidden="true"></span></a>
 Conclusion</h2>
-<p>The command <code>git filter-repo --invert-paths</code> is a powerful tool for cleaning up Git history. In my case, it let me remove a file from history while keeping the file in my project as an untracked file.</p>
+<p>The command <code>git filter-repo --invert-paths</code> is a powerful tool for cleaning up Git history. In my case, it allowed me to remove a file from history while keeping the file in my project as an untracked file.</p>
 <p>It’s one of those tools you hope you never need, but when you need it, it’s a lifesaver. I hope this guide helps if you ever find yourself in a similar situation.</p>
 
         </section>

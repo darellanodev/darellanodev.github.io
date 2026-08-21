@@ -228,8 +228,8 @@
 
             
             
-                • <li title="154 words">1 min read</li>
-            •&nbsp;<li>Tags:&nbsp;</li><li><a href=https://darellanodev.github.io/tags/gitbash/>gitbash</a>,&nbsp;</li><li><a href=https://darellanodev.github.io/tags/bash/>bash</a>,&nbsp;</li><li><a href=https://darellanodev.github.io/tags/bashrc/>bashrc</a></li>
+                • <li title="146 words">1 min read</li>
+            •&nbsp;<li>Tags:&nbsp;</li><li><a href=https://darellanodev.github.io/tags/git/>Git</a>,&nbsp;</li><li><a href=https://darellanodev.github.io/tags/bash/>bash</a></li>
                 </ul><ul class="meta last-updated"><li>Last updated on 
 
 
@@ -263,7 +263,7 @@
         <section class="body">
             
             
-            <p>Last week, I discussed with a friend how we can use the Git Bash console to create simple aliases that make executing Git commands more convenient and efficient. I use Visual Studio Code on my Windows machine, and the default terminal in it is Git Bash.</p>
+            <p>Last week, I discussed with a friend how we can create simple aliases in Git Bash to make executing Git commands faster and easier. I use Visual Studio Code on my Windows machine, and the default terminal in it is Git Bash.</p>
 <p><img src="https://darellanodev.github.io/blog/20250413-bash-alias/./alias_bash.png" alt="alias_bash" /></p>
 <p>To start, I opened my user directory by pressing <code>Win+R</code> and typing <code>%USERPROFILE%</code>.</p>
 <p>Next, I created a <code>.bashrc</code> file and added the following lines:</p>
@@ -283,7 +283,7 @@
 </span><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-support z-function z-alias z-shell">alias</span> <span class="z-entity z-name z-function z-alias z-shell">gsm</span><span class="z-keyword z-operator z-assignment z-shell">=</span><span class="z-string z-unquoted z-shell"><span class="z-string z-quoted z-single z-shell"><span class="z-punctuation z-definition z-string z-begin z-shell">&#39;</span>git switch main<span class="z-punctuation z-definition z-string z-end z-shell">&#39;</span></span></span></span>
 </span></code></pre>
 <p>After saving the file, I closed the Git Bash terminal in VSCode and reopened it. Now, when I run the <code>alias</code> command, I can see all the aliases listed. If I ever forget an alias, I can simply execute <code>alias</code> to view them.</p>
-<p>Finally, I can now execute an alias command like <code>gaa</code> in Git Bash, which results in running the command I wrote in my .bashrc file, <code>git add --all</code>, making it easy to stage all changes across the repository.</p>
+<p>Now I can execute an alias like <code>gaa</code> in Git Bash, which runs the command I defined in my <code>.bashrc</code> file (<code>git add --all</code>), making it easy to stage all changes in the repository.</p>
 
         </section>
 

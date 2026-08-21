@@ -10,7 +10,7 @@
     <meta name="base" content="https://darellanodev.github.io/">
 
     
-    <title>Darellanodev • How to delete a branch locally and remotely after it has been merged into main</title>
+    <title>Darellanodev • How to delete a branch locally and remotely after it has been merged into main.</title>
 
     
     
@@ -47,7 +47,7 @@
         <meta name="robots" content="index, nofollow" />
     
 
-    <meta property="og:title" content="How to delete a branch locally and remotely after it has been merged into main" />
+    <meta property="og:title" content="How to delete a branch locally and remotely after it has been merged into main." />
     <meta property="og:type" content="article" />
 
     
@@ -195,7 +195,7 @@
 <main>
     <article>
         <h1 class="article-title gradient-color">
-            How to delete a branch locally and remotely after it has been merged into main
+            How to delete a branch locally and remotely after it has been merged into main.
         </h1>
 
         <ul class="meta">
@@ -283,7 +283,7 @@
 <pre data-lang="bash" class="language-bash z-code"><code class="language-bash" data-lang="bash"><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-variable z-function z-shell">git</span></span><span class="z-meta z-function-call z-arguments z-shell"> switch main</span>
 </span><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-variable z-function z-shell">git</span></span><span class="z-meta z-function-call z-arguments z-shell"> branch<span class="z-variable z-parameter z-option z-shell"><span class="z-punctuation z-definition z-parameter z-shell"> --</span>merged</span></span> <span class="z-keyword z-operator z-logical z-pipe z-shell">|</span> <span class="z-meta z-function-call z-shell"><span class="z-variable z-function z-shell">grep</span></span><span class="z-meta z-function-call z-arguments z-shell"><span class="z-variable z-parameter z-option z-shell"><span class="z-punctuation z-definition z-parameter z-shell"> -</span>v</span> <span class="z-string z-quoted z-single z-shell"><span class="z-punctuation z-definition z-string z-begin z-shell">&#39;</span>\*<span class="z-punctuation z-definition z-string z-end z-shell">&#39;</span></span></span> <span class="z-keyword z-operator z-logical z-pipe z-shell">|</span> <span class="z-meta z-function-call z-shell"><span class="z-variable z-function z-shell">xargs</span></span><span class="z-meta z-function-call z-arguments z-shell"><span class="z-variable z-parameter z-option z-shell"><span class="z-punctuation z-definition z-parameter z-shell"> -</span>n</span> 1 git branch<span class="z-variable z-parameter z-option z-shell"><span class="z-punctuation z-definition z-parameter z-shell"> -</span>d</span></span>
 </span></code></pre>
-<p>This command switches to the main branch, list all merged branches, excludes the current branch, and deletes each merged branch.</p>
+<p>This command switches to the main branch, lists all merged branches, excludes the current branch, and deletes each merged branch.</p>
 <p>To delete the branch remotely:</p>
 <pre data-lang="bash" class="language-bash z-code"><code class="language-bash" data-lang="bash"><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-variable z-function z-shell">git</span></span><span class="z-meta z-function-call z-arguments z-shell"> push origin<span class="z-variable z-parameter z-option z-shell"><span class="z-punctuation z-definition z-parameter z-shell"> --</span>delete</span> branch-name</span>
 </span></code></pre>

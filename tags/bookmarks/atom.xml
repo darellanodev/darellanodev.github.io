@@ -11,7 +11,7 @@
     <generator uri="https://www.getzola.org/">Zola</generator>
     <updated>2024-07-20T00:00:00+00:00</updated>
     <id>https://darellanodev.github.io/tags/bookmarks/atom.xml</id><entry xml:lang="en">
-        <title>Bookmarks</title>
+        <title>Bookmarks.</title>
         <published>2024-07-20T00:00:00+00:00</published>
         <updated>2024-07-20T00:00:00+00:00</updated>
         <author>
@@ -19,6 +19,6 @@
         </author>
         <link rel="alternate" href="https://darellanodev.github.io/blog/20240720-js-factory-pattern/" type="text/html"/>
         <id>https://darellanodev.github.io/blog/20240720-js-factory-pattern/</id>
-        <summary type="html">Bookmarks to my favorites websites.</summary>
+        <summary type="html">Bookmarks to my favorite websites.</summary>
         </entry>
 </feed>

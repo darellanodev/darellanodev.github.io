@@ -10,7 +10,7 @@
     <meta name="base" content="https://darellanodev.github.io/">
 
     
-    <title>Darellanodev • Decorator pattern with pizzas</title>
+    <title>Darellanodev • Decorator pattern with pizzas.</title>
 
     
     
@@ -40,14 +40,14 @@
 
     <meta name="color-scheme" content="light dark" />
         <meta name="theme-color" content="#087e96" />
-        <meta name="description" content="We practice the Decorator pattern in a pizzeria to add ingredients dynamically, without creating a class for each possible combination" />
-        <meta property="og:description" content="We practice the Decorator pattern in a pizzeria to add ingredients dynamically, without creating a class for each possible combination" />
+        <meta name="description" content="We practice the Decorator pattern in a pizzeria to add ingredients dynamically, without creating a class for each possible combination." />
+        <meta property="og:description" content="We practice the Decorator pattern in a pizzeria to add ingredients dynamically, without creating a class for each possible combination." />
 
     
         <meta name="robots" content="index, nofollow" />
     
 
-    <meta property="og:title" content="Decorator pattern with pizzas" />
+    <meta property="og:title" content="Decorator pattern with pizzas." />
     <meta property="og:type" content="article" />
 
     
@@ -195,7 +195,7 @@
 <main>
     <article>
         <h1 class="article-title gradient-color">
-            Decorator pattern with pizzas
+            Decorator pattern with pizzas.
         </h1>
 
         <ul class="meta">
@@ -228,7 +228,7 @@
 
             
             
-                • <li title="296 words">2 min read</li>
+                • <li title="294 words">2 min read</li>
             •&nbsp;<li>Tags:&nbsp;</li><li><a href=https://darellanodev.github.io/tags/php/>PHP</a>,&nbsp;</li><li><a href=https://darellanodev.github.io/tags/oop/>OOP</a>,&nbsp;</li><li><a href=https://darellanodev.github.io/tags/design-patterns/>Design Patterns</a></li>
                 </ul><ul class="meta last-updated"><li>Last updated on 
 
@@ -285,7 +285,7 @@
 </span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">echo $pizza-&gt;getCost(); // 5.00
 </span></span></code></pre>
 <p>💥 Act 2 — The problem grows</p>
-<p>The business grows and the owner wants to offer extra ingredients. Our first idea as developers is to create a subclass for each variant, but with just 2 ingredients, 3 classes already appear. Adding more ingredients escalates the combinations: the code becomes unmanageable.</p>
+<p>The business grows and the owner wants to offer extra ingredients. Our first idea as developers is to create a subclass for each variant, but with just 2 ingredients, we already need 3 classes. Adding more ingredients escalates the combinations: the code becomes unmanageable.</p>
 <pre data-lang="php" class="language-php z-code"><code class="language-php" data-lang="php"><span class="z-embedding z-php"><span class="z-text z-html z-basic">class PizzaWithCheese extends Pizza
 </span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">{
 </span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">    public function getDescription(): string
@@ -327,8 +327,8 @@
 </span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">
 </span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">// ... and we keep creating classes 😰
 </span></span></code></pre>
-<p>💡 Act 3 — The revelation</p>
-<p>Let’s better apply the Decorator pattern, which allows us to wrap a pizza with ingredients dynamically, without creating new subclasses.</p>
+<p>💡 Act 3 — The solution</p>
+<p>Let’s apply the Decorator pattern, which allows us to wrap a pizza with ingredients dynamically, without creating new subclasses.</p>
 <pre data-lang="php" class="language-php z-code"><code class="language-php" data-lang="php"><span class="z-embedding z-php"><span class="z-text z-html z-basic">
 </span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">// 1. Common interface
 </span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">interface PizzaInterface
@@ -369,9 +369,9 @@
 <p><code>PizzaDecorator</code> is abstract for two reasons:</p>
 <ol>
 <li>It doesn’t make sense to instantiate it alone; we always need a concrete decorator like <code>CheeseDecorator</code>.</li>
-<li>It centralizes the common logic: the constructor that receives the pizza and the delegation of <code>getDescription()</code> and <code>getCost()</code>. So each concrete decorator only writes what it adds, without repeating code.</li>
+<li>It centralizes the common logic: the constructor that receives the pizza and the delegation of <code>getDescription()</code> and <code>getCost()</code>. Each concrete decorator only writes what it adds, without repeating code.</li>
 </ol>
-<p><code>PizzaInterface</code> is the contract that ensures that everything that goes into a decorator — whether it’s the base pizza or another decorator — will always have the same methods. Without that contract, we couldn’t nest decorators.</p>
+<p><code>PizzaInterface</code> is the contract that ensures everything that goes into a decorator — whether it’s the base pizza or another decorator — will always have the same methods. Without that contract, we couldn’t nest decorators.</p>
 <p>✅ Act 4 — The result</p>
 <pre data-lang="php" class="language-php z-code"><code class="language-php" data-lang="php"><span class="z-embedding z-php"><span class="z-text z-html z-basic">
 </span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">$pizza = new SimplePizza();
@@ -382,7 +382,7 @@
 </span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">echo $pizza-&gt;getCost();        // 8.50
 </span></span></code></pre>
 <p>🎯 Act 5 — Conclusion</p>
-<p>Thanks to the Decorator pattern, we’ve gone from needing a class for each possible combination, to needing only one class per ingredient. Adding a new ingredient is as simple as creating another decorator, without touching anything existing.</p>
+<p>Thanks to the Decorator pattern, we’ve gone from needing a class for each possible combination to needing only one class per ingredient. Adding a new ingredient is as simple as creating another decorator, without touching anything existing.</p>
 <pre data-lang="php" class="language-php z-code"><code class="language-php" data-lang="php"><span class="z-embedding z-php"><span class="z-text z-html z-basic">class PepperoniDecorator extends PizzaDecorator
 </span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">{
 </span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">    public function getDescription(): string { return $this-&gt;pizza-&gt;getDescription() . &#39;, pepperoni&#39;; }

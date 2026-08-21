@@ -18,16 +18,8 @@
         <loc>https://darellanodev.github.io/blog/</loc>
     </url>
     <url>
-        <loc>https://darellanodev.github.io/blog/20240630-newwebsite/</loc>
-        <lastmod>2024-06-30</lastmod>
-    </url>
-    <url>
         <loc>https://darellanodev.github.io/blog/20240714-js-observer-pattern/</loc>
         <lastmod>2024-07-14</lastmod>
-    </url>
-    <url>
-        <loc>https://darellanodev.github.io/blog/20240720-bookmarks/</loc>
-        <lastmod>2024-07-20</lastmod>
     </url>
     <url>
         <loc>https://darellanodev.github.io/blog/20240720-js-factory-pattern/</loc>
@@ -40,14 +32,6 @@
     <url>
         <loc>https://darellanodev.github.io/blog/20240722-vimvscode/</loc>
         <lastmod>2024-07-22</lastmod>
-    </url>
-    <url>
-        <loc>https://darellanodev.github.io/blog/20240726-devquotes/</loc>
-        <lastmod>2024-07-25</lastmod>
-    </url>
-    <url>
-        <loc>https://darellanodev.github.io/blog/20240810-health-gym/</loc>
-        <lastmod>2024-08-01</lastmod>
     </url>
     <url>
         <loc>https://darellanodev.github.io/blog/20240816-gitreview/</loc>
@@ -100,10 +84,6 @@
     <url>
         <loc>https://darellanodev.github.io/blog/20250511-frontend-mentor-01/</loc>
         <lastmod>2025-05-11</lastmod>
-    </url>
-    <url>
-        <loc>https://darellanodev.github.io/blog/20250531-english-hypothetical/</loc>
-        <lastmod>2025-05-31</lastmod>
     </url>
     <url>
         <loc>https://darellanodev.github.io/blog/20250614-min-width/</loc>
@@ -198,6 +178,10 @@
         <lastmod>2026-08-13</lastmod>
     </url>
     <url>
+        <loc>https://darellanodev.github.io/blog/20260825-hyperframes-storyboard-practice/</loc>
+        <lastmod>2026-08-25</lastmod>
+    </url>
+    <url>
         <loc>https://darellanodev.github.io/blog/page/1/</loc>
     </url>
     <url>
@@ -283,10 +267,10 @@
         <loc>https://darellanodev.github.io/tags/bash/</loc>
     </url>
     <url>
-        <loc>https://darellanodev.github.io/tags/bashrc/</loc>
+        <loc>https://darellanodev.github.io/tags/bookmarks/</loc>
     </url>
     <url>
-        <loc>https://darellanodev.github.io/tags/bookmarks/</loc>
+        <loc>https://darellanodev.github.io/tags/challenges/</loc>
     </url>
     <url>
         <loc>https://darellanodev.github.io/tags/css/</loc>
@@ -295,22 +279,10 @@
         <loc>https://darellanodev.github.io/tags/design-patterns/</loc>
     </url>
     <url>
-        <loc>https://darellanodev.github.io/tags/english/</loc>
-    </url>
-    <url>
-        <loc>https://darellanodev.github.io/tags/fitness/</loc>
-    </url>
-    <url>
         <loc>https://darellanodev.github.io/tags/front-end/</loc>
     </url>
     <url>
-        <loc>https://darellanodev.github.io/tags/frontend-mentor/</loc>
-    </url>
-    <url>
         <loc>https://darellanodev.github.io/tags/git/</loc>
-    </url>
-    <url>
-        <loc>https://darellanodev.github.io/tags/gitbash/</loc>
     </url>
     <url>
         <loc>https://darellanodev.github.io/tags/github/</loc>
@@ -319,13 +291,7 @@
         <loc>https://darellanodev.github.io/tags/gvim/</loc>
     </url>
     <url>
-        <loc>https://darellanodev.github.io/tags/gym/</loc>
-    </url>
-    <url>
-        <loc>https://darellanodev.github.io/tags/healthylifestyle/</loc>
-    </url>
-    <url>
-        <loc>https://darellanodev.github.io/tags/jspatterns/</loc>
+        <loc>https://darellanodev.github.io/tags/hyperframes/</loc>
     </url>
     <url>
         <loc>https://darellanodev.github.io/tags/lazyvim/</loc>
@@ -335,9 +301,6 @@
     </url>
     <url>
         <loc>https://darellanodev.github.io/tags/neovim/</loc>
-    </url>
-    <url>
-        <loc>https://darellanodev.github.io/tags/news/</loc>
     </url>
     <url>
         <loc>https://darellanodev.github.io/tags/oop/</loc>
@@ -355,9 +318,6 @@
         <loc>https://darellanodev.github.io/tags/plugins/</loc>
     </url>
     <url>
-        <loc>https://darellanodev.github.io/tags/quotes/</loc>
-    </url>
-    <url>
         <loc>https://darellanodev.github.io/tags/react/</loc>
     </url>
     <url>
@@ -365,9 +325,6 @@
     </url>
     <url>
         <loc>https://darellanodev.github.io/tags/sdd/</loc>
-    </url>
-    <url>
-        <loc>https://darellanodev.github.io/tags/showcase/</loc>
     </url>
     <url>
         <loc>https://darellanodev.github.io/tags/svg/</loc>

@@ -11,7 +11,7 @@
     <generator uri="https://www.getzola.org/">Zola</generator>
     <updated>2025-04-19T00:00:00+00:00</updated>
     <id>https://darellanodev.github.io/tags/gvim/atom.xml</id><entry xml:lang="en">
-        <title>Installing the vim-plug in gVim</title>
+        <title>Installing vim-plug in gVim.</title>
         <published>2025-04-19T00:00:00+00:00</published>
         <updated>2025-04-19T00:00:00+00:00</updated>
         <author>
@@ -21,7 +21,7 @@
         <id>https://darellanodev.github.io/blog/20250419-vim-plug/</id>
         <summary type="html">Two days ago, I continued learning about gVim by practicing the installation of the vim-plug plugin.</summary>
         </entry><entry xml:lang="en">
-        <title>Installing and starting to use Vim with gVim in Windows</title>
+        <title>Installing and starting to use Vim with gVim in Windows.</title>
         <published>2025-04-05T00:00:00+00:00</published>
         <updated>2025-04-05T00:00:00+00:00</updated>
         <author>

@@ -10,7 +10,7 @@
     <meta name="base" content="https://darellanodev.github.io/">
 
     
-    <title>Darellanodev • Bridge pattern for notifications in PHP</title>
+    <title>Darellanodev • Bridge pattern for notifications in PHP.</title>
 
     
     
@@ -40,14 +40,14 @@
 
     <meta name="color-scheme" content="light dark" />
         <meta name="theme-color" content="#087e96" />
-        <meta name="description" content="We practice the Bridge pattern in PHP to separate notification types from delivery channels, avoiding class explosion when adding new features" />
-        <meta property="og:description" content="We practice the Bridge pattern in PHP to separate notification types from delivery channels, avoiding class explosion when adding new features" />
+        <meta name="description" content="We practice the Bridge pattern in PHP to separate notification types from delivery channels, avoiding class explosion when adding new features." />
+        <meta property="og:description" content="We practice the Bridge pattern in PHP to separate notification types from delivery channels, avoiding class explosion when adding new features." />
 
     
         <meta name="robots" content="index, nofollow" />
     
 
-    <meta property="og:title" content="Bridge pattern for notifications in PHP" />
+    <meta property="og:title" content="Bridge pattern for notifications in PHP." />
     <meta property="og:type" content="article" />
 
     
@@ -195,7 +195,7 @@
 <main>
     <article>
         <h1 class="article-title gradient-color">
-            Bridge pattern for notifications in PHP
+            Bridge pattern for notifications in PHP.
         </h1>
 
         <ul class="meta">
@@ -231,7 +231,7 @@
 
             
             
-                • <li title="334 words">2 min read</li>
+                • <li title="324 words">2 min read</li>
             •&nbsp;<li>Tags:&nbsp;</li><li><a href=https://darellanodev.github.io/tags/php/>PHP</a>,&nbsp;</li><li><a href=https://darellanodev.github.io/tags/oop/>OOP</a>,&nbsp;</li><li><a href=https://darellanodev.github.io/tags/design-patterns/>Design Patterns</a>,&nbsp;</li><li><a href=https://darellanodev.github.io/tags/youtube/>YouTube</a></li>
                 </ul><ul class="meta last-updated"><li>Last updated on 
 
@@ -269,11 +269,11 @@
         <section class="body">
             
             
-            <p>Hello developer 👋 In this post we practice the Bridge pattern in PHP through a notification application that sends messages across different channels. This pattern allows us to extend two dimensions separately: what type of notification we want to send and which channel sends it ✨</p>
+            <p>Hello developer 👋 In this post we practice the Bridge pattern in PHP through a notification application that sends messages across different channels. This pattern lets us extend two dimensions separately: the type of notification and the delivery channel ✨</p>
 <p><img src="https://darellanodev.github.io/blog/20260607-bridge-pattern-in-php/./bridge-design-pattern-in-php.png" alt="bridge-design-pattern-in-php" /></p>
 <p>🚀 Act 1 — The beginning of the application</p>
 <p>As developers, we need to create an application to send notifications. For now, the system only needs to send messages by email, so we start with a simple solution.</p>
-<p>To keep things simple, we use a return string to simulate all the code needed.</p>
+<p>To keep things simple, we return a string to simulate all the code needed.</p>
 <pre data-lang="php" class="language-php z-code"><code class="language-php" data-lang="php"><span class="z-embedding z-php"><span class="z-text z-html z-basic">class EmailNotification
 </span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">{
 </span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">    public function send(string $message): string
@@ -287,7 +287,7 @@
 </span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">echo $notification-&gt;send(&quot;Server is down&quot;);
 </span></span></code></pre>
 <p>📬 Act 2 — A new need appears</p>
-<p>Soon after, we need the application to also send notifications by SMS. If we follow the previous approach, we create another class for this new channel.</p>
+<p>Soon after, we need the application to also send notifications by SMS. Following the same approach, we create another class for this new channel.</p>
 <pre data-lang="php" class="language-php z-code"><code class="language-php" data-lang="php"><span class="z-embedding z-php"><span class="z-text z-html z-basic">class EmailNotification
 </span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">{
 </span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">    public function send(string $message): string
@@ -434,7 +434,7 @@
 </span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">}
 </span></span></code></pre>
 <p>🎯 Act 6 — The client uses both parts</p>
-<p>Now we can combine any notification type with any channel without multiplying classes. The abstraction decides what message is sent, and the implementor decides how it is sent.</p>
+<p>Now we can combine any notification type with any channel without multiplying classes. The abstraction decides what message to send, and the implementor decides how to send it.</p>
 <pre data-lang="php" class="language-php z-code"><code class="language-php" data-lang="php"><span class="z-embedding z-php"><span class="z-text z-html z-basic">$alertByEmail = new AlertNotification(new EmailChannel());
 </span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">echo $alertByEmail-&gt;notify(&quot;Server is down&quot;);
 </span></span><span class="z-embedding z-php"><span class="z-text z-html z-basic">
@@ -448,7 +448,7 @@
 <div style="width: 100%; max-width: 560px; margin: 1rem 0;">
     <iframe width="560" height="315" src="https://www.youtube.com/embed/xzHdSNMW0y0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; fullscreen" title="Media Embed" style="border: 0px; width: 100%; height: auto;"></iframe>
 </div>
-<p>Bridge separates what is sent from how it is sent. This gives us a more flexible, cleaner structure that is much easier to extend.</p>
+<p>Bridge separates what is sent from how it is sent. This gives us a more flexible, cleaner structure that is easier to extend.</p>
 
         </section>
 

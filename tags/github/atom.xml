@@ -11,7 +11,7 @@
     <generator uri="https://www.getzola.org/">Zola</generator>
     <updated>2025-03-23T00:00:00+00:00</updated>
     <id>https://darellanodev.github.io/tags/github/atom.xml</id><entry xml:lang="en">
-        <title>Prefixing Git commits</title>
+        <title>Prefixing Git commits.</title>
         <published>2025-03-23T00:00:00+00:00</published>
         <updated>2025-03-23T00:00:00+00:00</updated>
         <author>
@@ -21,7 +21,7 @@
         <id>https://darellanodev.github.io/blog/20250323-git-prefixes/</id>
         <summary type="html">Last week, I started adding prefixes to my Git commits to provide more context.</summary>
         </entry><entry xml:lang="en">
-        <title>How to obtain the YOLO achievement on GitHub</title>
+        <title>How to obtain the YOLO achievement on GitHub.</title>
         <published>2025-03-16T00:00:00+00:00</published>
         <updated>2025-03-16T00:00:00+00:00</updated>
         <author>
@@ -29,9 +29,9 @@
         </author>
         <link rel="alternate" href="https://darellanodev.github.io/blog/20250316-github-yolo-achievement/" type="text/html"/>
         <id>https://darellanodev.github.io/blog/20250316-github-yolo-achievement/</id>
-        <summary type="html">The YOLO GitHub achievement is an ironic award that represents a bad practice that users should be aware of and avoid</summary>
+        <summary type="html">The YOLO GitHub achievement is an ironic award that represents a bad practice that users should be aware of and avoid.</summary>
         </entry><entry xml:lang="en">
-        <title>How to synchronize branches in Git</title>
+        <title>How to synchronize branches in Git.</title>
         <published>2025-03-08T00:00:00+00:00</published>
         <updated>2025-03-08T00:00:00+00:00</updated>
         <author>
@@ -39,9 +39,9 @@
         </author>
         <link rel="alternate" href="https://darellanodev.github.io/blog/20250308-synchronize-branches/" type="text/html"/>
         <id>https://darellanodev.github.io/blog/20250308-synchronize-branches/</id>
-        <summary type="html">I share my experience synchronizing branches in GitHub to keep my repository updated with the latest changes</summary>
+        <summary type="html">I share my experience synchronizing branches in GitHub to keep my repository updated with the latest changes.</summary>
         </entry><entry xml:lang="en">
-        <title>How to delete a branch locally and remotely after it has been merged into main</title>
+        <title>How to delete a branch locally and remotely after it has been merged into main.</title>
         <published>2025-03-02T00:00:00+00:00</published>
         <updated>2025-03-02T00:00:00+00:00</updated>
         <author>

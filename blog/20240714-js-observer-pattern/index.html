@@ -10,7 +10,7 @@
     <meta name="base" content="https://darellanodev.github.io/">
 
     
-    <title>Darellanodev • JavaScript Observer Pattern</title>
+    <title>Darellanodev • JavaScript Observer Pattern.</title>
 
     
     
@@ -47,7 +47,7 @@
         <meta name="robots" content="index, nofollow" />
     
 
-    <meta property="og:title" content="JavaScript Observer Pattern" />
+    <meta property="og:title" content="JavaScript Observer Pattern." />
     <meta property="og:type" content="article" />
 
     
@@ -195,7 +195,7 @@
 <main>
     <article>
         <h1 class="article-title gradient-color">
-            JavaScript Observer Pattern
+            JavaScript Observer Pattern.
         </h1>
 
         <ul class="meta">
@@ -231,8 +231,8 @@
 
             
             
-                • <li title="152 words">1 min read</li>
-            •&nbsp;<li>Tags:&nbsp;</li><li><a href=https://darellanodev.github.io/tags/jspatterns/>JSPatterns</a></li>
+                • <li title="136 words">1 min read</li>
+            •&nbsp;<li>Tags:&nbsp;</li><li><a href=https://darellanodev.github.io/tags/design-patterns/>Design Patterns</a></li>
                 </ul><ul class="meta last-updated"><li>Last updated on 
 
 
@@ -271,15 +271,15 @@
             
             <h2 id="javascript-observer-pattern"><a class="header-anchor no-hover-padding" href="#javascript-observer-pattern" aria-label="Anchor link for: javascript-observer-pattern"><span class="link-icon" aria-hidden="true"></span></a>
 JavaScript Observer Pattern</h2>
-<p>This is an example on how to apply the observer pattern to a to-do list app.</p>
+<p>This is an example of how to apply the observer pattern to a to-do list app.</p>
 <h3 id="main-components"><a class="header-anchor no-hover-padding" href="#main-components" aria-label="Anchor link for: main-components"><span class="link-icon" aria-hidden="true"></span></a>
 Main components</h3>
 <ul>
 <li>
-<p><strong>The subject</strong>: It would represent the list of the tasks. When a task is added, modified or deleted it will notify to the observers suscribed to it.</p>
+<p><strong>The subject</strong>: It represents the list of tasks. When a task is added, modified, or deleted, it notifies the observers subscribed to it.</p>
 </li>
 <li>
-<p><strong>The observers</strong>: They are components of the user interface that can be suscribed to the subject (the to-do list) and then they will receibe a notification from the to-do list (the subject), and then for example they can update them.</p>
+<p><strong>The observers</strong>: These are components of the user interface that can subscribe to the subject (the to-do list). When they receive a notification from the to-do list, they can update themselves.</p>
 </li>
 </ul>
 <h3 id="implementation"><a class="header-anchor no-hover-padding" href="#implementation" aria-label="Anchor link for: implementation"><span class="link-icon" aria-hidden="true"></span></a>
@@ -341,7 +341,7 @@ Main program</h4>
 </span><span class="z-source z-ts"><span class="z-meta z-function-call z-ts"><span class="z-variable z-other z-object z-ts">todoList</span><span class="z-punctuation z-accessor z-ts">.</span><span class="z-entity z-name z-function z-ts">addTodo</span></span><span class="z-meta z-brace z-round z-ts">(</span><span class="z-meta z-objectliteral z-ts"><span class="z-punctuation z-definition z-block z-ts">{</span> <span class="z-meta z-object z-member z-ts"><span class="z-meta z-object-literal z-key z-ts">title</span></span><span class="z-meta z-object z-member z-ts"><span class="z-meta z-object-literal z-key z-ts"><span class="z-punctuation z-separator z-key-value z-ts">:</span></span> <span class="z-string z-quoted z-single z-ts"><span class="z-punctuation z-definition z-string z-begin z-ts">&#39;</span>buy a bottle of milk<span class="z-punctuation z-definition z-string z-end z-ts">&#39;</span></span> </span><span class="z-punctuation z-definition z-block z-ts">}</span></span><span class="z-meta z-brace z-round z-ts">)</span>
 </span><span class="z-source z-ts"><span class="z-meta z-function-call z-ts"><span class="z-variable z-other z-object z-ts">todoList</span><span class="z-punctuation z-accessor z-ts">.</span><span class="z-entity z-name z-function z-ts">removeTodo</span></span><span class="z-meta z-brace z-round z-ts">(</span><span class="z-constant z-numeric z-decimal z-ts">0</span><span class="z-meta z-brace z-round z-ts">)</span> <span class="z-comment z-line z-double-slash z-ts"><span class="z-punctuation z-definition z-comment z-ts">//</span></span><span class="z-comment z-line z-double-slash z-ts"> remove the task</span>
 </span></code></pre>
-<p>In this example when adding a new task to the to-do list, the to-do list will notify to their observers. In this example there is one observer but we can add more observers. The display observer will update when it receives the notification from the to-do list.</p>
+<p>In this example, when adding a new task to the to-do list, the to-do list notifies its observers. In this example there is one observer, but we can add more observers. The display observer updates when it receives the notification from the to-do list.</p>
 
         </section>
 

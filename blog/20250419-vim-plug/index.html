@@ -10,7 +10,7 @@
     <meta name="base" content="https://darellanodev.github.io/">
 
     
-    <title>Darellanodev • Installing the vim-plug in gVim</title>
+    <title>Darellanodev • Installing vim-plug in gVim.</title>
 
     
     
@@ -47,7 +47,7 @@
         <meta name="robots" content="index, nofollow" />
     
 
-    <meta property="og:title" content="Installing the vim-plug in gVim" />
+    <meta property="og:title" content="Installing vim-plug in gVim." />
     <meta property="og:type" content="article" />
 
     
@@ -195,7 +195,7 @@
 <main>
     <article>
         <h1 class="article-title gradient-color">
-            Installing the vim-plug in gVim
+            Installing vim-plug in gVim.
         </h1>
 
         <ul class="meta">
@@ -231,8 +231,8 @@
 
             
             
-                • <li title="234 words">2 min read</li>
-            •&nbsp;<li>Tags:&nbsp;</li><li><a href=https://darellanodev.github.io/tags/gvim/>gVim</a>,&nbsp;</li><li><a href=https://darellanodev.github.io/tags/plugins/>plugins</a></li>
+                • <li title="229 words">2 min read</li>
+            •&nbsp;<li>Tags:&nbsp;</li><li><a href=https://darellanodev.github.io/tags/gvim/>gVim</a>,&nbsp;</li><li><a href=https://darellanodev.github.io/tags/plugins/>Plugins</a></li>
                 </ul><ul class="meta last-updated"><li>Last updated on 
 
 
@@ -274,9 +274,9 @@
 <p>First, I deleted the folders of the plugins I had previously downloaded manually, to avoid conflicts when using vim-plug.</p>
 <p>Then, I followed the instructions using the PowerShell command shown in the documentation on the vim-plug GitHub repository.</p>
 <p>I opened gVim and executed the command <code>:e $MYVIMRC</code>, then added the following lines at the top of the file before the existing <code>set nocompatible</code> line.</p>
-<p>I should mention that I needed to use the line <code>set shell=cmd.exe</code> because the vim-plug for windows had problems with other shells, so I added this line to prevent the errors shown by vim-plug.</p>
+<p>I should mention that I needed to use the line <code>set shell=cmd.exe</code> because vim-plug for Windows had problems with other shells, so I added this line to prevent the errors.</p>
 <pre data-lang="bash" class="language-bash z-code"><code class="language-bash" data-lang="bash"><span class="z-source z-shell z-bash">
-</span><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-support z-function z-set z-shell">set</span></span><span class="z-meta z-function-call z-arguments z-shell"> nocompatible <span class="z-comment z-line z-number-sign z-shell"><span class="z-punctuation z-definition z-comment z-begin z-shell">#</span></span><span class="z-comment z-line z-number-sign z-shell"> this line was already there. It’s the first line on my _vimrc file</span><span class="z-comment z-line z-number-sign z-shell">
+</span><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-support z-function z-set z-shell">set</span></span><span class="z-meta z-function-call z-arguments z-shell"> nocompatible <span class="z-comment z-line z-number-sign z-shell"><span class="z-punctuation z-definition z-comment z-begin z-shell">#</span></span><span class="z-comment z-line z-number-sign z-shell"> this line was already there. It&#39;s the first line on my _vimrc file</span><span class="z-comment z-line z-number-sign z-shell">
 </span></span></span><span class="z-source z-shell z-bash">
 </span><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-support z-function z-set z-shell">set</span></span><span class="z-meta z-function-call z-arguments z-shell"> shell=cmd.exe </span>
 </span><span class="z-source z-shell z-bash">
@@ -295,7 +295,7 @@ vim-fugitive: for managing Git inside gVim
 ctrlp: for simulating the vscode ctrl+p
 vim-maximizer: to temporarily maximize a window while working with multiple windows, and then restore it.</p>
 <p>I will talk about these plugins in future posts.</p>
-<p>Currently, my complete <code>_vimrc</code> file look like this (I’m using gVim 9.1.821 on my Windows 10 machine):</p>
+<p>Currently, my complete <code>_vimrc</code> file looks like this (I’m using gVim 9.1.821 on my Windows 10 machine):</p>
 <pre data-lang="bash" class="language-bash z-code"><code class="language-bash" data-lang="bash"><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-support z-function z-set z-shell">set</span></span><span class="z-meta z-function-call z-arguments z-shell"> nocompatible</span>
 </span><span class="z-source z-shell z-bash">
 </span><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-variable z-function z-shell"><span class="z-string z-quoted z-double z-shell"><span class="z-punctuation z-definition z-string z-begin z-shell">&quot;</span> Needed for vim-plug to manage Windows paths
