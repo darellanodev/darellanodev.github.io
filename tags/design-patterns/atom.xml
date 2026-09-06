@@ -9,8 +9,18 @@
     <link href="https://darellanodev.github.io/tags/design-patterns/atom.xml" rel="self" type="application/atom+xml"/>
     <link href="https://darellanodev.github.io"/>
     <generator uri="https://www.getzola.org/">Zola</generator>
-    <updated>2026-07-11T00:00:00+00:00</updated>
+    <updated>2026-09-06T00:00:00+00:00</updated>
     <id>https://darellanodev.github.io/tags/design-patterns/atom.xml</id><entry xml:lang="en">
+        <title>Fluent Interface Pattern in PHP.</title>
+        <published>2026-09-06T00:00:00+00:00</published>
+        <updated>2026-09-06T00:00:00+00:00</updated>
+        <author>
+            <name>Unknown</name>
+        </author>
+        <link rel="alternate" href="https://darellanodev.github.io/blog/20260906-fluent-interface-pattern-php/" type="text/html"/>
+        <id>https://darellanodev.github.io/blog/20260906-fluent-interface-pattern-php/</id>
+        <summary type="html">We practice the Fluent Interface technique in PHP to write code that reads like natural language by chaining method calls.</summary>
+        </entry><entry xml:lang="en">
         <title>Facade pattern in PHP.</title>
         <published>2026-07-11T00:00:00+00:00</published>
         <updated>2026-07-11T00:00:00+00:00</updated>
