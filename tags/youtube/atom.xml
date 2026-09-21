@@ -9,8 +9,18 @@
     <link href="https://darellanodev.github.io/tags/youtube/atom.xml" rel="self" type="application/atom+xml"/>
     <link href="https://darellanodev.github.io"/>
     <generator uri="https://www.getzola.org/">Zola</generator>
-    <updated>2026-09-06T00:00:00+00:00</updated>
+    <updated>2026-09-13T00:00:00+00:00</updated>
     <id>https://darellanodev.github.io/tags/youtube/atom.xml</id><entry xml:lang="en">
+        <title>Creating combos in OmniRoute.</title>
+        <published>2026-09-13T00:00:00+00:00</published>
+        <updated>2026-09-13T00:00:00+00:00</updated>
+        <author>
+            <name>Unknown</name>
+        </author>
+        <link rel="alternate" href="https://darellanodev.github.io/blog/20260913-creating-combos-in-omniroute/" type="text/html"/>
+        <id>https://darellanodev.github.io/blog/20260913-creating-combos-in-omniroute/</id>
+        <summary type="html">How to create a combo in OmniRoute with multiple free models from Groq, Gemini, and Mistral so that if one fails, the gateway automatically routes to another.</summary>
+        </entry><entry xml:lang="en">
         <title>Fluent Interface Pattern in PHP.</title>
         <published>2026-09-06T00:00:00+00:00</published>
         <updated>2026-09-06T00:00:00+00:00</updated>
