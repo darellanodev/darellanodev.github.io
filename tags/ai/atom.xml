@@ -9,8 +9,18 @@
     <link href="https://darellanodev.github.io/tags/ai/atom.xml" rel="self" type="application/atom+xml"/>
     <link href="https://darellanodev.github.io"/>
     <generator uri="https://www.getzola.org/">Zola</generator>
-    <updated>2026-09-13T00:00:00+00:00</updated>
+    <updated>2026-09-27T00:00:00+00:00</updated>
     <id>https://darellanodev.github.io/tags/ai/atom.xml</id><entry xml:lang="en">
+        <title>Laya AI decisions in Python.</title>
+        <published>2026-09-27T00:00:00+00:00</published>
+        <updated>2026-09-27T00:00:00+00:00</updated>
+        <author>
+            <name>Unknown</name>
+        </author>
+        <link rel="alternate" href="https://darellanodev.github.io/blog/20260927-laya-ai-decisions-in-python/" type="text/html"/>
+        <id>https://darellanodev.github.io/blog/20260927-laya-ai-decisions-in-python/</id>
+        <summary type="html">I try Laya, a free and open source AI tool to classify texts and make decisions between the options I define, installed locally and called from a simple Python script.</summary>
+        </entry><entry xml:lang="en">
         <title>Creating combos in OmniRoute.</title>
         <published>2026-09-13T00:00:00+00:00</published>
         <updated>2026-09-13T00:00:00+00:00</updated>
