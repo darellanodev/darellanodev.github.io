@@ -234,7 +234,7 @@
 
             
             
-                • <li title="677 words">4 min read</li>
+                • <li title="871 words">5 min read</li>
             •&nbsp;<li>Tags:&nbsp;</li><li><a href=https://darellanodev.github.io/tags/ai/>AI</a>,&nbsp;</li><li><a href=https://darellanodev.github.io/tags/tools/>Tools</a>,&nbsp;</li><li><a href=https://darellanodev.github.io/tags/python/>Python</a>,&nbsp;</li><li><a href=https://darellanodev.github.io/tags/youtube/>YouTube</a></li>
                 </ul><ul class="meta last-updated"><li>Last updated on 
 
@@ -390,6 +390,25 @@ Cleaning up</h2>
 <h2 id="conclusion"><a class="header-anchor no-hover-padding" href="#conclusion" aria-label="Anchor link for: conclusion"><span class="link-icon" aria-hidden="true"></span></a>
 Conclusion</h2>
 <p>Laya turns a text into a decision between the options you define, and it does so with a handful of lines of Python. The categories and their criteria are yours, so the same tool works for home automation, commit types, or routing customer messages to a department. And it is free and open source.</p>
+<h2 id="performance-on-my-local-machine"><a class="header-anchor no-hover-padding" href="#performance-on-my-local-machine" aria-label="Anchor link for: performance-on-my-local-machine"><span class="link-icon" aria-hidden="true"></span></a>
+Performance on my local machine</h2>
+<p>Before wrapping up, I wanted to know how fast this runs locally, so I ran <code>python main.py</code> three times in a row without changing anything.</p>
+<p>These are the specs of the machine:</p>
+<ul>
+<li>Intel i7 8750H 2.2 GHz</li>
+<li>Nvidia GeForce GTX 1060 (6 Gb)</li>
+<li>RAM 8 GB 2667 MHz</li>
+</ul>
+<p>The sequence is always the same:</p>
+<ol>
+<li>A short pause.</li>
+<li><code>Fetching 5 files 100%</code>.</li>
+<li>Another short pause.</li>
+<li>The decision, and back to the prompt.</li>
+</ol>
+<p>Timing the three runs, the total is about 11-12 seconds. From <code>Fetching 5 files 100%</code> to the decision, about 6 seconds.</p>
+<p>While it runs, in the Task Manager the CPU goes up, the WiFi activity goes up as well (I assume that is the <code>Fetching 5 files</code> part), and the RAM, which was at 49%, goes up to 70% for a moment, about two seconds, and then drops back to 49%. The graphics card does not move, so in this case it is not being used.</p>
+<p>I did this test without touching any setting, so there is probably room to tune it, but these are the real numbers of a normal local run.</p>
 <h2 id="video"><a class="header-anchor no-hover-padding" href="#video" aria-label="Anchor link for: video"><span class="link-icon" aria-hidden="true"></span></a>
 Video</h2>
 <p>In the following video you can see the complete process (Spanish audio).</p>
