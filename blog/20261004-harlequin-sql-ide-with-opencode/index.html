@@ -1,0 +1,497 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="base" content="https://darellanodev.github.io/">
+
+    
+    <title>Darellanodev • Harlequin SQL IDE with OpenCode.</title>
+
+    
+    
+        <link rel="icon" type="image/png" href="https://darellanodev.github.io/favicon.ico"/>
+    
+    
+        <link rel="apple-touch-icon" href="https://darellanodev.github.io/apple-touch-icon.png"/>
+    
+    
+        <link rel="manifest" href="https://darellanodev.github.io/site.webmanifest"/>
+    
+
+    
+    <link rel="alternate" type="application/atom+xml" title="Darellanodev" href="https://darellanodev.github.io/atom.xml">
+
+    
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
+    
+    
+        <link rel="stylesheet" href="https://darellanodev.github.io/custom_subset.css?h=6de30382822eb2c02ee0">
+    
+
+    
+        <link rel="stylesheet" href="https://darellanodev.github.io/main.css?h=d1a864feb44257fe9971" />
+
+    <meta name="color-scheme" content="light dark" />
+        <meta name="theme-color" content="#087e96" />
+        <meta name="description" content="How to install Harlequin, a free SQL IDE for the terminal, connect it to a local MySQL database and use it from OpenCode with the hsql skill." />
+        <meta property="og:description" content="How to install Harlequin, a free SQL IDE for the terminal, connect it to a local MySQL database and use it from OpenCode with the hsql skill." />
+
+    
+        <meta name="robots" content="index, nofollow" />
+    
+
+    <meta property="og:title" content="Harlequin SQL IDE with OpenCode." />
+    <meta property="og:type" content="article" />
+
+    
+        
+        
+        
+
+        
+        
+            
+            
+            
+                
+            
+        
+
+        
+        <meta property="og:image" content="https://darellanodev.github.io/social_cards/index.jpg?h=d8be352f1d2fb154df81" />
+        <meta property="og:image:width" content="1400" />
+        <meta property="og:image:height" content="800" />
+        <meta name="twitter:image" content="https://darellanodev.github.io/social_cards/index.jpg?h=d8be352f1d2fb154df81" />
+        <meta name="twitter:card" content="summary_large_image" />
+    
+
+    <meta property="og:locale" content="en_GB" />
+
+    <meta property="og:url" content="https:&#x2F;&#x2F;darellanodev.github.io&#x2F;blog&#x2F;20261004-harlequin-sql-ide-with-opencode&#x2F;" /><meta property="og:site_name" content="Darellanodev">
+        <noscript><link rel="stylesheet" href="https://darellanodev.github.io/no_js.css"/></noscript>
+        <script type="text/javascript" src="https://darellanodev.github.io/js/initializeTheme.min.js"></script>
+        <script defer src="https://darellanodev.github.io/js/themeSwitcher.min.js"></script>
+
+
+
+
+    
+    
+
+
+
+        <script defer src="https://darellanodev.github.io/js/searchElasticlunr.min.js?h=2950d57f80c9fa78f37e"></script>
+
+        </head>
+
+
+<body>
+    <div class="aura-bg" aria-hidden="true">
+        <div class="aura-layer aura-layer-1"></div>
+        <div class="aura-layer aura-layer-2"></div>
+        <div class="aura-layer aura-layer-3"></div>
+    </div>
+    <header>
+    <nav class="navbar">
+        <div class="nav-title">
+            <a href=https://darellanodev.github.io class="withoutbg">
+                <img src="https://darellanodev.github.io/img/darellanodev_logo.svg" alt="darellanodev logo">
+            </a>
+        </div>
+        <div class="nav-navs">
+            <ul>
+                
+                <li>
+                    
+                    
+
+                    <a class="nav-links no-hover-padding hvr-grow" href="https:&#x2F;&#x2F;github.com&#x2F;darellanodev">
+                        github
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    
+                    
+
+                    <a class="nav-links no-hover-padding hvr-grow"
+                        href="https://darellanodev.github.io/projects/">
+                        projects
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    
+                    
+
+                    <a class="nav-links no-hover-padding hvr-grow"
+                        href="https://darellanodev.github.io/artwork/">
+                        artwork
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    
+                    
+
+                    <a class="nav-links no-hover-padding hvr-grow"
+                        href="https://darellanodev.github.io/blog/">
+                        blog
+                    </a>
+                    
+                </li>
+                <li class="js">
+                    <div role="button" tabindex="0" id="search-button" class="search-icon interactive-icon"
+                        title="Click or press $SHORTCUT to open search" aria-label="Click or press $SHORTCUT to open search">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                            <path
+                                d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z" />
+                        </svg>
+                    </div>
+                </li>
+                
+                
+
+                <li class="theme-switcher-wrapper js"><div
+        title="Toggle dark&#x2F;light mode"
+        class="theme-switcher"
+        tabindex="0"
+        role="button"
+        aria-label="Toggle dark mode"
+        aria-pressed="false">
+    </div><div
+        title="Reset mode to default"
+        class="theme-resetter"
+        tabindex="0"
+        role="button"
+        aria-hidden="true"
+        aria-label="Reset mode to default">
+    </div>
+
+</li>
+</ul>
+        </div>
+        
+    </nav>
+</header>
+    <div class="content">
+
+        
+        
+
+
+
+
+<main>
+    <article>
+        <h1 class="article-title gradient-color">
+            Harlequin SQL IDE with OpenCode.
+        </h1>
+
+        <ul class="meta">
+            
+
+            
+
+            
+                <li>
+
+
+
+
+
+    
+
+    
+        
+        
+            
+        
+    
+
+    
+    4th
+    
+        Oct 2026
+    
+
+
+</li>
+            
+
+            
+            
+                • <li title="629 words">4 min read</li>
+            •&nbsp;<li>Tags:&nbsp;</li><li><a href=https://darellanodev.github.io/tags/opencode/>OpenCode</a>,&nbsp;</li><li><a href=https://darellanodev.github.io/tags/sql/>SQL</a>,&nbsp;</li><li><a href=https://darellanodev.github.io/tags/tools/>Tools</a>,&nbsp;</li><li><a href=https://darellanodev.github.io/tags/ai/>AI</a>,&nbsp;</li><li><a href=https://darellanodev.github.io/tags/youtube/>YouTube</a></li>
+                </ul><ul class="meta last-updated"><li>Last updated on 
+
+
+
+
+
+    
+
+    
+        
+        
+            
+        
+    
+
+    
+    4th
+    
+        Oct 2026
+    
+
+
+</li>
+                
+                
+            
+        </ul>
+
+        
+
+        
+        
+
+        <section class="body">
+            
+            
+            <p>Hello developer 👋! In this post we try <a href="https://github.com/tconbeer/harlequin">Harlequin</a>, a free and open source SQL IDE for the terminal. It also includes the HSQL tool and a skill that we can use with our AI agents.</p>
+<p>We test it with OpenCode against a MySQL database that we create locally. Remember that the AI can be wrong, so use it carefully (for example, only locally).</p>
+<p><img src="https://darellanodev.github.io/blog/20261004-harlequin-sql-ide-with-opencode/./harlequin-opencode-mysql.png" alt="harlequin-opencode-mysql" /></p>
+<h2 id="what-is-harlequin"><a class="header-anchor no-hover-padding" href="#what-is-harlequin" aria-label="Anchor link for: what-is-harlequin"><span class="link-icon" aria-hidden="true"></span></a>
+What is Harlequin</h2>
+<p>Harlequin is a SQL editor that runs inside your terminal. It gives you a proper editor with tabs, keyboard shortcuts and three panels: the query editor, the query results and the data catalog.</p>
+<p>The interesting part for us is that it also installs a command called <code>hsql</code>, and <code>hsql</code> can generate a skill for AI agents. That skill teaches the agent how to read the catalog and write safe queries, so OpenCode can work with your database instead of guessing.</p>
+<p>We are going to use it carefully against a local database in a development environment, never in production. That way, if the agent makes a mistake such as a DELETE without a WHERE clause, we do not lose anything important. Before starting, I made a backup of the local database.</p>
+<h2 id="installation"><a class="header-anchor no-hover-padding" href="#installation" aria-label="Anchor link for: installation"><span class="link-icon" aria-hidden="true"></span></a>
+Installation</h2>
+<p>Install it with <code>uv</code> as a tool:</p>
+<pre data-lang="bash" class="language-bash z-code"><code class="language-bash" data-lang="bash"><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-variable z-function z-shell">uv</span></span><span class="z-meta z-function-call z-arguments z-shell"> tool install <span class="z-string z-quoted z-double z-shell"><span class="z-punctuation z-definition z-string z-begin z-shell">&quot;</span>harlequin[mysql]<span class="z-punctuation z-definition z-string z-end z-shell">&quot;</span></span></span>
+</span></code></pre>
+<p>We install it as a tool because that puts Harlequin in its own isolated environment and adds it to your PATH, so you can run it from anywhere. This is the right option for Harlequin, because what we want is the <code>harlequin</code> command (and <code>hsql</code>), not to import it from Python code.</p>
+<h2 id="connecting-to-mysql"><a class="header-anchor no-hover-padding" href="#connecting-to-mysql" aria-label="Anchor link for: connecting-to-mysql"><span class="link-icon" aria-hidden="true"></span></a>
+Connecting to MySQL</h2>
+<ol>
+<li>Open XAMPP and start MySQL.</li>
+<li>Open a terminal (I use Alacritty).</li>
+<li>Connect with:</li>
+</ol>
+<pre data-lang="bash" class="language-bash z-code"><code class="language-bash" data-lang="bash"><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-variable z-function z-shell">harlequin</span></span><span class="z-meta z-function-call z-arguments z-shell"><span class="z-variable z-parameter z-option z-shell"><span class="z-punctuation z-definition z-parameter z-shell"> -</span>a</span> mysql<span class="z-variable z-parameter z-option z-shell"><span class="z-punctuation z-definition z-parameter z-shell"> -</span>h</span> localhost<span class="z-variable z-parameter z-option z-shell"><span class="z-punctuation z-definition z-parameter z-shell"> -</span>p</span> 3306<span class="z-variable z-parameter z-option z-shell"><span class="z-punctuation z-definition z-parameter z-shell"> -</span>U</span> root</span>
+</span></code></pre>
+<p>The <code>-a</code> flag is for adapter, and <code>-U root</code> is the user. In my case there is no password.</p>
+<h2 id="moving-around-harlequin"><a class="header-anchor no-hover-padding" href="#moving-around-harlequin" aria-label="Anchor link for: moving-around-harlequin"><span class="link-icon" aria-hidden="true"></span></a>
+Moving around Harlequin</h2>
+<p>Harlequin has three zones, and you move between them with these keys:</p>
+<ul>
+<li><code>F2</code>: query editor.</li>
+<li><code>F5</code>: query results.</li>
+<li><code>F6</code>: data catalog.</li>
+</ul>
+<p>Inside the query editor:</p>
+<ul>
+<li><code>Ctrl+N</code> opens a new tab.</li>
+<li><code>Ctrl+W</code> closes a tab.</li>
+<li><code>Ctrl+Enter</code> runs the query.</li>
+</ul>
+<p>The author says he based the shortcuts on VSCode, so if you use VSCode the keys feel familiar.</p>
+<h2 id="creating-the-example-database"><a class="header-anchor no-hover-padding" href="#creating-the-example-database" aria-label="Anchor link for: creating-the-example-database"><span class="link-icon" aria-hidden="true"></span></a>
+Creating the example database</h2>
+<p>Now we create a small library database. In Harlequin you can run each block separately:</p>
+<pre data-lang="sql" class="language-sql z-code"><code class="language-sql" data-lang="sql"><span class="z-source z-sql"><span class="z-meta z-create z-sql"><span class="z-keyword z-other z-create z-sql">CREATE</span> <span class="z-keyword z-other z-sql">DATABASE</span> </span><span class="z-meta z-toc-list z-full-identifier z-sql"><span class="z-entity z-name z-function z-sql">biblioteca</span></span>;
+</span></code></pre>
+<pre data-lang="sql" class="language-sql z-code"><code class="language-sql" data-lang="sql"><span class="z-source z-sql"><span class="z-meta z-create z-sql"><span class="z-keyword z-other z-create z-sql">CREATE</span> <span class="z-keyword z-other z-sql">TABLE</span> </span><span class="z-meta z-toc-list z-full-identifier z-sql">biblioteca<span class="z-punctuation z-accessor z-dot z-sql">.</span></span><span class="z-meta z-toc-list z-full-identifier z-sql"><span class="z-entity z-name z-function z-sql">autores</span></span> (
+</span><span class="z-source z-sql">  id <span class="z-storage z-type z-sql">INT</span> AUTO_INCREMENT <span class="z-storage z-modifier z-sql">PRIMARY KEY</span>,
+</span><span class="z-source z-sql">  nombre <span class="z-storage z-type z-sql">VARCHAR</span>(<span class="z-constant z-numeric z-sql">100</span>),
+</span><span class="z-source z-sql">  pais <span class="z-storage z-type z-sql">VARCHAR</span>(<span class="z-constant z-numeric z-sql">50</span>)
+</span><span class="z-source z-sql">);
+</span></code></pre>
+<pre data-lang="sql" class="language-sql z-code"><code class="language-sql" data-lang="sql"><span class="z-source z-sql"><span class="z-meta z-create z-sql"><span class="z-keyword z-other z-create z-sql">CREATE</span> <span class="z-keyword z-other z-sql">TABLE</span> </span><span class="z-meta z-toc-list z-full-identifier z-sql">biblioteca<span class="z-punctuation z-accessor z-dot z-sql">.</span></span><span class="z-meta z-toc-list z-full-identifier z-sql"><span class="z-entity z-name z-function z-sql">libros</span></span> (
+</span><span class="z-source z-sql">  id <span class="z-storage z-type z-sql">INT</span> AUTO_INCREMENT <span class="z-storage z-modifier z-sql">PRIMARY KEY</span>,
+</span><span class="z-source z-sql">  titulo <span class="z-storage z-type z-sql">VARCHAR</span>(<span class="z-constant z-numeric z-sql">150</span>),
+</span><span class="z-source z-sql">  anio <span class="z-storage z-type z-sql">INT</span>,
+</span><span class="z-source z-sql">  autor_id <span class="z-storage z-type z-sql">INT</span>,
+</span><span class="z-source z-sql">  <span class="z-storage z-modifier z-sql">FOREIGN KEY</span> (autor_id) <span class="z-storage z-modifier z-sql">REFERENCES</span> <span class="z-constant z-other z-database-name z-sql">biblioteca</span>.<span class="z-constant z-other z-table-name z-sql">autores</span>(id)
+</span><span class="z-source z-sql">);
+</span></code></pre>
+<pre data-lang="sql" class="language-sql z-code"><code class="language-sql" data-lang="sql"><span class="z-source z-sql"><span class="z-meta z-create z-sql"><span class="z-keyword z-other z-create z-sql">CREATE</span> <span class="z-keyword z-other z-sql">TABLE</span> </span><span class="z-meta z-toc-list z-full-identifier z-sql">biblioteca<span class="z-punctuation z-accessor z-dot z-sql">.</span></span><span class="z-meta z-toc-list z-full-identifier z-sql"><span class="z-entity z-name z-function z-sql">socios</span></span> (
+</span><span class="z-source z-sql">  id <span class="z-storage z-type z-sql">INT</span> AUTO_INCREMENT <span class="z-storage z-modifier z-sql">PRIMARY KEY</span>,
+</span><span class="z-source z-sql">  nombre <span class="z-storage z-type z-sql">VARCHAR</span>(<span class="z-constant z-numeric z-sql">100</span>),
+</span><span class="z-source z-sql">  email <span class="z-storage z-type z-sql">VARCHAR</span>(<span class="z-constant z-numeric z-sql">100</span>)
+</span><span class="z-source z-sql">);
+</span></code></pre>
+<pre data-lang="sql" class="language-sql z-code"><code class="language-sql" data-lang="sql"><span class="z-source z-sql"><span class="z-meta z-create z-sql"><span class="z-keyword z-other z-create z-sql">CREATE</span> <span class="z-keyword z-other z-sql">TABLE</span> </span><span class="z-meta z-toc-list z-full-identifier z-sql">biblioteca<span class="z-punctuation z-accessor z-dot z-sql">.</span></span><span class="z-meta z-toc-list z-full-identifier z-sql"><span class="z-entity z-name z-function z-sql">prestamos</span></span> (
+</span><span class="z-source z-sql">  id <span class="z-storage z-type z-sql">INT</span> AUTO_INCREMENT <span class="z-storage z-modifier z-sql">PRIMARY KEY</span>,
+</span><span class="z-source z-sql">  libro_id <span class="z-storage z-type z-sql">INT</span>,
+</span><span class="z-source z-sql">  socio_id <span class="z-storage z-type z-sql">INT</span>,
+</span><span class="z-source z-sql">  fecha_prestamo <span class="z-storage z-type z-sql">DATE</span>,
+</span><span class="z-source z-sql">  fecha_devolucion <span class="z-storage z-type z-sql">DATE</span> <span class="z-constant z-language z-sql">NULL</span>,
+</span><span class="z-source z-sql">  <span class="z-storage z-modifier z-sql">FOREIGN KEY</span> (libro_id) <span class="z-storage z-modifier z-sql">REFERENCES</span> <span class="z-constant z-other z-database-name z-sql">biblioteca</span>.<span class="z-constant z-other z-table-name z-sql">libros</span>(id),
+</span><span class="z-source z-sql">  <span class="z-storage z-modifier z-sql">FOREIGN KEY</span> (socio_id) <span class="z-storage z-modifier z-sql">REFERENCES</span> <span class="z-constant z-other z-database-name z-sql">biblioteca</span>.<span class="z-constant z-other z-table-name z-sql">socios</span>(id)
+</span><span class="z-source z-sql">);
+</span></code></pre>
+<p>Now we have four tables with their foreign keys: <code>autores</code>, <code>libros</code>, <code>socios</code> and <code>prestamos</code>.</p>
+<h2 id="installing-the-skill-for-opencode"><a class="header-anchor no-hover-padding" href="#installing-the-skill-for-opencode" aria-label="Anchor link for: installing-the-skill-for-opencode"><span class="link-icon" aria-hidden="true"></span></a>
+Installing the skill for OpenCode</h2>
+<p>Create an empty directory for the practice:</p>
+<pre data-lang="bash" class="language-bash z-code"><code class="language-bash" data-lang="bash"><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-variable z-function z-shell">mkdir</span></span><span class="z-meta z-function-call z-arguments z-shell"> harlequin-test</span>
+</span></code></pre>
+<p>From a Git Bash terminal inside Zed, install the skill into the project so OpenCode can use it. I install it locally for this project only:</p>
+<pre data-lang="bash" class="language-bash z-code"><code class="language-bash" data-lang="bash"><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-variable z-function z-shell">hsql</span></span><span class="z-meta z-function-call z-arguments z-shell"><span class="z-variable z-parameter z-option z-shell"><span class="z-punctuation z-definition z-parameter z-shell"> --</span>skill</span><span class="z-variable z-parameter z-option z-shell"><span class="z-punctuation z-definition z-parameter z-shell"> -</span>o</span> .opencode/skills/hsql/</span>
+</span></code></pre>
+<p>Then I start git and make a first commit (<code>first commit</code>). It is not necessary, but I like to do it so I can see easily if a file changes or something new is created.</p>
+<h2 id="using-it-with-opencode"><a class="header-anchor no-hover-padding" href="#using-it-with-opencode" aria-label="Anchor link for: using-it-with-opencode"><span class="link-icon" aria-hidden="true"></span></a>
+Using it with OpenCode</h2>
+<p>Now we open OpenCode and write this prompt:</p>
+<pre class="z-code"><code><span class="z-text z-plain">Use the hsql skill to connect to my local MySQL (XAMPP: host localhost, port 3306, user root, no password, mysql adapter).
+</span><span class="z-text z-plain">
+</span><span class="z-text z-plain">Work ONLY on the `biblioteca` database; do not touch any other.
+</span><span class="z-text z-plain">
+</span><span class="z-text z-plain">1. Read the catalog of `biblioteca` to see the tables that already exist (autores, libros, socios, prestamos).
+</span><span class="z-text z-plain">2. Insert consistent sample data: 10 authors, 25 books, 8 members and 15 loans (some already returned and some not).
+</span><span class="z-text z-plain">3. Respect the foreign keys and do not delete or modify existing data.
+</span><span class="z-text z-plain">4. Before running the INSERTs, show me the statements and wait for my confirmation.
+</span><span class="z-text z-plain">5. When you finish, verify with a SELECT COUNT(*) per table.
+</span><span class="z-text z-plain">6. If you need to write a .sql file, you can write it in this project.
+</span></code></pre>
+<p>Two details in this prompt are important. The first one is point 4: the agent has to show the statements and wait, so nothing runs without your approval. The second one is the transaction: the agent may ask if you want to run everything as a transaction, and you should say yes. With a transaction, either all the inserts go in or none of them do.</p>
+<h2 id="conclusion"><a class="header-anchor no-hover-padding" href="#conclusion" aria-label="Anchor link for: conclusion"><span class="link-icon" aria-hidden="true"></span></a>
+Conclusion</h2>
+<p>Harlequin is a small but complete SQL editor for the terminal, and the interesting part is the <code>hsql</code> skill: with a few lines of prompt, the agent reads your catalog, respects your foreign keys and asks for permission before writing anything. Use it on a local or development database, make a backup, and let the agent show you the statements first.</p>
+<h2 id="video"><a class="header-anchor no-hover-padding" href="#video" aria-label="Anchor link for: video"><span class="link-icon" aria-hidden="true"></span></a>
+Video</h2>
+<p>In the following video you can see the complete process (Spanish audio).</p>
+<div style="width: 100%; max-width: 560px; margin: 1rem 0;">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/Ds-wZIXCTl4" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; fullscreen" title="Media Embed" style="border: 0px; width: 100%; height: auto;"></iframe>
+</div>
+        </section>
+
+        
+        
+        
+        
+
+        
+            
+            
+            
+
+            
+        
+            
+            
+            
+
+            
+        
+            
+            
+            
+
+            
+        
+            
+            
+            
+
+            
+        
+
+        
+        
+
+        
+        
+
+    </article>
+</main>
+
+
+<span id="copy-success" class="hidden">
+        Copied!
+    </span>
+    <span id="copy-init" class="hidden">
+        Copy code to clipboard
+    </span>
+    <script defer src="https://darellanodev.github.io/js/copyCodeToClipboard.min.js"></script><script defer src="https://darellanodev.github.io/js/footnoteBacklinks.min.js"></script>
+    </div>
+    <footer>
+    <section>
+        <nav class="socials nav-navs">
+        </nav>
+
+        <div class="footer-social-row">
+            <a href="https://www.youtube.com/@Darellanodev" class="social-link">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                <span>YouTube</span>
+            </a>
+            <a href="https://www.linkedin.com/in/darellanoaliaga/" class="social-link">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="currentColor"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
+                <span>LinkedIn</span>
+            </a>
+            <a href="https://github.com/darellanodev" class="social-link">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" fill="currentColor"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+                <span>GitHub</span>
+            </a>
+        </div>
+
+        <div class="footer-bottom-row">
+            <a class="nav-links no-hover-padding" href="https:&#x2F;&#x2F;darellanodev.github.io&#x2F;privacy&#x2F;">
+                    privacy policy
+                </a>
+            
+            <span class="footer-separator">|</span>
+            <span class="credits-inline">
+                Powered by
+                <a rel=""  href="https://www.getzola.org">Zola</a>
+                &amp;
+                <a rel=""  href="https://github.com/welpo/tabi">tabi</a>
+            </span>
+        </div>
+    </section>
+
+    <div id="searchModal" class="search-modal js" role="dialog" aria-labelledby="modalTitle">
+    <h1 id="modalTitle" class="visually-hidden">Search</h1>
+    <div id="modal-content">
+        <div id="searchBar">
+            <div class="search-icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                    <path d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"/>
+                </svg>
+            </div>
+            <input id="searchInput" role="combobox" autocomplete="off" spellcheck="false" aria-expanded="false" aria-controls="results-container" placeholder="Search…"/>
+            <div id="clear-search" class="close-icon interactive-icon" tabindex="0" role="button" title="Clear search">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/>
+                </svg>
+            </div>
+        </div>
+        <div id="results-container">
+            <div id="results-info"><span id="zero_results"> No results</span>
+                <span id="one_results"> $NUMBER result</span>
+                <span id="many_results"> $NUMBER results</span><span id="two_results"> $NUMBER results</span>
+                <span id="few_results"> $NUMBER results</span>
+            </div>
+        <div id="results" role="listbox"></div>
+    </div>
+</div>
+</footer>
+</body>
+
+</html>
