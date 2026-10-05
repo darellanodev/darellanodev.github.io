@@ -275,7 +275,7 @@
             <p>I contributed to a friend’s repository and created a branch locally, then pushed the branch to my forked repo. My friend accepted the changes, so now I can delete my branch locally:</p>
 <pre data-lang="bash" class="language-bash z-code"><code class="language-bash" data-lang="bash"><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-variable z-function z-shell">git</span></span><span class="z-meta z-function-call z-arguments z-shell"> branch<span class="z-variable z-parameter z-option z-shell"><span class="z-punctuation z-definition z-parameter z-shell"> -</span>d</span> branch-name</span>
 </span></code></pre>
-<p><img src="https://darellanodev.github.io/blog/20250302-delete-branches/./delete_branches.png" alt="delete_branches" /></p>
+<p><img src="https://darellanodev.github.io/blog/20250302-delete-branches/./delete_branches.webp" alt="delete_branches" /></p>
 <p>Sometimes Git shows a message that it can’t delete the branch because it detects that it’s not merged, and then suggests that you can force the deletion with the uppercase flag -D instead of -d. However, you must be sure of what you’re doing if you use -D to force the deletion:</p>
 <pre data-lang="bash" class="language-bash z-code"><code class="language-bash" data-lang="bash"><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-variable z-function z-shell">git</span></span><span class="z-meta z-function-call z-arguments z-shell"> branch<span class="z-variable z-parameter z-option z-shell"><span class="z-punctuation z-definition z-parameter z-shell"> -</span>D</span> branch-name</span>
 </span></code></pre>

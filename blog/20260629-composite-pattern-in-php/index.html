@@ -273,17 +273,17 @@
             
             
             <p>The Composite pattern lets you compose objects into uniform interface hierarchies. The power of this pattern is that both composite and leaf objects share a common method. When you call it on a composite object, it propagates through the entire hierarchy.</p>
-<p><img src="https://darellanodev.github.io/blog/20260629-composite-pattern-in-php/./composite-pattern-in-php.png" alt="composite-pattern-in-php" /></p>
+<p><img src="https://darellanodev.github.io/blog/20260629-composite-pattern-in-php/./composite-pattern-in-php.webp" alt="composite-pattern-in-php" /></p>
 <h2 id="use-cases"><a class="header-anchor no-hover-padding" href="#use-cases" aria-label="Anchor link for: use-cases"><span class="link-icon" aria-hidden="true"></span></a>
 Use cases</h2>
 <p>A book structure with chapters (composite elements) and pages (leaf elements). Both types share a common method <code>countWords()</code>. If you call it on a chapter, it counts words throughout its hierarchy.</p>
-<p><img src="https://darellanodev.github.io/blog/20260629-composite-pattern-in-php/./example-book.png" alt="example-book" /></p>
+<p><img src="https://darellanodev.github.io/blog/20260629-composite-pattern-in-php/./example-book.webp" alt="example-book" /></p>
 <p>Another use case is a file system with directories and files and a common method <code>display()</code>. If you call it on a directory, it shows its name and the names of its children.</p>
-<p><img src="https://darellanodev.github.io/blog/20260629-composite-pattern-in-php/./example-filesystem.png" alt="example-filesystem" /></p>
+<p><img src="https://darellanodev.github.io/blog/20260629-composite-pattern-in-php/./example-filesystem.webp" alt="example-filesystem" /></p>
 <p>Another example could be a game with spaceships (leaf elements) and coordinator ships (composite elements). Both have a method <code>launchAttack()</code>. If you call it on a coordinator ship, it launches an attack from itself and its children.</p>
-<p><img src="https://darellanodev.github.io/blog/20260629-composite-pattern-in-php/./example-spaceships.png" alt="example-spaceships" /></p>
+<p><img src="https://darellanodev.github.io/blog/20260629-composite-pattern-in-php/./example-spaceships.webp" alt="example-spaceships" /></p>
 <p>An HTML form is also a good example. You have simple elements like buttons or inputs and composite elements like fieldsets. A <code>render()</code> method on a root form node renders the root and its children.</p>
-<p><img src="https://darellanodev.github.io/blog/20260629-composite-pattern-in-php/./example-form.png" alt="example-form" /></p>
+<p><img src="https://darellanodev.github.io/blog/20260629-composite-pattern-in-php/./example-form.webp" alt="example-form" /></p>
 <h2 id="example-file-system-structure"><a class="header-anchor no-hover-padding" href="#example-file-system-structure" aria-label="Anchor link for: example-file-system-structure"><span class="link-icon" aria-hidden="true"></span></a>
 Example: file system structure</h2>
 <p>We define a <code>FileSystemComponent</code> interface with a <code>display()</code> method. <code>File</code> is the leaf class. <code>Directory</code> is the composite class that can have children.</p>

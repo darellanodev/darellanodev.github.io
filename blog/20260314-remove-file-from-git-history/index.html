@@ -275,7 +275,7 @@
             <h2 id="the-problem"><a class="header-anchor no-hover-padding" href="#the-problem" aria-label="Anchor link for: the-problem"><span class="link-icon" aria-hidden="true"></span></a>
 The problem</h2>
 <p>Imagine you have a file in your project that you never wanted to be part of the Git history. Maybe you added it by mistake in the very first commits, or maybe it was a config file with sensitive info that should never have been tracked.</p>
-<p><img src="https://darellanodev.github.io/blog/20260314-remove-file-from-git-history/./remove_file_from_git_history.png" alt="remove_file_from_git_history" /></p>
+<p><img src="https://darellanodev.github.io/blog/20260314-remove-file-from-git-history/./remove_file_from_git_history.webp" alt="remove_file_from_git_history" /></p>
 <p>That happened to me with a file called <code>prompt.txt</code>. I added it to the project from the very first commit, and although I always wanted to ignore it, I never set it up correctly in the <code>.gitignore</code>. The problem is that even if I added the file to <code>.gitignore</code> later, <strong>Git would still track it</strong>.</p>
 <p>Every time someone did a <code>git clone</code> or checked the project history, they would see that file in the old commits. And that was exactly what I wanted to avoid.</p>
 <h2 id="why-gitignore-alone-doesn-t-work"><a class="header-anchor no-hover-padding" href="#why-gitignore-alone-doesn-t-work" aria-label="Anchor link for: why-gitignore-alone-doesn-t-work"><span class="link-icon" aria-hidden="true"></span></a>
