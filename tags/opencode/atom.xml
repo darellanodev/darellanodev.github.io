@@ -9,8 +9,18 @@
     <link href="https://darellanodev.github.io/tags/opencode/atom.xml" rel="self" type="application/atom+xml"/>
     <link href="https://darellanodev.github.io"/>
     <generator uri="https://www.getzola.org/">Zola</generator>
-    <updated>2026-10-04T00:00:00+00:00</updated>
+    <updated>2026-10-11T00:00:00+00:00</updated>
     <id>https://darellanodev.github.io/tags/opencode/atom.xml</id><entry xml:lang="en">
+        <title>Graphify code graphs with OpenCode.</title>
+        <published>2026-10-11T00:00:00+00:00</published>
+        <updated>2026-10-11T00:00:00+00:00</updated>
+        <author>
+            <name>Unknown</name>
+        </author>
+        <link rel="alternate" href="https://darellanodev.github.io/blog/20261011-graphify-code-graphs-with-opencode/" type="text/html"/>
+        <id>https://darellanodev.github.io/blog/20261011-graphify-code-graphs-with-opencode/</id>
+        <summary type="html">How to use Graphify, a free tool, with OpenCode to turn a programming project into a queryable knowledge graph and explore it from the browser.</summary>
+        </entry><entry xml:lang="en">
         <title>Harlequin SQL IDE with OpenCode.</title>
         <published>2026-10-04T00:00:00+00:00</published>
         <updated>2026-10-04T00:00:00+00:00</updated>
