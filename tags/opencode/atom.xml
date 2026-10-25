@@ -9,8 +9,18 @@
     <link href="https://darellanodev.github.io/tags/opencode/atom.xml" rel="self" type="application/atom+xml"/>
     <link href="https://darellanodev.github.io"/>
     <generator uri="https://www.getzola.org/">Zola</generator>
-    <updated>2026-10-11T00:00:00+00:00</updated>
+    <updated>2026-10-25T00:00:00+00:00</updated>
     <id>https://darellanodev.github.io/tags/opencode/atom.xml</id><entry xml:lang="en">
+        <title>Archify diagrams with OpenCode.</title>
+        <published>2026-10-25T00:00:00+00:00</published>
+        <updated>2026-10-25T00:00:00+00:00</updated>
+        <author>
+            <name>Unknown</name>
+        </author>
+        <link rel="alternate" href="https://darellanodev.github.io/blog/20261025-archify-diagrams-with-opencode/" type="text/html"/>
+        <id>https://darellanodev.github.io/blog/20261025-archify-diagrams-with-opencode/</id>
+        <summary type="html">How to use Archify, a free and open source tool, with OpenCode to turn an idea or the source code of an application into an interactive architecture diagram.</summary>
+        </entry><entry xml:lang="en">
         <title>Graphify code graphs with OpenCode.</title>
         <published>2026-10-11T00:00:00+00:00</published>
         <updated>2026-10-11T00:00:00+00:00</updated>
